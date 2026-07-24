@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     e.preventDefault();
 
     const accessKey = form.querySelector('input[name="access_key"]').value;
-    if (!accessKey || accessKey === 'GANTI_DENGAN_ACCESS_KEY_WEB3FORMS') {
+    if (!accessKey || accessKey === 'd4a28ce3-4bd0-454a-b4af-9c467dc5bd46') {
       showStatus('Form belum aktif — Access Key Web3Forms belum dipasang.', 'error');
       return;
     }
