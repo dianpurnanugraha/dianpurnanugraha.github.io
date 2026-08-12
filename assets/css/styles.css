@@ -674,6 +674,14 @@
 
   /* Grid 4 kartu contoh brosur landscape (lipat) */
   .brosur-ls-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+  /* Modifier: grid 4 kolom di desktop, turun bertahap di layar kecil (dipakai khusus halaman fotografi produk) */
+  .brosur-ls-grid.grid-4up{grid-template-columns:repeat(4,1fr);}
+  @media (max-width:980px){
+    .brosur-ls-grid.grid-4up{grid-template-columns:repeat(2,1fr);max-width:720px;margin:0 auto;}
+  }
+  @media (max-width:640px){
+    .brosur-ls-grid.grid-4up{grid-template-columns:1fr;max-width:560px;margin:0 auto;}
+  }
   .brosur-ls-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--card-shadow);}
   .brosur-ls-cardhead{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
   .brosur-ls-tag{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:#fff;font-size:11px;font-weight:700;padding:5px 12px;border-radius:20px;letter-spacing:.3px;}
