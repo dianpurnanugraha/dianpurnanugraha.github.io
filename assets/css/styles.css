@@ -18,7 +18,7 @@
   /* ===== NAVBAR ===== */
   .navbar{padding:22px 0;}
   .navbar-inner{display:flex;align-items:center;justify-content:space-between;}
-  .nav-logo{font-family:'Poppins',sans-serif;font-weight:700;font-size:18px;color:var(--navy);}
+  .nav-logo{font-family:'Poppins',sans-serif;font-weight:700;font-size:18px;color:var(--navy);text-decoration:none;}
   .nav-links{list-style:none;display:flex;gap:30px;margin:0;padding:0;}
   .nav-links a{color:var(--navy-2);font-weight:600;font-size:14px;transition:.2s;}
   .nav-links a:hover{color:var(--blue);}
