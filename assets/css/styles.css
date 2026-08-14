@@ -703,6 +703,16 @@
   .slider-card-imgbox{border-radius:14px;overflow:hidden;background:#eef3fb;border:1px solid var(--line);}
   .slider-card-imgbox img{width:100%;height:auto;display:block;background:#eef3fb;}
 
+  /* Pagination galeri (dipakai bersama .slider-card-grid, hanya kartu di
+     halaman aktif yang dirender ke DOM lewat JS) */
+  .gallery-pagination{display:flex;justify-content:center;align-items:center;gap:6px;margin-top:28px;flex-wrap:wrap;}
+  .gallery-page-btn{min-width:38px;height:38px;padding:0 12px;border-radius:10px;border:1px solid var(--line);background:#fff;color:var(--navy-2);font-weight:700;font-size:13.5px;cursor:pointer;transition:.2s;}
+  .gallery-page-btn:hover:not(:disabled){border-color:var(--navy);color:var(--navy);}
+  .gallery-page-btn.active{background:var(--navy);border-color:var(--navy);color:#fff;}
+  .gallery-page-btn:disabled{opacity:.4;cursor:not-allowed;}
+  .gallery-page-ellipsis{padding:0 4px;color:var(--muted);font-size:13.5px;}
+  .gallery-page-info{text-align:center;color:var(--muted);font-size:12.5px;margin-top:12px;}
+
   .project-nav-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;border-top:1px solid var(--line);padding-top:24px;}
   .project-nav-link{font-size:13px;font-weight:600;color:var(--navy-2);display:flex;align-items:center;gap:8px;max-width:260px;}
   .project-nav-link:hover{color:var(--blue);}
