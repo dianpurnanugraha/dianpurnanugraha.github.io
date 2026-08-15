@@ -16,7 +16,7 @@
   a{text-decoration:none;}
 
   /* ===== NAVBAR ===== */
-  .navbar{padding:22px 0;}
+  .navbar{padding:18px 0;position:sticky;top:0;z-index:1000;background:#ffffff;box-shadow:0 2px 14px rgba(15,42,77,0.06);transition:padding .2s;}
   .navbar-inner{display:flex;align-items:center;justify-content:space-between;}
   .nav-logo{font-family:'Poppins',sans-serif;font-weight:700;font-size:18px;color:var(--navy);text-decoration:none;}
   .nav-links{list-style:none;display:flex;gap:30px;margin:0;padding:0;}
