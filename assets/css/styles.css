@@ -127,7 +127,11 @@
     .hero-content{max-width:100%;padding:28px 22px 34px;}
     .badges-row{flex-direction:column;gap:8px;}
     .cta-row.hero-cta{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-    .cta-row.hero-cta .btn{width:100%;justify-content:center;}
+    .cta-row.hero-cta .btn{width:100%;justify-content:center;white-space:nowrap;padding:11px 8px;font-size:13px;gap:6px;}
+  }
+
+  @media (max-width: 380px){
+    .cta-row.hero-cta .btn{font-size:12px;padding:10px 4px;gap:5px;}
   }
 
   /* ===================================================== */
