@@ -31,7 +31,13 @@
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    <div class="nav-right">
+      <div class="lang-switch">
+        <button class="lang-btn" data-lang="id">ID</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    </div>
   </div>
 </nav>
 
@@ -39,10 +45,10 @@
 <section class="svc-hero">
   <div class="wrap svc-hero-grid">
     <div>
-      <span class="svc-badge"><i class="fa-solid fa-briefcase"></i> LAYANAN SAYA</span>
-      <h1>Layanan</h1>
-      <p>Saya membantu bisnis meningkatkan operasional, penjualan online, dan branding melalui layanan E-commerce &amp; Marketplace Operations, Operasional Bisnis &amp; Administrasi, Design &amp; Content Creative, Digital Marketing &amp; Riset, Web &amp; Teknologi</p>
-      <a href="contact.html" class="btn btn-solid"><i class="fa-solid fa-paper-plane"></i> Mari Bekerja Sama</a>
+      <span class="svc-badge"><i class="fa-solid fa-briefcase"></i> <span data-i18n="svchero.badge">LAYANAN SAYA</span></span>
+      <h1 data-i18n="svchero.title">Layanan</h1>
+      <p data-i18n="svchero.desc">Saya membantu bisnis meningkatkan operasional, penjualan online, dan branding melalui layanan E-commerce &amp; Marketplace Operations, Operasional Bisnis &amp; Administrasi, Design &amp; Content Creative, Digital Marketing &amp; Riset, Web &amp; Teknologi</p>
+      <a href="contact.html" class="btn btn-solid"><i class="fa-solid fa-paper-plane"></i> <span data-i18n="svchero.cta">Mari Bekerja Sama</span></a>
     </div>
 
     <div class="svc-graphic">
@@ -63,15 +69,15 @@
 <section class="section" style="padding-top:20px;">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow-line">YANG BISA SAYA BANTU</div>
-      <h2>Layanan yang <span>Saya Tawarkan</span></h2>
-      <p>Saya membantu bisnis dan tim untuk bekerja lebih efisien, terorganisir, serta mencapai hasil yang maksimal melalui berbagai keahlian yang saya miliki.</p>
+      <div class="eyebrow-line" data-i18n="svcgrid.eyebrow">YANG BISA SAYA BANTU</div>
+      <h2 data-i18n="svcgrid.title">Layanan yang <span>Saya Tawarkan</span></h2>
+      <p data-i18n="svcgrid.desc">Saya membantu bisnis dan tim untuk bekerja lebih efisien, terorganisir, serta mencapai hasil yang maksimal melalui berbagai keahlian yang saya miliki.</p>
     </div>
 
     <!-- ===== Kategori A: E-commerce & Marketplace Operations ===== -->
     <div class="svc-category">
       <div class="svc-category-head" style="margin-bottom:18px;">
-        <div class="eyebrow-line"><i class="fa-solid fa-cart-shopping"></i> KATEGORI</div>
+        <div class="eyebrow-line"><i class="fa-solid fa-cart-shopping"></i> <span data-i18n="svc.categoryLabel">KATEGORI</span></div>
         <h3 style="font-size:22px;color:var(--navy);font-weight:800;margin:4px 0 0;">E-commerce & Marketplace Operations</h3>
       </div>
       <div class="svc-grid">
@@ -81,15 +87,15 @@
           <div class="svc-num">1</div>
           <h3>E-commerce Management</h3>
           <div class="svc-icon-box"><i class="fa-solid fa-store"></i></div>
-          <p class="svc-desc">Mengelola toko online agar lebih rapi, profesional, dari optimasi produk, foto, katalog, hingga analisis performa toko.</p>
-          <div class="svc-sublabel">Layanan</div>
+          <p class="svc-desc" data-i18n="svc1.desc">Mengelola toko online agar lebih rapi, profesional, dari optimasi produk, foto, katalog, hingga analisis performa toko.</p>
+          <div class="svc-sublabel" data-i18n="svc.services">Layanan</div>
           <ul class="svc-list">
-            <li><i class="fa-solid fa-circle-check"></i> Setup toko</li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc1.li1">Setup toko</span></li>
             <li><i class="fa-solid fa-circle-check"></i> Product listing</li>
-            <li><i class="fa-solid fa-circle-check"></i> Optimasi judul & deskripsi</li>
-            <li><i class="fa-solid fa-circle-check"></i> Voucher & promo</li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc1.li3">Optimasi judul & deskripsi</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc1.li4">Voucher & promo</span></li>
             <li><i class="fa-solid fa-circle-check"></i> Flash Sale</li>
-            <li><i class="fa-solid fa-circle-check"></i> Analisis performa toko</li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc1.li6">Analisis performa toko</span></li>
             <li><i class="fa-solid fa-circle-check"></i> Customer Service & After-sales</li>
           </ul>
         </div>
@@ -99,7 +105,7 @@
           <div class="svc-num">2</div>
           <h3>Marketplace Management</h3>
           <div class="svc-icon-box"><i class="fa-solid fa-shop"></i></div>
-          <p class="svc-desc">Mengelola toko di berbagai platform marketplace (Shopee, TikTok Shop, Lazada, Blibli) secara terpadu dan konsisten.</p>
+          <p class="svc-desc" data-i18n="svc2.desc">Mengelola toko di berbagai platform marketplace (Shopee, TikTok Shop, Lazada, Blibli) secara terpadu dan konsisten.</p>
           <div class="svc-sublabel">Platform</div>
           <ul class="svc-list">
             <li><i class="fa-solid fa-circle-check"></i> Shopee</li>
@@ -107,13 +113,13 @@
             <li><i class="fa-solid fa-circle-check"></i> Lazada</li>
             <li><i class="fa-solid fa-circle-check"></i> Blibli</li>
           </ul>
-          <div class="svc-sublabel">Layanan</div>
+          <div class="svc-sublabel" data-i18n="svc.services">Layanan</div>
           <ul class="svc-list">
-            <li><i class="fa-solid fa-circle-check"></i> Upload produk</li>
-            <li><i class="fa-solid fa-circle-check"></i> Update stok</li>
-	    <li><i class="fa-solid fa-circle-check"></i> Dekorasi toko</li>
-            <li><i class="fa-solid fa-circle-check"></i> Optimasi SEO marketplace</li>
-            <li><i class="fa-solid fa-circle-check"></i> Banner toko</li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc2.li1">Upload produk</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc2.li2">Update stok</span></li>
+	    <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc2.li3">Dekorasi toko</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc2.li4">Optimasi SEO marketplace</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc2.li5">Banner toko</span></li>
           </ul>
         </div>
 
@@ -122,13 +128,13 @@
           <div class="svc-num">3</div>
           <h3>Inventory</h3>
           <div class="svc-icon-box"><i class="fa-solid fa-boxes-stacked"></i></div>
-          <p class="svc-desc">Memantau stok dan pergerakan barang agar ketersediaan produk tetap terjaga.</p>
-          <div class="svc-sublabel">Layanan</div>
+          <p class="svc-desc" data-i18n="svc3.desc">Memantau stok dan pergerakan barang agar ketersediaan produk tetap terjaga.</p>
+          <div class="svc-sublabel" data-i18n="svc.services">Layanan</div>
           <ul class="svc-list">
             <li><i class="fa-solid fa-circle-check"></i> Stock Opname</li>
-            <li><i class="fa-solid fa-circle-check"></i> Update Stok Real-time</li>
-            <li><i class="fa-solid fa-circle-check"></i> Manajemen Gudang</li>
-	    <li><i class="fa-solid fa-circle-check"></i> Koordinasi Pengadaan</li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc3.li2">Update Stok Real-time</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc3.li3">Manajemen Gudang</span></li>
+	    <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc3.li4">Koordinasi Pengadaan</span></li>
             <li><i class="fa-solid fa-circle-check"></i> Reorder Planning</li>
           </ul>
         </div>
@@ -138,15 +144,15 @@
           <div class="svc-num">4</div>
           <h3>Product Management</h3>
           <div class="svc-icon-box"><i class="fa-solid fa-boxes-packing"></i></div>
-          <p class="svc-desc">Mengelola data dan siklus produk agar katalog tetap rapi dan up to date di semua kanal.</p>
-          <div class="svc-sublabel">Layanan</div>
+          <p class="svc-desc" data-i18n="svc4.desc">Mengelola data dan siklus produk agar katalog tetap rapi dan up to date di semua kanal.</p>
+          <div class="svc-sublabel" data-i18n="svc.services">Layanan</div>
           <ul class="svc-list">
-            <li><i class="fa-solid fa-circle-check"></i> Kategori & Variasi Produk</li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc4.li1">Kategori & Variasi Produk</span></li>
             <li><i class="fa-solid fa-circle-check"></i> Product Data Sheet</li>
             <li><i class="fa-solid fa-circle-check"></i> Product Lifecycle</li>
-	    <li><i class="fa-solid fa-circle-check"></i> Product Riset</li>
-	    <li><i class="fa-solid fa-circle-check"></i> Product Strategi</li>
-            <li><i class="fa-solid fa-circle-check"></i> Standarisasi Katalog</li>
+	    <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc4.li4">Product Riset</span></li>
+	    <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc4.li5">Product Strategi</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc4.li6">Standarisasi Katalog</span></li>
           </ul>
         </div>
 
@@ -156,8 +162,8 @@
     <!-- ===== Kategori B: Operasional Bisnis & Administrasi ===== -->
     <div class="svc-category" style="margin-top:50px;">
       <div class="svc-category-head" style="margin-bottom:18px;">
-        <div class="eyebrow-line"><i class="fa-solid fa-clipboard-list"></i> KATEGORI</div>
-        <h3 style="font-size:22px;color:var(--navy);font-weight:800;margin:4px 0 0;">Operasional Bisnis & Administrasi</h3>
+        <div class="eyebrow-line"><i class="fa-solid fa-clipboard-list"></i> <span data-i18n="svc.categoryLabel">KATEGORI</span></div>
+        <h3 style="font-size:22px;color:var(--navy);font-weight:800;margin:4px 0 0;" data-i18n="svc.catB.title">Operasional Bisnis & Administrasi</h3>
       </div>
       <div class="svc-grid">
 
@@ -166,13 +172,13 @@
           <div class="svc-num">5</div>
           <h3>Business Operations Support</h3>
           <div class="svc-icon-box"><i class="fa-solid fa-clipboard-list"></i></div>
-          <p class="svc-desc">Membantu menyusun proses kerja yang efisien dan terstruktur agar operasional bisnis berjalan lancar.</p>
-          <div class="svc-sublabel">Layanan</div>
+          <p class="svc-desc" data-i18n="svc5.desc">Membantu menyusun proses kerja yang efisien dan terstruktur agar operasional bisnis berjalan lancar.</p>
+          <div class="svc-sublabel" data-i18n="svc.services">Layanan</div>
           <ul class="svc-list">
             <li><i class="fa-solid fa-circle-check"></i> SOP</li>
             <li><i class="fa-solid fa-circle-check"></i> Business Documentation</li>
             <li><i class="fa-solid fa-circle-check"></i> Vendor & Purchasing Management</li>
-            <li><i class="fa-solid fa-circle-check"></i> Koordinasi Tim Operasional</li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc5.li4">Koordinasi Tim Operasional</span></li>
           </ul>
         </div>
 
@@ -181,15 +187,15 @@
           <div class="svc-num">6</div>
           <h3>Finance & Administration</h3>
           <div class="svc-icon-box"><i class="fa-solid fa-file-invoice-dollar"></i></div>
-          <p class="svc-desc">Menyusun rekap keuangan dan administrasi bisnis secara rapi menggunakan spreadsheet.</p>
-          <div class="svc-sublabel">Layanan</div>
+          <p class="svc-desc" data-i18n="svc6.desc">Menyusun rekap keuangan dan administrasi bisnis secara rapi menggunakan spreadsheet.</p>
+          <div class="svc-sublabel" data-i18n="svc.services">Layanan</div>
           <ul class="svc-list">
-            <li><i class="fa-solid fa-circle-check"></i> Rekap Keuangan</li>
-            <li><i class="fa-solid fa-circle-check"></i> Analisis COGS & Laba Rugi</li>
-            <li><i class="fa-solid fa-circle-check"></i> Invoice, Delivery Order & Faktur Pajak</li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc6.li1">Rekap Keuangan</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc6.li2">Analisis COGS & Laba Rugi</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc6.li3">Invoice, Delivery Order & Faktur Pajak</span></li>
             <li><i class="fa-solid fa-circle-check"></i> Sales Inquiry & Quotation</li>
-            <li><i class="fa-solid fa-circle-check"></i> Administrasi Dokumen Bisnis</li>
-            <li><i class="fa-solid fa-circle-check"></i> Spreadsheet Otomatis</li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc6.li5">Administrasi Dokumen Bisnis</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc6.li6">Spreadsheet Otomatis</span></li>
             <li><i class="fa-solid fa-circle-check"></i> Budget Tracking</li>
           </ul>
         </div>
@@ -197,16 +203,16 @@
         <!-- Card 7 -->
         <div class="svc-card">
           <div class="svc-num">7</div>
-          <h3>Legalitas Usaha & Pajak E-commerce</h3>
+          <h3 data-i18n="svc7.title">Legalitas Usaha & Pajak E-commerce</h3>
           <div class="svc-icon-box"><i class="fa-solid fa-stamp"></i></div>
-          <p class="svc-desc">Membantu kelengkapan legalitas dan administrasi pajak toko online agar tetap sesuai ketentuan marketplace.</p>
-          <div class="svc-sublabel">Layanan</div>
+          <p class="svc-desc" data-i18n="svc7.desc">Membantu kelengkapan legalitas dan administrasi pajak toko online agar tetap sesuai ketentuan marketplace.</p>
+          <div class="svc-sublabel" data-i18n="svc.services">Layanan</div>
           <ul class="svc-list">
-            <li><i class="fa-solid fa-circle-check"></i> Pendaftaran NIB</li>
-            <li><i class="fa-solid fa-circle-check"></i> Administrasi Pajak E-commerce</li>
-            <li><i class="fa-solid fa-circle-check"></i> Compliance Akun Marketplace</li>
-            <li><i class="fa-solid fa-circle-check"></i> Penyelesaian Isu Akun Toko</li>
-	    <li><i class="fa-solid fa-circle-check"></i> SPT Tahunan Usaha dan Pribadi</li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc7.li1">Pendaftaran NIB</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc7.li2">Administrasi Pajak E-commerce</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc7.li3">Compliance Akun Marketplace</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc7.li4">Penyelesaian Isu Akun Toko</span></li>
+	    <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc7.li5">SPT Tahunan Usaha dan Pribadi</span></li>
           </ul>
         </div>
 
@@ -215,11 +221,11 @@
           <div class="svc-num">8</div>
           <h3>Reporting</h3>
           <div class="svc-icon-box"><i class="fa-solid fa-chart-column"></i></div>
-          <p class="svc-desc">Menyusun laporan performa bisnis yang jelas dan mudah dipantau owner atau tim.</p>
-          <div class="svc-sublabel">Layanan</div>
+          <p class="svc-desc" data-i18n="svc8.desc">Menyusun laporan performa bisnis yang jelas dan mudah dipantau owner atau tim.</p>
+          <div class="svc-sublabel" data-i18n="svc.services">Layanan</div>
           <ul class="svc-list">
-            <li><i class="fa-solid fa-circle-check"></i> Laporan Penjualan</li>
-            <li><i class="fa-solid fa-circle-check"></i> Dashboard Performa</li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc8.li1">Laporan Penjualan</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc8.li2">Dashboard Performa</span></li>
             <li><i class="fa-solid fa-circle-check"></i> Inventory Report</li>
             <li><i class="fa-solid fa-circle-check"></i> Dashboard Excel / Google Sheets</li>
           </ul>
@@ -230,12 +236,12 @@
           <div class="svc-num">9</div>
           <h3>Workflow Improvement</h3>
           <div class="svc-icon-box"><i class="fa-solid fa-gears"></i></div>
-          <p class="svc-desc">Menata ulang alur kerja tim agar proses berjalan lebih cepat, rapi, dan minim human error.</p>
-          <div class="svc-sublabel">Layanan</div>
+          <p class="svc-desc" data-i18n="svc9.desc">Menata ulang alur kerja tim agar proses berjalan lebih cepat, rapi, dan minim human error.</p>
+          <div class="svc-sublabel" data-i18n="svc.services">Layanan</div>
           <ul class="svc-list">
-            <li><i class="fa-solid fa-circle-check"></i> Efisiensi Proses Kerja</li>
-            <li><i class="fa-solid fa-circle-check"></i> Standarisasi Prosedur</li>
-            <li><i class="fa-solid fa-circle-check"></i> Automasi Tugas Rutin</li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc9.li1">Efisiensi Proses Kerja</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc9.li2">Standarisasi Prosedur</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc9.li3">Automasi Tugas Rutin</span></li>
           </ul>
         </div>
 
@@ -244,13 +250,13 @@
           <div class="svc-num">10</div>
           <h3>Virtual Assistant & Admin Support</h3>
           <div class="svc-icon-box"><i class="fa-solid fa-user-tie"></i></div>
-          <p class="svc-desc">Mendukung tugas administratif harian secara remote agar operasional tim tetap berjalan lancar.</p>
-          <div class="svc-sublabel">Layanan</div>
+          <p class="svc-desc" data-i18n="svc10.desc">Mendukung tugas administratif harian secara remote agar operasional tim tetap berjalan lancar.</p>
+          <div class="svc-sublabel" data-i18n="svc.services">Layanan</div>
           <ul class="svc-list">
-            <li><i class="fa-solid fa-circle-check"></i> Pengelolaan Email & Jadwal</li>
-            <li><i class="fa-solid fa-circle-check"></i> Input & Pengelolaan Data</li>
-            <li><i class="fa-solid fa-circle-check"></i> Koordinasi Tugas Harian</li>
-            <li><i class="fa-solid fa-circle-check"></i> Dokumentasi Administratif</li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc10.li1">Pengelolaan Email & Jadwal</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc10.li2">Input & Pengelolaan Data</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc10.li3">Koordinasi Tugas Harian</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc10.li4">Dokumentasi Administratif</span></li>
           </ul>
         </div>
 
@@ -259,13 +265,13 @@
           <div class="svc-num">11</div>
           <h3>Training & Team Onboarding</h3>
           <div class="svc-icon-box"><i class="fa-solid fa-chalkboard-user"></i></div>
-          <p class="svc-desc">Menyiapkan materi pelatihan dan onboarding agar tim baru cepat memahami alur kerja.</p>
-          <div class="svc-sublabel">Layanan</div>
+          <p class="svc-desc" data-i18n="svc11.desc">Menyiapkan materi pelatihan dan onboarding agar tim baru cepat memahami alur kerja.</p>
+          <div class="svc-sublabel" data-i18n="svc.services">Layanan</div>
           <ul class="svc-list">
-            <li><i class="fa-solid fa-circle-check"></i> Materi Pelatihan Tim</li>
-            <li><i class="fa-solid fa-circle-check"></i> Panduan Onboarding Karyawan Baru</li>
-            <li><i class="fa-solid fa-circle-check"></i> Dokumen Tutorial Kerja</li>
-            <li><i class="fa-solid fa-circle-check"></i> Pendampingan Implementasi SOP</li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc11.li1">Materi Pelatihan Tim</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc11.li2">Panduan Onboarding Karyawan Baru</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc11.li3">Dokumen Tutorial Kerja</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc11.li4">Pendampingan Implementasi SOP</span></li>
           </ul>
         </div>
 
@@ -275,7 +281,7 @@
     <!-- ===== Kategori C: Design & Content Creative ===== -->
     <div class="svc-category" style="margin-top:50px;">
       <div class="svc-category-head" style="margin-bottom:18px;">
-        <div class="eyebrow-line"><i class="fa-solid fa-pen-nib"></i> KATEGORI</div>
+        <div class="eyebrow-line"><i class="fa-solid fa-pen-nib"></i> <span data-i18n="svc.categoryLabel">KATEGORI</span></div>
         <h3 style="font-size:22px;color:var(--navy);font-weight:800;margin:4px 0 0;">Design & Content Creative</h3>
       </div>
       <div class="svc-grid">
@@ -285,13 +291,13 @@
           <div class="svc-num">12</div>
           <h3>Product Branding</h3>
           <div class="svc-icon-box"><i class="fa-solid fa-tag"></i></div>
-          <p class="svc-desc">Membangun identitas brand dan konsep kemasan produk yang siap naik kelas ke pasar modern.</p>
-          <div class="svc-sublabel">Layanan</div>
+          <p class="svc-desc" data-i18n="svc12.desc">Membangun identitas brand dan konsep kemasan produk yang siap naik kelas ke pasar modern.</p>
+          <div class="svc-sublabel" data-i18n="svc.services">Layanan</div>
           <ul class="svc-list">
             <li><i class="fa-solid fa-circle-check"></i> Brand Identity</li>
             <li><i class="fa-solid fa-circle-check"></i> Color Palette & Typography</li>
             <li><i class="fa-solid fa-circle-check"></i> Packaging Concept</li>
-            <li><i class="fa-solid fa-circle-check"></i> Label Produk</li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc12.li4">Label Produk</span></li>
           </ul>
         </div>
 
@@ -300,32 +306,32 @@
           <div class="svc-num">13</div>
           <h3>Graphic Design</h3>
           <div class="svc-icon-box"><i class="fa-solid fa-pen-nib"></i></div>
-          <p class="svc-desc">Mendesain materi visual yang konsisten dari logo, banner, media sosial, foto produk, hingga packaging.</p>
-          <div class="svc-sublabel">Layanan</div>
+          <p class="svc-desc" data-i18n="svc13.desc">Mendesain materi visual yang konsisten dari logo, banner, media sosial, foto produk, hingga packaging.</p>
+          <div class="svc-sublabel" data-i18n="svc.services">Layanan</div>
           <ul class="svc-list">
             <li><i class="fa-solid fa-circle-check"></i> Logo</li>
             <li><i class="fa-solid fa-circle-check"></i> Banner & Poster</li>
-            <li><i class="fa-solid fa-circle-check"></i> Feed Instagram</li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc13.li3">Feed Instagram</span></li>
             <li><i class="fa-solid fa-circle-check"></i> Marketplace Banner</li>
-            <li><i class="fa-solid fa-circle-check"></i> Foto Produk Tanpa Background</li>
-            <li><i class="fa-solid fa-circle-check"></i> Template Produk untuk Marketplace</li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc13.li5">Foto Produk Tanpa Background</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc13.li6">Template Produk untuk Marketplace</span></li>
           </ul>
         </div>
 
         <!-- Card 14 -->
         <div class="svc-card">
           <div class="svc-num">14</div>
-          <h3>Desain Booth, Signage & Materi Event</h3>
+          <h3 data-i18n="svc14.title">Desain Booth, Signage & Materi Event</h3>
           <div class="svc-icon-box"><i class="fa-solid fa-tent"></i></div>
-          <p class="svc-desc">Mendesain materi visual offline untuk kebutuhan event, booth, dan pengembangan franchise/UMKM.</p>
-          <div class="svc-sublabel">Layanan</div>
+          <p class="svc-desc" data-i18n="svc14.desc">Mendesain materi visual offline untuk kebutuhan event, booth, dan pengembangan franchise/UMKM.</p>
+          <div class="svc-sublabel" data-i18n="svc.services">Layanan</div>
           <ul class="svc-list">
-            <li><i class="fa-solid fa-circle-check"></i> Booth Portable & Meja Event</li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc14.li1">Booth Portable & Meja Event</span></li>
             <li><i class="fa-solid fa-circle-check"></i> Pop-up Counter & Poly Counter</li>
-            <li><i class="fa-solid fa-circle-check"></i> Tenda Kanopi & X-Banner</li>
-            <li><i class="fa-solid fa-circle-check"></i> Spanduk, Pamflet & Brosur</li>
-            <li><i class="fa-solid fa-circle-check"></i> Daftar Menu</li>
-            <li><i class="fa-solid fa-circle-check"></i> Materi Marketing Franchise</li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc14.li3">Tenda Kanopi & X-Banner</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc14.li4">Spanduk, Pamflet & Brosur</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc14.li5">Daftar Menu</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc14.li6">Materi Marketing Franchise</span></li>
           </ul>
         </div>
 
@@ -334,12 +340,12 @@
           <div class="svc-num">15</div>
           <h3>Creative Support</h3>
           <div class="svc-icon-box"><i class="fa-solid fa-lightbulb"></i></div>
-          <p class="svc-desc">Membantu proses kreatif dari ide awal hingga konsep siap eksekusi untuk kebutuhan konten dan promosi.</p>
-          <div class="svc-sublabel">Layanan</div>
+          <p class="svc-desc" data-i18n="svc15.desc">Membantu proses kreatif dari ide awal hingga konsep siap eksekusi untuk kebutuhan konten dan promosi.</p>
+          <div class="svc-sublabel" data-i18n="svc.services">Layanan</div>
           <ul class="svc-list">
-            <li><i class="fa-solid fa-circle-check"></i> Ide & Konsep Konten</li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc15.li1">Ide & Konsep Konten</span></li>
             <li><i class="fa-solid fa-circle-check"></i> Moodboard</li>
-            <li><i class="fa-solid fa-circle-check"></i> Konsultasi Visual</li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc15.li3">Konsultasi Visual</span></li>
           </ul>
         </div>
 
@@ -348,28 +354,28 @@
           <div class="svc-num">16</div>
           <h3>Copywriting & Content Writing</h3>
           <div class="svc-icon-box"><i class="fa-solid fa-feather-pointed"></i></div>
-          <p class="svc-desc">Menulis copy dan konten yang persuasif untuk kebutuhan penjualan, promosi, dan media sosial.</p>
-          <div class="svc-sublabel">Layanan</div>
+          <p class="svc-desc" data-i18n="svc16.desc">Menulis copy dan konten yang persuasif untuk kebutuhan penjualan, promosi, dan media sosial.</p>
+          <div class="svc-sublabel" data-i18n="svc.services">Layanan</div>
           <ul class="svc-list">
-            <li><i class="fa-solid fa-circle-check"></i> Deskripsi Produk</li>
-            <li><i class="fa-solid fa-circle-check"></i> Copy Iklan & Promo</li>
-            <li><i class="fa-solid fa-circle-check"></i> Caption Media Sosial</li>
-            <li><i class="fa-solid fa-circle-check"></i> Artikel & Blog Sederhana</li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc16.li1">Deskripsi Produk</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc16.li2">Copy Iklan & Promo</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc16.li3">Caption Media Sosial</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc16.li4">Artikel & Blog Sederhana</span></li>
           </ul>
         </div>
 
         <!-- Card 17 -->
         <div class="svc-card">
           <div class="svc-num">17</div>
-          <h3>Video Promosi & Editing (AI-Assisted)</h3>
+          <h3 data-i18n="svc17.title">Video Promosi & Editing (AI-Assisted)</h3>
           <div class="svc-icon-box"><i class="fa-solid fa-clapperboard"></i></div>
-          <p class="svc-desc">Membuat dan mengedit video promosi produk maupun konten media sosial dengan bantuan tools AI agar proses lebih cepat dan hasil tetap menarik.</p>
-          <div class="svc-sublabel">Layanan</div>
+          <p class="svc-desc" data-i18n="svc17.desc">Membuat dan mengedit video promosi produk maupun konten media sosial dengan bantuan tools AI agar proses lebih cepat dan hasil tetap menarik.</p>
+          <div class="svc-sublabel" data-i18n="svc.services">Layanan</div>
           <ul class="svc-list">
-            <li><i class="fa-solid fa-circle-check"></i> Video Promosi Produk</li>
-            <li><i class="fa-solid fa-circle-check"></i> Video Konten Reels/TikTok/Shorts</li>
-            <li><i class="fa-solid fa-circle-check"></i> Editing dengan CapCut & Tools AI</li>
-            <li><i class="fa-solid fa-circle-check"></i> Subtitle & Caption Otomatis</li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc17.li1">Video Promosi Produk</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc17.li2">Video Konten Reels/TikTok/Shorts</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc17.li3">Editing dengan CapCut & Tools AI</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc17.li4">Subtitle & Caption Otomatis</span></li>
           </ul>
         </div>
 
@@ -379,8 +385,8 @@
     <!-- ===== Kategori D: Digital Marketing & Riset ===== -->
     <div class="svc-category" style="margin-top:50px;">
       <div class="svc-category-head" style="margin-bottom:18px;">
-        <div class="eyebrow-line"><i class="fa-solid fa-bullhorn"></i> KATEGORI</div>
-        <h3 style="font-size:22px;color:var(--navy);font-weight:800;margin:4px 0 0;">Digital Marketing & Riset</h3>
+        <div class="eyebrow-line"><i class="fa-solid fa-bullhorn"></i> <span data-i18n="svc.categoryLabel">KATEGORI</span></div>
+        <h3 style="font-size:22px;color:var(--navy);font-weight:800;margin:4px 0 0;" data-i18n="svc.catD.title">Digital Marketing & Riset</h3>
       </div>
       <div class="svc-grid">
 
@@ -389,15 +395,15 @@
           <div class="svc-num">18</div>
           <h3>Digital Marketing</h3>
           <div class="svc-icon-box"><i class="fa-solid fa-bullhorn"></i></div>
-          <p class="svc-desc">Mendukung promosi bisnis melalui strategi konten, iklan berbayar, serta analisis performa campaign.</p>
-          <div class="svc-sublabel">Layanan</div>
+          <p class="svc-desc" data-i18n="svc18.desc">Mendukung promosi bisnis melalui strategi konten, iklan berbayar, serta analisis performa campaign.</p>
+          <div class="svc-sublabel" data-i18n="svc.services">Layanan</div>
           <ul class="svc-list">
             <li><i class="fa-solid fa-circle-check"></i> Shopee Ads</li>
             <li><i class="fa-solid fa-circle-check"></i> Tiktok Ads</li>
             <li><i class="fa-solid fa-circle-check"></i> Facebook Ads</li>
             <li><i class="fa-solid fa-circle-check"></i> Campaign Planning</li>
-            <li><i class="fa-solid fa-circle-check"></i> Program Afiliasi</li>
-            <li><i class="fa-solid fa-circle-check"></i> Giveaway & Promo Bundling</li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc18.li5">Program Afiliasi</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc18.li6">Giveaway & Promo Bundling</span></li>
           </ul>
         </div>
 
@@ -406,13 +412,13 @@
           <div class="svc-num">19</div>
           <h3>Market & Competitor Research</h3>
           <div class="svc-icon-box"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
-          <p class="svc-desc">Menganalisis pasar dan kompetitor sebagai dasar pengambilan keputusan bisnis yang lebih tepat.</p>
-          <div class="svc-sublabel">Layanan</div>
+          <p class="svc-desc" data-i18n="svc19.desc">Menganalisis pasar dan kompetitor sebagai dasar pengambilan keputusan bisnis yang lebih tepat.</p>
+          <div class="svc-sublabel" data-i18n="svc.services">Layanan</div>
           <ul class="svc-list">
-            <li><i class="fa-solid fa-circle-check"></i> Analisis Harga Kompetitor</li>
-            <li><i class="fa-solid fa-circle-check"></i> Riset Tren Pasar</li>
-            <li><i class="fa-solid fa-circle-check"></i> Positioning Produk</li>
-            <li><i class="fa-solid fa-circle-check"></i> Ringkasan Insight Bisnis</li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc19.li1">Analisis Harga Kompetitor</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc19.li2">Riset Tren Pasar</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc19.li3">Positioning Produk</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc19.li4">Ringkasan Insight Bisnis</span></li>
           </ul>
         </div>
 
@@ -422,23 +428,23 @@
     <!-- ===== Kategori E: Web & Teknologi ===== -->
     <div class="svc-category" style="margin-top:50px;">
       <div class="svc-category-head" style="margin-bottom:18px;">
-        <div class="eyebrow-line"><i class="fa-solid fa-laptop-code"></i> KATEGORI</div>
-        <h3 style="font-size:22px;color:var(--navy);font-weight:800;margin:4px 0 0;">Web & Teknologi</h3>
+        <div class="eyebrow-line"><i class="fa-solid fa-laptop-code"></i> <span data-i18n="svc.categoryLabel">KATEGORI</span></div>
+        <h3 style="font-size:22px;color:var(--navy);font-weight:800;margin:4px 0 0;" data-i18n="svc.catE.title">Web & Teknologi</h3>
       </div>
       <div class="svc-grid">
 
         <!-- Card 20 -->
         <div class="svc-card">
           <div class="svc-num">20</div>
-          <h3>Website SEO & Optimasi</h3>
+          <h3 data-i18n="svc20.title">Website SEO & Optimasi</h3>
           <div class="svc-icon-box"><i class="fa-solid fa-magnifying-glass"></i></div>
-          <p class="svc-desc">Mengoptimasi website agar lebih mudah ditemukan di mesin pencari dan performanya lebih baik.</p>
-          <div class="svc-sublabel">Layanan</div>
+          <p class="svc-desc" data-i18n="svc20.desc">Mengoptimasi website agar lebih mudah ditemukan di mesin pencari dan performanya lebih baik.</p>
+          <div class="svc-sublabel" data-i18n="svc.services">Layanan</div>
           <ul class="svc-list">
-            <li><i class="fa-solid fa-circle-check"></i> Riset Keyword</li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc20.li1">Riset Keyword</span></li>
             <li><i class="fa-solid fa-circle-check"></i> On-Page SEO</li>
-            <li><i class="fa-solid fa-circle-check"></i> Optimasi Kecepatan & Struktur Website</li>
-            <li><i class="fa-solid fa-circle-check"></i> Audit & Perbaikan SEO Dasar</li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc20.li3">Optimasi Kecepatan & Struktur Website</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc20.li4">Audit & Perbaikan SEO Dasar</span></li>
           </ul>
         </div>
 
@@ -447,28 +453,28 @@
           <div class="svc-num">21</div>
           <h3>Web Management</h3>
           <div class="svc-icon-box"><i class="fa-solid fa-globe"></i></div>
-          <p class="svc-desc">Mengelola website bisnis secara berkala (remote) agar konten tetap update dan berjalan lancar.</p>
-          <div class="svc-sublabel">Layanan</div>
+          <p class="svc-desc" data-i18n="svc21.desc">Mengelola website bisnis secara berkala (remote) agar konten tetap update dan berjalan lancar.</p>
+          <div class="svc-sublabel" data-i18n="svc.services">Layanan</div>
           <ul class="svc-list">
-            <li><i class="fa-solid fa-circle-check"></i> Update Konten & Produk</li>
-            <li><i class="fa-solid fa-circle-check"></i> Maintenance Berkala</li>
-            <li><i class="fa-solid fa-circle-check"></i> Pengelolaan Domain & Hosting Dasar</li>
-            <li><i class="fa-solid fa-circle-check"></i> Monitoring Performa Website</li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc21.li1">Update Konten & Produk</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc21.li2">Maintenance Berkala</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc21.li3">Pengelolaan Domain & Hosting Dasar</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc21.li4">Monitoring Performa Website</span></li>
           </ul>
         </div>
 
         <!-- Card 22 -->
         <div class="svc-card">
           <div class="svc-num">22</div>
-          <h3>Pembuatan Website & Landing Page</h3>
+          <h3 data-i18n="svc22.title">Pembuatan Website & Landing Page</h3>
           <div class="svc-icon-box"><i class="fa-solid fa-file-code"></i></div>
-          <p class="svc-desc">Membuat website sederhana atau landing page promosi untuk mendukung penjualan dan branding bisnis.</p>
-          <div class="svc-sublabel">Layanan</div>
+          <p class="svc-desc" data-i18n="svc22.desc">Membuat website sederhana atau landing page promosi untuk mendukung penjualan dan branding bisnis.</p>
+          <div class="svc-sublabel" data-i18n="svc.services">Layanan</div>
           <ul class="svc-list">
-            <li><i class="fa-solid fa-circle-check"></i> Website Profil Bisnis Sederhana</li>
-            <li><i class="fa-solid fa-circle-check"></i> Landing Page Promosi & Produk</li>
-            <li><i class="fa-solid fa-circle-check"></i> Portofolio & Katalog Online</li>
-            <li><i class="fa-solid fa-circle-check"></i> Integrasi Form & Kontak</li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc22.li1">Website Profil Bisnis Sederhana</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc22.li2">Landing Page Promosi & Produk</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc22.li3">Portofolio & Katalog Online</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc22.li4">Integrasi Form & Kontak</span></li>
           </ul>
         </div>
 
@@ -477,13 +483,13 @@
           <div class="svc-num">23</div>
           <h3>Technical Solutions</h3>
           <div class="svc-icon-box"><i class="fa-solid fa-laptop-code"></i></div>
-          <p class="svc-desc">Membantu bisnis menerapkan solusi teknis sederhana secara <b>remote</b> (tidak melayani pengerjaan onsite/di tempat), dari sistem data hingga automasi kerja.</p>
-          <div class="svc-sublabel">Layanan</div>
+          <p class="svc-desc" data-i18n="svc23.desc">Membantu bisnis menerapkan solusi teknis sederhana secara <b>remote</b> (tidak melayani pengerjaan onsite/di tempat), dari sistem data hingga automasi kerja.</p>
+          <div class="svc-sublabel" data-i18n="svc.services">Layanan</div>
           <ul class="svc-list">
-            <li><i class="fa-solid fa-circle-check"></i> Setup & Konfigurasi Tools Bisnis (Remote)</li>
-            <li><i class="fa-solid fa-circle-check"></i> Sistem Informasi Sederhana (Database & Workflow)</li>
-            <li><i class="fa-solid fa-circle-check"></i> Automasi Sistem Sederhana</li>
-            <li><i class="fa-solid fa-circle-check"></i> Troubleshooting Software (Remote)</li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc23.li1">Setup & Konfigurasi Tools Bisnis (Remote)</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc23.li2">Sistem Informasi Sederhana (Database & Workflow)</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc23.li3">Automasi Sistem Sederhana</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc23.li4">Troubleshooting Software (Remote)</span></li>
           </ul>
         </div>
 
@@ -492,13 +498,13 @@
           <div class="svc-num">24</div>
           <h3>AI Productivity</h3>
           <div class="svc-icon-box"><i class="fa-solid fa-robot"></i></div>
-          <p class="svc-desc">Memanfaatkan AI untuk mempercepat riset, konten, dan otomasi pekerjaan sehari-hari.</p>
-          <div class="svc-sublabel">Layanan</div>
+          <p class="svc-desc" data-i18n="svc24.desc">Memanfaatkan AI untuk mempercepat riset, konten, dan otomasi pekerjaan sehari-hari.</p>
+          <div class="svc-sublabel" data-i18n="svc.services">Layanan</div>
           <ul class="svc-list">
             <li><i class="fa-solid fa-circle-check"></i> Prompt Engineering</li>
             <li><i class="fa-solid fa-circle-check"></i> AI Content</li>
             <li><i class="fa-solid fa-circle-check"></i> AI Research</li>
-            <li><i class="fa-solid fa-circle-check"></i> AI Automation Sederhana</li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc24.li4">AI Automation Sederhana</span></li>
           </ul>
         </div>
 
@@ -507,13 +513,13 @@
           <div class="svc-num">25</div>
           <h3>Google Apps Script</h3>
           <div class="svc-icon-box"><i class="fa-solid fa-code"></i></div>
-          <p class="svc-desc">Membuat script otomatisasi berbasis Google Apps Script untuk Google Sheets, Docs, Forms, dan Gmail agar pekerjaan berulang jadi lebih efisien.</p>
-          <div class="svc-sublabel">Layanan</div>
+          <p class="svc-desc" data-i18n="svc25.desc">Membuat script otomatisasi berbasis Google Apps Script untuk Google Sheets, Docs, Forms, dan Gmail agar pekerjaan berulang jadi lebih efisien.</p>
+          <div class="svc-sublabel" data-i18n="svc.services">Layanan</div>
           <ul class="svc-list">
-            <li><i class="fa-solid fa-circle-check"></i> Automasi Google Sheets</li>
-            <li><i class="fa-solid fa-circle-check"></i> Integrasi Form & Email Otomatis</li>
-            <li><i class="fa-solid fa-circle-check"></i> Custom Menu & Fungsi Sheets</li>
-            <li><i class="fa-solid fa-circle-check"></i> Trigger & Penjadwalan Otomatis</li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc25.li1">Automasi Google Sheets</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc25.li2">Integrasi Form & Email Otomatis</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc25.li3">Custom Menu & Fungsi Sheets</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="svc25.li4">Trigger & Penjadwalan Otomatis</span></li>
           </ul>
         </div>
 
@@ -527,9 +533,9 @@
 <section class="section faq-section">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow-line">FAQ</div>
-      <h2>Pertanyaan yang <span>Sering Diajukan</span></h2>
-      <p>Berikut jawaban dari pertanyaan yang paling sering saya terima.</p>
+      <div class="eyebrow-line" data-i18n="faq.eyebrow">FAQ</div>
+      <h2 data-i18n="faq.title">Pertanyaan yang <span>Sering Diajukan</span></h2>
+      <p data-i18n="faq.desc">Berikut jawaban dari pertanyaan yang paling sering saya terima.</p>
     </div>
 
     <div class="faq-list">
@@ -537,55 +543,55 @@
         <summary>
           <div class="faq-icon"><i class="fa-regular fa-clock"></i></div>
           <div class="faq-title-row">
-            <h4>Berapa lama pengerjaan?</h4>
+            <h4 data-i18n="faq.q1">Berapa lama pengerjaan?</h4>
             <i class="fa-solid fa-chevron-down"></i>
           </div>
         </summary>
-        <div class="faq-body">Waktu pengerjaan tergantung pada jenis dan kompleksitas proyek. Rata-rata 2–7 hari kerja. Akan saya komunikasikan di awal.</div>
+        <div class="faq-body" data-i18n="faq.a1">Waktu pengerjaan tergantung pada jenis dan kompleksitas proyek. Rata-rata 2–7 hari kerja. Akan saya komunikasikan di awal.</div>
       </details>
 
       <details class="faq-item">
         <summary>
           <div class="faq-icon"><i class="fa-solid fa-pen"></i></div>
           <div class="faq-title-row">
-            <h4>Bisa revisi?</h4>
+            <h4 data-i18n="faq.q2">Bisa revisi?</h4>
             <i class="fa-solid fa-chevron-down"></i>
           </div>
         </summary>
-        <div class="faq-body">Tentu! Saya memberikan revisi sesuai kesepakatan di awal. Kepuasan klien adalah prioritas saya.</div>
+        <div class="faq-body" data-i18n="faq.a2">Tentu! Saya memberikan revisi sesuai kesepakatan di awal. Kepuasan klien adalah prioritas saya.</div>
       </details>
 
       <details class="faq-item">
         <summary>
           <div class="faq-icon"><i class="fa-solid fa-laptop"></i></div>
           <div class="faq-title-row">
-            <h4>Bisa kerja remote?</h4>
+            <h4 data-i18n="faq.q3">Bisa kerja remote?</h4>
             <i class="fa-solid fa-chevron-down"></i>
           </div>
         </summary>
-        <div class="faq-body">Ya, semua layanan dapat dikerjakan secara remote dengan komunikasi yang efektif dan terstruktur.</div>
+        <div class="faq-body" data-i18n="faq.a3">Ya, semua layanan dapat dikerjakan secara remote dengan komunikasi yang efektif dan terstruktur.</div>
       </details>
 
       <details class="faq-item">
         <summary>
           <div class="faq-icon"><i class="fa-solid fa-briefcase"></i></div>
           <div class="faq-title-row">
-            <h4>Bisa freelance?</h4>
+            <h4 data-i18n="faq.q4">Bisa freelance?</h4>
             <i class="fa-solid fa-chevron-down"></i>
           </div>
         </summary>
-        <div class="faq-body">Ya, saya terbuka untuk proyek freelance jangka pendek maupun jangka panjang.</div>
+        <div class="faq-body" data-i18n="faq.a4">Ya, saya terbuka untuk proyek freelance jangka pendek maupun jangka panjang.</div>
       </details>
 
       <details class="faq-item">
         <summary>
           <div class="faq-icon"><i class="fa-solid fa-user-clock"></i></div>
           <div class="faq-title-row">
-            <h4>Bisa part-time?</h4>
+            <h4 data-i18n="faq.q5">Bisa part-time?</h4>
             <i class="fa-solid fa-chevron-down"></i>
           </div>
         </summary>
-        <div class="faq-body">Ya, saya tersedia untuk kerja part-time sesuai kebutuhan dan kesepakatan bersama.</div>
+        <div class="faq-body" data-i18n="faq.a5">Ya, saya tersedia untuk kerja part-time sesuai kebutuhan dan kesepakatan bersama.</div>
       </details>
     </div>
   </div>
@@ -597,34 +603,34 @@
     <div class="connect-section">
             <div class="connect-grid">
         <div>
-          <span class="connect-badge">SOLUSI UNTUK BISNIS</span>
-          <h2>Apa yang Bisa <span>Saya Bantu?</span></h2>
-          <p>Saya siap membantu mengembangkan bisnis atau proyek Anda dengan solusi yang praktis dan efektif.</p>
+          <span class="connect-badge" data-i18n="svccta.badge">SOLUSI UNTUK BISNIS</span>
+          <h2 data-i18n="svccta.title">Apa yang Bisa <span>Saya Bantu?</span></h2>
+          <p data-i18n="svccta.desc">Saya siap membantu mengembangkan bisnis atau proyek Anda dengan solusi yang praktis dan efektif.</p>
           <div class="help-cta-row" style="margin-top:22px;">
             <a href="https://www.linkedin.com/in/dian-purna-nugraha-s-kom/" target="_blank" rel="noopener" class="btn btn-help-outline"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
             <a href="https://wa.me/6281295733476" target="_blank" rel="noopener" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-            <a href="project.html" class="btn btn-help-outline"><i class="fa-solid fa-folder-open"></i> Lihat Portofolio</a>
+            <a href="project.html" class="btn btn-help-outline"><i class="fa-solid fa-folder-open"></i> <span data-i18n="svccta.viewPortfolio">Lihat Portofolio</span></a>
           </div>
         </div>
 
         <div class="connect-cards">
           <div class="connect-card cc-blue">
             <div class="cc-icon"><i class="fa-solid fa-user"></i></div>
-            <h4>Rekrut Saya</h4>
-            <p>Saya siap bergabung dan memberikan kontribusi terbaik untuk Anda.</p>
-            <a href="contact.html">Rekrut Saya Sekarang <i class="fa-solid fa-arrow-right"></i></a>
+            <h4 data-i18n="svccta.hireTitle">Rekrut Saya</h4>
+            <p data-i18n="svccta.hireDesc">Saya siap bergabung dan memberikan kontribusi terbaik untuk Anda.</p>
+            <a href="contact.html"><span data-i18n="svccta.hireLink">Rekrut Saya Sekarang</span> <i class="fa-solid fa-arrow-right"></i></a>
           </div>
           <div class="connect-card cc-green">
             <div class="cc-icon"><i class="fa-solid fa-file-arrow-down"></i></div>
-            <h4>Unduh CV</h4>
-            <p>Unduh CV saya untuk informasi lebih lengkap tentang pengalaman dan keterampilan saya.</p>
-            <a href="assets/files/Dian-Purna-Nugraha_Resume.pdf" download>Unduh CV <i class="fa-solid fa-download"></i></a>
+            <h4 data-i18n="svccta.cvTitle">Unduh CV</h4>
+            <p data-i18n="svccta.cvDesc">Unduh CV saya untuk informasi lebih lengkap tentang pengalaman dan keterampilan saya.</p>
+            <a href="assets/files/Dian-Purna-Nugraha_Resume.pdf" download><span data-i18n="svccta.cvLink">Unduh CV</span> <i class="fa-solid fa-download"></i></a>
           </div>
         </div>
       </div>
 
       <div class="connect-footer">
-        <span><i class="fa-solid fa-shield-halved"></i> Respons cepat &nbsp;•&nbsp; Komunikasi jelas &nbsp;•&nbsp; Hasil berkualitas</span>
+        <span><i class="fa-solid fa-shield-halved"></i> <span data-i18n="svccta.footer">Respons cepat &nbsp;•&nbsp; Komunikasi jelas &nbsp;•&nbsp; Hasil berkualitas</span></span>
       </div>
     </div>
   </div>
@@ -636,7 +642,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <h3>Dian Purna Nugraha, S.Kom.</h3>
-        <p>E-commerce Operations, Business Operations, Graphic Design, Digital Marketing, dan AI Productivity untuk membantu bisnis bekerja lebih efisien, berkembang, dan menciptakan nilai yang berkelanjutan.</p>
+        <p data-i18n="footer.bio">E-commerce Operations, Business Operations, Graphic Design, Digital Marketing, dan AI Productivity untuk membantu bisnis bekerja lebih efisien, berkembang, dan menciptakan nilai yang berkelanjutan.</p>
         <div class="footer-social">
           <a href="https://www.linkedin.com/in/dian-purna-nugraha-s-kom/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
           <a href="https://www.upwork.com/freelancers/~017580231dbed875ca?mp_source=share" target="_blank" rel="noopener" aria-label="Upwork"><svg viewBox="0 0 640 512" style="width:1em;height:1em;fill:currentColor;vertical-align:-0.125em;" xmlns="http://www.w3.org/2000/svg"><path d="M493.9 295.6c-50.3 0-83.5-38.9-92.8-53.9 11.9-95.3 46.8-125.4 92.8-125.4 45.5 0 80.9 36.4 80.9 89.7s-35.4 89.7-80.9 89.7l0-.1zm0-237.8c-81.9 0-127.8 53.4-141 108.4-14.9-28-25.9-65.5-34.5-100.3l-113.2 0 0 141c0 51.1-23.3 89-68.8 89s-71.6-37.8-71.6-89l.5-141-65.3 0 0 141c0 41.1 13.3 78.4 37.6 105.1 25 27.5 59.2 41.8 98.8 41.8 78.8 0 133.8-60.4 133.8-146.9l0-94.8c8.2 31.2 27.8 91.1 65.3 143.6l-35 199.4 66.4 0 23.1-141.3c7.6 6.3 15.7 12 24.2 17 22.2 14 47.7 21.9 73.9 22.8 0 0 4 .2 6.1 .2 81.2 0 145.9-62.9 145.9-147.8S575.3 57.9 494.1 57.9l-.2-.1z"/></svg></a>
@@ -648,7 +654,7 @@
       </div>
 
       <div class="footer-col">
-        <h4>Navigasi</h4>
+        <h4 data-i18n="footer.nav">Navigasi</h4>
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="project.html">Project</a></li>
@@ -661,34 +667,37 @@
       </div>
 
       <div class="footer-col">
-        <h4>Layanan</h4>
+        <h4 data-i18n="footer.services">Layanan</h4>
         <ul>
-          <li>E-commerce & Marketplace Operations</li>
-          <li>Operasional Bisnis & Administrasi</li>
-          <li>Design & Content Creative</li>
-          <li>Digital Marketing & Riset</li>
-          <li>Web & Teknologi</li>
-          <li><a href="services.html">Layanan Lainnya</a></li>
+          <li data-i18n="footer.service1">E-commerce & Marketplace Operations</li>
+          <li data-i18n="footer.service2">Operasional Bisnis & Administrasi</li>
+          <li data-i18n="footer.service3">Design & Content Creative</li>
+          <li data-i18n="footer.service4">Digital Marketing & Riset</li>
+          <li data-i18n="footer.service5">Web & Teknologi</li>
+          <li><a href="services.html" data-i18n="footer.serviceMore">Layanan Lainnya</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4>Kontak</h4>
+        <h4 data-i18n="footer.contact">Kontak</h4>
         <ul>
           <li><i class="fa-solid fa-envelope"></i> dyannugraha.p@gmail.com</li>
           <li><i class="fa-brands fa-whatsapp"></i> +62 812 9573 3476</li>
-          <li><i class="fa-solid fa-location-dot"></i> Jakarta Timur, DKI Jakarta, Indonesia</li>
+          <li><i class="fa-solid fa-location-dot"></i> <span data-i18n="footer.location">Jakarta Timur, DKI Jakarta, Indonesia</span></li>
         </ul>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <span>&copy; 2026 Dian Purna Nugraha, S.Kom. All rights reserved.</span>
-      <span>Dibuat dengan kreativitas dan bantuan AI.</span>
+      <span data-i18n="footer.rights">&copy; 2026 Dian Purna Nugraha, S.Kom. All rights reserved.</span>
+      <span data-i18n="footer.madeWith">Dibuat dengan kreativitas dan bantuan AI.</span>
     </div>
   </div>
 </footer>
 
+<script src="assets/js/i18n-common.js"></script>
+<script src="assets/js/i18n-services.js"></script>
+<script src="assets/js/i18n.js"></script>
 <script src="assets/js/nav-toggle.js"></script>
 </body>
 </html>
