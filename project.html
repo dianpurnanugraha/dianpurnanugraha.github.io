@@ -11,6 +11,7 @@
 <meta property="og:description" content="Kumpulan proyek dan studi kasus Dian Purna Nugraha, S.Kom. di bidang e-commerce, branding, marketing, dan business operations.">
 <meta property="og:image" content="assets/img/profile.png">
 <meta name="twitter:card" content="summary_large_image">
+<!-- _title, _metaDesc, _ogTitle diisi otomatis oleh i18n.js dari i18n-project.js -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -31,7 +32,13 @@
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    <div class="nav-right">
+      <div class="lang-switch">
+        <button class="lang-btn" data-lang="id">ID</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    </div>
   </div>
 </nav>
 
@@ -39,15 +46,15 @@
 <section class="svc-hero">
   <div class="wrap svc-hero-grid">
     <div>
-      <span class="svc-badge"><i class="fa-solid fa-folder-open"></i> PORTOFOLIO SAYA</span>
-      <h1>Proyek &amp; <span style="background:linear-gradient(90deg,#2F6FED,#5A9CFF);-webkit-background-clip:text;background-clip:text;color:transparent;">Portofolio</span></h1>
-      <p>Kumpulan proyek dan hasil kerja yang pernah saya kerjakan, mulai dari e-commerce, branding &amp; design, digital marketing, reporting &amp; data dan operations</p>
+      <span class="svc-badge"><i class="fa-solid fa-folder-open"></i> <span data-i18n="hero.badge">PORTOFOLIO SAYA</span></span>
+      <h1 data-i18n="hero.title">Proyek &amp; <span style="background:linear-gradient(90deg,#2F6FED,#5A9CFF);-webkit-background-clip:text;background-clip:text;color:transparent;">Portofolio</span></h1>
+      <p data-i18n="hero.desc">Kumpulan proyek dan hasil kerja yang pernah saya kerjakan, mulai dari e-commerce, branding &amp; design, digital marketing, reporting &amp; data dan operations</p>
 
       <div class="proj-stats-row">
-        <div class="stat"><b>50+</b><span>Proyek Selesai</span></div>
-        <div class="stat"><b>4+</b><span>Platform Marketplace</span></div>
-        <div class="stat"><b>10+</b><span>Industri Ditangani</span></div>
-        <div class="stat"><b>98%</b><span>Kepuasan Klien</span></div>
+        <div class="stat"><b>50+</b><span data-i18n="hero.stat1">Proyek Selesai</span></div>
+        <div class="stat"><b>4+</b><span data-i18n="hero.stat2">Platform Marketplace</span></div>
+        <div class="stat"><b>10+</b><span data-i18n="hero.stat3">Industri Ditangani</span></div>
+        <div class="stat"><b>98%</b><span data-i18n="hero.stat4">Kepuasan Klien</span></div>
       </div>
     </div>
 
@@ -69,18 +76,18 @@
 <section class="section section-tight-top">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow-line">PORTOFOLIO</div>
-      <h2>Semua <span>Proyek</span></h2>
-      <p>Klik kategori di bawah untuk menyaring proyek berdasarkan bidang kerja.</p>
+      <div class="eyebrow-line" data-i18n="grid.eyebrow">PORTOFOLIO</div>
+      <h2 data-i18n="grid.title">Semua <span>Proyek</span></h2>
+      <p data-i18n="grid.desc">Klik kategori di bawah untuk menyaring proyek berdasarkan bidang kerja.</p>
     </div>
 
     <div class="filter-row">
-      <button class="filter-btn active" data-filter="all">Semua</button>
-      <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
-      <button class="filter-btn" data-filter="branding">Branding &amp; Design</button>
-      <button class="filter-btn" data-filter="marketing">Digital Marketing</button>
-      <button class="filter-btn" data-filter="reporting">Reporting &amp; Data</button>
-      <button class="filter-btn" data-filter="operations">Operations</button>
+      <button class="filter-btn active" data-filter="all" data-i18n="filter.all">Semua</button>
+      <button class="filter-btn" data-filter="ecommerce" data-i18n="filter.ecommerce">E-commerce</button>
+      <button class="filter-btn" data-filter="branding" data-i18n="filter.branding">Branding &amp; Design</button>
+      <button class="filter-btn" data-filter="marketing" data-i18n="filter.marketing">Digital Marketing</button>
+      <button class="filter-btn" data-filter="reporting" data-i18n="filter.reporting">Reporting &amp; Data</button>
+      <button class="filter-btn" data-filter="operations" data-i18n="filter.operations">Operations</button>
     </div>
 
     <div class="project-grid">
@@ -91,11 +98,11 @@
           <i class="fa-solid fa-cart-shopping"></i>
         </div>
         <div class="project-body">
-          <h4>Optimasi Toko Shopee &amp; TikTok Shop</h4>
-          <p>Menata ulang listing produk, promo, dan performa toko lintas marketplace untuk meningkatkan penjualan.</p>
+          <h4 data-i18n="card1.title">Optimasi Toko Shopee &amp; TikTok Shop</h4>
+          <p data-i18n="card1.desc">Menata ulang listing produk, promo, dan performa toko lintas marketplace untuk meningkatkan penjualan.</p>
           <div class="project-tags"><span>Shopee</span><span>TikTok Shop</span><span>SEO Listing</span></div>
         
-          <a href="project-shopee-tiktok.html" class="project-link">Lihat Detail <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="project-shopee-tiktok.html" class="project-link"><span data-i18n="cta.detail">Lihat Detail</span> <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
 
@@ -105,11 +112,11 @@
           <i class="fa-solid fa-palette"></i>
         </div>
         <div class="project-body">
-          <h4>Desain Logo &amp; Identitas Visual</h4>
-          <p>Kumpulan desain logo dan identitas visual untuk berbagai brand, dari konsep awal hingga siap diaplikasikan.</p>
+          <h4 data-i18n="card2.title">Desain Logo &amp; Identitas Visual</h4>
+          <p data-i18n="card2.desc">Kumpulan desain logo dan identitas visual untuk berbagai brand, dari konsep awal hingga siap diaplikasikan.</p>
           <div class="project-tags"><span>Brand Identity</span><span>Logo Design</span><span>CorelDRAW</span></div>
         
-          <a href="project-logo-identitas.html" class="project-link">Lihat Detail <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="project-logo-identitas.html" class="project-link"><span data-i18n="cta.detail">Lihat Detail</span> <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
 
@@ -119,11 +126,11 @@
           <i class="fa-solid fa-chart-column"></i>
         </div>
         <div class="project-body">
-          <h4>Dashboard Laporan Penjualan Multi-Marketplace</h4>
-          <p>Menyusun dashboard Google Sheets untuk memantau penjualan dan performa toko secara real-time.</p>
+          <h4 data-i18n="card3.title">Dashboard Laporan Penjualan Multi-Marketplace</h4>
+          <p data-i18n="card3.desc">Menyusun dashboard Google Sheets untuk memantau penjualan dan performa toko secara real-time.</p>
           <div class="project-tags"><span>Google Sheets</span><span>Dashboard</span><span>Data Analysis</span></div>
         
-          <a href="project-sales-dashboard.html" class="project-link">Lihat Detail <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="project-sales-dashboard.html" class="project-link"><span data-i18n="cta.detail">Lihat Detail</span> <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
 
@@ -133,11 +140,11 @@
           <i class="fa-solid fa-bullhorn"></i>
         </div>
         <div class="project-body">
-          <h4>Kampanye Iklan Shopee &amp; Facebook Ads</h4>
-          <p>Merancang dan menjalankan kampanye iklan untuk meningkatkan traffic dan konversi toko.</p>
+          <h4 data-i18n="card4.title">Kampanye Iklan Shopee &amp; Facebook Ads</h4>
+          <p data-i18n="card4.desc">Merancang dan menjalankan kampanye iklan untuk meningkatkan traffic dan konversi toko.</p>
           <div class="project-tags"><span>Shopee Ads</span><span>Facebook Ads</span><span>Copywriting</span></div>
         
-          <a href="project-ads-campaign.html" class="project-link">Lihat Detail <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="project-ads-campaign.html" class="project-link"><span data-i18n="cta.detail">Lihat Detail</span> <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
 
@@ -147,11 +154,11 @@
           <i class="fa-solid fa-shop"></i>
         </div>
         <div class="project-body">
-          <h4>Setup &amp; Migrasi Toko ke Lazada</h4>
-          <p>Membangun toko baru dari nol, upload katalog produk, dan konfigurasi promo awal.</p>
-          <div class="project-tags"><span>Lazada</span><span>Store Setup</span><span>Katalog</span></div>
+          <h4 data-i18n="card5.title">Setup &amp; Migrasi Toko ke Lazada</h4>
+          <p data-i18n="card5.desc">Membangun toko baru dari nol, upload katalog produk, dan konfigurasi promo awal.</p>
+          <div class="project-tags"><span>Lazada</span><span>Store Setup</span><span data-i18n="card5.tag3">Katalog</span></div>
         
-          <a href="project-lazada-setup.html" class="project-link">Lihat Detail <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="project-lazada-setup.html" class="project-link"><span data-i18n="cta.detail">Lihat Detail</span> <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
 
@@ -161,11 +168,11 @@
           <i class="fa-solid fa-image"></i>
         </div>
         <div class="project-body">
-          <h4>Desain Feed Instagram &amp; Konten Promosi</h4>
-          <p>Merancang konten visual untuk kebutuhan media sosial dan materi promosi toko.</p>
+          <h4 data-i18n="card6.title">Desain Feed Instagram &amp; Konten Promosi</h4>
+          <p data-i18n="card6.desc">Merancang konten visual untuk kebutuhan media sosial dan materi promosi toko.</p>
           <div class="project-tags"><span>Canva</span><span>Photoshop</span><span>Content Planning</span></div>
         
-          <a href="project-instagram-design.html" class="project-link">Lihat Detail <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="project-instagram-design.html" class="project-link"><span data-i18n="cta.detail">Lihat Detail</span> <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
 
@@ -175,11 +182,11 @@
           <i class="fa-solid fa-gears"></i>
         </div>
         <div class="project-body">
-          <h4>Penyusunan SOP &amp; Workflow Gudang</h4>
-          <p>Menyusun SOP operasional gudang untuk mengurangi kesalahan dan mempercepat proses kerja.</p>
+          <h4 data-i18n="card7.title">Penyusunan SOP &amp; Workflow Gudang</h4>
+          <p data-i18n="card7.desc">Menyusun SOP operasional gudang untuk mengurangi kesalahan dan mempercepat proses kerja.</p>
           <div class="project-tags"><span>SOP</span><span>Inventory</span><span>Workflow</span></div>
         
-          <a href="project-sop-workflow.html" class="project-link">Lihat Detail <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="project-sop-workflow.html" class="project-link"><span data-i18n="cta.detail">Lihat Detail</span> <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
 
@@ -189,11 +196,11 @@
           <i class="fa-solid fa-file-invoice-dollar"></i>
         </div>
         <div class="project-body">
-          <h4>Laporan Keuangan &amp; Rekap Otomatis</h4>
-          <p>Membuat template rekap keuangan otomatis berbasis spreadsheet untuk laporan bulanan.</p>
+          <h4 data-i18n="card8.title">Laporan Keuangan &amp; Rekap Otomatis</h4>
+          <p data-i18n="card8.desc">Membuat template rekap keuangan otomatis berbasis spreadsheet untuk laporan bulanan.</p>
           <div class="project-tags"><span>Excel</span><span>Spreadsheet</span><span>Automation</span></div>
         
-          <a href="project-finance-report.html" class="project-link">Lihat Detail <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="project-finance-report.html" class="project-link"><span data-i18n="cta.detail">Lihat Detail</span> <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
 
@@ -203,11 +210,11 @@
           <i class="fa-solid fa-book-open"></i>
         </div>
         <div class="project-body">
-          <h4>Desain Brosur &amp; Materi Cetak Promosi</h4>
-          <p>Merancang brosur dan materi cetak promosi untuk mendukung penjualan offline dan kebutuhan pameran produk.</p>
-          <div class="project-tags"><span>Brosur</span><span>Print Design</span><span>Layout</span></div>
+          <h4 data-i18n="card9.title">Desain Brosur &amp; Materi Cetak Promosi</h4>
+          <p data-i18n="card9.desc">Merancang brosur dan materi cetak promosi untuk mendukung penjualan offline dan kebutuhan pameran produk.</p>
+          <div class="project-tags"><span data-i18n="card9.tag1">Brosur</span><span>Print Design</span><span>Layout</span></div>
         
-          <a href="project-brosur.html" class="project-link">Lihat Detail <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="project-brosur.html" class="project-link"><span data-i18n="cta.detail">Lihat Detail</span> <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
 
@@ -217,11 +224,11 @@
           <i class="fa-solid fa-box-open"></i>
         </div>
         <div class="project-body">
-          <h4>Desain Kemasan &amp; Branding Multi-Brand</h4>
-          <p>Merancang kemasan produk untuk berbagai varian brand lintas industri bagi beberapa klien.</p>
+          <h4 data-i18n="card10.title">Desain Kemasan &amp; Branding Multi-Brand</h4>
+          <p data-i18n="card10.desc">Merancang kemasan produk untuk berbagai varian brand lintas industri bagi beberapa klien.</p>
           <div class="project-tags"><span>Packaging Design</span><span>Multi-Brand</span><span>CorelDRAW</span></div>
         
-          <a href="project-packaging.html" class="project-link">Lihat Detail <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="project-packaging.html" class="project-link"><span data-i18n="cta.detail">Lihat Detail</span> <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
 
@@ -231,11 +238,11 @@
           <i class="fa-solid fa-camera-retro"></i>
         </div>
         <div class="project-body">
-          <h4>Fotografi &amp; Editing Produk</h4>
-          <p>Memotret dan mengedit foto produk multi-angle untuk kebutuhan listing marketplace, media sosial, dan katalog.</p>
+          <h4 data-i18n="card11.title">Fotografi &amp; Editing Produk</h4>
+          <p data-i18n="card11.desc">Memotret dan mengedit foto produk multi-angle untuk kebutuhan listing marketplace, media sosial, dan katalog.</p>
           <div class="project-tags"><span>Product Photography</span><span>Photo Editing</span><span>Multi-Angle</span></div>
         
-          <a href="project-fotografi-produk.html" class="project-link">Lihat Detail <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="project-fotografi-produk.html" class="project-link"><span data-i18n="cta.detail">Lihat Detail</span> <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
 
@@ -249,34 +256,34 @@
     <div class="connect-section">
             <div class="connect-grid">
         <div>
-          <span class="connect-badge">PUNYA PROYEK?</span>
-          <h2>Mari Wujudkan <span>Ide Anda</span></h2>
-          <p>Dari konsep hingga implementasi, saya siap membantu menghadirkan solusi yang sesuai dengan kebutuhan Anda.</p>
+          <span class="connect-badge" data-i18n="connect.badge">PUNYA PROYEK?</span>
+          <h2 data-i18n="connect.title">Mari Wujudkan <span>Ide Anda</span></h2>
+          <p data-i18n="connect.desc">Dari konsep hingga implementasi, saya siap membantu menghadirkan solusi yang sesuai dengan kebutuhan Anda.</p>
           <div class="help-cta-row" style="margin-top:22px;">
             <a href="https://www.linkedin.com/in/dian-purna-nugraha-s-kom/" target="_blank" rel="noopener" class="btn btn-help-outline"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
             <a href="https://wa.me/6281295733476" target="_blank" rel="noopener" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-            <a href="project.html" class="btn btn-help-outline"><i class="fa-solid fa-folder-open"></i> Lihat Portofolio</a>
+            <a href="project.html" class="btn btn-help-outline"><i class="fa-solid fa-folder-open"></i> <span data-i18n="connect.viewPortfolio">Lihat Portofolio</span></a>
           </div>
         </div>
 
         <div class="connect-cards">
           <div class="connect-card cc-blue">
             <div class="cc-icon"><i class="fa-solid fa-user"></i></div>
-            <h4>Rekrut Saya</h4>
-            <p>Saya siap bergabung dan memberikan kontribusi terbaik untuk Anda.</p>
-            <a href="contact.html">Rekrut Saya Sekarang <i class="fa-solid fa-arrow-right"></i></a>
+            <h4 data-i18n="connect.hireTitle">Rekrut Saya</h4>
+            <p data-i18n="connect.hireDesc">Saya siap bergabung dan memberikan kontribusi terbaik untuk Anda.</p>
+            <a href="contact.html"><span data-i18n="connect.hireLink">Rekrut Saya Sekarang</span> <i class="fa-solid fa-arrow-right"></i></a>
           </div>
           <div class="connect-card cc-green">
             <div class="cc-icon"><i class="fa-solid fa-file-arrow-down"></i></div>
-            <h4>Unduh CV</h4>
-            <p>Unduh CV saya untuk informasi lebih lengkap tentang pengalaman dan keterampilan saya.</p>
-            <a href="assets/files/Dian-Purna-Nugraha_Resume.pdf" download>Unduh CV <i class="fa-solid fa-download"></i></a>
+            <h4 data-i18n="connect.downloadCv">Unduh CV</h4>
+            <p data-i18n="connect.cvDesc">Unduh CV saya untuk informasi lebih lengkap tentang pengalaman dan keterampilan saya.</p>
+            <a href="assets/files/Dian-Purna-Nugraha_Resume.pdf" download><span data-i18n="connect.downloadCv">Unduh CV</span> <i class="fa-solid fa-download"></i></a>
           </div>
         </div>
       </div>
 
       <div class="connect-footer">
-        <span><i class="fa-solid fa-circle-check"></i> Hasil Nyata &nbsp;•&nbsp; Detail Terjaga &nbsp;•&nbsp; Tepat Waktu</span>
+        <span><i class="fa-solid fa-circle-check"></i> <span data-i18n="connect.footerNote">Hasil Nyata &nbsp;•&nbsp; Detail Terjaga &nbsp;•&nbsp; Tepat Waktu</span></span>
       </div>
     </div>
   </div>
@@ -288,7 +295,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <h3>Dian Purna Nugraha, S.Kom.</h3>
-        <p>E-commerce Operations, Business Operations, Graphic Design, Digital Marketing, dan AI Productivity untuk membantu bisnis bekerja lebih efisien, berkembang, dan menciptakan nilai yang berkelanjutan.</p>
+        <p data-i18n="footer.bio">E-commerce Operations, Business Operations, Graphic Design, Digital Marketing, dan AI Productivity untuk membantu bisnis bekerja lebih efisien, berkembang, dan menciptakan nilai yang berkelanjutan.</p>
         <div class="footer-social">
           <a href="https://www.linkedin.com/in/dian-purna-nugraha-s-kom/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
           <a href="https://www.upwork.com/freelancers/~017580231dbed875ca?mp_source=share" target="_blank" rel="noopener" aria-label="Upwork"><svg viewBox="0 0 640 512" style="width:1em;height:1em;fill:currentColor;vertical-align:-0.125em;" xmlns="http://www.w3.org/2000/svg"><path d="M493.9 295.6c-50.3 0-83.5-38.9-92.8-53.9 11.9-95.3 46.8-125.4 92.8-125.4 45.5 0 80.9 36.4 80.9 89.7s-35.4 89.7-80.9 89.7l0-.1zm0-237.8c-81.9 0-127.8 53.4-141 108.4-14.9-28-25.9-65.5-34.5-100.3l-113.2 0 0 141c0 51.1-23.3 89-68.8 89s-71.6-37.8-71.6-89l.5-141-65.3 0 0 141c0 41.1 13.3 78.4 37.6 105.1 25 27.5 59.2 41.8 98.8 41.8 78.8 0 133.8-60.4 133.8-146.9l0-94.8c8.2 31.2 27.8 91.1 65.3 143.6l-35 199.4 66.4 0 23.1-141.3c7.6 6.3 15.7 12 24.2 17 22.2 14 47.7 21.9 73.9 22.8 0 0 4 .2 6.1 .2 81.2 0 145.9-62.9 145.9-147.8S575.3 57.9 494.1 57.9l-.2-.1z"/></svg></a>
@@ -300,7 +307,7 @@
       </div>
 
       <div class="footer-col">
-        <h4>Navigasi</h4>
+        <h4 data-i18n="footer.nav">Navigasi</h4>
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="project.html">Project</a></li>
@@ -313,34 +320,37 @@
       </div>
 
       <div class="footer-col">
-        <h4>Layanan</h4>
+        <h4 data-i18n="footer.services">Layanan</h4>
         <ul>
-          <li>E-commerce & Marketplace Operations</li>
-          <li>Operasional Bisnis & Administrasi</li>
-          <li>Design & Content Creative</li>
-          <li>Digital Marketing & Riset</li>
-          <li>Web & Teknologi</li>
-          <li><a href="services.html">Layanan Lainnya</a></li>
+          <li data-i18n="footer.service1">E-commerce & Marketplace Operations</li>
+          <li data-i18n="footer.service2">Operasional Bisnis & Administrasi</li>
+          <li data-i18n="footer.service3">Design & Content Creative</li>
+          <li data-i18n="footer.service4">Digital Marketing & Riset</li>
+          <li data-i18n="footer.service5">Web & Teknologi</li>
+          <li><a href="services.html" data-i18n="footer.serviceMore">Layanan Lainnya</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4>Kontak</h4>
+        <h4 data-i18n="footer.contact">Kontak</h4>
         <ul>
           <li><i class="fa-solid fa-envelope"></i> dyannugraha.p@gmail.com</li>
           <li><i class="fa-brands fa-whatsapp"></i> +62 812 9573 3476</li>
-          <li><i class="fa-solid fa-location-dot"></i> Jakarta Timur, DKI Jakarta, Indonesia</li>
+          <li><i class="fa-solid fa-location-dot"></i> <span data-i18n="footer.location">Jakarta Timur, DKI Jakarta, Indonesia</span></li>
         </ul>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <span>&copy; 2026 Dian Purna Nugraha, S.Kom. All rights reserved.</span>
-      <span>Dibuat dengan kreativitas dan bantuan AI.</span>
+      <span data-i18n="footer.rights">&copy; 2026 Dian Purna Nugraha, S.Kom. All rights reserved.</span>
+      <span data-i18n="footer.madeWith">Dibuat dengan kreativitas dan bantuan AI.</span>
     </div>
   </div>
 </footer>
 
+<script src="assets/js/i18n-common.js"></script>
+<script src="assets/js/i18n-project.js"></script>
+<script src="assets/js/i18n.js"></script>
 <script src="assets/js/nav-toggle.js"></script>
 <script src="assets/js/project-filter.js"></script>
 </body>
