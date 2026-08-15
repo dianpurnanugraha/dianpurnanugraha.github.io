@@ -40,6 +40,7 @@
   .badge-mini i{color:var(--blue);font-size:15px;width:16px;text-align:center;}
   .desc{color:var(--muted);font-size:14.5px;line-height:1.7;max-width:480px;margin-bottom:22px;}
   .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:30px;}
+  .cta-row.hero-cta .btn{flex:1;justify-content:center;text-align:center;}
   .btn{padding:11px 22px;border-radius:8px;font-weight:600;font-size:14px;display:inline-flex;align-items:center;gap:8px;cursor:pointer;border:1.5px solid transparent;transition:.2s;}
   .btn-solid{background:var(--navy);color:#fff;}
   .btn-solid:hover{background:var(--navy-2);}
@@ -125,6 +126,8 @@
     .hero-panel::after{content:none;}
     .hero-content{max-width:100%;padding:28px 22px 34px;}
     .badges-row{flex-direction:column;gap:8px;}
+    .cta-row.hero-cta{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+    .cta-row.hero-cta .btn{width:100%;justify-content:center;}
   }
 
   /* ===================================================== */
