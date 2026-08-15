@@ -104,26 +104,10 @@
       <div class="eyebrow-line">DOKUMENTASI</div>
       <h2>Galeri <span>Logo &amp; Identitas</span></h2>
     </div>
-    <div class="gallery-grid gallery-grid-dense">
-      <div class="gallery-item gallery-item-img"><img src="assets/img/logo/logo-brand-a.png" alt="Logo Brand A"></div>
-      <div class="gallery-item gallery-item-img"><img src="assets/img/logo/logo-brand-b.png" alt="Logo Brand B"></div>
-      <div class="gallery-item gallery-item-img"><img src="assets/img/logo/logo-brand-c.png" alt="Logo Brand C"></div>
-      <div class="gallery-item gallery-item-img"><img src="assets/img/logo/logo-brand-d.png" alt="Logo Brand D"></div>
-      <div class="gallery-item gallery-item-img"><img src="assets/img/logo/logo-brand-e.png" alt="Logo Brand E"></div>
-      <div class="gallery-item gallery-item-img"><img src="assets/img/logo/logo-brand-f.png" alt="Logo Brand F"></div>
-      <div class="gallery-item gallery-item-img"><img src="assets/img/logo/logo-brand-g.png" alt="Logo Brand G"></div>
-      <div class="gallery-item gallery-item-img"><img src="assets/img/logo/logo-brand-h.png" alt="Logo Brand H"></div>
-      <div class="gallery-item gallery-item-img"><img src="assets/img/logo/logo-brand-i.png" alt="Logo Brand I"></div>
-      <div class="gallery-item gallery-item-img"><img src="assets/img/logo/logo-brand-j.png" alt="Logo Brand J"></div>
-      <div class="gallery-item gallery-item-img"><img src="assets/img/logo/logo-brand-k.png" alt="Logo Brand K"></div>
-      <div class="gallery-item gallery-item-img"><img src="assets/img/logo/logo-brand-l.png" alt="Logo Brand L"></div>
-      <div class="gallery-item gallery-item-img"><img src="assets/img/logo/logo-brand-m.png" alt="Logo Brand M"></div>
-      <div class="gallery-item gallery-item-img"><img src="assets/img/logo/logo-brand-n.png" alt="Logo Brand N"></div>
-      <div class="gallery-item gallery-item-img"><img src="assets/img/logo/logo-brand-o.png" alt="Logo Brand O"></div>
-      <div class="gallery-item gallery-item-img"><img src="assets/img/logo/logo-brand-p.png" alt="Logo Brand O"></div>
-      <div class="gallery-item gallery-item-img"><img src="assets/img/logo/logo-brand-q.png" alt="Logo Brand O"></div>
-      <div class="gallery-item gallery-item-img"><img src="assets/img/logo/logo-brand-r.png" alt="Logo Brand O"></div>
-    </div>
+    <div class="gallery-grid gallery-grid-dense" id="galleryGrid"></div>
+
+    <nav class="gallery-pagination" id="galleryPagination" aria-label="Navigasi halaman galeri logo"></nav>
+    <p class="gallery-page-info" id="galleryPageInfo"></p>
 
     <div class="project-tags project-tags-center">
       <span>Brand Identity</span>
@@ -241,5 +225,112 @@
 </footer>
 
 <script src="assets/js/nav-toggle.js"></script>
+<script>
+(function(){
+  var LOGOS = [
+    { src: "assets/img/logo/logo-brand-a.png", alt: "Logo Brand A" },
+    { src: "assets/img/logo/logo-brand-b.png", alt: "Logo Brand B" },
+    { src: "assets/img/logo/logo-brand-c.png", alt: "Logo Brand C" },
+    { src: "assets/img/logo/logo-brand-d.png", alt: "Logo Brand D" },
+    { src: "assets/img/logo/logo-brand-e.png", alt: "Logo Brand E" },
+    { src: "assets/img/logo/logo-brand-f.png", alt: "Logo Brand F" },
+    { src: "assets/img/logo/logo-brand-g.png", alt: "Logo Brand G" },
+    { src: "assets/img/logo/logo-brand-h.png", alt: "Logo Brand H" },
+    { src: "assets/img/logo/logo-brand-i.png", alt: "Logo Brand I" },
+    { src: "assets/img/logo/logo-brand-j.png", alt: "Logo Brand J" },
+    { src: "assets/img/logo/logo-brand-k.png", alt: "Logo Brand K" },
+    { src: "assets/img/logo/logo-brand-l.png", alt: "Logo Brand L" },
+    { src: "assets/img/logo/logo-brand-m.png", alt: "Logo Brand M" },
+    { src: "assets/img/logo/logo-brand-n.png", alt: "Logo Brand N" },
+    { src: "assets/img/logo/logo-brand-o.png", alt: "Logo Brand O" },
+    { src: "assets/img/logo/logo-brand-p.png", alt: "Logo Brand P" },
+    { src: "assets/img/logo/logo-brand-q.png", alt: "Logo Brand Q" },
+    { src: "assets/img/logo/logo-brand-r.png", alt: "Logo Brand R" }
+  ];
+
+  var ITEMS_PER_PAGE = 12; // grid dense (4 kolom desktop) -> 3 baris per halaman
+
+  var grid       = document.getElementById('galleryGrid');
+  var paginateEl = document.getElementById('galleryPagination');
+  var infoEl     = document.getElementById('galleryPageInfo');
+  var totalPages = Math.ceil(LOGOS.length / ITEMS_PER_PAGE);
+  var currentPage = 1;
+
+  function buildItem(logo){
+    var item = document.createElement('div');
+    item.className = 'gallery-item gallery-item-img';
+    item.innerHTML = '<img src="' + logo.src + '" alt="' + logo.alt + '" loading="lazy">';
+    return item;
+  }
+
+  function getPageList(current, total){
+    var delta = 1;
+    var range = [];
+    for (var i = Math.max(2, current - delta); i <= Math.min(total - 1, current + delta); i++){
+      range.push(i);
+    }
+    var result = [1];
+    if (range[0] > 2) result.push('...');
+    result = result.concat(range);
+    if (range.length && range[range.length - 1] < total - 1) result.push('...');
+    if (total > 1) result.push(total);
+    return result;
+  }
+
+  function renderPagination(){
+    paginateEl.innerHTML = '';
+    if (totalPages <= 1) { infoEl.textContent = ''; return; }
+
+    var prevBtn = document.createElement('button');
+    prevBtn.type = 'button';
+    prevBtn.className = 'gallery-page-btn';
+    prevBtn.innerHTML = '<i class="fa-solid fa-chevron-left"></i>';
+    prevBtn.disabled = currentPage === 1;
+    prevBtn.addEventListener('click', function(){ renderPage(currentPage - 1, true); });
+    paginateEl.appendChild(prevBtn);
+
+    getPageList(currentPage, totalPages).forEach(function(p){
+      if (p === '...'){
+        var span = document.createElement('span');
+        span.className = 'gallery-page-ellipsis';
+        span.textContent = '...';
+        paginateEl.appendChild(span);
+      } else {
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'gallery-page-btn' + (p === currentPage ? ' active' : '');
+        btn.textContent = p;
+        btn.addEventListener('click', function(){ renderPage(p, true); });
+        paginateEl.appendChild(btn);
+      }
+    });
+
+    var nextBtn = document.createElement('button');
+    nextBtn.type = 'button';
+    nextBtn.className = 'gallery-page-btn';
+    nextBtn.innerHTML = '<i class="fa-solid fa-chevron-right"></i>';
+    nextBtn.disabled = currentPage === totalPages;
+    nextBtn.addEventListener('click', function(){ renderPage(currentPage + 1, true); });
+    paginateEl.appendChild(nextBtn);
+
+    infoEl.textContent = 'Halaman ' + currentPage + ' dari ' + totalPages + ' — ' + LOGOS.length + ' logo total';
+  }
+
+  function renderPage(page, scroll){
+    currentPage = page;
+    grid.innerHTML = '';
+
+    var start = (page - 1) * ITEMS_PER_PAGE;
+    LOGOS.slice(start, start + ITEMS_PER_PAGE).forEach(function(logo){
+      grid.appendChild(buildItem(logo));
+    });
+
+    renderPagination();
+    if (scroll) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  renderPage(1, false);
+})();
+</script>
 </body>
 </html>

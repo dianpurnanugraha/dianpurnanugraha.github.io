@@ -122,106 +122,10 @@
 
     <!-- Panel: Landscape (dilipat) -->
     <div class="brosur-panel" data-brosur-panel="landscape">
-      <div class="slider-card-grid">
+      <div class="slider-card-grid" id="galleryGrid"></div>
 
-<!-- Contoh 1: Brosur lipat landscape, bolak-balik (pakai slider) -->
-        <div class="slider-card">
-          <div class="slider-card-head">
-            <span class="slider-card-tag"><i class="fa-solid fa-arrows-rotate"></i> Bolak-balik</span>
-            <span class="slider-card-title">Contoh 1</span>
-          </div>
-          <div class="media-slider">
-            <button class="media-arrow prev" aria-label="Sebelumnya"><i class="fa-solid fa-chevron-left"></i></button>
-            <div class="media-slider-track">
-              <div class="media-slider-slides">
-                <div class="media-slide">
-                  <span class="media-slide-label">Tampak Depan</span>
-                  <img src="assets/img/brosur/project-brosur-2a.png" alt="Brosur Landscape Lipat Bolak-balik Contoh 1 - Tampak Depan">
-                </div>
-                <div class="media-slide">
-                  <span class="media-slide-label">Tampak Belakang</span>
-                  <img src="assets/img/brosur/project-brosur-2b.png" alt="Brosur Landscape Lipat Bolak-balik Contoh 1 - Tampak Belakang">
-                </div>
-              </div>
-            </div>
-            <button class="media-arrow next" aria-label="Berikutnya"><i class="fa-solid fa-chevron-right"></i></button>
-          </div>
-          <div class="media-dots"></div>
-        </div>
-
-<!-- Contoh 2: Brosur lipat landscape, satu sisi (tanpa slider) -->
-        <div class="slider-card">
-          <div class="slider-card-head">
-            <span class="slider-card-tag alt"><i class="fa-solid fa-image"></i> Satu Sisi</span>
-            <span class="slider-card-title">Contoh 2</span>
-          </div>
-          <div class="slider-card-imgbox">
-            <img src="assets/img/brosur/project-brosur-2a.png" alt="Brosur Landscape Lipat Satu Sisi Contoh 2">
-          </div>
-        </div>
-
-<!-- Contoh 3: Brosur lipat landscape, bolak-balik (pakai slider) -->
-        <div class="slider-card">
-          <div class="slider-card-head">
-            <span class="slider-card-tag"><i class="fa-solid fa-arrows-rotate"></i> Bolak-balik</span>
-            <span class="slider-card-title">Contoh 3</span>
-          </div>
-          <div class="media-slider">
-            <button class="media-arrow prev" aria-label="Sebelumnya"><i class="fa-solid fa-chevron-left"></i></button>
-            <div class="media-slider-track">
-              <div class="media-slider-slides">
-                <div class="media-slide">
-                  <span class="media-slide-label">Tampak Depan</span>
-                  <img src="assets/img/brosur/project-brosur-2a.png" alt="Brosur Landscape Lipat Bolak-balik Contoh 3 - Tampak Depan">
-                </div>
-                <div class="media-slide">
-                  <span class="media-slide-label">Tampak Belakang</span>
-                  <img src="assets/img/brosur/project-brosur-2b.png" alt="Brosur Landscape Lipat Bolak-balik Contoh 3 - Tampak Belakang">
-                </div>
-              </div>
-            </div>
-            <button class="media-arrow next" aria-label="Berikutnya"><i class="fa-solid fa-chevron-right"></i></button>
-          </div>
-          <div class="media-dots"></div>
-        </div>
-
-<!-- Contoh 4: Brosur lipat landscape, satu sisi (tanpa slider) -->
-        <div class="slider-card">
-          <div class="slider-card-head">
-            <span class="slider-card-tag alt"><i class="fa-solid fa-image"></i> Satu Sisi</span>
-            <span class="slider-card-title">Contoh 4</span>
-          </div>
-          <div class="slider-card-imgbox">
-            <img src="assets/img/brosur/project-brosur-2b.png" alt="Brosur Landscape Lipat Satu Sisi Contoh 4">
-          </div>
-        </div>
-
-<!-- Contoh 5: Brosur lipat landscape, bolak-balik (pakai slider) -->
-        <div class="slider-card">
-          <div class="slider-card-head">
-            <span class="slider-card-tag"><i class="fa-solid fa-arrows-rotate"></i> Bolak-balik</span>
-            <span class="slider-card-title">Contoh 5</span>
-          </div>
-          <div class="media-slider">
-            <button class="media-arrow prev" aria-label="Sebelumnya"><i class="fa-solid fa-chevron-left"></i></button>
-            <div class="media-slider-track">
-              <div class="media-slider-slides">
-                <div class="media-slide">
-                  <span class="media-slide-label">Tampak Depan</span>
-                  <img src="assets/img/brosur/project-brosur-2a.png" alt="Brosur Landscape Lipat Bolak-balik Contoh 5 - Tampak Depan">
-                </div>
-                <div class="media-slide">
-                  <span class="media-slide-label">Tampak Belakang</span>
-                  <img src="assets/img/brosur/project-brosur-2b.png" alt="Brosur Landscape Lipat Bolak-balik Contoh 5 - Tampak Belakang">
-                </div>
-              </div>
-            </div>
-            <button class="media-arrow next" aria-label="Berikutnya"><i class="fa-solid fa-chevron-right"></i></button>
-          </div>
-          <div class="media-dots"></div>
-        </div>
-
-      </div>
+      <nav class="gallery-pagination" id="galleryPagination" aria-label="Navigasi halaman contoh brosur landscape"></nav>
+      <p class="gallery-page-info" id="galleryPageInfo"></p>
     </div>
 
     <div class="project-tags project-tags-center">
@@ -353,39 +257,190 @@
     });
   });
 
-  // Slider Depan / Belakang (mendukung beberapa slider sekaligus, misal 4 kartu contoh)
-  document.querySelectorAll('.media-slider').forEach(function(sliderEl){
-    var track   = sliderEl.querySelector('.media-slider-slides');
-    var slides  = sliderEl.querySelectorAll('.media-slide');
-    var prevBtn = sliderEl.querySelector('.media-arrow.prev');
-    var nextBtn = sliderEl.querySelector('.media-arrow.next');
-    var dotsBox = sliderEl.parentElement.querySelector('.media-dots');
-    var index = 0;
+  /* ================================================================
+     DATA CONTOH BROSUR LANDSCAPE (dipaginasi)
+     type: "double" pakai slider depan/belakang, "single" pakai
+     slider-card-imgbox (satu gambar saja, tanpa panah/dot).
+     ================================================================ */
+  var EXAMPLES = [
+    { title: "Contoh 1", type: "double", tagIcon: "fa-arrows-rotate", tagLabel: "Bolak-balik", tagAlt: false, images: [
+        { label: "Tampak Depan", src: "assets/img/brosur/project-brosur-2a.png" },
+        { label: "Tampak Belakang", src: "assets/img/brosur/project-brosur-2b.png" }
+    ]},
+    { title: "Contoh 2", type: "single", tagIcon: "fa-image", tagLabel: "Satu Sisi", tagAlt: true,
+      image: { src: "assets/img/brosur/project-brosur-2a.png" }
+    },
+    { title: "Contoh 3", type: "double", tagIcon: "fa-arrows-rotate", tagLabel: "Bolak-balik", tagAlt: false, images: [
+        { label: "Tampak Depan", src: "assets/img/brosur/project-brosur-2a.png" },
+        { label: "Tampak Belakang", src: "assets/img/brosur/project-brosur-2b.png" }
+    ]},
+    { title: "Contoh 4", type: "single", tagIcon: "fa-image", tagLabel: "Satu Sisi", tagAlt: true,
+      image: { src: "assets/img/brosur/project-brosur-2b.png" }
+    },
+    { title: "Contoh 5", type: "double", tagIcon: "fa-arrows-rotate", tagLabel: "Bolak-balik", tagAlt: false, images: [
+        { label: "Tampak Depan", src: "assets/img/brosur/project-brosur-2a.png" },
+        { label: "Tampak Belakang", src: "assets/img/brosur/project-brosur-2b.png" }
+    ]}
+  ];
 
-    // Kalau cuma 1 sisi (brosur landscape tidak bolak-balik), sembunyikan panah & dot
-    if (slides.length <= 1){
-      if (prevBtn) prevBtn.style.display = 'none';
-      if (nextBtn) nextBtn.style.display = 'none';
-      if (dotsBox) dotsBox.style.display = 'none';
-      return;
+  var ITEMS_PER_PAGE = 8;
+
+  var grid       = document.getElementById('galleryGrid');
+  var paginateEl = document.getElementById('galleryPagination');
+  var infoEl     = document.getElementById('galleryPageInfo');
+  var totalPages = Math.ceil(EXAMPLES.length / ITEMS_PER_PAGE);
+  var currentPage = 1;
+  var rendered = false; // baru render galeri saat tab landscape pertama kali dibuka
+
+  function buildCard(ex){
+    var card = document.createElement('div');
+    card.className = 'slider-card';
+
+    var head = document.createElement('div');
+    head.className = 'slider-card-head';
+    head.innerHTML =
+      '<span class="slider-card-tag' + (ex.tagAlt ? ' alt' : '') + '"><i class="fa-solid ' + ex.tagIcon + '"></i> ' + ex.tagLabel + '</span>' +
+      '<span class="slider-card-title">' + ex.title + '</span>';
+    card.appendChild(head);
+
+    if (ex.type === 'single'){
+      var box = document.createElement('div');
+      box.className = 'slider-card-imgbox';
+      box.innerHTML = '<img src="' + ex.image.src + '" alt="Brosur Landscape Lipat Satu Sisi ' + ex.title + '" loading="lazy">';
+      card.appendChild(box);
+    } else {
+      var slider = document.createElement('div');
+      slider.className = 'media-slider';
+      var slidesHtml = ex.images.map(function(img){
+        return '<div class="media-slide">' +
+                 '<span class="media-slide-label">' + img.label + '</span>' +
+                 '<img src="' + img.src + '" alt="Brosur Landscape Lipat Bolak-balik ' + ex.title + ' - ' + img.label + '" loading="lazy">' +
+               '</div>';
+      }).join('');
+      slider.innerHTML =
+        '<button class="media-arrow prev" aria-label="Sebelumnya"><i class="fa-solid fa-chevron-left"></i></button>' +
+        '<div class="media-slider-track"><div class="media-slider-slides">' + slidesHtml + '</div></div>' +
+        '<button class="media-arrow next" aria-label="Berikutnya"><i class="fa-solid fa-chevron-right"></i></button>';
+      card.appendChild(slider);
+
+      var dots = document.createElement('div');
+      dots.className = 'media-dots';
+      card.appendChild(dots);
     }
 
-    slides.forEach(function(_, i){
-      var dot = document.createElement('button');
-      dot.className = 'media-dot' + (i === 0 ? ' active' : '');
-      dot.setAttribute('aria-label', 'Slide ' + (i + 1));
-      dot.addEventListener('click', function(){ goTo(i); });
-      dotsBox.appendChild(dot);
+    return card;
+  }
+
+  function initSliders(scopeEl){
+    scopeEl.querySelectorAll('.media-slider').forEach(function(sliderEl){
+      var track   = sliderEl.querySelector('.media-slider-slides');
+      var slides  = sliderEl.querySelectorAll('.media-slide');
+      var prevBtn = sliderEl.querySelector('.media-arrow.prev');
+      var nextBtn = sliderEl.querySelector('.media-arrow.next');
+      var dotsBox = sliderEl.parentElement.querySelector('.media-dots');
+      var index = 0;
+
+      if (slides.length <= 1){
+        if (prevBtn) prevBtn.style.display = 'none';
+        if (nextBtn) nextBtn.style.display = 'none';
+        if (dotsBox) dotsBox.style.display = 'none';
+        return;
+      }
+
+      slides.forEach(function(_, i){
+        var dot = document.createElement('button');
+        dot.className = 'media-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+        dot.addEventListener('click', function(){ goTo(i); });
+        dotsBox.appendChild(dot);
+      });
+      var dots = dotsBox.querySelectorAll('.media-dot');
+
+      function goTo(i){
+        index = (i + slides.length) % slides.length;
+        track.style.transform = 'translateX(-' + (index * 100) + '%)';
+        dots.forEach(function(d, di){ d.classList.toggle('active', di === index); });
+      }
+      prevBtn.addEventListener('click', function(){ goTo(index - 1); });
+      nextBtn.addEventListener('click', function(){ goTo(index + 1); });
     });
-    var dots = dotsBox.querySelectorAll('.media-dot');
+  }
 
-    function goTo(i){
-      index = (i + slides.length) % slides.length;
-      track.style.transform = 'translateX(-' + (index * 100) + '%)';
-      dots.forEach(function(d, di){ d.classList.toggle('active', di === index); });
+  function getPageList(current, total){
+    var delta = 1;
+    var range = [];
+    for (var i = Math.max(2, current - delta); i <= Math.min(total - 1, current + delta); i++){
+      range.push(i);
     }
-    prevBtn.addEventListener('click', function(){ goTo(index - 1); });
-    nextBtn.addEventListener('click', function(){ goTo(index + 1); });
+    var result = [1];
+    if (range[0] > 2) result.push('...');
+    result = result.concat(range);
+    if (range.length && range[range.length - 1] < total - 1) result.push('...');
+    if (total > 1) result.push(total);
+    return result;
+  }
+
+  function renderPagination(){
+    paginateEl.innerHTML = '';
+    if (totalPages <= 1) { infoEl.textContent = ''; return; }
+
+    var prevBtn = document.createElement('button');
+    prevBtn.type = 'button';
+    prevBtn.className = 'gallery-page-btn';
+    prevBtn.innerHTML = '<i class="fa-solid fa-chevron-left"></i>';
+    prevBtn.disabled = currentPage === 1;
+    prevBtn.addEventListener('click', function(){ renderPage(currentPage - 1, true); });
+    paginateEl.appendChild(prevBtn);
+
+    getPageList(currentPage, totalPages).forEach(function(p){
+      if (p === '...'){
+        var span = document.createElement('span');
+        span.className = 'gallery-page-ellipsis';
+        span.textContent = '...';
+        paginateEl.appendChild(span);
+      } else {
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'gallery-page-btn' + (p === currentPage ? ' active' : '');
+        btn.textContent = p;
+        btn.addEventListener('click', function(){ renderPage(p, true); });
+        paginateEl.appendChild(btn);
+      }
+    });
+
+    var nextBtn = document.createElement('button');
+    nextBtn.type = 'button';
+    nextBtn.className = 'gallery-page-btn';
+    nextBtn.innerHTML = '<i class="fa-solid fa-chevron-right"></i>';
+    nextBtn.disabled = currentPage === totalPages;
+    nextBtn.addEventListener('click', function(){ renderPage(currentPage + 1, true); });
+    paginateEl.appendChild(nextBtn);
+
+    infoEl.textContent = 'Halaman ' + currentPage + ' dari ' + totalPages + ' — ' + EXAMPLES.length + ' contoh total';
+  }
+
+  function renderPage(page, scroll){
+    currentPage = page;
+    grid.innerHTML = '';
+
+    var start = (page - 1) * ITEMS_PER_PAGE;
+    EXAMPLES.slice(start, start + ITEMS_PER_PAGE).forEach(function(ex){
+      grid.appendChild(buildCard(ex));
+    });
+
+    initSliders(grid);
+    renderPagination();
+    if (scroll) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // Render galeri landscape begitu tabnya dibuka pertama kali (hemat kalau
+  // pengunjung cuma lihat tab Potrait saja)
+  var landscapeTabBtn = document.querySelector('[data-brosur-tab="landscape"]');
+  landscapeTabBtn.addEventListener('click', function(){
+    if (!rendered){
+      rendered = true;
+      renderPage(1, false);
+    }
   });
 })();
 </script>

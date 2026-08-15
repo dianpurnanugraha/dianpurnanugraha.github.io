@@ -106,11 +106,10 @@
       <h2>Cuplikan <span>Pekerjaan</span></h2>
       <p>Ganti kotak di bawah ini dengan screenshot atau foto hasil kerja asli kamu.</p>
     </div>
-    <div class="gallery-grid">
-      <div class="gallery-item"><i class="fa-solid fa-image"></i>Tampilan Template Rekap</div>
-      <div class="gallery-item"><i class="fa-solid fa-image"></i>Grafik Ringkasan Keuangan</div>
-      <div class="gallery-item"><i class="fa-solid fa-image"></i>Contoh Laporan Bulanan</div>
-    </div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+
+    <nav class="gallery-pagination" id="galleryPagination" aria-label="Navigasi halaman galeri"></nav>
+    <p class="gallery-page-info" id="galleryPageInfo"></p>
 
     <div class="project-tags project-tags-center">
       <span>Excel</span>
@@ -227,5 +226,111 @@
 </footer>
 
 <script src="assets/js/nav-toggle.js"></script>
+<script>
+(function(){
+  /* ================================================================
+     DATA GALERI (dipaginasi). Tinggal isi "img" dengan path foto asli
+     kamu -> otomatis tampil sebagai gambar. Kalau "img" dibiarkan
+     kosong, kotak placeholder ikon akan tetap muncul seperti semula.
+     Tambah baris baru untuk foto tambahan, pagination otomatis
+     menyesuaikan.
+     ================================================================ */
+  var GALLERY_ITEMS = [
+    { label: "Tampilan Template Rekap", img: "" }, // contoh isi: "assets/img/finance-report/template-rekap.jpg"
+    { label: "Grafik Ringkasan Keuangan", img: "" }, // contoh isi: "assets/img/finance-report/grafik-ringkasan.jpg"
+    { label: "Contoh Laporan Bulanan", img: "" }, // contoh isi: "assets/img/finance-report/laporan-bulanan.jpg"
+  ];
+
+  var ITEMS_PER_PAGE = 6;
+
+  var grid       = document.getElementById('galleryGrid');
+  var paginateEl = document.getElementById('galleryPagination');
+  var infoEl     = document.getElementById('galleryPageInfo');
+  var totalPages = Math.ceil(GALLERY_ITEMS.length / ITEMS_PER_PAGE);
+  var currentPage = 1;
+
+  function buildItem(entry){
+    var item = document.createElement('div');
+    if (entry.img){
+      // Sudah diisi path foto -> render sebagai gambar asli
+      item.className = 'gallery-item gallery-item-img';
+      item.innerHTML = '<img src="' + entry.img + '" alt="' + entry.label + '" loading="lazy">';
+    } else {
+      // Belum diisi -> tampilkan kotak placeholder seperti semula
+      item.className = 'gallery-item';
+      item.innerHTML = '<i class="fa-solid fa-image"></i>' + entry.label;
+    }
+    return item;
+  }
+
+  function getPageList(current, total){
+    var delta = 1;
+    var range = [];
+    for (var i = Math.max(2, current - delta); i <= Math.min(total - 1, current + delta); i++){
+      range.push(i);
+    }
+    var result = [1];
+    if (range[0] > 2) result.push('...');
+    result = result.concat(range);
+    if (range.length && range[range.length - 1] < total - 1) result.push('...');
+    if (total > 1) result.push(total);
+    return result;
+  }
+
+  function renderPagination(){
+    paginateEl.innerHTML = '';
+    if (totalPages <= 1) { infoEl.textContent = ''; return; }
+
+    var prevBtn = document.createElement('button');
+    prevBtn.type = 'button';
+    prevBtn.className = 'gallery-page-btn';
+    prevBtn.innerHTML = '<i class="fa-solid fa-chevron-left"></i>';
+    prevBtn.disabled = currentPage === 1;
+    prevBtn.addEventListener('click', function(){ renderPage(currentPage - 1, true); });
+    paginateEl.appendChild(prevBtn);
+
+    getPageList(currentPage, totalPages).forEach(function(p){
+      if (p === '...'){
+        var span = document.createElement('span');
+        span.className = 'gallery-page-ellipsis';
+        span.textContent = '...';
+        paginateEl.appendChild(span);
+      } else {
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'gallery-page-btn' + (p === currentPage ? ' active' : '');
+        btn.textContent = p;
+        btn.addEventListener('click', function(){ renderPage(p, true); });
+        paginateEl.appendChild(btn);
+      }
+    });
+
+    var nextBtn = document.createElement('button');
+    nextBtn.type = 'button';
+    nextBtn.className = 'gallery-page-btn';
+    nextBtn.innerHTML = '<i class="fa-solid fa-chevron-right"></i>';
+    nextBtn.disabled = currentPage === totalPages;
+    nextBtn.addEventListener('click', function(){ renderPage(currentPage + 1, true); });
+    paginateEl.appendChild(nextBtn);
+
+    infoEl.textContent = 'Halaman ' + currentPage + ' dari ' + totalPages + ' — ' + GALLERY_ITEMS.length + ' item total';
+  }
+
+  function renderPage(page, scroll){
+    currentPage = page;
+    grid.innerHTML = '';
+
+    var start = (page - 1) * ITEMS_PER_PAGE;
+    GALLERY_ITEMS.slice(start, start + ITEMS_PER_PAGE).forEach(function(entry){
+      grid.appendChild(buildItem(entry));
+    });
+
+    renderPagination();
+    if (scroll) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  renderPage(1, false);
+})();
+</script>
 </body>
 </html>

@@ -105,109 +105,10 @@
       <p>Geser tiap kartu untuk melihat mockup kemasan dan desain flat-nya.</p>
     </div>
 
-    <div class="slider-card-grid">
+    <div class="slider-card-grid" id="galleryGrid"></div>
 
-      <!-- Brand 1: Alanature -->
-      <div class="slider-card">
-        <div class="slider-card-head">
-          <span class="slider-card-tag"><i class="fa-solid fa-tag"></i> Alanature</span>
-          <span class="slider-card-title">Teh Rimpang</span>
-        </div>
-        <div class="media-slider">
-          <button class="media-arrow prev" aria-label="Sebelumnya"><i class="fa-solid fa-chevron-left"></i></button>
-          <div class="media-slider-track">
-            <div class="media-slider-slides">
-              <div class="media-slide">
-                <span class="media-slide-label">Mockup</span>
-                <img src="assets/img/packaging/project-packaging-alanature-mockup.png" alt="Mockup Kemasan Teh Rimpang Alanature">
-              </div>
-              <div class="media-slide">
-                <span class="media-slide-label">Desain Flat</span>
-                <img src="assets/img/packaging/project-packaging-alanature-flat.png" alt="Desain Flat Kemasan Teh Rimpang Alanature">
-              </div>
-            </div>
-          </div>
-          <button class="media-arrow next" aria-label="Berikutnya"><i class="fa-solid fa-chevron-right"></i></button>
-        </div>
-        <div class="media-dots"></div>
-      </div>
-
-      <!-- Brand 2: Xtraherb -->
-      <div class="slider-card">
-        <div class="slider-card-head">
-          <span class="slider-card-tag"><i class="fa-solid fa-tag"></i> Xtraherb</span>
-          <span class="slider-card-title">Teh Rimpang</span>
-        </div>
-        <div class="media-slider">
-          <button class="media-arrow prev" aria-label="Sebelumnya"><i class="fa-solid fa-chevron-left"></i></button>
-          <div class="media-slider-track">
-            <div class="media-slider-slides">
-              <div class="media-slide">
-                <span class="media-slide-label">Mockup</span>
-                <img src="assets/img/packaging/project-packaging-xtraherb-mockup.png" alt="Mockup Kemasan Teh Rimpang Xtraherb">
-              </div>
-              <div class="media-slide">
-                <span class="media-slide-label">Desain Flat</span>
-                <img src="assets/img/packaging/project-packaging-xtraherb-flat.png" alt="Desain Flat Kemasan Teh Rimpang Xtraherb">
-              </div>
-            </div>
-          </div>
-          <button class="media-arrow next" aria-label="Berikutnya"><i class="fa-solid fa-chevron-right"></i></button>
-        </div>
-        <div class="media-dots"></div>
-      </div>
-
-      <!-- Brand 3: X-travit -->
-      <div class="slider-card">
-        <div class="slider-card-head">
-          <span class="slider-card-tag"><i class="fa-solid fa-tag"></i> X-travit</span>
-          <span class="slider-card-title">Teh Rimpang</span>
-        </div>
-        <div class="media-slider">
-          <button class="media-arrow prev" aria-label="Sebelumnya"><i class="fa-solid fa-chevron-left"></i></button>
-          <div class="media-slider-track">
-            <div class="media-slider-slides">
-              <div class="media-slide">
-                <span class="media-slide-label">Mockup</span>
-                <img src="assets/img/packaging/project-packaging-xtravit-mockup.png" alt="Mockup Kemasan Teh Rimpang X-travit">
-              </div>
-              <div class="media-slide">
-                <span class="media-slide-label">Desain Flat</span>
-                <img src="assets/img/packaging/project-packaging-xtravit-flat.png" alt="Desain Flat Kemasan Teh Rimpang X-travit">
-              </div>
-            </div>
-          </div>
-          <button class="media-arrow next" aria-label="Berikutnya"><i class="fa-solid fa-chevron-right"></i></button>
-        </div>
-        <div class="media-dots"></div>
-      </div>
-
-      <!-- Brand 4: Sari Rimpang (generic/no logo) -->
-      <div class="slider-card">
-        <div class="slider-card-head">
-          <span class="slider-card-tag alt"><i class="fa-solid fa-tag"></i> Sari Rimpang</span>
-          <span class="slider-card-title">Teh Rimpang</span>
-        </div>
-        <div class="media-slider">
-          <button class="media-arrow prev" aria-label="Sebelumnya"><i class="fa-solid fa-chevron-left"></i></button>
-          <div class="media-slider-track">
-            <div class="media-slider-slides">
-              <div class="media-slide">
-                <span class="media-slide-label">Mockup</span>
-                <img src="assets/img/packaging/project-packaging-saririmpang-mockup.png" alt="Mockup Kemasan Sari Rimpang">
-              </div>
-              <div class="media-slide">
-                <span class="media-slide-label">Desain Flat</span>
-                <img src="assets/img/packaging/project-packaging-saririmpang-flat.png" alt="Desain Flat Kemasan Sari Rimpang">
-              </div>
-            </div>
-          </div>
-          <button class="media-arrow next" aria-label="Berikutnya"><i class="fa-solid fa-chevron-right"></i></button>
-        </div>
-        <div class="media-dots"></div>
-      </div>
-
-    </div>
+    <nav class="gallery-pagination" id="galleryPagination" aria-label="Navigasi halaman galeri kemasan"></nav>
+    <p class="gallery-page-info" id="galleryPageInfo"></p>
 
     <div class="project-tags project-tags-center">
       <span>Packaging Design</span>
@@ -326,38 +227,170 @@
 <script src="assets/js/nav-toggle.js"></script>
 <script>
 (function(){
-  document.querySelectorAll('.media-slider').forEach(function(sliderEl){
-    var track   = sliderEl.querySelector('.media-slider-slides');
-    var slides  = sliderEl.querySelectorAll('.media-slide');
-    var prevBtn = sliderEl.querySelector('.media-arrow.prev');
-    var nextBtn = sliderEl.querySelector('.media-arrow.next');
-    var dotsBox = sliderEl.parentElement.querySelector('.media-dots');
-    var index = 0;
+  var PRODUCTS = [
+    { tag: "Alanature", tagAlt: false, title: "Teh Rimpang", images: [
+        { label: "Mockup", src: "assets/img/packaging/project-packaging-alanature-mockup.png" },
+        { label: "Desain Flat", src: "assets/img/packaging/project-packaging-alanature-flat.png" }
+    ]},
+    { tag: "Xtraherb", tagAlt: false, title: "Teh Rimpang", images: [
+        { label: "Mockup", src: "assets/img/packaging/project-packaging-xtraherb-mockup.png" },
+        { label: "Desain Flat", src: "assets/img/packaging/project-packaging-xtraherb-flat.png" }
+    ]},
+    { tag: "X-travit", tagAlt: false, title: "Teh Rimpang", images: [
+        { label: "Mockup", src: "assets/img/packaging/project-packaging-xtravit-mockup.png" },
+        { label: "Desain Flat", src: "assets/img/packaging/project-packaging-xtravit-flat.png" }
+    ]},
+    { tag: "Sari Rimpang", tagAlt: true, title: "Teh Rimpang", images: [
+        { label: "Mockup", src: "assets/img/packaging/project-packaging-saririmpang-mockup.png" },
+        { label: "Desain Flat", src: "assets/img/packaging/project-packaging-saririmpang-flat.png" }
+    ]}
+  ];
 
-    if (slides.length <= 1){
-      if (prevBtn) prevBtn.style.display = 'none';
-      if (nextBtn) nextBtn.style.display = 'none';
-      if (dotsBox) dotsBox.style.display = 'none';
-      return;
-    }
+  var ITEMS_PER_PAGE = 8;
 
-    slides.forEach(function(_, i){
-      var dot = document.createElement('button');
-      dot.className = 'media-dot' + (i === 0 ? ' active' : '');
-      dot.setAttribute('aria-label', 'Slide ' + (i + 1));
-      dot.addEventListener('click', function(){ goTo(i); });
-      dotsBox.appendChild(dot);
+  var grid       = document.getElementById('galleryGrid');
+  var paginateEl = document.getElementById('galleryPagination');
+  var infoEl     = document.getElementById('galleryPageInfo');
+  var totalPages = Math.ceil(PRODUCTS.length / ITEMS_PER_PAGE);
+  var currentPage = 1;
+
+  function buildCard(product){
+    var card = document.createElement('div');
+    card.className = 'slider-card';
+
+    var head = document.createElement('div');
+    head.className = 'slider-card-head';
+    head.innerHTML =
+      '<span class="slider-card-tag' + (product.tagAlt ? ' alt' : '') + '"><i class="fa-solid fa-tag"></i> ' + product.tag + '</span>' +
+      '<span class="slider-card-title">' + product.title + '</span>';
+    card.appendChild(head);
+
+    var slider = document.createElement('div');
+    slider.className = 'media-slider';
+
+    var slidesHtml = product.images.map(function(img){
+      return '<div class="media-slide">' +
+               '<span class="media-slide-label">' + img.label + '</span>' +
+               '<img src="' + img.src + '" alt="' + img.label + ' Kemasan ' + product.tag + '" loading="lazy">' +
+             '</div>';
+    }).join('');
+
+    slider.innerHTML =
+      '<button class="media-arrow prev" aria-label="Sebelumnya"><i class="fa-solid fa-chevron-left"></i></button>' +
+      '<div class="media-slider-track"><div class="media-slider-slides">' + slidesHtml + '</div></div>' +
+      '<button class="media-arrow next" aria-label="Berikutnya"><i class="fa-solid fa-chevron-right"></i></button>';
+    card.appendChild(slider);
+
+    var dots = document.createElement('div');
+    dots.className = 'media-dots';
+    card.appendChild(dots);
+
+    return card;
+  }
+
+  function initSliders(scopeEl){
+    scopeEl.querySelectorAll('.media-slider').forEach(function(sliderEl){
+      var track   = sliderEl.querySelector('.media-slider-slides');
+      var slides  = sliderEl.querySelectorAll('.media-slide');
+      var prevBtn = sliderEl.querySelector('.media-arrow.prev');
+      var nextBtn = sliderEl.querySelector('.media-arrow.next');
+      var dotsBox = sliderEl.parentElement.querySelector('.media-dots');
+      var index = 0;
+
+      if (slides.length <= 1){
+        if (prevBtn) prevBtn.style.display = 'none';
+        if (nextBtn) nextBtn.style.display = 'none';
+        if (dotsBox) dotsBox.style.display = 'none';
+        return;
+      }
+
+      slides.forEach(function(_, i){
+        var dot = document.createElement('button');
+        dot.className = 'media-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+        dot.addEventListener('click', function(){ goTo(i); });
+        dotsBox.appendChild(dot);
+      });
+      var dots = dotsBox.querySelectorAll('.media-dot');
+
+      function goTo(i){
+        index = (i + slides.length) % slides.length;
+        track.style.transform = 'translateX(-' + (index * 100) + '%)';
+        dots.forEach(function(d, di){ d.classList.toggle('active', di === index); });
+      }
+      prevBtn.addEventListener('click', function(){ goTo(index - 1); });
+      nextBtn.addEventListener('click', function(){ goTo(index + 1); });
     });
-    var dots = dotsBox.querySelectorAll('.media-dot');
+  }
 
-    function goTo(i){
-      index = (i + slides.length) % slides.length;
-      track.style.transform = 'translateX(-' + (index * 100) + '%)';
-      dots.forEach(function(d, di){ d.classList.toggle('active', di === index); });
+  function getPageList(current, total){
+    var delta = 1;
+    var range = [];
+    for (var i = Math.max(2, current - delta); i <= Math.min(total - 1, current + delta); i++){
+      range.push(i);
     }
-    prevBtn.addEventListener('click', function(){ goTo(index - 1); });
-    nextBtn.addEventListener('click', function(){ goTo(index + 1); });
-  });
+    var result = [1];
+    if (range[0] > 2) result.push('...');
+    result = result.concat(range);
+    if (range.length && range[range.length - 1] < total - 1) result.push('...');
+    if (total > 1) result.push(total);
+    return result;
+  }
+
+  function renderPagination(){
+    paginateEl.innerHTML = '';
+    if (totalPages <= 1) { infoEl.textContent = ''; return; }
+
+    var prevBtn = document.createElement('button');
+    prevBtn.type = 'button';
+    prevBtn.className = 'gallery-page-btn';
+    prevBtn.innerHTML = '<i class="fa-solid fa-chevron-left"></i>';
+    prevBtn.disabled = currentPage === 1;
+    prevBtn.addEventListener('click', function(){ renderPage(currentPage - 1, true); });
+    paginateEl.appendChild(prevBtn);
+
+    getPageList(currentPage, totalPages).forEach(function(p){
+      if (p === '...'){
+        var span = document.createElement('span');
+        span.className = 'gallery-page-ellipsis';
+        span.textContent = '...';
+        paginateEl.appendChild(span);
+      } else {
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'gallery-page-btn' + (p === currentPage ? ' active' : '');
+        btn.textContent = p;
+        btn.addEventListener('click', function(){ renderPage(p, true); });
+        paginateEl.appendChild(btn);
+      }
+    });
+
+    var nextBtn = document.createElement('button');
+    nextBtn.type = 'button';
+    nextBtn.className = 'gallery-page-btn';
+    nextBtn.innerHTML = '<i class="fa-solid fa-chevron-right"></i>';
+    nextBtn.disabled = currentPage === totalPages;
+    nextBtn.addEventListener('click', function(){ renderPage(currentPage + 1, true); });
+    paginateEl.appendChild(nextBtn);
+
+    infoEl.textContent = 'Halaman ' + currentPage + ' dari ' + totalPages + ' — ' + PRODUCTS.length + ' brand total';
+  }
+
+  function renderPage(page, scroll){
+    currentPage = page;
+    grid.innerHTML = '';
+
+    var start = (page - 1) * ITEMS_PER_PAGE;
+    PRODUCTS.slice(start, start + ITEMS_PER_PAGE).forEach(function(product){
+      grid.appendChild(buildCard(product));
+    });
+
+    initSliders(grid);
+    renderPagination();
+    if (scroll) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  renderPage(1, false);
 })();
 </script>
 </body>
