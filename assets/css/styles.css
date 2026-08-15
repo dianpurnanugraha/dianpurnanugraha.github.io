@@ -24,6 +24,13 @@
   .nav-links a:hover{color:var(--blue);}
   .nav-links a.active{color:var(--blue);}
 
+  /* ===== LANGUAGE SWITCH ===== */
+  .nav-right{display:flex;align-items:center;gap:14px;}
+  .lang-switch{display:flex;align-items:center;background:var(--blue-light);border-radius:20px;padding:3px;gap:2px;}
+  .lang-btn{border:none;background:transparent;color:var(--navy-2);font-weight:700;font-size:12px;padding:6px 12px;border-radius:16px;cursor:pointer;transition:.2s;line-height:1;}
+  .lang-btn:hover{color:var(--blue);}
+  .lang-btn.active{background:var(--navy);color:#fff;}
+
   /* ===== HERO ===== */
   .hero{padding:60px 0 40px;}
   .hero-panel{position:relative;border-radius:24px;overflow:hidden;background:linear-gradient(135deg,#e9f0fc,#dbe6f7);padding:48px 56px;}
@@ -342,7 +349,7 @@
   /* Skills & Values box */
   .skills-box{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
   .skills-col{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px 28px;box-shadow:var(--card-shadow);}
-  .skills-col-head{display:flex;align-items:center;gap:12px;margin-bottom:22px;}
+  .skills-col-head{display:flex;align-items:flex-start;gap:12px;margin-bottom:22px;}
   .skills-col-head .ic{width:42px;height:42px;min-width:42px;border-radius:12px;background:var(--blue-light);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:17px;}
   .skills-col-head h3{font-size:16.5px;color:var(--navy);font-weight:700;margin-bottom:3px;}
   .skills-col-head span{font-size:11.8px;color:var(--muted);}
