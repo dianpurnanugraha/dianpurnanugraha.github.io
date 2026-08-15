@@ -10,6 +10,7 @@
 <meta property="og:title" content="Skill — Dian Purna Nugraha, S.Kom.">
 <meta property="og:description" content="Skill &amp; keahlian Dian Purna Nugraha, S.Kom. di bidang E-commerce, Graphic Design, Business Operations, Finance Administration, dan AI Productivity.">
 <meta property="og:image" content="assets/img/profile.png">
+<!-- _title, _metaDesc, _ogTitle diisi otomatis oleh i18n.js dari i18n-skill.js -->
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -70,7 +71,13 @@
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    <div class="nav-right">
+      <div class="lang-switch">
+        <button class="lang-btn" data-lang="id">ID</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    </div>
   </div>
 </nav>
 
@@ -78,9 +85,9 @@
 <section class="svc-hero">
   <div class="wrap svc-hero-grid">
     <div>
-      <span class="svc-badge"><i class="fa-solid fa-screwdriver-wrench"></i> KEAHLIAN SAYA</span>
-      <h1>Kompetensi &amp; Keahlian</h1>
-      <p>Saya memiliki kombinasi kompetensi keahlian yang memadukan e-commerce, operasional bisnis,  digital marketing, desain grafis, pemanfaatan AI —
+      <span class="svc-badge"><i class="fa-solid fa-screwdriver-wrench"></i> <span data-i18n="hero.badge">KEAHLIAN SAYA</span></span>
+      <h1 data-i18n="hero.title">Kompetensi &amp; Keahlian</h1>
+      <p data-i18n="hero.desc">Saya memiliki kombinasi kompetensi keahlian yang memadukan e-commerce, operasional bisnis,  digital marketing, desain grafis, pemanfaatan AI —
 didukung dengan manajemen marketplace, manajemen persediaan stok, administrasi keuangan,  peningkatan proses bisnis, data analisis dan laporan.
 </p>
     </div>
@@ -103,9 +110,9 @@ didukung dengan manajemen marketplace, manajemen persediaan stok, administrasi k
 <section class="section section-tight-top">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow-line">Keahlian</div>
-      <h2>Kemampuan yang <span>Saya Kuasai </span></h2>
-      <p>Kombinasi keterampilan teknis dan Keterampilan interpersonal yang saya miliki memungkinkan saya untuk memberikan hasil terbaik dalam setiap pekerjaan.</p>
+      <div class="eyebrow-line" data-i18n="skills.eyebrow">Keahlian</div>
+      <h2 data-i18n="skills.title">Kemampuan yang <span>Saya Kuasai </span></h2>
+      <p data-i18n="skills.desc">Kombinasi keterampilan teknis dan Keterampilan interpersonal yang saya miliki memungkinkan saya untuk memberikan hasil terbaik dalam setiap pekerjaan.</p>
     </div>
 
     <div class="competency-cards">
@@ -114,8 +121,8 @@ didukung dengan manajemen marketplace, manajemen persediaan stok, administrasi k
         <div class="cc-head">
           <div class="ic"><i class="fa-solid fa-screwdriver-wrench"></i></div>
           <div>
-            <h3>Hard Skills</h3>
-            <span>Keterampilan teknis dan spesialisasi.</span>
+            <h3 data-i18n="hard.title">Hard Skills</h3>
+            <span data-i18n="hard.note">Keterampilan teknis dan spesialisasi.</span>
           </div>
         </div>
         <div class="cc-scroll">
@@ -264,8 +271,8 @@ Graphic Design</div>
         <div class="cc-head">
           <div class="ic"><i class="fa-solid fa-users"></i></div>
           <div>
-            <h3>Soft Skills</h3>
-            <span>Keterampilan interpersonal saya.</span>
+            <h3 data-i18n="soft.title">Soft Skills</h3>
+            <span data-i18n="soft.note">Keterampilan interpersonal saya.</span>
           </div>
         </div>
         <div class="cc-body">
@@ -301,9 +308,9 @@ Graphic Design</div>
 <section class="section tools-section" style="padding-top:10px;">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow-line">GAYA BEKERJA</div>
-      <h2>Cara Saya <span>Bekerja</span></h2>
-      <p>Pendekatan kerja saya yang sistematis untuk menghasilkan solusi terbaik.</p>
+      <div class="eyebrow-line" data-i18n="work.eyebrow">GAYA BEKERJA</div>
+      <h2 data-i18n="work.title">Cara Saya <span>Bekerja</span></h2>
+      <p data-i18n="work.desc">Pendekatan kerja saya yang sistematis untuk menghasilkan solusi terbaik.</p>
     </div>
 
     <div class="work-steps">
@@ -311,28 +318,28 @@ Graphic Design</div>
 
       <div class="work-step">
         <div class="work-circle">01</div>
-        <h4>Memahami Masalah</h4>
-        <p>Saya memahami kebutuhan dan menggali masalah secara mendalam agar mendapatkan gambaran tujuan yang jelas dan tepat.</p>
+        <h4 data-i18n="work.step1.title">Memahami Masalah</h4>
+        <p data-i18n="work.step1.desc">Saya memahami kebutuhan dan menggali masalah secara mendalam agar mendapatkan gambaran tujuan yang jelas dan tepat.</p>
       </div>
       <div class="work-step">
         <div class="work-circle">02</div>
-        <h4>Merancang Solusi</h4>
-        <p>Saya merancang strategi dan solusi yang paling efektif, realistis, serta sesuai dengan tujuan yang ingin dicapai.</p>
+        <h4 data-i18n="work.step2.title">Merancang Solusi</h4>
+        <p data-i18n="work.step2.desc">Saya merancang strategi dan solusi yang paling efektif, realistis, serta sesuai dengan tujuan yang ingin dicapai.</p>
       </div>
       <div class="work-step">
         <div class="work-circle">03</div>
-        <h4>Eksekusi Secara Efisien</h4>
-        <p>Saya mengeksekusi rencana dengan fokus, terorganisir, dan memanfaatkan sumber daya secara optimal untuk hasil terbaik.</p>
+        <h4 data-i18n="work.step3.title">Eksekusi Secara Efisien</h4>
+        <p data-i18n="work.step3.desc">Saya mengeksekusi rencana dengan fokus, terorganisir, dan memanfaatkan sumber daya secara optimal untuk hasil terbaik.</p>
       </div>
       <div class="work-step">
         <div class="work-circle">04</div>
-        <h4>Mengukur Hasil</h4>
-        <p>Saya mengukur hasil dan menganalisis data untuk memastikan performa sesuai target dan menemukan insight yang penting.</p>
+        <h4 data-i18n="work.step4.title">Mengukur Hasil</h4>
+        <p data-i18n="work.step4.desc">Saya mengukur hasil dan menganalisis data untuk memastikan performa sesuai target dan menemukan insight yang penting.</p>
       </div>
       <div class="work-step">
         <div class="work-circle">05</div>
-        <h4>Perbaikan Berkelanjutan</h4>
-        <p>Saya terus melakukan evaluasi berkelanjutan agar perbaikan tetap relevan dan memberikan hasil yang lebih baik.</p>
+        <h4 data-i18n="work.step5.title">Perbaikan Berkelanjutan</h4>
+        <p data-i18n="work.step5.desc">Saya terus melakukan evaluasi berkelanjutan agar perbaikan tetap relevan dan memberikan hasil yang lebih baik.</p>
       </div>
     </div>
   </div>
@@ -342,46 +349,46 @@ Graphic Design</div>
 <section class="section">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow-line">ALUR KERJA</div>
-      <h2>Tahapan atau <span>Proses Kerja</span></h2>
-      <p>Proses kerja yang terstruktur untuk memastikan setiap proyek dikerjakan secara efektif dan menghasilkan hasil terbaik.</p>
+      <div class="eyebrow-line" data-i18n="flow.eyebrow">ALUR KERJA</div>
+      <h2 data-i18n="flow.title">Tahapan atau <span>Proses Kerja</span></h2>
+      <p data-i18n="flow.desc">Proses kerja yang terstruktur untuk memastikan setiap proyek dikerjakan secara efektif dan menghasilkan hasil terbaik.</p>
     </div>
 
     <div class="flow-steps">
       <div class="flow-step">
         <div class="flow-circle"><i class="fa-solid fa-clipboard-list"></i><span class="flow-num">01</span></div>
         <h4>Planning</h4>
-        <p>Memahami kebutuhan, menetapkan tujuan, dan menyusun rencana kerja yang jelas.</p>
+        <p data-i18n="flow.step1.desc">Memahami kebutuhan, menetapkan tujuan, dan menyusun rencana kerja yang jelas.</p>
       </div>
       <div class="flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
       <div class="flow-step">
         <div class="flow-circle"><i class="fa-solid fa-magnifying-glass"></i><span class="flow-num">02</span></div>
         <h4>Research</h4>
-        <p>Melakukan riset dan pengumpulan data untuk mendapatkan insight yang akurat.</p>
+        <p data-i18n="flow.step2.desc">Melakukan riset dan pengumpulan data untuk mendapatkan insight yang akurat.</p>
       </div>
       <div class="flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
       <div class="flow-step">
         <div class="flow-circle"><i class="fa-solid fa-pen-ruler"></i><span class="flow-num">03</span></div>
         <h4>Design</h4>
-        <p>Membuat konsep, desain, dan strategi yang sesuai dengan kebutuhan tujuan proyek.</p>
+        <p data-i18n="flow.step3.desc">Membuat konsep, desain, dan strategi yang sesuai dengan kebutuhan tujuan proyek.</p>
       </div>
       <div class="flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
       <div class="flow-step">
         <div class="flow-circle"><i class="fa-solid fa-gears"></i><span class="flow-num">04</span></div>
         <h4>Implementation</h4>
-        <p>Mengimplementasikan rencana dan eksekusi dengan koordinasi yang efektif.</p>
+        <p data-i18n="flow.step4.desc">Mengimplementasikan rencana dan eksekusi dengan koordinasi yang efektif.</p>
       </div>
       <div class="flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
       <div class="flow-step">
         <div class="flow-circle"><i class="fa-solid fa-arrow-trend-up"></i><span class="flow-num">05</span></div>
         <h4>Optimization</h4>
-        <p>Menganalisis hasil dan melakukan perbaikan untuk meningkatkan efisiensi dan performa.</p>
+        <p data-i18n="flow.step5.desc">Menganalisis hasil dan melakukan perbaikan untuk meningkatkan efisiensi dan performa.</p>
       </div>
       <div class="flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
       <div class="flow-step">
         <div class="flow-circle"><i class="fa-solid fa-file-lines"></i><span class="flow-num">06</span></div>
         <h4>Reporting</h4>
-        <p>Menyusun laporan dan menyampaikan hasil secara jelas dan terukur.</p>
+        <p data-i18n="flow.step6.desc">Menyusun laporan dan menyampaikan hasil secara jelas dan terukur.</p>
       </div>
     </div>
   </div>
@@ -391,76 +398,76 @@ Graphic Design</div>
 <section class="section tools-section">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow-line">INDUSTRI</div>
-      <h2>Industri yang <span>Pernah Saya Tangani</span></h2>
-      <p>Berbagai pengalaman lintas industri yang membentuk pemahaman bisnis dan kemampuan adaptasi saya.</p>
+      <div class="eyebrow-line" data-i18n="industry.eyebrow">INDUSTRI</div>
+      <h2 data-i18n="industry.title">Industri yang <span>Pernah Saya Tangani</span></h2>
+      <p data-i18n="industry.desc">Berbagai pengalaman lintas industri yang membentuk pemahaman bisnis dan kemampuan adaptasi saya.</p>
     </div>
 
     <div class="industry-grid">
       <div class="industry-card">
         <div class="ic-circle ic-bg-1"><i class="fa-solid fa-leaf"></i></div>
-        <h4>Herbal &amp; Kesehatan</h4>
-        <p>Mengelola operasional e-commerce, marketplace, branding, promosi, administrasi, &amp; aktivitas gudang untuk produk herbal dan suplemen kesehatan.</p>
+        <h4 data-i18n="industry.card1.title">Herbal &amp; Kesehatan</h4>
+        <p data-i18n="industry.card1.desc">Mengelola operasional e-commerce, marketplace, branding, promosi, administrasi, &amp; aktivitas gudang untuk produk herbal dan suplemen kesehatan.</p>
       </div>
       <div class="industry-card">
         <div class="ic-circle ic-bg-2"><i class="fa-solid fa-shirt"></i></div>
-        <h4>Fashion Muslim</h4>
-        <p>Mengelola penjualan, optimasi marketplace, desain visual,  &amp; promosi berbagai produk fashion muslim melalui platform e-commerce.</p>
+        <h4 data-i18n="industry.card2.title">Fashion Muslim</h4>
+        <p data-i18n="industry.card2.desc">Mengelola penjualan, optimasi marketplace, desain visual,  &amp; promosi berbagai produk fashion muslim melalui platform e-commerce.</p>
       </div>
       <div class="industry-card">
         <div class="ic-circle ic-bg-3"><i class="fa-solid fa-spray-can-sparkles"></i></div>
-        <h4>Kosmetik &amp; Kecantikan</h4>
-        <p>Mendesain materi branding, marketplace, &amp; promosi digital untuk berbagai produk kosmetik dan perawatan kecantikan.</p>
+        <h4 data-i18n="industry.card3.title">Kosmetik &amp; Kecantikan</h4>
+        <p data-i18n="industry.card3.desc">Mendesain materi branding, marketplace, &amp; promosi digital untuk berbagai produk kosmetik dan perawatan kecantikan.</p>
       </div>
       <div class="industry-card">
         <div class="ic-circle ic-bg-4"><i class="fa-solid fa-print"></i></div>
-        <h4>Percetakan</h4>
-        <p>Mengembangkan sistem informasi penjualan untuk mendukung proses bisnis &amp; operasional perusahaan percetakan.</p>
+        <h4 data-i18n="industry.card4.title">Percetakan</h4>
+        <p data-i18n="industry.card4.desc">Mengembangkan sistem informasi penjualan untuk mendukung proses bisnis &amp; operasional perusahaan percetakan.</p>
       </div>
       <div class="industry-card">
         <div class="ic-circle ic-bg-5"><i class="fa-solid fa-scale-balanced"></i></div>
-        <h4>Konsultan Hukum</h4>
-        <p>Mendukung infrastruktur TI, jaringan komputer, &amp; operasional teknologi untuk memastikan layanan kantor hukum berjalan lancar.</p>
+        <h4 data-i18n="industry.card5.title">Konsultan Hukum</h4>
+        <p data-i18n="industry.card5.desc">Mendukung infrastruktur TI, jaringan komputer, &amp; operasional teknologi untuk memastikan layanan kantor hukum berjalan lancar.</p>
       </div>
       <div class="industry-card">
         <div class="ic-circle ic-bg-6"><i class="fa-solid fa-microphone-lines"></i></div>
-        <h4>Karaoke &amp; Hiburan</h4>
-        <p>Mengelola sistem karaoke, mulai dari update database lagu hingga konfigurasi jaringan dan perawatan hardware, untuk unit bisnis hiburan keluarga.</p>
+        <h4 data-i18n="industry.card6.title">Karaoke &amp; Hiburan</h4>
+        <p data-i18n="industry.card6.desc">Mengelola sistem karaoke, mulai dari update database lagu hingga konfigurasi jaringan dan perawatan hardware, untuk unit bisnis hiburan keluarga.</p>
       </div>
       <div class="industry-card">
         <div class="ic-circle ic-bg-4"><i class="fa-solid fa-van-shuttle"></i></div>
-        <h4>Transportasi Wisata</h4>
-        <p>Mendesain materi promosi untuk layanan bus pariwisata milik perusahaan.</p>
+        <h4 data-i18n="industry.card7.title">Transportasi Wisata</h4>
+        <p data-i18n="industry.card7.desc">Mendesain materi promosi untuk layanan bus pariwisata milik perusahaan.</p>
       </div>
       <div class="industry-card">
         <div class="ic-circle ic-bg-3"><i class="fa-solid fa-truck-moving"></i></div>
-        <h4>Logistik Semen</h4>
-        <p>Memantau operasional distribusi semen, meliputi inspeksi kendaraan, pemasangan GPS, dan monitoring pengiriman agar tetap tepat waktu.</p>
+        <h4 data-i18n="industry.card8.title">Logistik Semen</h4>
+        <p data-i18n="industry.card8.desc">Memantau operasional distribusi semen, meliputi inspeksi kendaraan, pemasangan GPS, dan monitoring pengiriman agar tetap tepat waktu.</p>
       </div>
       <div class="industry-card">
         <div class="ic-circle ic-bg-5"><i class="fa-solid fa-scissors"></i></div>
-        <h4>Garmen &amp; Apparel</h4>
-        <p>Menyediakan dukungan infrastruktur TI untuk operasional konveksi dengan fokus pada produksi denim dan jeans.</p>
+        <h4 data-i18n="industry.card9.title">Garmen &amp; Apparel</h4>
+        <p data-i18n="industry.card9.desc">Menyediakan dukungan infrastruktur TI untuk operasional konveksi dengan fokus pada produksi denim dan jeans.</p>
       </div>
       <div class="industry-card">
         <div class="ic-circle ic-bg-6"><i class="fa-solid fa-oil-well"></i></div>
-        <h4>Minyak &amp; Gas (Migas)</h4>
-        <p>Dukungan administrasi keuangan, manajemen dokumen finansial, serta operasional sistem akuntansi di instansi migas.</p>
+        <h4 data-i18n="industry.card10.title">Minyak &amp; Gas (Migas)</h4>
+        <p data-i18n="industry.card10.desc">Dukungan administrasi keuangan, manajemen dokumen finansial, serta operasional sistem akuntansi di instansi migas.</p>
       </div>
       <div class="industry-card">
         <div class="ic-circle ic-bg-1"><i class="fa-solid fa-industry"></i></div>
-        <h4>Manufaktur, Fabrikasi &amp; Konstruksi</h4>
-        <p>Dukungan IT, optimasi SEO website pemasaran, serta administrasi penjualan untuk produk industrial B2B.</p>
+        <h4 data-i18n="industry.card11.title">Manufaktur, Fabrikasi &amp; Konstruksi</h4>
+        <p data-i18n="industry.card11.desc">Dukungan IT, optimasi SEO website pemasaran, serta administrasi penjualan untuk produk industrial B2B.</p>
       </div>
       <div class="industry-card">
         <div class="ic-circle ic-bg-2"><i class="fa-solid fa-people-group"></i></div>
-        <h4>Event Organizer, Franchise &amp; UMKM</h4>
-        <p>Mendesain booth, media promosi, &amp; materi branding untuk kebutuhan event organizer, bisnis franchise serta pelaku UMKM di berbagai sektor.</p>
+        <h4 data-i18n="industry.card12.title">Event Organizer, Franchise &amp; UMKM</h4>
+        <p data-i18n="industry.card12.desc">Mendesain booth, media promosi, &amp; materi branding untuk kebutuhan event organizer, bisnis franchise serta pelaku UMKM di berbagai sektor.</p>
       </div>
     </div>
 
     <div class="sec-cta-center">
-      <a href="experience.html" class="btn btn-outline"><i class="fa-solid fa-briefcase"></i> Lihat Semua Pengalaman</a>
+      <a href="experience.html" class="btn btn-outline"><i class="fa-solid fa-briefcase"></i> <span data-i18n="industry.cta">Lihat Semua Pengalaman</span></a>
     </div>
   </div>
 </section>
@@ -469,59 +476,59 @@ Graphic Design</div>
 <section class="section">
   <div class="wrap">
     <div class="sec-head" style="margin-bottom:30px;">
-<div class="eyebrow-line">SOROTAN PENGALAMAN</div>
-      <h2>Kontribusi yang <span>Telah Saya Berikan</span></h2>
-      <p>Beberapa pengalaman dan pencapaian yang telah saya lakukan untuk membantu bisnis menjadi lebih efisien, terstruktur, dan berkembang.</p>
+<div class="eyebrow-line" data-i18n="exp.eyebrow">SOROTAN PENGALAMAN</div>
+      <h2 data-i18n="exp.title">Kontribusi yang <span>Telah Saya Berikan</span></h2>
+      <p data-i18n="exp.desc">Beberapa pengalaman dan pencapaian yang telah saya lakukan untuk membantu bisnis menjadi lebih efisien, terstruktur, dan berkembang.</p>
     </div>
 
     <div class="exp-grid">
       <div class="exp-card">
         <div class="exp-icon"><i class="fa-solid fa-cart-shopping"></i></div>
         <h4>E-commerce Operations</h4>
-        <p>Mengelola operasional toko online secara end-to-end, mulai dari pengelolaan produk, stok, promo, hingga analisis performa.</p>
+        <p data-i18n="exp.card1.desc">Mengelola operasional toko online secara end-to-end, mulai dari pengelolaan produk, stok, promo, hingga analisis performa.</p>
         <div class="exp-stats">
-          <div class="exp-stat"><i class="fa-solid fa-box"></i><div><b>1.000+</b><span>Produk Dikelola</span></div></div>
-          <div class="exp-stat"><i class="fa-solid fa-arrow-trend-up"></i><div><b>35%</b><span>Peningkatan Penjualan</span></div></div>
+          <div class="exp-stat"><i class="fa-solid fa-box"></i><div><b>1.000+</b><span data-i18n="exp.card1.stat1">Produk Dikelola</span></div></div>
+          <div class="exp-stat"><i class="fa-solid fa-arrow-trend-up"></i><div><b>35%</b><span data-i18n="exp.card1.stat2">Peningkatan Penjualan</span></div></div>
         </div>
       </div>
 
       <div class="exp-card">
         <div class="exp-icon"><i class="fa-solid fa-clipboard-list"></i></div>
         <h4>Business Operations</h4>
-        <p>Mengelola operasional bisnis sehari-hari dengan sistem, SOP, dan proses kerja yang tertib untuk mendukung kelancaran dan efisiensi.</p>
+        <p data-i18n="exp.card2.desc">Mengelola operasional bisnis sehari-hari dengan sistem, SOP, dan proses kerja yang tertib untuk mendukung kelancaran dan efisiensi.</p>
         <div class="exp-stats">
-          <div class="exp-stat"><i class="fa-solid fa-gauge-high"></i><div><b>30%</b><span>Efisiensi Waktu Meningkat</span></div></div>
-          <div class="exp-stat"><i class="fa-solid fa-circle-check"></i><div><b>40%</b><span>Pengurangan Kesalahan</span></div></div>
+          <div class="exp-stat"><i class="fa-solid fa-gauge-high"></i><div><b>30%</b><span data-i18n="exp.card2.stat1">Efisiensi Waktu Meningkat</span></div></div>
+          <div class="exp-stat"><i class="fa-solid fa-circle-check"></i><div><b>40%</b><span data-i18n="exp.card2.stat2">Pengurangan Kesalahan</span></div></div>
         </div>
       </div>
 
       <div class="exp-card">
         <div class="exp-icon"><i class="fa-solid fa-pen-nib"></i></div>
         <h4>Graphic Design</h4>
-        <p>Mendesain berbagai materi promosi dan branding yang konsisten untuk membangun identitas brand yang menarik dan kepercayaan.</p>
+        <p data-i18n="exp.card3.desc">Mendesain berbagai materi promosi dan branding yang konsisten untuk membangun identitas brand yang menarik dan kepercayaan.</p>
         <div class="exp-stats">
-          <div class="exp-stat"><i class="fa-solid fa-swatchbook"></i><div><b>200+</b><span>Proyek Desain Selesai</span></div></div>
-          <div class="exp-stat"><i class="fa-solid fa-face-smile"></i><div><b>98%</b><span>Kepuasan Klien</span></div></div>
+          <div class="exp-stat"><i class="fa-solid fa-swatchbook"></i><div><b>200+</b><span data-i18n="exp.card3.stat1">Proyek Desain Selesai</span></div></div>
+          <div class="exp-stat"><i class="fa-solid fa-face-smile"></i><div><b>98%</b><span data-i18n="exp.card3.stat2">Kepuasan Klien</span></div></div>
         </div>
       </div>
 
       <div class="exp-card">
         <div class="exp-icon"><i class="fa-solid fa-bullhorn"></i></div>
         <h4>Digital Marketing</h4>
-        <p>Menjalankan strategi pemasaran digital di berbagai channel untuk meningkatkan visibilitas, engagement, dan penjualan.</p>
+        <p data-i18n="exp.card4.desc">Menjalankan strategi pemasaran digital di berbagai channel untuk meningkatkan visibilitas, engagement, dan penjualan.</p>
         <div class="exp-stats">
-          <div class="exp-stat"><i class="fa-solid fa-rectangle-ad"></i><div><b>50+</b><span>Kampanye Dijalankan</span></div></div>
-          <div class="exp-stat"><i class="fa-solid fa-arrow-trend-up"></i><div><b>40%</b><span>Peningkatan Engagement</span></div></div>
+          <div class="exp-stat"><i class="fa-solid fa-rectangle-ad"></i><div><b>50+</b><span data-i18n="exp.card4.stat1">Kampanye Dijalankan</span></div></div>
+          <div class="exp-stat"><i class="fa-solid fa-arrow-trend-up"></i><div><b>40%</b><span data-i18n="exp.card4.stat2">Peningkatan Engagement</span></div></div>
         </div>
       </div>
 
       <div class="exp-card">
         <div class="exp-icon"><i class="fa-solid fa-robot"></i></div>
         <h4>AI Productivity</h4>
-        <p>Memanfaatkan AI tools untuk otomatisasi tugas, riset, dan pembuatan konten sehingga pekerjaan lebih cepat & efisien.</p>
+        <p data-i18n="exp.card5.desc">Memanfaatkan AI tools untuk otomatisasi tugas, riset, dan pembuatan konten sehingga pekerjaan lebih cepat & efisien.</p>
         <div class="exp-stats">
-          <div class="exp-stat"><i class="fa-solid fa-hourglass-half"></i><div><b>200+</b><span>Jam Kerja Dihemat</span></div></div>
-          <div class="exp-stat"><i class="fa-solid fa-chart-line"></i><div><b>60%</b><span>Produktivitas Meningkat</span></div></div>
+          <div class="exp-stat"><i class="fa-solid fa-hourglass-half"></i><div><b>200+</b><span data-i18n="exp.card5.stat1">Jam Kerja Dihemat</span></div></div>
+          <div class="exp-stat"><i class="fa-solid fa-chart-line"></i><div><b>60%</b><span data-i18n="exp.card5.stat2">Produktivitas Meningkat</span></div></div>
         </div>
       </div>
     </div>
@@ -533,16 +540,16 @@ Graphic Design</div>
 <section class="section tools-section">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow-line">SERTIFIKASI & PEMBELAJARAN</div>
-      <h2>Sedang Mengembangkan <span>Keahlian Profesional Saya</span></h2>
-      <p>Saya percaya belajar adalah proses berkelanjutan. Berikut bidang yang sedang saya pelajari untuk terus meningkatkan kompetensi dan memberi hasil terbaik.</p>
+      <div class="eyebrow-line" data-i18n="cert.eyebrow">SERTIFIKASI & PEMBELAJARAN</div>
+      <h2 data-i18n="cert.title">Sedang Mengembangkan <span>Keahlian Profesional Saya</span></h2>
+      <p data-i18n="cert.desc">Saya percaya belajar adalah proses berkelanjutan. Berikut bidang yang sedang saya pelajari untuk terus meningkatkan kompetensi dan memberi hasil terbaik.</p>
     </div>
 
     <div class="roadmap-note">
       <div class="ic-circle"><i class="fa-solid fa-map"></i></div>
       <div>
-        <h5>Peta Jalan Belajar Saya</h5>
-        <p>Komitmen saya untuk secara aktif mempelajari teknologi, strategi, dan tools terbaru yang relevan dengan pekerjaan agar bisa memberi solusi yang lebih inovatif dan efektif.</p>
+        <h5 data-i18n="cert.noteTitle">Peta Jalan Belajar Saya</h5>
+        <p data-i18n="cert.noteDesc">Komitmen saya untuk secara aktif mempelajari teknologi, strategi, dan tools terbaru yang relevan dengan pekerjaan agar bisa memberi solusi yang lebih inovatif dan efektif.</p>
       </div>
     </div>
 
@@ -550,42 +557,42 @@ Graphic Design</div>
       <div class="roadmap-item">
         <div class="ic-circle"><i class="fa-solid fa-robot"></i></div>
         <h4>Automation &amp; AI</h4>
-        <p>Mempelajari AI productivity, workflow automation, AI agents, prompt engineering, dan AI tools untuk meningkatkan efisiensi serta produktivitas kerja.</p>
+        <p data-i18n="cert.item1.desc">Mempelajari AI productivity, workflow automation, AI agents, prompt engineering, dan AI tools untuk meningkatkan efisiensi serta produktivitas kerja.</p>
         <div class="roadmap-bar"><span style="width:85%;"></span></div>
         <div class="roadmap-pct">85%</div>
       </div>
       <div class="roadmap-item">
         <div class="ic-circle"><i class="fa-solid fa-code"></i></div>
         <h4>Web Development</h4>
-        <p>Mempelajari pengembangan website modern, mulai dari frontend, backend, database, hingga deployment untuk membangun aplikasi web yang fungsional.</p>
+        <p data-i18n="cert.item2.desc">Mempelajari pengembangan website modern, mulai dari frontend, backend, database, hingga deployment untuk membangun aplikasi web yang fungsional.</p>
         <div class="roadmap-bar"><span style="width:60%;"></span></div>
         <div class="roadmap-pct">60%</div>
       </div>
       <div class="roadmap-item">
         <div class="ic-circle"><i class="fa-solid fa-palette"></i></div>
         <h4>Design &amp; Branding</h4>
-        <p>Mempelajari branding, visual communication, UI/UX fundamentals, motion design, dan strategi desain untuk menciptakan pengalaman visual yang efektif.</p>
+        <p data-i18n="cert.item3.desc">Mempelajari branding, visual communication, UI/UX fundamentals, motion design, dan strategi desain untuk menciptakan pengalaman visual yang efektif.</p>
         <div class="roadmap-bar"><span style="width:80%;"></span></div>
         <div class="roadmap-pct">80%</div>
       </div>
       <div class="roadmap-item">
         <div class="ic-circle"><i class="fa-solid fa-bullhorn"></i></div>
         <h4>Performance Marketing</h4>
-        <p>Mempelajari Meta Ads, Google Ads, TikTok Ads, YouTube Ads, serta strategi optimasi kampanye digital berbasis data.</p>
+        <p data-i18n="cert.item4.desc">Mempelajari Meta Ads, Google Ads, TikTok Ads, YouTube Ads, serta strategi optimasi kampanye digital berbasis data.</p>
         <div class="roadmap-bar"><span style="width:70%;"></span></div>
         <div class="roadmap-pct">70%</div>
       </div>
       <div class="roadmap-item">
         <div class="ic-circle"><i class="fa-solid fa-chart-column"></i></div>
         <h4>Data Analytics</h4>
-        <p>Mempelajari analisis data, SQL, dashboard, visualisasi data, dan business intelligence untuk mendukung pengambilan keputusan yang lebih baik.</p>
+        <p data-i18n="cert.item5.desc">Mempelajari analisis data, SQL, dashboard, visualisasi data, dan business intelligence untuk mendukung pengambilan keputusan yang lebih baik.</p>
         <div class="roadmap-bar"><span style="width:75%;"></span></div>
         <div class="roadmap-pct">75%</div>
       </div>
       <div class="roadmap-item">
         <div class="ic-circle"><i class="fa-solid fa-gears"></i></div>
         <h4>Process Improvement</h4>
-        <p>Mempelajari analisis proses bisnis, workflow optimization, penyusunan SOP, dan continuous improvement untuk meningkatkan efisiensi operasional.</p>
+        <p data-i18n="cert.item6.desc">Mempelajari analisis proses bisnis, workflow optimization, penyusunan SOP, dan continuous improvement untuk meningkatkan efisiensi operasional.</p>
         <div class="roadmap-bar"><span style="width:85%;"></span></div>
         <div class="roadmap-pct">85%</div>
       </div>
@@ -599,37 +606,37 @@ Graphic Design</div>
     <div class="connect-section">
             <div class="connect-grid">
         <div>
-          <span class="connect-badge">SIAP BERKONTRIBUSI</span>
-          <h2>Butuh Keahlian <span>Saya?</span></h2>
-          <p>Saya siap membantu melalui keahlian di bidang operasional bisnis, e-commerce, desain, administrasi, dan AI.</p>
+          <span class="connect-badge" data-i18n="connect.badge">SIAP BERKONTRIBUSI</span>
+          <h2 data-i18n="connect.title">Butuh Keahlian <span>Saya?</span></h2>
+          <p data-i18n="connect.desc">Saya siap membantu melalui keahlian di bidang operasional bisnis, e-commerce, desain, administrasi, dan AI.</p>
           <div class="help-cta-row" style="margin-top:22px;">
             <a href="https://www.linkedin.com/in/dian-purna-nugraha-s-kom/" target="_blank" rel="noopener" class="btn btn-help-outline"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
             <a href="https://wa.me/6281295733476" target="_blank" rel="noopener" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-            <a href="project.html" class="btn btn-help-outline"><i class="fa-solid fa-folder-open"></i> Lihat Portofolio</a>
+            <a href="project.html" class="btn btn-help-outline"><i class="fa-solid fa-folder-open"></i> <span data-i18n="connect.viewPortfolio">Lihat Portofolio</span></a>
           </div>
         </div>
 
         <div class="connect-cards">
           <div class="connect-card cc-blue">
             <div class="cc-icon"><i class="fa-solid fa-user"></i></div>
-            <h4>Rekrut Saya</h4>
-            <p>Saya siap bergabung dan memberikan kontribusi terbaik untuk Anda.</p>
-            <a href="contact.html">Rekrut Saya Sekarang <i class="fa-solid fa-arrow-right"></i></a>
+            <h4 data-i18n="connect.hireTitle">Rekrut Saya</h4>
+            <p data-i18n="connect.hireDesc">Saya siap bergabung dan memberikan kontribusi terbaik untuk Anda.</p>
+            <a href="contact.html"><span data-i18n="connect.hireLink">Rekrut Saya Sekarang</span> <i class="fa-solid fa-arrow-right"></i></a>
           </div>
           <div class="connect-card cc-green">
             <div class="cc-icon"><i class="fa-solid fa-file-arrow-down"></i></div>
-            <h4>Unduh CV</h4>
-            <p>Unduh CV saya untuk informasi lebih lengkap tentang pengalaman dan keterampilan saya.</p>
-            <a href="assets/files/Dian-Purna-Nugraha_Resume.pdf" download>Unduh CV <i class="fa-solid fa-download"></i></a>
+            <h4 data-i18n="connect.downloadCv">Unduh CV</h4>
+            <p data-i18n="connect.cvDesc">Unduh CV saya untuk informasi lebih lengkap tentang pengalaman dan keterampilan saya.</p>
+            <a href="assets/files/Dian-Purna-Nugraha_Resume.pdf" download><span data-i18n="connect.downloadCv">Unduh CV</span> <i class="fa-solid fa-download"></i></a>
           </div>
         </div>
       </div>
 
       <div class="connect-footer">
-        <span><i class="fa-solid fa-user-check"></i> Professional</span>
-        <span><i class="fa-solid fa-comments"></i> Komunikatif</span>
-        <span><i class="fa-solid fa-bolt"></i> Proaktif</span>
-        <span><i class="fa-solid fa-bullseye"></i> Berorientasi Hasil</span>
+        <span><i class="fa-solid fa-user-check"></i> <span data-i18n="connect.footer1">Professional</span></span>
+        <span><i class="fa-solid fa-comments"></i> <span data-i18n="connect.footer2">Komunikatif</span></span>
+        <span><i class="fa-solid fa-bolt"></i> <span data-i18n="connect.footer3">Proaktif</span></span>
+        <span><i class="fa-solid fa-bullseye"></i> <span data-i18n="connect.footer4">Berorientasi Hasil</span></span>
       </div>
     </div>
   </div>
@@ -641,7 +648,7 @@ Graphic Design</div>
     <div class="footer-grid">
       <div class="footer-brand">
         <h3>Dian Purna Nugraha, S.Kom.</h3>
-        <p>E-commerce Operations, Business Operations, Graphic Design, Digital Marketing, dan AI Productivity untuk membantu bisnis bekerja lebih efisien, berkembang, dan menciptakan nilai yang berkelanjutan.</p>
+        <p data-i18n="footer.bio">E-commerce Operations, Business Operations, Graphic Design, Digital Marketing, dan AI Productivity untuk membantu bisnis bekerja lebih efisien, berkembang, dan menciptakan nilai yang berkelanjutan.</p>
         <div class="footer-social">
           <a href="https://www.linkedin.com/in/dian-purna-nugraha-s-kom/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
           <a href="https://www.upwork.com/freelancers/~017580231dbed875ca?mp_source=share" target="_blank" rel="noopener" aria-label="Upwork"><svg viewBox="0 0 640 512" style="width:1em;height:1em;fill:currentColor;vertical-align:-0.125em;" xmlns="http://www.w3.org/2000/svg"><path d="M493.9 295.6c-50.3 0-83.5-38.9-92.8-53.9 11.9-95.3 46.8-125.4 92.8-125.4 45.5 0 80.9 36.4 80.9 89.7s-35.4 89.7-80.9 89.7l0-.1zm0-237.8c-81.9 0-127.8 53.4-141 108.4-14.9-28-25.9-65.5-34.5-100.3l-113.2 0 0 141c0 51.1-23.3 89-68.8 89s-71.6-37.8-71.6-89l.5-141-65.3 0 0 141c0 41.1 13.3 78.4 37.6 105.1 25 27.5 59.2 41.8 98.8 41.8 78.8 0 133.8-60.4 133.8-146.9l0-94.8c8.2 31.2 27.8 91.1 65.3 143.6l-35 199.4 66.4 0 23.1-141.3c7.6 6.3 15.7 12 24.2 17 22.2 14 47.7 21.9 73.9 22.8 0 0 4 .2 6.1 .2 81.2 0 145.9-62.9 145.9-147.8S575.3 57.9 494.1 57.9l-.2-.1z"/></svg></a>
@@ -653,7 +660,7 @@ Graphic Design</div>
       </div>
 
       <div class="footer-col">
-        <h4>Navigasi</h4>
+        <h4 data-i18n="footer.nav">Navigasi</h4>
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="project.html">Project</a></li>
@@ -666,34 +673,37 @@ Graphic Design</div>
       </div>
 
       <div class="footer-col">
-        <h4>Layanan</h4>
+        <h4 data-i18n="footer.services">Layanan</h4>
         <ul>
-          <li>E-commerce & Marketplace Operations</li>
-          <li>Operasional Bisnis & Administrasi</li>
-          <li>Design & Content Creative</li>
-          <li>Digital Marketing & Riset</li>
-          <li>Web & Teknologi</li>
-          <li><a href="services.html">Layanan Lainnya</a></li>
+          <li data-i18n="footer.service1">E-commerce & Marketplace Operations</li>
+          <li data-i18n="footer.service2">Operasional Bisnis & Administrasi</li>
+          <li data-i18n="footer.service3">Design & Content Creative</li>
+          <li data-i18n="footer.service4">Digital Marketing & Riset</li>
+          <li data-i18n="footer.service5">Web & Teknologi</li>
+          <li><a href="services.html" data-i18n="footer.serviceMore">Layanan Lainnya</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4>Kontak</h4>
+        <h4 data-i18n="footer.contact">Kontak</h4>
         <ul>
           <li><i class="fa-solid fa-envelope"></i> dyannugraha.p@gmail.com</li>
           <li><i class="fa-brands fa-whatsapp"></i> +62 812 9573 3476</li>
-          <li><i class="fa-solid fa-location-dot"></i> Jakarta Timur, DKI Jakarta, Indonesia</li>
+          <li><i class="fa-solid fa-location-dot"></i> <span data-i18n="footer.location">Jakarta Timur, DKI Jakarta, Indonesia</span></li>
         </ul>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <span>&copy; 2026 Dian Purna Nugraha, S.Kom. All rights reserved.</span>
-      <span>Dibuat dengan kreativitas dan bantuan AI.</span>
+      <span data-i18n="footer.rights">&copy; 2026 Dian Purna Nugraha, S.Kom. All rights reserved.</span>
+      <span data-i18n="footer.madeWith">Dibuat dengan kreativitas dan bantuan AI.</span>
     </div>
   </div>
 </footer>
 
+<script src="assets/js/i18n-common.js"></script>
+<script src="assets/js/i18n-skill.js"></script>
+<script src="assets/js/i18n.js"></script>
 <script src="assets/js/nav-toggle.js"></script>
 </body>
 </html>
