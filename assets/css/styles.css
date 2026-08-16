@@ -1028,6 +1028,45 @@
     }
   }
 
+  /* ===== HINT "TAHAN UNTUK DAFTAR ISI" (muncul sekali) ===== */
+  .fab-hint{
+    position:fixed;
+    right:24px;
+    bottom:78px;
+    background:var(--navy);
+    color:#fff;
+    font-size:12px;
+    font-weight:600;
+    padding:8px 12px;
+    border-radius:8px;
+    box-shadow:0 10px 26px rgba(15,42,77,0.24);
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(8px);
+    transition:opacity .25s ease, transform .25s ease, visibility .25s ease;
+    z-index:999;
+    white-space:nowrap;
+    pointer-events:none;
+  }
+  .fab-hint::after{
+    content:"";
+    position:absolute;
+    bottom:-5px;
+    right:16px;
+    width:10px;
+    height:10px;
+    background:var(--navy);
+    transform:rotate(45deg);
+  }
+  .fab-hint.show{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+  }
+  @media (max-width:560px){
+    .fab-hint{right:16px;bottom:66px;font-size:11px;padding:7px 10px;}
+  }
+
   /* ===== TABLE OF CONTENTS (TOC) PANEL ===== */
   .toc-panel{
     position:fixed;
