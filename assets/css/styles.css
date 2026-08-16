@@ -836,51 +836,6 @@
     .timeline-badge{align-self:flex-start;}
   }
 
-  /* ===== BACK TO TOP BUTTON ===== */
-  .back-to-top{
-    position:fixed;
-    right:24px;
-    bottom:24px;
-    width:46px;
-    height:46px;
-    border-radius:50%;
-    background:linear-gradient(135deg,var(--navy),var(--blue));
-    color:#fff;
-    border:none;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:17px;
-    cursor:pointer;
-    box-shadow:0 10px 26px rgba(15,42,77,0.28);
-    opacity:0;
-    visibility:hidden;
-    transform:translateY(14px);
-    transition:opacity .25s ease, transform .25s ease, visibility .25s ease, box-shadow .2s ease;
-    z-index:999;
-  }
-  .back-to-top.show{
-    opacity:1;
-    visibility:visible;
-    transform:translateY(0);
-  }
-  .back-to-top:hover{
-    box-shadow:0 12px 30px rgba(15,42,77,0.38);
-    transform:translateY(-3px);
-  }
-  .back-to-top:active{
-    transform:translateY(-1px);
-  }
-  @media (max-width:560px){
-    .back-to-top{
-      right:16px;
-      bottom:16px;
-      width:42px;
-      height:42px;
-      font-size:15px;
-    }
-  }
-
   /* ===== READING PROGRESS BAR ===== */
   .reading-progress-track{
     position:fixed;
@@ -984,4 +939,154 @@
   }
   .cinfo-card.copyable.copied p{
     color:#16a34a;
+  }
+
+  /* ===== FLOATING ACTION BUTTON (BACK TO TOP + TOC GABUNGAN) =====
+     1 tombol saja: tap singkat = scroll ke atas, tekan & tahan
+     (~0.4 detik) = panel daftar isi slide-up dari tombol ini. */
+  .fab-button{
+    position:fixed;
+    right:24px;
+    bottom:24px;
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    background:linear-gradient(135deg,var(--navy),var(--blue));
+    color:#fff;
+    border:none;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:17px;
+    cursor:pointer;
+    box-shadow:0 10px 26px rgba(15,42,77,0.28);
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(14px);
+    transition:opacity .25s ease, transform .25s ease, visibility .25s ease, box-shadow .2s ease;
+    z-index:999;
+    -webkit-tap-highlight-color:transparent;
+    -webkit-touch-callout:none;
+    user-select:none;
+    touch-action:manipulation;
+  }
+  .fab-button.show{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+  }
+  .fab-button:hover{
+    box-shadow:0 12px 30px rgba(15,42,77,0.38);
+    transform:translateY(-3px);
+  }
+  .fab-button:active{
+    transform:translateY(-1px);
+  }
+  .fab-button.open{
+    background:var(--navy);
+  }
+  /* ring pengisi yang muncul progresif selama tombol ditahan, kasih
+     tahu pengguna kalau daftar isi akan terbuka */
+  .fab-ring{
+    position:absolute;
+    inset:-4px;
+    border-radius:50%;
+    border:3px solid rgba(255,255,255,.9);
+    opacity:0;
+    transform:scale(.4);
+    pointer-events:none;
+  }
+  .fab-button.charging .fab-ring{
+    opacity:1;
+    transform:scale(1);
+    transition:transform .4s linear, opacity .15s ease;
+  }
+  /* ikon panah bersilang-fade ke ikon daftar isi selama ditahan */
+  .fab-icon-up,.fab-icon-toc{
+    position:absolute;
+    transition:opacity .2s ease, transform .2s ease;
+  }
+  .fab-icon-toc{
+    opacity:0;
+    transform:scale(.7);
+  }
+  .fab-button.charging .fab-icon-up{
+    opacity:0;
+    transform:scale(.7);
+  }
+  .fab-button.charging .fab-icon-toc{
+    opacity:1;
+    transform:scale(1);
+  }
+  @media (max-width:560px){
+    .fab-button{
+      right:16px;
+      bottom:16px;
+      width:42px;
+      height:42px;
+      font-size:15px;
+    }
+  }
+
+  /* ===== TABLE OF CONTENTS (TOC) PANEL ===== */
+  .toc-panel{
+    position:fixed;
+    right:24px;
+    bottom:82px;
+    width:270px;
+    max-height:55vh;
+    overflow-y:auto;
+    background:#fff;
+    border-radius:14px;
+    border:1px solid var(--line);
+    box-shadow:0 20px 50px rgba(15,42,77,0.18);
+    padding:14px;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(10px) scale(.96);
+    transform-origin:bottom right;
+    transition:opacity .22s ease, transform .22s ease, visibility .22s ease;
+    z-index:998;
+  }
+  .toc-panel.open{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0) scale(1);
+  }
+  .toc-panel-title{
+    font-size:11px;
+    font-weight:700;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:.4px;
+    margin-bottom:10px;
+    padding:0 6px;
+  }
+  .toc-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+  }
+  .toc-list a{
+    display:block;
+    padding:8px 10px;
+    border-radius:8px;
+    font-size:13px;
+    color:var(--navy-2);
+    font-weight:600;
+    transition:.15s;
+  }
+  .toc-list a:hover{
+    background:var(--blue-light);
+    color:var(--blue);
+  }
+  .toc-list a.active{
+    background:var(--blue);
+    color:#fff;
+  }
+  @media (max-width:560px){
+    .toc-panel{left:16px;right:16px;width:auto;bottom:66px;transform-origin:bottom center;}
   }
