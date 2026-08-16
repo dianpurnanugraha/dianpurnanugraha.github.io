@@ -15,6 +15,8 @@ window.I18N_PAGE = {
     'cinfo.title': 'Informasi <span>Kontak</span>',
     'cinfo.desc': 'Berbagai cara untuk menghubungi saya. Pilih yang paling nyaman untuk Anda.',
     'cinfo.locationLabel': 'Location',
+    'cinfo.copyHint': 'Klik untuk salin',
+    'cinfo.copied': 'Tersalin!',
 
     'form.title': 'Kirim Pesan untuk Saya',
     'form.subtitle': 'Isi formulir di bawah ini dan saya akan segera menghubungi Anda kembali.',
@@ -85,6 +87,8 @@ window.I18N_PAGE = {
     'cinfo.title': 'Contact <span>Information</span>',
     'cinfo.desc': "Several ways to reach me. Pick whichever is most convenient for you.",
     'cinfo.locationLabel': 'Location',
+    'cinfo.copyHint': 'Click to copy',
+    'cinfo.copied': 'Copied!',
 
     'form.title': 'Send Me a Message',
     'form.subtitle': "Fill out the form below and I'll get back to you shortly.",
