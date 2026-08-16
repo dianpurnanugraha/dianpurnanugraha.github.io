@@ -591,6 +591,8 @@
   .filter-btn{background:#fff;border:1.5px solid var(--line);color:var(--navy-2);font-weight:600;font-size:12.5px;padding:9px 18px;border-radius:30px;cursor:pointer;transition:.2s;font-family:'Inter',sans-serif;}
   .filter-btn:hover{border-color:var(--blue);color:var(--blue);}
   .filter-btn.active{background:var(--navy);color:#fff;border-color:var(--navy);}
+  .filter-count{opacity:.65;font-weight:700;font-size:11.5px;}
+  .filter-btn.active .filter-count{opacity:.85;}
 
   .project-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px;}
   .project-tags span{background:var(--blue-light);color:var(--blue);font-size:10.5px;font-weight:600;padding:4px 10px;border-radius:20px;}
@@ -935,4 +937,51 @@
     .breadcrumb-inner .breadcrumb-current{
       max-width:180px;
     }
+  }
+
+  /* ===== COPY TO CLIPBOARD (CONTACT CARDS) ===== */
+  .cinfo-card.copyable{
+    cursor:pointer;
+    position:relative;
+    transition:box-shadow .2s ease, transform .2s ease, border-color .2s ease;
+  }
+  .cinfo-card.copyable:hover{
+    box-shadow:0 14px 32px rgba(15,42,77,0.12);
+    transform:translateY(-3px);
+  }
+  .cinfo-card.copyable:active{
+    transform:translateY(-1px);
+  }
+  .cinfo-card.copyable:focus-visible{
+    outline:2px solid var(--blue);
+    outline-offset:3px;
+  }
+  .cinfo-card .copy-hint{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    margin-top:10px;
+    font-size:11px;
+    color:var(--muted);
+    opacity:0;
+    transform:translateY(-2px);
+    transition:opacity .2s ease, transform .2s ease;
+  }
+  .cinfo-card.copyable:hover .copy-hint,
+  .cinfo-card.copyable:focus-visible .copy-hint{
+    opacity:1;
+    transform:translateY(0);
+  }
+  .cinfo-card.copyable.copied{
+    border-color:#22c55e;
+  }
+  .cinfo-card.copyable.copied .copy-hint{
+    opacity:1;
+    transform:translateY(0);
+    color:#16a34a;
+    font-weight:700;
+  }
+  .cinfo-card.copyable.copied p{
+    color:#16a34a;
   }
