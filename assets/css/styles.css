@@ -833,3 +833,48 @@
     .timeline-entry{flex-direction:column;}
     .timeline-badge{align-self:flex-start;}
   }
+
+  /* ===== BACK TO TOP BUTTON ===== */
+  .back-to-top{
+    position:fixed;
+    right:24px;
+    bottom:24px;
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    background:linear-gradient(135deg,var(--navy),var(--blue));
+    color:#fff;
+    border:none;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:17px;
+    cursor:pointer;
+    box-shadow:0 10px 26px rgba(15,42,77,0.28);
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(14px);
+    transition:opacity .25s ease, transform .25s ease, visibility .25s ease, box-shadow .2s ease;
+    z-index:999;
+  }
+  .back-to-top.show{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+  }
+  .back-to-top:hover{
+    box-shadow:0 12px 30px rgba(15,42,77,0.38);
+    transform:translateY(-3px);
+  }
+  .back-to-top:active{
+    transform:translateY(-1px);
+  }
+  @media (max-width:560px){
+    .back-to-top{
+      right:16px;
+      bottom:16px;
+      width:42px;
+      height:42px;
+      font-size:15px;
+    }
+  }
