@@ -313,7 +313,7 @@
   .cc-green .cc-icon{background:#22c55e;}
   .connect-card h4{font-size:14px;margin-bottom:4px;}
   .connect-card p{font-size:11.5px;color:#c3d1ec;line-height:1.45;margin-bottom:10px;}
-  .connect-card a{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:14px;font-weight:600;color:#fff;background:rgba(255,255,255,.12);padding:11px 22px;border-radius:8px;margin-top:auto;align-self:flex-start;}
+  .connect-card a{display:inline-flex;align-items:center;justify-content:center;text-align:center;gap:8px;font-size:13px;line-height:1.3;font-weight:600;color:#fff;background:rgba(255,255,255,.12);padding:10px 14px;border-radius:8px;margin-top:auto;align-self:stretch;}
   .connect-card.cc-blue a{background:#2F6FED;}
   .connect-card.cc-green a{background:#22c55e;}
   .connect-footer{display:flex;gap:34px;flex-wrap:wrap;margin-top:30px;padding-top:22px;border-top:1px solid rgba(255,255,255,.12);font-size:12.5px;color:#c3d1ec;}
