@@ -199,6 +199,7 @@
   .help-grid h2 span{color:#5A9CFF;}
   .help-grid p{color:#c3d1ec;font-size:14px;line-height:1.7;max-width:420px;margin-bottom:22px;}
   .help-cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;}
+  .help-cta-row .btn{flex:1 1 0;min-width:150px;justify-content:center;text-align:center;white-space:nowrap;}
   .btn-help-outline{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.25);}
   .btn-help-outline:hover{background:rgba(255,255,255,.16);}
   .help-note{color:#93a6c9;font-size:12px;}
@@ -216,6 +217,7 @@
     .svc-grid{grid-template-columns:1fr;}
     .svc-hero h1{font-size:32px;}
     .faq-body{padding-left:0;margin-top:8px;}
+    .help-cta-row .btn{flex:1 1 100%;min-width:0;}
   }
 
   /* ===================================================== */
@@ -302,8 +304,8 @@
   .connect-grid h2{font-size:32px;font-weight:800;margin-bottom:12px;}
   .connect-grid h2 span{color:#5A9CFF;}
   .connect-grid > div > p{color:#c3d1ec;font-size:14px;line-height:1.7;max-width:420px;}
-  .connect-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-  .connect-card{border-radius:14px;padding:16px;}
+  .connect-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:stretch;}
+  .connect-card{border-radius:14px;padding:16px;display:flex;flex-direction:column;}
   .connect-card.cc-blue{background:rgba(47,111,237,.18);border:1px solid rgba(47,111,237,.4);}
   .connect-card.cc-green{background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.4);}
   .connect-card .cc-icon{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:8px;font-size:14px;color:#fff;}
@@ -311,7 +313,7 @@
   .cc-green .cc-icon{background:#22c55e;}
   .connect-card h4{font-size:14px;margin-bottom:4px;}
   .connect-card p{font-size:11.5px;color:#c3d1ec;line-height:1.45;margin-bottom:10px;}
-  .connect-card a{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;color:#fff;background:rgba(255,255,255,.12);padding:8px 14px;border-radius:8px;}
+  .connect-card a{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:14px;font-weight:600;color:#fff;background:rgba(255,255,255,.12);padding:11px 22px;border-radius:8px;margin-top:auto;align-self:flex-start;}
   .connect-card.cc-blue a{background:#2F6FED;}
   .connect-card.cc-green a{background:#22c55e;}
   .connect-footer{display:flex;gap:34px;flex-wrap:wrap;margin-top:30px;padding-top:22px;border-top:1px solid rgba(255,255,255,.12);font-size:12.5px;color:#c3d1ec;}
