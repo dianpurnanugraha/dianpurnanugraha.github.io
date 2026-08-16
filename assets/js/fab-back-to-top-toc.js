@@ -148,13 +148,44 @@
       else openPanel();
     }
 
+    /* ===== Hint "Tahan untuk daftar isi" -> muncul sekali saja
+       (seumur hidup browser pembaca, lewat localStorage) supaya
+       mereka tahu tombol ini bisa ditahan, bukan cuma di-tap. ===== */
+    var HINT_KEY = 'fabTocHintShown';
+    var hint = null;
+    var hintShownAlready = false;
+    try { hintShownAlready = !!localStorage.getItem(HINT_KEY); } catch (err) {}
+
+    if (mode && !hintShownAlready) {
+      hint = document.createElement('div');
+      hint.className = 'fab-hint';
+      hint.textContent = 'Tahan untuk daftar isi';
+      document.body.appendChild(hint);
+    }
+
+    function showHintOnce() {
+      if (!hint) return;
+      hint.classList.add('show');
+      try { localStorage.setItem(HINT_KEY, '1'); } catch (err) {}
+      setTimeout(hideHint, 4000);
+    }
+    function hideHint() {
+      if (!hint) return;
+      hint.classList.remove('show');
+    }
+
     /* ===== Tampil/sembunyi tombol saat scroll ===== */
     function toggleVisibility() {
+      var wasShown = btn.classList.contains('show');
       if (window.scrollY > SHOW_AFTER) {
-        btn.classList.add('show');
+        if (!wasShown) {
+          btn.classList.add('show');
+          showHintOnce();
+        }
       } else {
         btn.classList.remove('show');
         closePanel();
+        hideHint();
       }
     }
     window.addEventListener('scroll', toggleVisibility, { passive: true });
@@ -166,6 +197,7 @@
 
     function startPress() {
       longPressFired = false;
+      hideHint();
       if (!mode) return; // tanpa daftar isi -> tidak perlu efek tahan
       btn.classList.add('charging');
       pressTimer = setTimeout(function () {
