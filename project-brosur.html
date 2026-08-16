@@ -270,14 +270,32 @@
   // Tab Potrait / Landscape
   var tabBtns = document.querySelectorAll('[data-brosur-tab]');
   var panels  = document.querySelectorAll('[data-brosur-panel]');
+
+  function switchTab(tabName){
+    tabBtns.forEach(function(b){ b.classList.toggle('active', b.dataset.brosurTab === tabName); });
+    panels.forEach(function(p){ p.classList.remove('active'); });
+    document.querySelector('[data-brosur-panel="' + tabName + '"]').classList.add('active');
+  }
+
   tabBtns.forEach(function(btn){
-    btn.addEventListener('click', function(){
-      tabBtns.forEach(function(b){ b.classList.remove('active'); });
-      panels.forEach(function(p){ p.classList.remove('active'); });
-      btn.classList.add('active');
-      document.querySelector('[data-brosur-panel="' + btn.dataset.brosurTab + '"]').classList.add('active');
-    });
+    btn.addEventListener('click', function(){ switchTab(btn.dataset.brosurTab); });
   });
+
+  function getPageFromURL(total){
+    var params = new URLSearchParams(window.location.search);
+    var p = parseInt(params.get('page'), 10);
+    if (!p || p < 1) p = 1;
+    if (p > total) p = total;
+    return p;
+  }
+
+  function setPageInURL(page){
+    if (!window.history || !window.history.replaceState) return;
+    var url = new URL(window.location.href);
+    if (page > 1) url.searchParams.set('page', page);
+    else url.searchParams.delete('page');
+    window.history.replaceState(null, '', url.toString());
+  }
 
   /* ================================================================
      DATA CONTOH BROSUR LANDSCAPE (dipaginasi)
@@ -453,6 +471,7 @@
 
   function renderPage(page, scroll){
     currentPage = page;
+    setPageInURL(page);
     grid.innerHTML = '';
 
     var start = (page - 1) * ITEMS_PER_PAGE;
@@ -471,9 +490,18 @@
   landscapeTabBtn.addEventListener('click', function(){
     if (!rendered){
       rendered = true;
-      renderPage(1, false);
+      renderPage(currentPage, false);
     }
   });
+
+  // Kalau URL bawa ?page=N (misal habis refresh di tab landscape halaman 2/3),
+  // langsung buka tab landscape dan render ke halaman itu
+  var initialPage = getPageFromURL(totalPages);
+  if (initialPage > 1){
+    switchTab('landscape');
+    rendered = true;
+    renderPage(initialPage, false);
+  }
 
   document.querySelectorAll('.lang-btn').forEach(function (btn) {
     btn.addEventListener('click', function () {

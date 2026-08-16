@@ -299,6 +299,22 @@
     return result;
   }
 
+  function getPageFromURL(total){
+    var params = new URLSearchParams(window.location.search);
+    var p = parseInt(params.get('page'), 10);
+    if (!p || p < 1) p = 1;
+    if (p > total) p = total;
+    return p;
+  }
+
+  function setPageInURL(page){
+    if (!window.history || !window.history.replaceState) return;
+    var url = new URL(window.location.href);
+    if (page > 1) url.searchParams.set('page', page);
+    else url.searchParams.delete('page');
+    window.history.replaceState(null, '', url.toString());
+  }
+
   function renderPagination(){
     paginateEl.innerHTML = '';
     if (totalPages <= 1) { infoEl.textContent = ''; return; }
@@ -346,6 +362,7 @@
 
   function renderPage(page, scroll){
     currentPage = page;
+    setPageInURL(page);
     grid.innerHTML = '';
 
     var start = (page - 1) * ITEMS_PER_PAGE;
@@ -357,7 +374,7 @@
     if (scroll) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
-  renderPage(1, false);
+  renderPage(getPageFromURL(totalPages), false);
 
   document.querySelectorAll('.lang-btn').forEach(function (btn) {
     btn.addEventListener('click', function () { renderPagination(); });
