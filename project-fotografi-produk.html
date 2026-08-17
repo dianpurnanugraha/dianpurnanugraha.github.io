@@ -398,7 +398,6 @@
 
     var slidesHtml = product.images.map(function(img){
       return '<div class="media-slide">' +
-               '<span class="media-slide-label">' + img.label + '</span>' +
                '<img src="' + img.src + '" alt="' + ui().photoAlt + ' ' + product.tag + ' ' + img.label + '" loading="lazy">' +
              '</div>';
     }).join('');
