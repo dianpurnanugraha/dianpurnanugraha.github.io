@@ -148,15 +148,12 @@
       else openPanel();
     }
 
-    /* ===== Hint "Tahan untuk daftar isi" -> muncul sekali saja
-       (seumur hidup browser pembaca, lewat localStorage) supaya
-       mereka tahu tombol ini bisa ditahan, bukan cuma di-tap. ===== */
-    var HINT_KEY = 'fabTocHintShown';
+    /* ===== Hint "Tahan untuk daftar isi" -> muncul setiap kali
+       halaman dibuka/di-refresh, supaya pengunjung tahu tombol
+       ini bisa ditahan, bukan cuma di-tap. ===== */
     var hint = null;
-    var hintShownAlready = false;
-    try { hintShownAlready = !!localStorage.getItem(HINT_KEY); } catch (err) {}
 
-    if (mode && !hintShownAlready) {
+    if (mode) {
       hint = document.createElement('div');
       hint.className = 'fab-hint';
       hint.textContent = 'Tahan untuk daftar isi';
@@ -166,7 +163,6 @@
     function showHintOnce() {
       if (!hint) return;
       hint.classList.add('show');
-      try { localStorage.setItem(HINT_KEY, '1'); } catch (err) {}
       setTimeout(hideHint, 4000);
     }
     function hideHint() {
