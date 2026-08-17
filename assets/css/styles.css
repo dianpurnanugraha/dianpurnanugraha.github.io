@@ -1132,3 +1132,49 @@
   @media (max-width:560px){
     .toc-panel{left:16px;right:16px;width:auto;bottom:66px;transform-origin:bottom center;}
   }
+
+/* ===================== LIGHTBOX GALERI FOTO ===================== */
+  body.lightbox-lock{overflow:hidden;}
+  .lightbox-overlay{
+    position:fixed;inset:0;background:rgba(10,20,35,.94);z-index:3000;
+    display:flex;align-items:center;justify-content:center;
+    opacity:0;visibility:hidden;transition:opacity .2s;
+  }
+  .lightbox-overlay.open{opacity:1;visibility:visible;}
+  .lightbox-stage{
+    width:100%;height:100%;display:flex;align-items:center;justify-content:center;
+    overflow:hidden;padding:70px 90px;
+  }
+  .lightbox-img{
+    max-width:100%;max-height:100%;object-fit:contain;
+    cursor:zoom-in;user-select:none;-webkit-user-drag:none;
+    transition:transform .15s ease-out;touch-action:none;
+  }
+  .lightbox-img.zoomed{cursor:grab;transition:none;}
+  .lightbox-img.dragging{cursor:grabbing;transition:none;}
+  .lightbox-close,.lightbox-arrow{
+    position:absolute;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);
+    color:#fff;border-radius:50%;width:44px;height:44px;display:flex;align-items:center;
+    justify-content:center;font-size:16px;cursor:pointer;transition:.2s;z-index:2;
+  }
+  .lightbox-close:hover,.lightbox-arrow:hover{background:var(--blue);border-color:var(--blue);}
+  .lightbox-close{top:18px;right:18px;}
+  .lightbox-prev{left:18px;top:50%;transform:translateY(-50%);}
+  .lightbox-next{right:18px;top:50%;transform:translateY(-50%);}
+  .lightbox-counter{
+    position:absolute;bottom:20px;left:50%;transform:translateX(-50%);
+    background:rgba(255,255,255,.1);color:#fff;font-size:12.5px;font-weight:700;
+    padding:6px 16px;border-radius:20px;letter-spacing:.3px;
+  }
+  .lightbox-hint{
+    position:absolute;bottom:20px;right:20px;color:rgba(255,255,255,.55);
+    font-size:11.5px;letter-spacing:.2px;
+  }
+  @media (max-width:768px){
+    .lightbox-stage{padding:70px 16px;}
+    .lightbox-close{width:38px;height:38px;font-size:14px;top:12px;right:12px;}
+    .lightbox-arrow{width:38px;height:38px;font-size:14px;}
+    .lightbox-prev{left:8px;}
+    .lightbox-next{right:8px;}
+    .lightbox-hint{display:none;}
+  }
