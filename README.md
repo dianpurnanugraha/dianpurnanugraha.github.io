@@ -2,6 +2,8 @@
 
 Website portofolio statis (HTML + CSS) untuk menampilkan profil, layanan, skill, pengalaman, studi kasus project, dan kontak sebagai E-commerce & Business Operations Specialist.
 
+Live: [dianpurnanugraha.my.id](https://dianpurnanugraha.my.id)
+
 ## Struktur Halaman
 
 | File | Deskripsi |
@@ -18,10 +20,13 @@ Website portofolio statis (HTML + CSS) untuk menampilkan profil, layanan, skill,
 ### Halaman Detail Project (`project-*.html`)
 
 - `project-ads-campaign.html` — Kampanye Iklan Shopee & Facebook Ads
+- `project-brosur.html` — Desain Brosur Promosi
 - `project-finance-report.html` — Laporan Keuangan & Rekap Otomatis
-- `project-herbal-branding.html` — Branding & Packaging Produk Herbal
+- `project-fotografi-produk.html` — Fotografi Produk
 - `project-instagram-design.html` — Desain Feed Instagram & Konten Promosi
 - `project-lazada-setup.html` — Setup & Migrasi Toko ke Lazada
+- `project-logo-identitas.html` — Logo & Identitas Brand
+- `project-packaging.html` — Desain Packaging Produk
 - `project-sales-dashboard.html` — Dashboard Laporan Penjualan Multi-Marketplace
 - `project-shopee-tiktok.html` — Optimasi Toko Shopee & TikTok Shop
 - `project-sop-workflow.html` — Penyusunan SOP & Workflow Gudang
