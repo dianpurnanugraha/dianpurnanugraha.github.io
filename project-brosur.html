@@ -71,10 +71,10 @@
 <!-- ===================== META INFO ===================== -->
 <section class="wrap">
   <div class="detail-meta-grid">
-    <div class="detail-meta-item"><span data-i18n="meta.client">Klien</span><b data-i18n="meta.clientValue">Multi Klien (contoh)</b></div>
+    <div class="detail-meta-item"><span data-i18n="meta.client">Klien</span><b data-i18n="meta.clientValue">Multi Klien</b></div>
     <div class="detail-meta-item"><span data-i18n="meta.role">Peran</span><b data-i18n="meta.roleValue">Graphic &amp; Print Collateral Designer</b></div>
-    <div class="detail-meta-item"><span data-i18n="meta.duration">Durasi</span><b data-i18n="meta.durationValue">3 Minggu / Proyek</b></div>
-    <div class="detail-meta-item"><span data-i18n="meta.tools">Tools</span><b>CorelDRAW, Adobe Illustrator</b></div>
+    <div class="detail-meta-item"><span data-i18n="meta.duration">Durasi</span><b data-i18n="meta.durationValue">Berkelanjutan (2018–2026)</b></div>
+    <div class="detail-meta-item"><span data-i18n="meta.tools">Tools</span><b>Canva, CorelDRAW, Adobe Photoshop, Adobe Illustrator</b></div>
   </div>
 </section>
 
@@ -104,10 +104,9 @@
     <div class="sec-head">
       <div class="eyebrow-line" data-i18n="result.eyebrow">HASIL</div>
       <h2 data-i18n="result.title">Dampak &amp; <span>Hasil</span></h2>
-      <p data-i18n="result.desc">Contoh gambaran hasil dari proyek ini (angka ilustrasi).</p>
     </div>
     <div class="result-grid">
-      <div class="result-card"><b>3</b><span data-i18n="result1.label">Varian Brosur</span></div>
+      <div class="result-card"><b>2</b><span data-i18n="result1.label">Varian Brosur</span></div>
       <div class="result-card"><b>100%</b><span data-i18n="result2.label">Siap Cetak</span></div>
       <div class="result-card"><b>1</b><span data-i18n="result3.label">Panduan Layout Brand</span></div>
       <div class="result-card"><b>2x</b><span data-i18n="result4.label">Dipakai di Berbagai Acara</span></div>
@@ -121,7 +120,6 @@
     <div class="sec-head">
       <div class="eyebrow-line" data-i18n="gallery.eyebrow">DOKUMENTASI</div>
       <h2 data-i18n="gallery.title">Cuplikan <span>Pekerjaan</span></h2>
-      <p data-i18n="gallery.desc">Ganti kotak di bawah ini dengan screenshot atau foto hasil kerja asli kamu.</p>
     </div>
     <!-- Tab: Potrait / Landscape -->
     <div class="brosur-tabnav">
@@ -307,23 +305,23 @@
   function dict(){ return (window.I18N_PAGE && window.I18N_PAGE[getLang()]) || {}; }
 
   var EXAMPLES = [
-    { idx: 1, type: "double", tagIcon: "fa-arrows-rotate", tagAlt: false, images: [
-        { label: "Tampak Depan", src: "assets/img/brosur/project-brosur-2a.webp" },
-        { label: "Tampak Belakang", src: "assets/img/brosur/project-brosur-2b.webp" }
+    { name: "Brosur Sekolah", type: "double", tagIcon: "fa-arrows-rotate", tagAlt: false, images: [
+        { src: "assets/img/brosur/project-brosur-2a.webp" },
+        { src: "assets/img/brosur/project-brosur-2b.webp" }
     ]},
-    { idx: 2, type: "single", tagIcon: "fa-image", tagAlt: true,
+    { name: "Brosur Sekolah", type: "single", tagIcon: "fa-image", tagAlt: true,
       image: { src: "assets/img/brosur/project-brosur-2a.webp" }
     },
-    { idx: 3, type: "double", tagIcon: "fa-arrows-rotate", tagAlt: false, images: [
-        { label: "Tampak Depan", src: "assets/img/brosur/project-brosur-2a.webp" },
-        { label: "Tampak Belakang", src: "assets/img/brosur/project-brosur-2b.webp" }
+    { name: "Brosur Sekolah", type: "double", tagIcon: "fa-arrows-rotate", tagAlt: false, images: [
+        { src: "assets/img/brosur/project-brosur-2a.webp" },
+        { src: "assets/img/brosur/project-brosur-2b.webp" }
     ]},
-    { idx: 4, type: "single", tagIcon: "fa-image", tagAlt: true,
+    { name: "Brosur Sekolah", type: "single", tagIcon: "fa-image", tagAlt: true,
       image: { src: "assets/img/brosur/project-brosur-2b.webp" }
     },
-    { idx: 5, type: "double", tagIcon: "fa-arrows-rotate", tagAlt: false, images: [
-        { label: "Tampak Depan", src: "assets/img/brosur/project-brosur-2a.webp" },
-        { label: "Tampak Belakang", src: "assets/img/brosur/project-brosur-2b.webp" }
+    { name: "Brosur Sekolah", type: "double", tagIcon: "fa-arrows-rotate", tagAlt: false, images: [
+        { src: "assets/img/brosur/project-brosur-2a.webp" },
+        { src: "assets/img/brosur/project-brosur-2b.webp" }
     ]}
   ];
 
@@ -340,7 +338,7 @@
     var card = document.createElement('div');
     card.className = 'slider-card';
     var d = dict();
-    var title = (d['example.title'] || 'Contoh {n}').replace('{n}', ex.idx);
+    var title = ex.name;
     var tagLabel = ex.type === 'double' ? (d['example.tagDouble'] || 'Bolak-balik') : (d['example.tagSingle'] || 'Satu Sisi');
 
     var head = document.createElement('div');
@@ -360,8 +358,7 @@
       slider.className = 'media-slider';
       var slidesHtml = ex.images.map(function(img){
         return '<div class="media-slide">' +
-                 '<span class="media-slide-label">' + img.label + '</span>' +
-                 '<img src="' + img.src + '" alt="Brosur Landscape Lipat Bolak-balik ' + title + ' - ' + img.label + '" loading="lazy">' +
+                 '<img src="' + img.src + '" alt="Brosur Landscape Lipat Bolak-balik ' + title + '" loading="lazy">' +
                '</div>';
       }).join('');
       slider.innerHTML =
