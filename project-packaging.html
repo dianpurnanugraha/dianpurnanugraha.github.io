@@ -73,7 +73,7 @@
     <div class="detail-meta-item"><span data-i18n="meta.client">Klien</span><b>4+ Brand</b></div>
     <div class="detail-meta-item"><span data-i18n="meta.role">Peran</span><b data-i18n="meta.roleValue">Graphic &amp; Packaging Designer</b></div>
     <div class="detail-meta-item"><span data-i18n="meta.duration">Durasi</span><b data-i18n="meta.durationValue">Berkelanjutan (2023–2026)</b></div>
-    <div class="detail-meta-item"><span data-i18n="meta.tools">Tools</span><b>CorelDRAW, Adobe Photoshop</b></div>
+    <div class="detail-meta-item"><span data-i18n="meta.tools">Tools</span><b>Canva, CorelDRAW, Adobe Photoshop, Adobe Illustrator</b></div>
   </div>
 </section>
 
@@ -252,20 +252,20 @@
 (function(){
   var PRODUCTS = [
     { tag: "Alanature", tagAlt: false, title: "Teh Rimpang", images: [
-        { label: "Mockup", src: "assets/img/packaging/project-packaging-alanature-mockup.webp" },
-        { label: "Desain Flat", src: "assets/img/packaging/project-packaging-alanature-flat.webp" }
+        { src: "assets/img/packaging/project-packaging-alanature-mockup.webp" },
+        { src: "assets/img/packaging/project-packaging-alanature-flat.webp" }
     ]},
     { tag: "Xtraherb", tagAlt: false, title: "Teh Rimpang", images: [
-        { label: "Mockup", src: "assets/img/packaging/project-packaging-xtraherb-mockup.webp" },
-        { label: "Desain Flat", src: "assets/img/packaging/project-packaging-xtraherb-flat.webp" }
+        { src: "assets/img/packaging/project-packaging-xtraherb-mockup.webp" },
+        { src: "assets/img/packaging/project-packaging-xtraherb-flat.webp" }
     ]},
     { tag: "X-travit", tagAlt: false, title: "Teh Rimpang", images: [
-        { label: "Mockup", src: "assets/img/packaging/project-packaging-xtravit-mockup.webp" },
-        { label: "Desain Flat", src: "assets/img/packaging/project-packaging-xtravit-flat.webp" }
+        { src: "assets/img/packaging/project-packaging-xtravit-mockup.webp" },
+        { src: "assets/img/packaging/project-packaging-xtravit-flat.webp" }
     ]},
     { tag: "Sari Rimpang", tagAlt: true, title: "Teh Rimpang", images: [
-        { label: "Mockup", src: "assets/img/packaging/project-packaging-saririmpang-mockup.webp" },
-        { label: "Desain Flat", src: "assets/img/packaging/project-packaging-saririmpang-flat.webp" }
+        { src: "assets/img/packaging/project-packaging-saririmpang-mockup.webp" },
+        { src: "assets/img/packaging/project-packaging-saririmpang-flat.webp" }
     ]}
   ];
 
@@ -293,8 +293,7 @@
 
     var slidesHtml = product.images.map(function(img){
       return '<div class="media-slide">' +
-               '<span class="media-slide-label">' + img.label + '</span>' +
-               '<img src="' + img.src + '" alt="' + img.label + ' Kemasan ' + product.tag + '" loading="lazy">' +
+               '<img src="' + img.src + '" alt="Kemasan ' + product.tag + '" loading="lazy">' +
              '</div>';
     }).join('');
 
