@@ -15,7 +15,7 @@ window.I18N_PAGE = {
     'meta.role': 'Peran',
     'meta.roleValue': 'Logo &amp; Brand Identity Designer',
     'meta.duration': 'Durasi',
-    'meta.durationValue': 'Berkelanjutan (2023–2026)',
+    'meta.durationValue': 'Berkelanjutan (2018–2026)',
     'meta.tools': 'Tools',
 
     'challenge.title': 'Tantangan',
