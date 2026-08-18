@@ -12,11 +12,11 @@ window.I18N_PAGE = {
     'hero.desc': 'Merancang brosur dan materi cetak promosi untuk mendukung penjualan produk, promosi jasa, hingga kebutuhan institusi seperti sekolah.',
 
     'meta.client': 'Klien',
-    'meta.clientValue': 'Multi Klien (contoh)',
+    'meta.clientValue': 'Multi Klien',
     'meta.role': 'Peran',
     'meta.roleValue': 'Graphic &amp; Print Collateral Designer',
     'meta.duration': 'Durasi',
-    'meta.durationValue': '3 Minggu / Proyek',
+    'meta.durationValue': 'Berkelanjutan (2018–2026)',
     'meta.tools': 'Tools',
 
     'challenge.title': 'Tantangan',
@@ -34,7 +34,6 @@ window.I18N_PAGE = {
 
     'result.eyebrow': 'HASIL',
     'result.title': 'Dampak &amp; <span>Hasil</span>',
-    'result.desc': 'Contoh gambaran hasil dari proyek ini (angka ilustrasi).',
     'result1.label': 'Varian Brosur',
     'result2.label': 'Siap Cetak',
     'result3.label': 'Panduan Layout Brand',
@@ -42,13 +41,11 @@ window.I18N_PAGE = {
 
     'gallery.eyebrow': 'DOKUMENTASI',
     'gallery.title': 'Cuplikan <span>Pekerjaan</span>',
-    'gallery.desc': 'Ganti kotak di bawah ini dengan screenshot atau foto hasil kerja asli kamu.',
     'tab.potrait': 'Potrait',
     'tab.landscape': 'Landscape (Lipat)',
     'gallery.pageInfo': 'Halaman {page} dari {total} — {count} contoh total',
     'gallery.slidePrev': 'Sebelumnya',
     'gallery.slideNext': 'Berikutnya',
-    'example.title': 'Contoh {n}',
     'example.tagDouble': 'Bolak-balik',
     'example.tagSingle': 'Satu Sisi',
 
@@ -100,7 +97,6 @@ window.I18N_PAGE = {
 
     'result.eyebrow': 'RESULTS',
     'result.title': 'Impact &amp; <span>Results</span>',
-    'result.desc': 'An illustrative overview of the results from this project (example figures).',
     'result1.label': 'Brochure Variants',
     'result2.label': 'Print-Ready',
     'result3.label': 'Brand Layout Guide',
@@ -108,13 +104,11 @@ window.I18N_PAGE = {
 
     'gallery.eyebrow': 'DOCUMENTATION',
     'gallery.title': 'Work <span>Highlights</span>',
-    'gallery.desc': 'Replace the boxes below with your own actual work screenshots or photos.',
     'tab.potrait': 'Portrait',
     'tab.landscape': 'Landscape (Folded)',
     'gallery.pageInfo': 'Page {page} of {total} — {count} examples total',
     'gallery.slidePrev': 'Previous',
     'gallery.slideNext': 'Next',
-    'example.title': 'Example {n}',
     'example.tagDouble': 'Double-Sided',
     'example.tagSingle': 'Single-Sided',
 
