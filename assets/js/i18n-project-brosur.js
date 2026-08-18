@@ -75,11 +75,11 @@ window.I18N_PAGE = {
     'hero.desc': 'Designing brochures and print promotional materials to support product sales, service promotion, and institutional needs such as schools.',
 
     'meta.client': 'Client',
-    'meta.clientValue': 'Multiple Clients (example)',
+    'meta.clientValue': 'Multiple Clients',
     'meta.role': 'Role',
     'meta.roleValue': 'Graphic &amp; Print Collateral Designer',
     'meta.duration': 'Duration',
-    'meta.durationValue': '3 Weeks / Project',
+    'meta.durationValue': 'Ongoing (2018–2026)',
     'meta.tools': 'Tools',
 
     'challenge.title': 'Challenge',
