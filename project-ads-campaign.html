@@ -258,14 +258,14 @@
      ================================================================ */
   var ITEMS = [
     // ---- Dashboard Performa (ringkasan + grafik tren) ----
-    { category: 'dashboard', period: '1bulan', img: 'assets/screenshoot/dashboard/dashboard-produk-1bulan.webp',
-      caption: { id: 'Dashboard Performa — Iklan Produk (1 Bulan Terakhir)', en: 'Performance Dashboard — Product Ads (Last 1 Month)' } },
-    { category: 'dashboard', period: '3bulan', img: 'assets/screenshoot/dashboard/dashboard-produk-3bulan.webp',
-      caption: { id: 'Dashboard Performa — Iklan Produk (3 Bulan Terakhir)', en: 'Performance Dashboard — Product Ads (Last 3 Months)' } },
     { category: 'dashboard', period: '1bulan', img: 'assets/screenshoot/dashboard/dashboard-toko-1bulan.webp',
       caption: { id: 'Dashboard Performa — Iklan Toko (1 Bulan Terakhir)', en: 'Performance Dashboard — Store Ads (Last 1 Month)' } },
     { category: 'dashboard', period: '3bulan', img: 'assets/screenshoot/dashboard/dashboard-toko-3bulan.webp',
       caption: { id: 'Dashboard Performa — Iklan Toko (3 Bulan Terakhir)', en: 'Performance Dashboard — Store Ads (Last 3 Months)' } },
+    { category: 'dashboard', period: '1bulan', img: 'assets/screenshoot/dashboard/dashboard-produk-1bulan.webp',
+      caption: { id: 'Dashboard Performa — Iklan Produk (1 Bulan Terakhir)', en: 'Performance Dashboard — Product Ads (Last 1 Month)' } },
+    { category: 'dashboard', period: '3bulan', img: 'assets/screenshoot/dashboard/dashboard-produk-3bulan.webp',
+      caption: { id: 'Dashboard Performa — Iklan Produk (3 Bulan Terakhir)', en: 'Performance Dashboard — Product Ads (Last 3 Months)' } },
 
     // ---- Iklan Produk Otomatis (tabel per SKU) — 1 Bulan ----
     { category: 'otomatis', period: '1bulan', img: 'assets/screenshoot/produk-otomatis/produk-otomatis-1bulan-01.webp',
@@ -281,19 +281,43 @@
 
     // ---- Iklan Produk Individu (GMV Max ROAS) — 1 Bulan ----
     { category: 'individu', period: '1bulan', img: 'assets/screenshoot/produk-individu/produk-individu-1bulan-01.webp',
-      caption: { id: 'Produk Individu (GMV Max ROAS) — Target ROAS & Diagnosis (1 Bulan)', en: 'Individual Product Ads (GMV Max ROAS) — Target ROAS & Diagnosis (1 Month)' } },
+      caption: { id: 'Produk Individu (GMV Max ROAS) — Target ROAS & Diagnosis, Produk 1-7 (1 Bulan)', en: 'Individual Product Ads (GMV Max ROAS) — Target ROAS & Diagnosis, Products 1-7 (1 Month)' } },
     { category: 'individu', period: '1bulan', img: 'assets/screenshoot/produk-individu/produk-individu-1bulan-02.webp',
-      caption: { id: 'Produk Individu (GMV Max ROAS) — Klik & Tambah Keranjang (1 Bulan)', en: 'Individual Product Ads (GMV Max ROAS) — Clicks & Add to Cart (1 Month)' } },
+      caption: { id: 'Produk Individu (GMV Max ROAS) — Klik & Tambah Keranjang, Produk 1-7 (1 Bulan)', en: 'Individual Product Ads (GMV Max ROAS) — Clicks & Add to Cart, Products 1-7 (1 Month)' } },
     { category: 'individu', period: '1bulan', img: 'assets/screenshoot/produk-individu/produk-individu-1bulan-03.webp',
-      caption: { id: 'Produk Individu (GMV Max ROAS) — Konversi & Biaya per Konversi (1 Bulan)', en: 'Individual Product Ads (GMV Max ROAS) — Conversions & Cost per Conversion (1 Month)' } },
+      caption: { id: 'Produk Individu (GMV Max ROAS) — Konversi & ACOS, Produk 1-7 (1 Bulan)', en: 'Individual Product Ads (GMV Max ROAS) — Conversions & ACOS, Products 1-7 (1 Month)' } },
+    { category: 'individu', period: '1bulan', img: 'assets/screenshoot/produk-individu/produk-individu-1bulan-04.webp',
+      caption: { id: 'Produk Individu (GMV Max ROAS) — Target ROAS & Diagnosis, Produk 8-14 (1 Bulan)', en: 'Individual Product Ads (GMV Max ROAS) — Target ROAS & Diagnosis, Products 8-14 (1 Month)' } },
+    { category: 'individu', period: '1bulan', img: 'assets/screenshoot/produk-individu/produk-individu-1bulan-05.webp',
+      caption: { id: 'Produk Individu (GMV Max ROAS) — Klik & Tambah Keranjang, Produk 8-14 (1 Bulan)', en: 'Individual Product Ads (GMV Max ROAS) — Clicks & Add to Cart, Products 8-14 (1 Month)' } },
+    { category: 'individu', period: '1bulan', img: 'assets/screenshoot/produk-individu/produk-individu-1bulan-06.webp',
+      caption: { id: 'Produk Individu (GMV Max ROAS) — Konversi & ACOS, Produk 8-14 (1 Bulan)', en: 'Individual Product Ads (GMV Max ROAS) — Conversions & ACOS, Products 8-14 (1 Month)' } },
+    { category: 'individu', period: '1bulan', img: 'assets/screenshoot/produk-individu/produk-individu-1bulan-07.webp',
+      caption: { id: 'Produk Individu (GMV Max ROAS) — Target ROAS & Diagnosis, Produk 15-21 (1 Bulan)', en: 'Individual Product Ads (GMV Max ROAS) — Target ROAS & Diagnosis, Products 15-21 (1 Month)' } },
+    { category: 'individu', period: '1bulan', img: 'assets/screenshoot/produk-individu/produk-individu-1bulan-08.webp',
+      caption: { id: 'Produk Individu (GMV Max ROAS) — Klik & Tambah Keranjang, Produk 15-21 (1 Bulan)', en: 'Individual Product Ads (GMV Max ROAS) — Clicks & Add to Cart, Products 15-21 (1 Month)' } },
+    { category: 'individu', period: '1bulan', img: 'assets/screenshoot/produk-individu/produk-individu-1bulan-09.webp',
+      caption: { id: 'Produk Individu (GMV Max ROAS) — Konversi & ACOS, Produk 15-21 (1 Bulan)', en: 'Individual Product Ads (GMV Max ROAS) — Conversions & ACOS, Products 15-21 (1 Month)' } },
 
     // ---- Iklan Produk Individu (GMV Max ROAS) — 3 Bulan ----
     { category: 'individu', period: '3bulan', img: 'assets/screenshoot/produk-individu/produk-individu-3bulan-01.webp',
-      caption: { id: 'Produk Individu (GMV Max ROAS) — Konversi & Biaya per Konversi (3 Bulan)', en: 'Individual Product Ads (GMV Max ROAS) — Conversions & Cost per Conversion (3 Months)' } },
+      caption: { id: 'Produk Individu (GMV Max ROAS) — Target ROAS & Diagnosis, Produk 1-7 (3 Bulan)', en: 'Individual Product Ads (GMV Max ROAS) — Target ROAS & Diagnosis, Products 1-7 (3 Months)' } },
     { category: 'individu', period: '3bulan', img: 'assets/screenshoot/produk-individu/produk-individu-3bulan-02.webp',
-      caption: { id: 'Produk Individu (GMV Max ROAS) — Klik & Tambah Keranjang (3 Bulan)', en: 'Individual Product Ads (GMV Max ROAS) — Clicks & Add to Cart (3 Months)' } },
+      caption: { id: 'Produk Individu (GMV Max ROAS) — Klik & Tambah Keranjang, Produk 1-7 (3 Bulan)', en: 'Individual Product Ads (GMV Max ROAS) — Clicks & Add to Cart, Products 1-7 (3 Months)' } },
     { category: 'individu', period: '3bulan', img: 'assets/screenshoot/produk-individu/produk-individu-3bulan-03.webp',
-      caption: { id: 'Produk Individu (GMV Max ROAS) — Target ROAS & Diagnosis (3 Bulan)', en: 'Individual Product Ads (GMV Max ROAS) — Target ROAS & Diagnosis (3 Months)' } },
+      caption: { id: 'Produk Individu (GMV Max ROAS) — Konversi & ACOS, Produk 1-7 (3 Bulan)', en: 'Individual Product Ads (GMV Max ROAS) — Conversions & ACOS, Products 1-7 (3 Months)' } },
+    { category: 'individu', period: '3bulan', img: 'assets/screenshoot/produk-individu/produk-individu-3bulan-04.webp',
+      caption: { id: 'Produk Individu (GMV Max ROAS) — Target ROAS & Diagnosis, Produk 8-14 (3 Bulan)', en: 'Individual Product Ads (GMV Max ROAS) — Target ROAS & Diagnosis, Products 8-14 (3 Months)' } },
+    { category: 'individu', period: '3bulan', img: 'assets/screenshoot/produk-individu/produk-individu-3bulan-05.webp',
+      caption: { id: 'Produk Individu (GMV Max ROAS) — Klik & Tambah Keranjang, Produk 8-14 (3 Bulan)', en: 'Individual Product Ads (GMV Max ROAS) — Clicks & Add to Cart, Products 8-14 (3 Months)' } },
+    { category: 'individu', period: '3bulan', img: 'assets/screenshoot/produk-individu/produk-individu-3bulan-06.webp',
+      caption: { id: 'Produk Individu (GMV Max ROAS) — Konversi & ACOS, Produk 8-14 (3 Bulan)', en: 'Individual Product Ads (GMV Max ROAS) — Conversions & ACOS, Products 8-14 (3 Months)' } },
+    { category: 'individu', period: '3bulan', img: 'assets/screenshoot/produk-individu/produk-individu-3bulan-07.webp',
+      caption: { id: 'Produk Individu (GMV Max ROAS) — Target ROAS & Diagnosis, Produk 15-21 (3 Bulan)', en: 'Individual Product Ads (GMV Max ROAS) — Target ROAS & Diagnosis, Products 15-21 (3 Months)' } },
+    { category: 'individu', period: '3bulan', img: 'assets/screenshoot/produk-individu/produk-individu-3bulan-08.webp',
+      caption: { id: 'Produk Individu (GMV Max ROAS) — Klik & Tambah Keranjang, Produk 15-21 (3 Bulan)', en: 'Individual Product Ads (GMV Max ROAS) — Clicks & Add to Cart, Products 15-21 (3 Months)' } },
+    { category: 'individu', period: '3bulan', img: 'assets/screenshoot/produk-individu/produk-individu-3bulan-09.webp',
+      caption: { id: 'Produk Individu (GMV Max ROAS) — Konversi & ACOS, Produk 15-21 (3 Bulan)', en: 'Individual Product Ads (GMV Max ROAS) — Conversions & ACOS, Products 15-21 (3 Months)' } },
 
     // ---- Iklan Toko / Shop+ Ads — 1 Bulan ----
     { category: 'toko', period: '1bulan', img: 'assets/screenshoot/toko/toko-1bulan-01.webp',
