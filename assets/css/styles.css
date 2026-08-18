@@ -662,6 +662,20 @@
   .gallery-grid-2col .gallery-item-img{height:auto;aspect-ratio:210/297;}
   .gallery-grid-2col .gallery-item-img img{object-fit:cover;background:#eef3fb;}
 
+  /* ===== Gallery khusus screenshot dashboard (rasio gambar beragam,
+     jadi tidak dipaksa aspect-ratio tetap — tinggi menyesuaikan gambar
+     asli, tampil apa adanya tanpa crop) ===== */
+  .gallery-grid-shots{grid-template-columns:repeat(2,1fr);}
+  .gallery-grid-shots .gallery-item-img{height:auto;display:flex;flex-direction:column;border:1px solid var(--line);}
+  .gallery-grid-shots .gallery-item-img img{width:100%;height:auto;object-fit:contain;border-radius:14px 14px 0 0;background:#fafbfd;}
+  .shot-caption{display:flex;align-items:center;gap:8px;padding:11px 14px;border-top:1px solid var(--line);font-size:11.5px;font-weight:600;color:var(--navy-2);}
+  .shot-tag{background:var(--blue-light);color:var(--blue);font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;white-space:nowrap;}
+  .shot-tag.alt{background:var(--navy);color:#fff;}
+
+  /* ===== Filter periode (sub-filter di bawah filter kategori) ===== */
+  .filter-row-sub{margin-bottom:26px;margin-top:-16px;}
+  .filter-row-sub .filter-btn{padding:6px 14px;font-size:11.5px;}
+
   /* ===== Brosur Tabs: Potrait / Landscape ===== */
   .brosur-tabnav{display:flex;justify-content:center;gap:10px;margin-bottom:28px;flex-wrap:wrap;}
   .brosur-panel{display:none;}
@@ -750,6 +764,9 @@
     .gallery-grid-2row .gallery-item-img{height:420px;}
     .slider-card-grid{grid-template-columns:1fr;max-width:560px;margin:0 auto;}
 
+  }
+  @media (max-width:760px){
+    .gallery-grid-shots{grid-template-columns:1fr;}
   }
   @media (max-width:640px){
     .detail-hero{padding:40px 26px;}
