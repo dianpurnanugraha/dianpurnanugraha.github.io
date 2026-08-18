@@ -382,7 +382,10 @@
       var prevBtn = sliderEl.querySelector('.media-arrow.prev');
       var nextBtn = sliderEl.querySelector('.media-arrow.next');
       var dotsBox = sliderEl.parentElement.querySelector('.media-dots');
+      var cardEl  = sliderEl.closest('.slider-card');
+      var flipTag = cardEl ? cardEl.querySelector('.slider-card-tag') : null;
       var index = 0;
+      var flipping = false;
 
       if (slides.length <= 1){
         if (prevBtn) prevBtn.style.display = 'none';
@@ -405,8 +408,44 @@
         track.style.transform = 'translateX(-' + (index * 100) + '%)';
         dots.forEach(function(d, di){ d.classList.toggle('active', di === index); });
       }
+
+      // Efek flip 3D dipicu klik tag "Bolak-balik" — carousel panah/dot tetap
+      // pakai transisi geser biasa lewat goTo().
+      function flipTo(i){
+        if (flipping || typeof track.animate !== 'function') { goTo(i); return; }
+        var nextIndex = (i + slides.length) % slides.length;
+        var fromX = -(index * 100);
+        var toX   = -(nextIndex * 100);
+        flipping = true;
+        sliderEl.classList.add('is-flipping');
+        var anim = track.animate([
+          { transform: 'translateX(' + fromX + '%) rotateY(0deg)' },
+          { transform: 'translateX(' + fromX + '%) rotateY(90deg)' },
+          { transform: 'translateX(' + toX   + '%) rotateY(90deg)' },
+          { transform: 'translateX(' + toX   + '%) rotateY(0deg)' }
+        ], { duration: 560, easing: 'ease-in-out', fill: 'forwards' });
+        anim.onfinish = function(){
+          index = nextIndex;
+          track.style.transform = 'translateX(' + toX + '%)';
+          anim.cancel();
+          dots.forEach(function(d, di){ d.classList.toggle('active', di === index); });
+          sliderEl.classList.remove('is-flipping');
+          flipping = false;
+        };
+      }
+
       prevBtn.addEventListener('click', function(){ goTo(index - 1); });
       nextBtn.addEventListener('click', function(){ goTo(index + 1); });
+
+      if (flipTag){
+        flipTag.classList.add('is-flip-trigger');
+        flipTag.setAttribute('role', 'button');
+        flipTag.setAttribute('tabindex', '0');
+        flipTag.addEventListener('click', function(){ flipTo(index + 1); });
+        flipTag.addEventListener('keydown', function(e){
+          if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); flipTo(index + 1); }
+        });
+      }
     });
   }
 
