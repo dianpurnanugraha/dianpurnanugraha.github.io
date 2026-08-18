@@ -1,6 +1,6 @@
 # Portofolio — Dian Purna Nugraha, S.Kom.
 
-Website portofolio statis (HTML + CSS) untuk menampilkan profil, layanan, skill, pengalaman, studi kasus project, dan kontak sebagai E-commerce & Business Operations Specialist.
+Website portofolio statis (HTML + CSS) untuk menampilkan profil, layanan, skill, pengalaman, studi kasus project, dan kontak sebagai E-commerce Operations & Business Operations Specialist.
 
 Live: [dianpurnanugraha.my.id](https://dianpurnanugraha.my.id)
 
