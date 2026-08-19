@@ -33,7 +33,7 @@ window.I18N_PAGE = {
     'result.eyebrow': 'HASIL',
     'result.title': 'Dampak &amp; <span>Hasil</span>',
     'result.card1.s': 'Rata-rata Penjualan Flash Sale / Bulan',
-    'result.card2.s': 'Total Pesanan Flash Sale (Data Bulanan Terpantau)',
+    'result.card2.s': 'Total Pesanan Flash Sale (Sepanjang 2025)',
     'result.card3.s': 'Persentase Klik Tertinggi (Bulanan)',
     'result.card4.s': 'Jadwal Promo Flash Sale Dikelola Sekaligus',
 
@@ -89,7 +89,7 @@ window.I18N_PAGE = {
     'result.eyebrow': 'RESULTS',
     'result.title': 'Impact &amp; <span>Results</span>',
     'result.card1.s': 'Average Flash Sale Sales / Month',
-    'result.card2.s': 'Total Flash Sale Orders (Months Tracked)',
+    'result.card2.s': 'Total Flash Sale Orders (Throughout 2025)',
     'result.card3.s': 'Highest Click Rate (Monthly)',
     'result.card4.s': 'Flash Sale Schedules Managed at Once',
 
