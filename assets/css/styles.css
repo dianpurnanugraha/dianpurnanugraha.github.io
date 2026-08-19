@@ -805,7 +805,7 @@
   .timeline-item:last-child .timeline-entry{margin-bottom:0;}
   .timeline-logo{width:44px;height:44px;border-radius:10px;background:var(--blue-light);display:flex;align-items:center;justify-content:center;font-size:17px;color:var(--blue);flex-shrink:0;}
   .timeline-body{flex:1;min-width:0;}
-  .timeline-body h4{font-size:14.5px;color:var(--navy);font-weight:700;margin-bottom:2px;}
+  .timeline-body h4{font-size:14.5px;color:var(--navy);font-weight:700;margin:0 0 2px;}
   .timeline-body .role{color:var(--blue);font-size:12px;font-weight:600;margin-bottom:6px;display:block;}
   .timeline-body p{font-size:12.5px;color:var(--muted);line-height:1.6;margin:0;}
   .timeline-body .timeline-subhead{font-size:12.5px;color:var(--navy);font-weight:700;margin:14px 0 6px;}
