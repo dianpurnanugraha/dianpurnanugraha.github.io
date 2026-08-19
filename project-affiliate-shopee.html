@@ -266,10 +266,20 @@
       caption: { id: 'Ringkasan — Produk Terlaris & Affiliate Terbaik (Juli 2026)', en: 'Overview — Best-Selling Products & Top Affiliates (July 2026)' } },
     { category: 'ringkasan', period: 'jul2026', img: 'assets/ss/affiliate/ringkasan-04.webp',
       caption: { id: 'Ringkasan — Affiliate Shopee Terbaik (Juli 2026)', en: 'Overview — Top Shopee Affiliates (July 2026)' } },
+    { category: 'ringkasan', period: 'jun2026', img: 'assets/ss/affiliate/ringkasan-05.webp',
+      caption: { id: 'Ringkasan — Metrik Utama & Tren Penjualan (Juni 2026)', en: 'Overview — Key Metrics & Sales Trend (June 2026)' } },
+    { category: 'ringkasan', period: 'jun2026', img: 'assets/ss/affiliate/ringkasan-06.webp',
+      caption: { id: 'Ringkasan — Komposisi Platform & Konten Terbaik (Juni 2026)', en: 'Overview — Platform Composition & Top Content (June 2026)' } },
+    { category: 'ringkasan', period: 'jun2026', img: 'assets/ss/affiliate/ringkasan-07.webp',
+      caption: { id: 'Ringkasan — Produk Terlaris & Affiliate Terbaik (Juni 2026)', en: 'Overview — Best-Selling Products & Top Affiliates (June 2026)' } },
+    { category: 'ringkasan', period: 'jun2026', img: 'assets/ss/affiliate/ringkasan-08.webp',
+      caption: { id: 'Ringkasan — Affiliate Shopee Terbaik (Juni 2026)', en: 'Overview — Top Shopee Affiliates (June 2026)' } },
 
     // ---- Performa Produk ----
     { category: 'produk', period: 'jul2026', img: 'assets/ss/affiliate/produk-01.webp',
       caption: { id: 'Performa Produk via Affiliate (Juli 2026)', en: 'Product Performance via Affiliate (July 2026)' } },
+    { category: 'produk', period: 'jun2026', img: 'assets/ss/affiliate/produk-02.webp',
+      caption: { id: 'Performa Produk via Affiliate (Juni 2026)', en: 'Product Performance via Affiliate (June 2026)' } },
 
     // ---- Performa Affiliate ----
     { category: 'affiliate', period: 'jul2026', img: 'assets/ss/affiliate/affiliate-jul2026-01.webp',
@@ -334,6 +344,17 @@
 
   function getLang(){ return localStorage.getItem('site-lang') || 'id'; }
 
+  // Sebagian kategori (Pengaturan Komisi, Validasi Tagihan) tidak dibagi per
+  // periode karena datanya bukan snapshot bulanan. Fungsi ini mengecek apakah
+  // kategori yang dipilih punya item berperiode, supaya filter periode bisa
+  // disembunyikan / direset otomatis dan tidak menampilkan grid kosong.
+  function catHasPeriods(catKey){
+    return ITEMS.some(function(entry){
+      if (catKey !== 'all' && entry.category !== catKey) return false;
+      return !!entry.period;
+    });
+  }
+
   var catState = 'all';
   var periodState = 'all';
 
@@ -351,9 +372,17 @@
       btn.type = 'button';
       btn.className = 'filter-btn' + (catState === c.key ? ' active' : '');
       btn.textContent = lang === 'en' ? c.en : c.id;
-      btn.addEventListener('click', function(){ catState = c.key; renderFilters(); renderGrid(); });
+      btn.addEventListener('click', function(){
+        catState = c.key;
+        if (!catHasPeriods(catState)) periodState = 'all';
+        renderFilters();
+        renderGrid();
+      });
       catFilterEl.appendChild(btn);
     });
+
+    var showPeriods = catHasPeriods(catState);
+    periodFilterEl.style.display = showPeriods ? '' : 'none';
 
     periodFilterEl.innerHTML = '';
     PERIODS.forEach(function(p){
