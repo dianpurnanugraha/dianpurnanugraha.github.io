@@ -14,7 +14,7 @@ window.I18N_PAGE = {
     'meta.clientVal': 'Toko Herbal & Suplemen Kesehatan (Shopee)',
     'meta.role': 'Peran',
     'meta.duration': 'Durasi',
-    'meta.durationVal': '19 Agustus – 11 September 2026 (Setup Promo Massal)',
+    'meta.durationVal': 'Berkelanjutan (Manajemen Bulanan)',
     'meta.tools': 'Tools',
 
     'challenge.title': 'Tantangan',
@@ -70,7 +70,7 @@ window.I18N_PAGE = {
     'meta.clientVal': 'Health Supplement & Herbal Store (Shopee)',
     'meta.role': 'Role',
     'meta.duration': 'Duration',
-    'meta.durationVal': 'Aug 19 – Sep 11, 2026 (Bulk Promo Setup)',
+    'meta.durationVal': 'Ongoing (Monthly Management)',
     'meta.tools': 'Tools',
 
     'challenge.title': 'The Challenge',
