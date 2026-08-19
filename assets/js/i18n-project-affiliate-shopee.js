@@ -32,10 +32,10 @@ window.I18N_PAGE = {
 
     'result.eyebrow': 'HASIL',
     'result.title': 'Dampak &amp; <span>Hasil</span>',
-    'result.card1.s': 'Total Penjualan via Affiliate (Juli 2026)',
-    'result.card2.s': 'Affiliate Aktif dengan Penjualan (Juli 2026)',
-    'result.card3.s': 'ROI Program Affiliate (Juli 2026)',
-    'result.card4.s': 'Produk Terjual via Affiliate (Juli 2026)',
+    'result.card1.s': 'Total Penjualan via Affiliate',
+    'result.card2.s': 'Affiliate Aktif dengan Penjualan',
+    'result.card3.s': 'ROI Program Affiliate',
+    'result.card4.s': 'Produk Terjual via Affiliate',
 
     'gallery.eyebrow': 'DOKUMENTASI',
     'gallery.title': 'Cuplikan <span>Pekerjaan</span>',
@@ -88,10 +88,10 @@ window.I18N_PAGE = {
 
     'result.eyebrow': 'RESULTS',
     'result.title': 'Impact &amp; <span>Results</span>',
-    'result.card1.s': 'Total Sales via Affiliate (July 2026)',
-    'result.card2.s': 'Active Affiliates with Sales (July 2026)',
-    'result.card3.s': 'Affiliate Program ROI (July 2026)',
-    'result.card4.s': 'Products Sold via Affiliate (July 2026)',
+    'result.card1.s': 'Total Sales via Affiliate',
+    'result.card2.s': 'Active Affiliates with Sales',
+    'result.card3.s': 'Affiliate Program ROI',
+    'result.card4.s': 'Products Sold via Affiliate',
 
     'gallery.eyebrow': 'DOCUMENTATION',
     'gallery.title': 'Work <span>Snapshots</span>',
