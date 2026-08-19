@@ -32,10 +32,10 @@ window.I18N_PAGE = {
 
     'result.eyebrow': 'HASIL',
     'result.title': 'Dampak &amp; <span>Hasil</span>',
-    'result.card1.s': 'Total Penjualan via Affiliate (Bulan Ini)',
-    'result.card2.s': 'Affiliate Aktif dengan Penjualan (Bulan Ini)',
-    'result.card3.s': 'ROI Program Affiliate (Bulan Ini)',
-    'result.card4.s': 'Produk Terjual via Affiliate (Bulan Ini)',
+    'result.card1.s': 'Total Penjualan via Affiliate (Juli 2026)',
+    'result.card2.s': 'Affiliate Aktif dengan Penjualan (Juli 2026)',
+    'result.card3.s': 'ROI Program Affiliate (Juli 2026)',
+    'result.card4.s': 'Produk Terjual via Affiliate (Juli 2026)',
 
     'gallery.eyebrow': 'DOKUMENTASI',
     'gallery.title': 'Cuplikan <span>Pekerjaan</span>',
@@ -88,10 +88,10 @@ window.I18N_PAGE = {
 
     'result.eyebrow': 'RESULTS',
     'result.title': 'Impact &amp; <span>Results</span>',
-    'result.card1.s': 'Total Sales via Affiliate (This Month)',
-    'result.card2.s': 'Active Affiliates with Sales (This Month)',
-    'result.card3.s': 'Affiliate Program ROI (This Month)',
-    'result.card4.s': 'Products Sold via Affiliate (This Month)',
+    'result.card1.s': 'Total Sales via Affiliate (July 2026)',
+    'result.card2.s': 'Active Affiliates with Sales (July 2026)',
+    'result.card3.s': 'Affiliate Program ROI (July 2026)',
+    'result.card4.s': 'Products Sold via Affiliate (July 2026)',
 
     'gallery.eyebrow': 'DOCUMENTATION',
     'gallery.title': 'Work <span>Snapshots</span>',
