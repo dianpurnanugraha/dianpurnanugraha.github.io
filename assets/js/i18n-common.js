@@ -14,7 +14,12 @@ window.I18N_COMMON = {
     'footer.serviceMore': 'Layanan Lainnya',
     'footer.location': 'Jakarta Timur, DKI Jakarta, Indonesia',
     'footer.rights': '&copy; 2026 Dian Purna Nugraha, S.Kom. All rights reserved.',
-    'footer.madeWith': 'Dibuat dengan kreativitas dan bantuan AI.'
+    'footer.madeWith': 'Dibuat dengan kreativitas dan bantuan AI.',
+
+    'toc.title': 'Daftar Isi',
+    'toc.ariaLabelMode': 'Kembali ke atas (tap), buka daftar isi (tahan)',
+    'toc.ariaLabelSimple': 'Kembali ke atas',
+    'toc.hint': 'Tahan untuk daftar isi'
   },
   en: {
     'footer.bio': 'E-commerce Operations, Business Operations, Graphic Design, Digital Marketing, and AI Productivity to help businesses work more efficiently, grow, and create lasting value.',
@@ -29,6 +34,11 @@ window.I18N_COMMON = {
     'footer.serviceMore': 'Other Services',
     'footer.location': 'East Jakarta, DKI Jakarta, Indonesia',
     'footer.rights': '&copy; 2026 Dian Purna Nugraha, S.Kom. All rights reserved.',
-    'footer.madeWith': 'Made with creativity and the help of AI.'
+    'footer.madeWith': 'Made with creativity and the help of AI.',
+
+    'toc.title': 'Table of Contents',
+    'toc.ariaLabelMode': 'Back to top (tap), open table of contents (hold)',
+    'toc.ariaLabelSimple': 'Back to top',
+    'toc.hint': 'Hold for table of contents'
   }
 };

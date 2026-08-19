@@ -10,17 +10,27 @@ document.addEventListener('DOMContentLoaded', function () {
   const submitBtn = document.getElementById('formSubmitBtn');
   const originalBtnHTML = submitBtn.innerHTML;
 
+  function getLang() { return localStorage.getItem('site-lang') || 'id'; }
+  function t(key, fallback) {
+    const lang = getLang();
+    const common = (window.I18N_COMMON && window.I18N_COMMON[lang]) || {};
+    const page = (window.I18N_PAGE && window.I18N_PAGE[lang]) || {};
+    if (page[key] !== undefined) return page[key];
+    if (common[key] !== undefined) return common[key];
+    return fallback;
+  }
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
     const accessKey = form.querySelector('input[name="access_key"]').value;
     if (!accessKey) {
-      showStatus('Form belum aktif — Access Key Web3Forms belum dipasang.', 'error');
+      showStatus(t('form.notActive', 'Form belum aktif — Access Key Web3Forms belum dipasang.'), 'error');
       return;
     }
 
     submitBtn.disabled = true;
-    submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Mengirim...';
+    submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> ' + t('form.sending', 'Mengirim...');
     showStatus('', '');
 
     const formData = new FormData(form);
@@ -34,14 +44,14 @@ document.addEventListener('DOMContentLoaded', function () {
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
-          showStatus('Pesan berhasil terkirim! Terima kasih, saya akan segera menghubungi Anda kembali.', 'success');
+          showStatus(t('form.success', 'Pesan berhasil terkirim! Terima kasih, saya akan segera menghubungi Anda kembali.'), 'success');
           form.reset();
         } else {
-          showStatus('Gagal mengirim pesan: ' + (data.message || 'Terjadi kesalahan. Coba lagi.'), 'error');
+          showStatus(t('form.errorPrefix', 'Gagal mengirim pesan: ') + (data.message || t('form.errorGeneric', 'Terjadi kesalahan. Coba lagi.')), 'error');
         }
       })
       .catch(() => {
-        showStatus('Gagal mengirim pesan. Periksa koneksi internet Anda dan coba lagi.', 'error');
+        showStatus(t('form.errorNetwork', 'Gagal mengirim pesan. Periksa koneksi internet Anda dan coba lagi.'), 'error');
       })
       .finally(() => {
         submitBtn.disabled = false;

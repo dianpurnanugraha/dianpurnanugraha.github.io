@@ -70,7 +70,14 @@ window.I18N_PAGE = {
     'connect.hireDesc': 'Saya siap bergabung dan memberikan kontribusi terbaik untuk Anda.',
     'connect.hireLink': 'Rekrut Saya Sekarang',
     'connect.cvDesc': 'Unduh CV saya untuk informasi lebih lengkap tentang pengalaman dan keterampilan saya.',
-    'cta.downloadCv': 'Unduh CV'
+    'cta.downloadCv': 'Unduh CV',
+
+    'form.notActive': 'Form belum aktif — Access Key Web3Forms belum dipasang.',
+    'form.sending': 'Mengirim...',
+    'form.success': 'Pesan berhasil terkirim! Terima kasih, saya akan segera menghubungi Anda kembali.',
+    'form.errorPrefix': 'Gagal mengirim pesan: ',
+    'form.errorGeneric': 'Terjadi kesalahan. Coba lagi.',
+    'form.errorNetwork': 'Gagal mengirim pesan. Periksa koneksi internet Anda dan coba lagi.'
   },
   en: {
     '_title': 'Contact — Dian Purna Nugraha, S.Kom.',
@@ -142,6 +149,13 @@ window.I18N_PAGE = {
     'connect.hireDesc': "I'm ready to join and bring my best contribution to your team.",
     'connect.hireLink': 'Hire Me Now',
     'connect.cvDesc': 'Download my CV for more complete information about my experience and skills.',
-    'cta.downloadCv': 'Download CV'
+    'cta.downloadCv': 'Download CV',
+
+    'form.notActive': 'Form is not active yet — the Web3Forms Access Key has not been set up.',
+    'form.sending': 'Sending...',
+    'form.success': "Message sent successfully! Thank you, I'll get back to you shortly.",
+    'form.errorPrefix': 'Failed to send message: ',
+    'form.errorGeneric': 'Something went wrong. Please try again.',
+    'form.errorNetwork': 'Failed to send message. Please check your internet connection and try again.'
   }
 };

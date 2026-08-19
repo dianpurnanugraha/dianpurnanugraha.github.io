@@ -71,7 +71,7 @@ window.I18N_PAGE = {
     'meta.role': 'Role',
     'meta.roleValue': 'Logo &amp; Brand Identity Designer',
     'meta.duration': 'Duration',
-    'meta.durationValue': 'Ongoing (2023–2026)',
+    'meta.durationValue': 'Ongoing (2018–2026)',
     'meta.tools': 'Tools',
 
     'challenge.title': 'Challenge',

@@ -16,6 +16,13 @@
   var SHOW_AFTER = 320;     // px scroll sebelum tombol muncul
   var LONG_PRESS_MS = 400;  // durasi tahan sebelum panel terbuka
 
+  function getLang() { return localStorage.getItem('site-lang') || 'id'; }
+  function t(key, fallback) {
+    var lang = getLang();
+    var common = (window.I18N_COMMON && window.I18N_COMMON[lang]) || {};
+    return common[key] !== undefined ? common[key] : fallback;
+  }
+
   function init() {
     var sections = document.querySelectorAll('[data-toc]');
     var filterButtons = document.querySelectorAll('.filter-btn[data-filter]');
@@ -34,7 +41,7 @@
     btn.className = 'fab-button';
     btn.setAttribute(
       'aria-label',
-      mode ? 'Kembali ke atas (tap), buka daftar isi (tahan)' : 'Kembali ke atas'
+      mode ? t('toc.ariaLabelMode', 'Kembali ke atas (tap), buka daftar isi (tahan)') : t('toc.ariaLabelSimple', 'Kembali ke atas')
     );
     btn.innerHTML =
       '<span class="fab-ring"></span>' +
@@ -53,7 +60,7 @@
 
       var title = document.createElement('div');
       title.className = 'toc-panel-title';
-      title.innerHTML = '<i class="fa-solid fa-list-ul"></i> Daftar Isi';
+      title.innerHTML = '<i class="fa-solid fa-list-ul"></i> <span class="toc-panel-title-text">' + t('toc.title', 'Daftar Isi') + '</span>';
       panel.appendChild(title);
 
       list = document.createElement('ul');
@@ -156,7 +163,7 @@
     if (mode) {
       hint = document.createElement('div');
       hint.className = 'fab-hint';
-      hint.textContent = 'Tahan untuk daftar isi';
+      hint.textContent = t('toc.hint', 'Tahan untuk daftar isi');
       document.body.appendChild(hint);
     }
 
@@ -241,6 +248,21 @@
       if (panel && !panel.contains(e.target) && e.target !== btn && !btn.contains(e.target)) {
         closePanel();
       }
+    });
+
+    /* ===== Perbarui teks saat bahasa situs diganti (tombol ID/EN) ===== */
+    document.querySelectorAll('.lang-btn').forEach(function (langBtn) {
+      langBtn.addEventListener('click', function () {
+        btn.setAttribute(
+          'aria-label',
+          mode ? t('toc.ariaLabelMode', 'Kembali ke atas (tap), buka daftar isi (tahan)') : t('toc.ariaLabelSimple', 'Kembali ke atas')
+        );
+        if (panel) {
+          var titleText = panel.querySelector('.toc-panel-title-text');
+          if (titleText) titleText.textContent = t('toc.title', 'Daftar Isi');
+        }
+        if (hint) hint.textContent = t('toc.hint', 'Tahan untuk daftar isi');
+      });
     });
   }
 
