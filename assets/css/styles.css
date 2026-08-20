@@ -261,16 +261,16 @@
 
   /* Experience highlight cards */
   .exp-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;}
-  .exp-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 16px;box-shadow:var(--card-shadow);text-align:center;display:flex;flex-direction:column;}
-  .exp-icon{width:44px;height:44px;border-radius:10px;background:var(--blue-light);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;}
+  .exp-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 16px;box-shadow:var(--card-shadow);text-align:center;display:flex;flex-direction:column;height:100%;}
+  .exp-icon{width:44px;height:44px;border-radius:10px;background:var(--blue-light);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;flex-shrink:0;}
   .exp-icon i{color:var(--blue);font-size:18px;}
   .exp-card h4{font-size:13px;color:var(--navy);font-weight:700;margin-bottom:6px;line-height:1.3;min-height:34px;display:flex;align-items:center;justify-content:center;}
-  .exp-card p{font-size:11px;color:var(--muted);line-height:1.5;margin-bottom:14px;}
+  .exp-card p{font-size:11px;color:var(--muted);line-height:1.5;margin-bottom:14px;min-height:82.5px;}
   .exp-stats{display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--line);padding-top:12px;text-align:left;margin-top:auto;}
   .exp-stat{display:flex;align-items:center;gap:8px;}
   .exp-stat i{color:var(--blue);font-size:14px;width:16px;}
   .exp-stat b{font-size:14px;color:var(--navy);display:block;}
-  .exp-stat span{font-size:10px;color:var(--muted);}
+  .exp-stat span{font-size:10px;color:var(--muted);line-height:1.4;}
 
   /* Working preferences */
   .pref-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;}
@@ -326,6 +326,8 @@
     .work-steps{grid-template-columns:repeat(3,1fr);row-gap:26px;}
     .work-track{display:none;}
     .exp-grid{grid-template-columns:repeat(3,1fr);}
+    .exp-card p{min-height:66px;}
+    .exp-stat span{min-height:28px;display:block;}
     .pref-grid{grid-template-columns:repeat(3,1fr);}
     .beyond-grid-wrap{grid-template-columns:1fr;}
     .connect-grid{grid-template-columns:1fr;}
@@ -334,6 +336,8 @@
   @media (max-width: 640px){
     .work-steps{grid-template-columns:1fr 1fr;}
     .exp-grid{grid-template-columns:1fr 1fr;}
+    .exp-card p{min-height:99px;}
+    .exp-stat span{min-height:28px;display:block;}
     .pref-grid{grid-template-columns:1fr 1fr;}
     .beyond-photo-grid{grid-template-columns:1fr 1fr;}
     .connect-cards{grid-template-columns:1fr;}
