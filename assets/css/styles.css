@@ -118,8 +118,10 @@
     .hero-panel::after{background:linear-gradient(180deg, rgba(255,255,255,.95) 0%, rgba(255,255,255,.85) 60%, rgba(255,255,255,.55) 100%);}
     .hero-content{max-width:100%;}
     .comp-grid{grid-template-columns:repeat(2,1fr);}
+    .comp-card h3{min-height:63px;}
     .tool-row{grid-template-columns:repeat(3,1fr);}
     .tool-cat{grid-column:span 3;flex-direction:row;justify-content:center;}
+    .tool-item{justify-content:flex-start;}
     .journey-line{grid-template-columns:repeat(2,1fr);row-gap:30px;}
     .journey-track{display:none;}
     .hero h1{font-size:32px;}
