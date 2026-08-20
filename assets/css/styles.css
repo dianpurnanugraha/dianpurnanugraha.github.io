@@ -10,7 +10,8 @@
     --card-shadow: 0 10px 30px rgba(15,42,77,0.07);
   }
   *{box-sizing:border-box;}
-  body{margin:0;font-family:'Inter',sans-serif;color:var(--ink);background:var(--bg);}
+  html{overflow-x:hidden;width:100%;}
+  body{margin:0;font-family:'Inter',sans-serif;color:var(--ink);background:var(--bg);overflow-x:hidden;width:100%;}
   h1,h2,h3{font-family:'Poppins',sans-serif;margin:0;}
   .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
   a{text-decoration:none;}
