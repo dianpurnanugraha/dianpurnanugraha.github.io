@@ -257,7 +257,7 @@
   .work-track{position:absolute;top:30px;left:8%;right:8%;height:0;border-top:2px dashed #c6d3ea;z-index:0;}
   .work-step{position:relative;z-index:1;text-align:center;padding:0 8px;}
   .work-circle{width:60px;height:60px;border-radius:50%;background:#fff;border:2px solid var(--blue);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;margin:0 auto 14px;}
-  .work-step h4{font-size:13.5px;color:var(--navy);font-weight:700;margin-bottom:6px;}
+  .work-step h4{font-size:13.5px;color:var(--navy);font-weight:700;margin-bottom:6px;line-height:1.3;min-height:36px;display:flex;align-items:center;justify-content:center;}
   .work-step p{font-size:11.5px;color:var(--muted);line-height:1.55;margin:0;}
 
   /* Experience highlight cards */
