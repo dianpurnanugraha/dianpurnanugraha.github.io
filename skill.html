@@ -82,6 +82,38 @@
   </div>
 </nav>
 
+<!-- ===================== CORE COMPETENCIES TICKER ===================== -->
+<div class="cc-ticker" aria-label="Core competencies">
+  <span class="cc-label">CORE COMPETENCIES</span>
+  <div class="cc-track-wrap">
+    <div class="cc-track" id="ccTrack">
+      <!-- filled by JS: content duplicated for seamless loop -->
+    </div>
+  </div>
+</div>
+<script>
+  (function(){
+    var items = [
+      "E-commerce Operations",
+      "Business Operations",
+      "Digital Marketing",
+      "Graphic Design",
+      "AI Productivity",
+      "Marketplace Management",
+      "Inventory Management",
+      "Financial Administration",
+      "Business Process Improvement",
+      "Data Analysis & Reporting"
+    ];
+    var track = document.getElementById('ccTrack');
+    if(!track) return;
+    var html = items.map(function(t){ return '<span class="cc-item"><span class="dot"></span>' + t + '</span>'; }).join('');
+    // digandakan 2x supaya loop translateX(-50%) mulus tanpa jeda
+    track.innerHTML = html + html;
+  })();
+</script>
+
+
 <!-- ===================== BREADCRUMB ===================== -->
 <nav class="breadcrumb" aria-label="Breadcrumb">
   <div class="wrap breadcrumb-inner">
