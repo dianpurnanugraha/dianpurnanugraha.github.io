@@ -1347,6 +1347,6 @@
   .cc-track{ animation:none; }
 }
 @media (max-width:640px){
-  .cc-label{ padding:0 12px; font-size:11px; }
+  .cc-label{ display:none; }
   .cc-item{ font-size:12.5px; padding:0 16px; }
 }
