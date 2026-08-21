@@ -220,14 +220,12 @@
     .help-grid{grid-template-columns:1fr;}
     .help-section{padding:36px 26px;}
     .help-graphic{display:none;}
-    .proj-stats-row{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:20px;}
   }
   @media (max-width: 640px){
     .svc-grid{grid-template-columns:1fr;}
     .svc-hero h1{font-size:32px;}
     .faq-body{padding-left:0;margin-top:8px;}
     .help-cta-row .btn{flex:1 1 100%;min-width:0;}
-    .proj-stats-row{gap:20px;}
   }
 
   /* ===================================================== */
@@ -611,6 +609,12 @@
   /* ===================================================== */
 
   .proj-stats-row{display:grid;grid-template-columns:repeat(4,auto);gap:28px;margin-top:26px;}
+  @media (max-width: 980px){
+    .proj-stats-row{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:20px;}
+  }
+  @media (max-width: 640px){
+    .proj-stats-row{gap:20px;}
+  }
 
   .filter-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:36px;}
   .filter-btn{background:#fff;border:1.5px solid var(--line);color:var(--navy-2);font-weight:600;font-size:12.5px;padding:9px 18px;border-radius:30px;cursor:pointer;transition:.2s;font-family:'Inter',sans-serif;}
