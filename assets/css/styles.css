@@ -1295,19 +1295,7 @@
   height:44px;
 }
 .cc-label{
-  flex-shrink:0;
-  display:flex;
-  align-items:center;
-  gap:8px;
-  background:var(--blue);
-  color:#fff;
-  font-size:12.5px;
-  font-weight:700;
-  letter-spacing:.4px;
-  padding:0 18px;
-  height:100%;
-  white-space:nowrap;
-  z-index:2;
+  display:none;
 }
 .cc-track-wrap{
   flex:1;
@@ -1347,6 +1335,5 @@
   .cc-track{ animation:none; }
 }
 @media (max-width:640px){
-  .cc-label{ display:none; }
   .cc-item{ font-size:12.5px; padding:0 16px; }
 }
