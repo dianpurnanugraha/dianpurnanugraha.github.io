@@ -82,7 +82,7 @@ window.I18N_PAGE = {
     'process.item2.title': 'Copying the Promo to Many Products at Once',
     'process.item2.desc': 'Using the Copy Promo feature to duplicate the promo setup across dozens of products (up to 50 at a time) in a single process, with a success/failed count for easy review.',
     'process.item3.title': 'Scheduling Many Time Sessions at Once',
-    'process.item3.desc': 'Setting up many flash sale time slots at once for the Aug 19 – Sep 11, 2026 window, keeping the store consistently visible in Flash Sale Toko Saya slots without scheduling each session one by one.',
+    'process.item3.desc': 'Setting up many flash sale time slots at once for the Aug 21 – Sep 18, 2026 window, keeping the store consistently visible in Flash Sale Toko Saya slots without scheduling each session one by one.',
     'process.item4.title': 'Monthly Performance Monitoring',
     'process.item4.desc': 'Tracking Sales, Orders, Total Buyers, and Click Rate trends through the Flash Sale Toko Saya dashboard each month, then adjusting products and the next promo schedule based on that data.',
 
