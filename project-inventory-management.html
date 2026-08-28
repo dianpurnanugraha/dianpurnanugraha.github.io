@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manajemen Stok, Pembelian &amp; Persediaan — Dian Purna Nugraha, S.Kom.</title>
+<meta name="description" content="Studi kasus sistem manajemen stok, pembelian, dan persediaan otomatis berbasis Google Sheets untuk menghubungkan Purchase, Stockin, Stockout, rekap bulanan, retur supplier, konsinyasi, dan pinjaman stok.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230F2A4D'/%3E%3Ctext x='50' y='68' font-family='Poppins,Arial,sans-serif' font-size='58' font-weight='700' fill='white' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Manajemen Stok, Pembelian &amp; Persediaan — Dian Purna Nugraha, S.Kom.">
+<meta property="og:description" content="Studi kasus sistem manajemen stok, pembelian, dan persediaan otomatis berbasis Google Sheets untuk menghubungkan Purchase, Stockin, Stockout, rekap bulanan, retur supplier, konsinyasi, dan pinjaman stok.">
+<meta property="og:image" content="assets/img/profile.webp">
+<meta name="twitter:card" content="summary_large_image">
+<!-- _title, _metaDesc, _ogTitle diisi otomatis oleh i18n.js dari i18n-project-inventory-management.js -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="assets/css/styles.css?v=11">
+<style>
+.gallery-cat-filter{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-bottom:1.5rem;}
+.gallery-cat-btn{padding:.5rem 1.1rem;border-radius:999px;border:1px solid #d7dee8;background:#fff;color:#324156;font-family:inherit;font-size:.9rem;font-weight:600;cursor:pointer;transition:all .2s ease;}
+.gallery-cat-btn:hover{border-color:#0f9d58;color:#0f9d58;}
+.gallery-cat-btn.active{background:#0F2A4D;border-color:#0F2A4D;color:#fff;}
+
+/* Galeri halaman proyek: responsif dan siap diisi screenshot WebP. */
+#galleryGrid.gallery-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+#galleryGrid .gallery-item-img{height:auto;background:#f1f3f6;display:block;overflow:hidden;}
+#galleryGrid .gallery-item-img img{width:100%;height:auto;display:block;object-fit:contain;}
+@media (max-width:900px){
+  #galleryGrid.gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media (max-width:560px){
+  #galleryGrid.gallery-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== NAVBAR ===================== -->
+<nav class="navbar">
+  <div class="wrap navbar-inner">
+    <a href="index.html" class="nav-logo">My Portofolio</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="project.html" class="active">Project</a></li>
+      <li><a href="skill.html">Skill</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="insight.html">Insight</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-switch">
+        <button class="lang-btn" data-lang="id">ID</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- ===================== CORE COMPETENCIES TICKER ===================== -->
+<div class="cc-ticker" aria-label="Core competencies">
+  <span class="cc-label">CORE COMPETENCIES</span>
+  <div class="cc-track-wrap">
+    <div class="cc-track" id="ccTrack">
+      <!-- filled by JS: content duplicated for seamless loop -->
+    </div>
+  </div>
+</div>
+<script>
+  (function(){
+    var items = [
+      "E-commerce Operations",
+      "Business Operations",
+      "Digital Marketing",
+      "Graphic Design",
+      "AI Productivity",
+      "Marketplace Management",
+      "Inventory Management",
+      "Financial Administration",
+      "Business Process Improvement",
+      "Data Analysis & Reporting"
+    ];
+    var track = document.getElementById('ccTrack');
+    if(!track) return;
+    var html = items.map(function(t){ return '<span class="cc-item"><span class="dot"></span>' + t + '</span>'; }).join('');
+    // digandakan 2x supaya loop translateX(-50%) mulus tanpa jeda
+    track.innerHTML = html + html;
+  })();
+</script>
+
+
+
+<!-- ===================== BREADCRUMB ===================== -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <div class="wrap breadcrumb-inner">
+    <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+    <i class="fa-solid fa-chevron-right breadcrumb-sep"></i>
+    <a href="project.html">Project</a>
+    <i class="fa-solid fa-chevron-right breadcrumb-sep"></i>
+    <span class="breadcrumb-current" data-i18n="hero.title">Manajemen Stok, Pembelian &amp; Persediaan</span>
+  </div>
+</nav>
+
+<section class="wrap" style="padding-top:18px;">
+  <a href="project.html" class="project-back"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="back.toAll">Kembali ke Semua Project</span></a>
+</section>
+
+<section class="wrap" style="padding-top:20px;">
+  <div class="detail-hero" style="background:linear-gradient(135deg,#0f766e,#14b8a6);">
+    <span class="project-tag">Operations</span>
+    <h1 data-i18n="hero.title">Manajemen Stok, Pembelian &amp; Persediaan</h1>
+    <p data-i18n="hero.desc">Membangun sistem persediaan berbasis Google Sheets yang menghubungkan pembelian, stok masuk dan keluar otomatis, rekap bulanan, retur supplier, konsinyasi, serta pinjaman stok dalam satu alur operasional.</p>
+    <div class="detail-hero-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="detail-meta-grid">
+    <div class="detail-meta-item"><span data-i18n="meta.clientLabel">Klien</span><b data-i18n="meta.clientValue">Team Sukatani — Operasional Persediaan Herbal Multi-Channel</b></div>
+    <div class="detail-meta-item"><span data-i18n="meta.roleLabel">Peran</span><b data-i18n="meta.roleValue">Business Operations &amp; Inventory Management</b></div>
+    <div class="detail-meta-item"><span data-i18n="meta.durationLabel">Durasi</span><b data-i18n="meta.durationValue">Berkelanjutan (dipakai dan diperbarui setiap bulan)</b></div>
+    <div class="detail-meta-item"><span data-i18n="meta.toolsLabel">Tools</span><b data-i18n="meta.toolsValue">Google Sheets, Formula Otomatis, Validasi &amp; Rekonsiliasi Stok</b></div>
+  </div>
+</section>
+
+<section class="section" id="toc-tantangan" data-toc="Tantangan &amp; Solusi" data-i18n-attr="data-toc:process.tocLabel">
+  <div class="wrap">
+    <div class="detail-block">
+      <h3><i class="fa-solid fa-circle-exclamation"></i> <span data-i18n="challenge.title">Tantangan</span></h3>
+      <p data-i18n="challenge.desc">Pergerakan barang berasal dari pembelian, penjualan marketplace, retur supplier, konsinyasi, dan pinjaman stok. Tanpa alur terhubung, pencatatan stok masuk dan keluar mudah terlewat, modal persediaan sulit ditelusuri, dan stok akhir berisiko berbeda dari transaksi sumber.</p>
+    </div>
+    <div class="detail-block">
+      <h3><i class="fa-solid fa-diagram-project"></i> <span data-i18n="process.title">Proses &amp; Solusi</span></h3>
+    </div>
+    <div class="process-list">
+      <div class="process-item"><div class="process-num">1</div><div><h5 data-i18n="process1.title">Pemetaan Alur Persediaan</h5><p data-i18n="process1.desc">Memetakan hubungan antara Stock, Purchase, Stockin Auto, Stockout Auto, Input Monthly, Output Monthly, output marketplace, retur supplier, konsinyasi, dan pinjaman stok.</p></div></div>
+      <div class="process-item"><div class="process-num">2</div><div><h5 data-i18n="process2.title">Automasi Stok Masuk &amp; Keluar</h5><p data-i18n="process2.desc">Menjadikan Purchase sebagai sumber stok masuk dan transaksi penjualan sebagai sumber stok keluar, sehingga pergerakan barang dapat ditelusuri berdasarkan tanggal, ID item, qty, channel, dan vendor.</p></div></div>
+      <div class="process-item"><div class="process-num">3</div><div><h5 data-i18n="process3.title">Rekap Bulanan &amp; Pemisahan Retur</h5><p data-i18n="process3.desc">Menyusun rekap bulanan yang memisahkan penjualan reguler, stok retur bermodal nol, retur bulan sama, dan retur supplier agar nilai modal penjualan tidak dihitung dua kali.</p></div></div>
+      <div class="process-item"><div class="process-num">4</div><div><h5 data-i18n="process4.title">Kontrol Pembelian &amp; Rekonsiliasi</h5><p data-i18n="process4.desc">Menghubungkan harga modal, vendor, status pembayaran, jumlah masuk, jumlah keluar, dan stok akhir untuk membantu pemeriksaan persediaan serta keputusan pembelian berikutnya.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section tools-section" id="toc-hasil" data-toc="Hasil" data-i18n-attr="data-toc:results.tocLabel">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow-line" data-i18n="results.eyebrow">HASIL</div>
+      <h2 data-i18n="results.title">Dampak &amp; <span>Hasil</span></h2>
+      <p data-i18n="results.desc">Snapshot pergerakan persediaan pada Laporan Agustus 2026.</p>
+    </div>
+    <div class="result-grid">
+      <div class="result-card"><b>11</b><span data-i18n="results.stat1">Sheet Operasional Terhubung</span></div>
+      <div class="result-card"><b>1.394</b><span data-i18n="results.stat2">Unit Stok Masuk Terekonsiliasi</span></div>
+      <div class="result-card"><b>1.548</b><span data-i18n="results.stat3">Unit Stok Keluar Tercatat</span></div>
+      <div class="result-card"><b>Otomatis</b><span data-i18n="results.stat4">Alur Stok Masuk &amp; Keluar</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="toc-galeri" data-toc="Dokumentasi" data-i18n-attr="data-toc:gallery.tocLabel">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow-line" data-i18n="gallery.eyebrow">DOKUMENTASI</div>
+      <h2 data-i18n="gallery.title">Cuplikan <span>Pekerjaan</span></h2>
+      <p data-i18n="gallery.desc">Cuplikan sheet operasional untuk master stok, pembelian, pergerakan otomatis, rekap bulanan, dan kontrol persediaan.</p>
+    </div>
+    <div class="gallery-cat-filter" id="galleryCatFilter"></div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+    <nav class="gallery-pagination" id="galleryPagination" data-i18n-attr="aria-label:gallery.navAriaLabel" aria-label="Navigasi halaman galeri"></nav>
+    <p class="gallery-page-info" id="galleryPageInfo"></p>
+    <div class="project-tags project-tags-center"><span>Google Sheets</span><span>Inventory Management</span><span>Procurement</span><span>Stock Reconciliation</span><span>Business Automation</span></div>
+  </div>
+</section>
+
+<section class="wrap" style="padding-bottom:30px;">
+  <div class="project-nav-row">
+    <a href="project-finance-report.html" class="project-nav-link"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="nav.prev">Laporan Keuangan &amp; Rekap Otomatis</span></a>
+    <a href="project-sales-return-operations.html" class="project-nav-link next"><span data-i18n="nav.next">Sistem Operasional Penjualan &amp; Retur Multi-Channel</span> <i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+</section>
+
+<!-- ===================== READY TO WORK TOGETHER ===================== -->
+<section class="section section-tight-top">
+  <div class="wrap">
+    <div class="connect-section">
+            <div class="connect-grid">
+        <div>
+          <span class="connect-badge" data-i18n="connect.badge">Lihat Hasil Kerja Saya</span>
+          <h2 data-i18n="connect.title">Punya Proyek <span>di Pikiran?</span></h2>
+          <p data-i18n="connect.desc">Saya siap membantu mewujudkan kebutuhan operasional, desain, atau strategi digital marketing untuk bisnis Anda.</p>
+          <div class="help-cta-row" style="margin-top:22px;">
+            <a href="https://www.linkedin.com/in/dian-purna-nugraha-s-kom/" target="_blank" rel="noopener" class="btn btn-help-outline"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            <a href="https://wa.me/6281295733476" target="_blank" rel="noopener" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="project.html" class="btn btn-help-outline"><i class="fa-solid fa-folder-open"></i> <span data-i18n="connect.viewPortfolio">Lihat Portofolio</span></a>
+          </div>
+        </div>
+
+        <div class="connect-cards">
+          <div class="connect-card cc-blue">
+            <div class="cc-icon"><i class="fa-solid fa-user"></i></div>
+            <h4 data-i18n="connect.hireTitle">Rekrut Saya</h4>
+            <p data-i18n="connect.hireDesc">Saya siap bergabung dan memberikan kontribusi terbaik untuk Anda.</p>
+            <a href="contact.html"><span data-i18n="connect.hireLink">Rekrut Saya Sekarang</span> <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="connect-card cc-green">
+            <div class="cc-icon"><i class="fa-solid fa-file-arrow-down"></i></div>
+            <h4 data-i18n="connect.downloadCv">Unduh CV</h4>
+            <p data-i18n="connect.cvDesc">Unduh CV saya untuk informasi lebih lengkap tentang pengalaman dan keterampilan saya.</p>
+            <a href="assets/files/Dian-Purna-Nugraha_Resume.pdf" download><span data-i18n="connect.downloadCv">Unduh CV</span> <i class="fa-solid fa-download"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="connect-footer">
+        <span><i class="fa-solid fa-circle-check"></i> <span data-i18n="connect.footerNote">Hasil Nyata &nbsp;•&nbsp; Detail Terjaga &nbsp;•&nbsp; Tepat Waktu</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Dian Purna Nugraha, S.Kom.</h3>
+        <p data-i18n="footer.bio">E-commerce Operations, Business Operations, Graphic Design, Digital Marketing, dan AI Productivity untuk membantu bisnis bekerja lebih efisien, berkembang, dan menciptakan nilai yang berkelanjutan.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/dian-purna-nugraha-s-kom/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://www.upwork.com/freelancers/~017580231dbed875ca?mp_source=share" target="_blank" rel="noopener" aria-label="Upwork"><svg viewBox="0 0 640 512" style="width:1em;height:1em;fill:currentColor;vertical-align:-0.125em;" xmlns="http://www.w3.org/2000/svg"><path d="M493.9 295.6c-50.3 0-83.5-38.9-92.8-53.9 11.9-95.3 46.8-125.4 92.8-125.4 45.5 0 80.9 36.4 80.9 89.7s-35.4 89.7-80.9 89.7l0-.1zm0-237.8c-81.9 0-127.8 53.4-141 108.4-14.9-28-25.9-65.5-34.5-100.3l-113.2 0 0 141c0 51.1-23.3 89-68.8 89s-71.6-37.8-71.6-89l.5-141-65.3 0 0 141c0 41.1 13.3 78.4 37.6 105.1 25 27.5 59.2 41.8 98.8 41.8 78.8 0 133.8-60.4 133.8-146.9l0-94.8c8.2 31.2 27.8 91.1 65.3 143.6l-35 199.4 66.4 0 23.1-141.3c7.6 6.3 15.7 12 24.2 17 22.2 14 47.7 21.9 73.9 22.8 0 0 4 .2 6.1 .2 81.2 0 145.9-62.9 145.9-147.8S575.3 57.9 494.1 57.9l-.2-.1z"/></svg></a>
+          <a href="https://t.me/dianpurnanugraha" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="73 113 311 311" style="width:1em;height:1em;fill:currentColor;vertical-align:-0.125em;" xmlns="http://www.w3.org/2000/svg"><path d="M363 176.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7 .2-.7 .3-3.1-1.2-4.4s-3.6-.8-5.1-.5q-3.3 .7-104.6 69.1-14.8 10.2-26.9 9.9c-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3q.8-6.7 18.5-13.7 108.4-47.2 144.6-62.3c68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6 .5 9.6 2.9a10.5 10.5 0 0 1 3.5 6.7A43.8 43.8 0 0 1 363 176.7z"/></svg></a>
+          <a href="https://www.instagram.com/dianpurnanugraha" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://github.com/dianpurnanugraha" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://lynk.id/dianpurnanugraha" target="_blank" rel="noopener" aria-label="Lynk.id"><svg viewBox="0 0 100 100" style="width:1.05em;height:1.05em;vertical-align:-0.12em;" xmlns="http://www.w3.org/2000/svg"><path d="M19 84.5V44a31 31 0 0 1 62 0V84.5" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/><path d="M36 84 L36 52 A14 14 0 0 1 64 52 L64 84 A4 4 0 0 1 60 88 L40 88 A4 4 0 0 1 36 84 Z" fill="currentColor"/></svg></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.nav">Navigasi</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="project.html">Project</a></li>
+          <li><a href="skill.html">Skill</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="insight.html">Insight</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.services">Layanan</h4>
+        <ul>
+          <li data-i18n="footer.service1">E-commerce &amp; Marketplace Operations</li>
+          <li data-i18n="footer.service2">Operasional Bisnis &amp; Administrasi</li>
+          <li data-i18n="footer.service3">Design &amp; Content Creative</li>
+          <li data-i18n="footer.service4">Digital Marketing &amp; Riset</li>
+          <li data-i18n="footer.service5">Web &amp; Teknologi</li>
+          <li><a href="services.html" data-i18n="footer.serviceMore">Layanan Lainnya</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.contact">Kontak</h4>
+        <ul>
+          <li><i class="fa-solid fa-envelope"></i> dianpurnanugraha@gmail.com</li>
+          <li><i class="fa-brands fa-whatsapp"></i> +62 812 9573 3476</li>
+          <li><i class="fa-solid fa-location-dot"></i> <span data-i18n="footer.location">Jakarta Timur, DKI Jakarta, Indonesia</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span data-i18n="footer.rights">&copy; 2026 Dian Purna Nugraha, S.Kom. All rights reserved.</span>
+      <span data-i18n="footer.madeWith">Dibuat dengan kreativitas dan bantuan AI.</span>
+    </div>
+  </div>
+</footer>
+
+
+<script src="assets/js/i18n-common.js"></script>
+<script src="assets/js/i18n-project-inventory-management.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/reading-progress.js"></script>
+<script src="assets/js/nav-toggle.js"></script>
+<script src="assets/js/fab-back-to-top-toc.js"></script>
+<script src="assets/js/lightbox.js"></script>
+<script>
+(function(){
+  var CAT_LABELS={"persediaan":{"id":"Persediaan","en":"Inventory"},"pembelian":{"id":"Pembelian","en":"Purchasing"},"rekap":{"id":"Rekap & Kontrol","en":"Recap & Control"}};
+  var ALL_KEY='all';
+  var ALL_LABEL={id:'Semua',en:'All'};
+  var GALLERY_ITEMS=[{"cat":"persediaan","img":"assets/ss/inventory-management/stock-master.webp","caption":{"id":"Stock — Master Produk, Modal, Vendor & Stok Akhir","en":"Stock — Product Master, Cost, Vendor & Ending Stock"}},{"cat":"pembelian","img":"assets/ss/inventory-management/purchase.webp","caption":{"id":"Purchase — Pembelian, Pembayaran & Vendor","en":"Purchase — Purchasing, Payments & Vendors"}},{"cat":"persediaan","img":"assets/ss/inventory-management/stockin-auto.webp","caption":{"id":"Stockin Auto — Stok Masuk Otomatis","en":"Stockin Auto — Automated Stock In"}},{"cat":"persediaan","img":"assets/ss/inventory-management/stockout-auto.webp","caption":{"id":"Stockout Auto — Stok Keluar Otomatis","en":"Stockout Auto — Automated Stock Out"}},{"cat":"rekap","img":"assets/ss/inventory-management/input-monthly.webp","caption":{"id":"Input Monthly — Rekap Stok Masuk Bulanan","en":"Input Monthly — Monthly Stock-In Recap"}},{"cat":"rekap","img":"assets/ss/inventory-management/output-monthly.webp","caption":{"id":"Output Monthly — Penjualan, Retur & Modal Neto","en":"Output Monthly — Sales, Returns & Net Cost"}},{"cat":"rekap","img":"assets/ss/inventory-management/output-shopee-tiktok.webp","caption":{"id":"Output Shopee & TikTok — Jembatan Data ke Stockout","en":"Shopee & TikTok Output — Data Bridge to Stockout"}},{"cat":"persediaan","img":"assets/ss/inventory-management/retur-supplier.webp","caption":{"id":"Retur Supplier, Konsinyasi & Pinjaman Stok","en":"Supplier Returns, Consignment & Borrowed Stock"}}];
+  var ITEMS_PER_PAGE=6;
+  var currentCat=ALL_KEY;
+  var currentItems=GALLERY_ITEMS;
+  var currentPage=1;
+  var totalPages=Math.max(1,Math.ceil(currentItems.length/ITEMS_PER_PAGE));
+  var grid=document.getElementById('galleryGrid');
+  var filter=document.getElementById('galleryCatFilter');
+  var pagination=document.getElementById('galleryPagination');
+  var info=document.getElementById('galleryPageInfo');
+  function lang(){return localStorage.getItem('site-lang')||'id';}
+  function label(cat){return cat===ALL_KEY?ALL_LABEL:(CAT_LABELS[cat]||{id:cat,en:cat});}
+  function filtered(){return currentCat===ALL_KEY?GALLERY_ITEMS:GALLERY_ITEMS.filter(function(x){return x.cat===currentCat;});}
+  function renderFilter(){
+    filter.innerHTML='';
+    [ALL_KEY].concat(Object.keys(CAT_LABELS)).forEach(function(cat){
+      var b=document.createElement('button');
+      b.type='button';
+      b.className='gallery-cat-btn'+(cat===currentCat?' active':'');
+      b.textContent=label(cat)[lang()]||label(cat).id;
+      b.addEventListener('click',function(){currentCat=cat;currentItems=filtered();totalPages=Math.max(1,Math.ceil(currentItems.length/ITEMS_PER_PAGE));renderPage(1,true);renderFilter();});
+      filter.appendChild(b);
+    });
+  }
+  function item(entry){
+    var d=document.createElement('div');
+    var caption=entry.caption[lang()]||entry.caption.id;
+    if(entry.img){
+      d.className='gallery-item gallery-item-img';
+      d.innerHTML='<img src="'+entry.img+'" alt="'+caption+'" loading="lazy">';
+    }else{
+      d.className='gallery-item';
+      d.innerHTML='<i class="fa-solid fa-image"></i>'+caption;
+    }
+    return d;
+  }
+  function renderPagination(){
+    pagination.innerHTML='';
+    if(totalPages>1){
+      var prev=document.createElement('button');
+      prev.type='button';prev.className='gallery-page-btn';prev.innerHTML='<i class="fa-solid fa-chevron-left"></i>';
+      prev.disabled=currentPage===1;prev.addEventListener('click',function(){renderPage(currentPage-1,true);});
+      pagination.appendChild(prev);
+      for(var p=1;p<=totalPages;p++){
+        (function(page){
+          var b=document.createElement('button');b.type='button';
+          b.className='gallery-page-btn'+(page===currentPage?' active':'');b.textContent=page;
+          b.addEventListener('click',function(){renderPage(page,true);});pagination.appendChild(b);
+        })(p);
+      }
+      var next=document.createElement('button');
+      next.type='button';next.className='gallery-page-btn';next.innerHTML='<i class="fa-solid fa-chevron-right"></i>';
+      next.disabled=currentPage===totalPages;next.addEventListener('click',function(){renderPage(currentPage+1,true);});
+      pagination.appendChild(next);
+    }
+    info.textContent=lang()==='en'
+      ?('Page '+currentPage+' of '+totalPages+' — '+currentItems.length+' items')
+      :('Halaman '+currentPage+' dari '+totalPages+' — '+currentItems.length+' item');
+  }
+  function renderPage(page,scroll){
+    currentPage=page;grid.innerHTML='';
+    var start=(page-1)*ITEMS_PER_PAGE;
+    currentItems.slice(start,start+ITEMS_PER_PAGE).forEach(function(x){grid.appendChild(item(x));});
+    renderPagination();
+    if(scroll)grid.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+  function refresh(){currentItems=filtered();totalPages=Math.max(1,Math.ceil(currentItems.length/ITEMS_PER_PAGE));renderFilter();renderPage(Math.min(currentPage,totalPages),false);}
+  document.querySelectorAll('.lang-btn').forEach(function(b){b.addEventListener('click',function(){setTimeout(refresh,0);});});
+  renderFilter();renderPage(1,false);
+})();
+</script>
+</body>
+</html>
+
