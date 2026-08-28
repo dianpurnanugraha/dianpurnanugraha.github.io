@@ -3,18 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard Laporan Penjualan Multi-Marketplace — Dian Purna Nugraha, S.Kom.</title>
-<meta name="description" content="Studi kasus (contoh): Dashboard Laporan Penjualan Multi-Marketplace — Menyusun dashboard terpusat berbasis Google Sheets untuk memantau penjualan, stok, dan performa toko dari beberapa marketplace sekaligus secara real-time.">
+<title>Dashboard Operasional &amp; Analisis Data Multi-Channel — Dian Purna Nugraha, S.Kom.</title>
+<meta name="description" content="Studi kasus Dashboard Operasional &amp; Analisis Data Multi-Channel: membangun sheet All Data sebagai dashboard utama untuk merangkum penjualan, stok, keuangan, retur, audit, dan restock lintas channel.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230F2A4D'/%3E%3Ctext x='50' y='68' font-family='Poppins,Arial,sans-serif' font-size='58' font-weight='700' fill='white' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Dashboard Laporan Penjualan Multi-Marketplace — Dian Purna Nugraha, S.Kom.">
-<meta property="og:description" content="Menyusun dashboard terpusat berbasis Google Sheets untuk memantau penjualan, stok, dan performa toko dari beberapa marketplace sekaligus secara real-time.">
+<meta property="og:title" content="Dashboard Operasional &amp; Analisis Data Multi-Channel — Dian Purna Nugraha, S.Kom.">
+<meta property="og:description" content="Sheet All Data sebagai dashboard utama untuk merangkum penjualan, stok, keuangan, retur, audit, dan restock lintas channel.">
 <meta property="og:image" content="assets/img/profile.webp">
 <meta name="twitter:card" content="summary_large_image">
+<!-- _title, _metaDesc, _ogTitle diisi otomatis oleh i18n.js dari i18n-project-sales-dashboard.js -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="assets/css/styles.css?v=11">
+<style>
+.gallery-cat-filter{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-bottom:1.5rem;}
+.gallery-cat-btn{padding:.5rem 1.1rem;border-radius:999px;border:1px solid #d7dee8;background:#fff;color:#324156;font-family:inherit;font-size:.9rem;font-weight:600;cursor:pointer;transition:all .2s ease;}
+.gallery-cat-btn:hover{border-color:#0f9d58;color:#0f9d58;}
+.gallery-cat-btn.active{background:#0F2A4D;border-color:#0F2A4D;color:#fff;}
+
+/* Override khusus halaman project sales dashboard ini saja: kotak galeri menjadi portrait */
+#galleryGrid.gallery-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+#galleryGrid .gallery-item-img{height:auto;background:#f1f3f6;display:block;overflow:hidden;}
+#galleryGrid .gallery-item-img img{width:100%;height:auto;display:block;object-fit:contain;}
+@media (max-width:900px){
+  #galleryGrid.gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media (max-width:560px){
+  #galleryGrid.gallery-grid{grid-template-columns:1fr;}
+}
+</style>
 </head>
 <body>
 
@@ -32,7 +50,13 @@
       <li><a href="insight.html">Insight</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    <div class="nav-right">
+      <div class="lang-switch">
+        <button class="lang-btn" data-lang="id">ID</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    </div>
   </div>
 </nav>
 
@@ -75,22 +99,21 @@
     <i class="fa-solid fa-chevron-right breadcrumb-sep"></i>
     <a href="project.html">Project</a>
     <i class="fa-solid fa-chevron-right breadcrumb-sep"></i>
-    <span class="breadcrumb-current">Dashboard Laporan Penjualan Multi-Marketplace</span>
+    <span class="breadcrumb-current" data-i18n="hero.title">Dashboard Operasional &amp; Analisis Data Multi-Channel</span>
   </div>
 </nav>
 
 <!-- ===================== BACK LINK ===================== -->
 <section class="wrap" style="padding-top:18px;">
-  <a href="project.html" class="project-back"><i class="fa-solid fa-arrow-left"></i> Kembali ke Semua Project</a>
+  <a href="project.html" class="project-back"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="back.toAll">Kembali ke Semua Project</span></a>
 </section>
 
 <!-- ===================== DETAIL HERO ===================== -->
-<!-- CATATAN: Ini contoh/ilustrasi. Ganti nama klien, angka hasil, dan gambar dengan data project asli kamu. -->
 <section class="wrap" style="padding-top:20px;">
   <div class="detail-hero" style="background:linear-gradient(135deg,#f97316,#fbbf24);">
     <span class="project-tag">Reporting</span>
-    <h1>Dashboard Laporan Penjualan Multi-Marketplace</h1>
-    <p>Menyusun dashboard terpusat berbasis Google Sheets untuk memantau penjualan, stok, dan performa toko dari beberapa marketplace sekaligus secara real-time.</p>
+    <h1 data-i18n="hero.title">Dashboard Operasional &amp; Analisis Data Multi-Channel</h1>
+    <p data-i18n="hero.desc">Membangun sheet <strong>All Data</strong> sebagai dashboard utama untuk merangkum penjualan, stok, keuangan, retur, audit, dan restock lintas channel — mengonsolidasikan performa Shopee, TikTok Shop, Lazada, dan penjualan MD/Public dalam satu pusat laporan.</p>
     <div class="detail-hero-icon"><i class="fa-solid fa-chart-column"></i></div>
   </div>
 </section>
@@ -98,67 +121,71 @@
 <!-- ===================== META INFO ===================== -->
 <section class="wrap">
   <div class="detail-meta-grid">
-    <div class="detail-meta-item"><span>Klien</span><b>Toko Multiplatform (contoh)</b></div>
-    <div class="detail-meta-item"><span>Peran</span><b>Data &amp; Reporting Specialist</b></div>
-    <div class="detail-meta-item"><span>Durasi</span><b>1 Bulan</b></div>
-    <div class="detail-meta-item"><span>Tools</span><b>Google Sheets, Google Data Studio</b></div>
+    <div class="detail-meta-item"><span data-i18n="meta.clientLabel">Klien</span><b data-i18n="meta.clientValue">Team Sukatani — Reseller Herbal Multi-Channel</b></div>
+    <div class="detail-meta-item"><span data-i18n="meta.roleLabel">Peran</span><b data-i18n="meta.roleValue">E-commerce Operations, Reporting &amp; Data Analysis</b></div>
+    <div class="detail-meta-item"><span data-i18n="meta.durationLabel">Durasi</span><b data-i18n="meta.durationValue">Berkelanjutan (diperbarui dan digunakan setiap bulan)</b></div>
+    <div class="detail-meta-item"><span data-i18n="meta.toolsLabel">Tools</span><b data-i18n="meta.toolsValue">Google Sheets, Formula Otomatis, Rekonsiliasi &amp; Visualisasi Data</b></div>
   </div>
 </section>
 
 <!-- ===================== TANTANGAN ===================== -->
-<section class="section" id="toc-tantangan" data-toc="Tantangan &amp; Solusi">
+<section class="section" id="toc-tantangan" data-toc="Tantangan &amp; Solusi" data-i18n-attr="data-toc:process.tocLabel">
   <div class="wrap">
     <div class="detail-block">
-      <h3><i class="fa-solid fa-circle-exclamation"></i> Tantangan</h3>
-      <p>Data penjualan tersebar di beberapa akun marketplace berbeda sehingga sulit dipantau dan sering terlambat diketahui saat terjadi penurunan performa.</p>
+      <h3><i class="fa-solid fa-circle-exclamation"></i> <span data-i18n="challenge.title">Tantangan</span></h3>
+      <p data-i18n="challenge.desc">Data operasional tersebar di banyak sheet sumber: transaksi Shopee, TikTok Shop, Lazada, dan MD/Public, serta data stok, pembelian, retur, kas, biaya operasional, dan vendor. Tanpa satu pusat laporan, owner harus memeriksa data satu per satu untuk mengetahui omzet, laba, status pengiriman, masalah stok, pesanan belum selesai, tingkat retur, arus kas, dan kebutuhan restock. Perbedaan sumber juga meningkatkan risiko selisih yang terlambat terdeteksi.</p>
     </div>
 
     <div class="detail-block">
-      <h3><i class="fa-solid fa-diagram-project"></i> Proses &amp; Solusi</h3>
+      <h3><i class="fa-solid fa-diagram-project"></i> <span data-i18n="process.title">Proses &amp; Solusi</span></h3>
     </div>
     <div class="process-list">
-      <div class="process-item"><div class="process-num">1</div><div><h5>Pengumpulan Data</h5><p>Menarik data transaksi dari tiap marketplace secara berkala.</p></div></div>
-      <div class="process-item"><div class="process-num">2</div><div><h5>Penyusunan Struktur</h5><p>Merancang struktur sheet agar data mudah diolah dan diperbarui.</p></div></div>
-      <div class="process-item"><div class="process-num">3</div><div><h5>Automasi Formula</h5><p>Membangun formula otomatis untuk rekap harian dan bulanan.</p></div></div>
-      <div class="process-item"><div class="process-num">4</div><div><h5>Visualisasi</h5><p>Menyajikan data dalam grafik dan dashboard yang mudah dibaca owner.</p></div></div>
+      <div class="process-item"><div class="process-num">1</div><div><h5 data-i18n="process1.title">Pemetaan Sumber Data</h5><p data-i18n="process1.desc">Memetakan alur data dari penjualan marketplace, stok masuk dan keluar, pembelian, retur, kas, biaya operasional, vendor, invoice, dan surat jalan agar setiap ringkasan memiliki sumber yang jelas.</p></div></div>
+      <div class="process-item"><div class="process-num">2</div><div><h5 data-i18n="process2.title">Perancangan All Data sebagai Dashboard Utama</h5><p data-i18n="process2.desc">Menyusun area kerja A–I menjadi pusat laporan dengan navigasi cepat untuk 9 kelompok: Kontrol, Penjualan, Stok, Keuangan, Retur, Masalah, Audit, Rank Channel, dan Restock 14 Hari.</p></div></div>
+      <div class="process-item"><div class="process-num">3</div><div><h5 data-i18n="process3.title">Automasi Perhitungan &amp; Rekonsiliasi</h5><p data-i18n="process3.desc">Menghubungkan omzet, modal penjualan, laba kotor, biaya operasional, laba bersih, margin, saldo pengiriman, pergerakan stok, retur, dan hutang vendor; kemudian memvalidasinya melalui pemeriksaan silang otomatis.</p></div></div>
+      <div class="process-item"><div class="process-num">4</div><div><h5 data-i18n="process4.title">Analisis &amp; Visualisasi untuk Keputusan</h5><p data-i18n="process4.desc">Menyajikan tabel kendali dan 31 grafik untuk target vs realisasi, tren harian, kinerja channel dan produk, perputaran stok, restock, retur, arus kas, masalah pesanan, biaya marketplace, serta evaluasi vendor.</p></div></div>
     </div>
   </div>
 </section>
 
 <!-- ===================== HASIL ===================== -->
-<section class="section tools-section" id="toc-hasil" data-toc="Hasil">
+<section class="section tools-section" id="toc-hasil" data-toc="Hasil" data-i18n-attr="data-toc:results.tocLabel">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow-line">HASIL</div>
-      <h2>Dampak &amp; <span>Hasil</span></h2>
-      <p>Contoh gambaran hasil dari proyek ini (angka ilustrasi).</p>
+      <div class="eyebrow-line" data-i18n="results.eyebrow">HASIL</div>
+      <h2 data-i18n="results.title">Dampak &amp; <span>Hasil</span></h2>
+      <p data-i18n="results.desc">Ringkasan aktual pada sheet All Data per 28 Agustus 2026.</p>
     </div>
     <div class="result-grid">
-      <div class="result-card"><b>4</b><span>Marketplace Terpantau</span></div>
-      <div class="result-card"><b>80%</b><span>Rekap Lebih Cepat</span></div>
-      <div class="result-card"><b>Harian</b><span>Update Data</span></div>
-      <div class="result-card"><b>1</b><span>Dashboard Terpusat</span></div>
+      <div class="result-card"><b>Rp73,51 Jt</b><span data-i18n="results.stat1">Omzet Bulan Berjalan</span></div>
+      <div class="result-card"><b>999</b><span data-i18n="results.stat2">Pesanan Tercatat</span></div>
+      <div class="result-card"><b>Rp4,93 Jt</b><span data-i18n="results.stat3">Laba Bersih Bulan Berjalan</span></div>
+      <div class="result-card"><b>31</b><span data-i18n="results.stat4">Grafik Analitis di All Data</span></div>
     </div>
   </div>
 </section>
 
 <!-- ===================== GALLERY ===================== -->
-<section class="section" id="toc-galeri" data-toc="Dokumentasi">
+<section class="section" id="toc-galeri" data-toc="Dokumentasi" data-i18n-attr="data-toc:gallery.tocLabel">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow-line">DOKUMENTASI</div>
-      <h2>Cuplikan <span>Pekerjaan</span></h2>
-      <p>Ganti kotak di bawah ini dengan screenshot atau foto hasil kerja asli kamu.</p>
+      <div class="eyebrow-line" data-i18n="gallery.eyebrow">DOKUMENTASI</div>
+      <h2 data-i18n="gallery.title">Cuplikan <span>Pekerjaan</span></h2>
+      <p data-i18n="gallery.desc">Cuplikan khusus dari sheet All Data yang memperlihatkan ringkasan utama, kontrol otomatis, analisis penjualan dan stok, rekonsiliasi, keuangan, retur, masalah operasional, serta perencanaan restock.</p>
     </div>
+    <div class="gallery-cat-filter" id="galleryCatFilter"></div>
     <div class="gallery-grid" id="galleryGrid"></div>
 
-    <nav class="gallery-pagination" id="galleryPagination" aria-label="Navigasi halaman galeri"></nav>
+    <nav class="gallery-pagination" id="galleryPagination" data-i18n-attr="aria-label:gallery.navAriaLabel" aria-label="Navigasi halaman galeri"></nav>
     <p class="gallery-page-info" id="galleryPageInfo"></p>
 
     <div class="project-tags project-tags-center">
       <span>Google Sheets</span>
-      <span>Dashboard</span>
+      <span>Central Dashboard</span>
       <span>Data Analysis</span>
+      <span>Formula Automation</span>
+      <span>Data Reconciliation</span>
+      <span>Inventory Planning</span>
     </div>
   </div>
 </section>
@@ -166,8 +193,8 @@
 <!-- ===================== PREV / NEXT ===================== -->
 <section class="wrap" style="padding-bottom:30px;">
   <div class="project-nav-row">
-    <a href="project-ads-campaign.html" class="project-nav-link"><i class="fa-solid fa-arrow-left"></i> Kampanye Iklan Shopee &amp; Facebook Ads</a>
-    <a href="project-finance-report.html" class="project-nav-link next">Laporan Keuangan &amp; Rekap Otomatis <i class="fa-solid fa-arrow-right"></i></a>
+    <a href="project-ads-campaign.html" class="project-nav-link"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="nav.prev">Kampanye Iklan Shopee Ads</span></a>
+    <a href="project-finance-report.html" class="project-nav-link next"><span data-i18n="nav.next">Laporan Keuangan &amp; Rekap Otomatis</span> <i class="fa-solid fa-arrow-right"></i></a>
   </div>
 </section>
 
@@ -177,34 +204,34 @@
     <div class="connect-section">
             <div class="connect-grid">
         <div>
-          <span class="connect-badge">Lihat Hasil Kerja Saya</span>
-          <h2>Punya Proyek <span>di Pikiran?</span></h2>
-          <p>Saya siap membantu mewujudkan kebutuhan operasional, desain, atau strategi digital marketing untuk bisnis Anda.</p>
+          <span class="connect-badge" data-i18n="connect.badge">Lihat Hasil Kerja Saya</span>
+          <h2 data-i18n="connect.title">Punya Proyek <span>di Pikiran?</span></h2>
+          <p data-i18n="connect.desc">Saya siap membantu mewujudkan kebutuhan operasional, desain, atau strategi digital marketing untuk bisnis Anda.</p>
           <div class="help-cta-row" style="margin-top:22px;">
             <a href="https://www.linkedin.com/in/dian-purna-nugraha-s-kom/" target="_blank" rel="noopener" class="btn btn-help-outline"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
             <a href="https://wa.me/6281295733476" target="_blank" rel="noopener" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-            <a href="project.html" class="btn btn-help-outline"><i class="fa-solid fa-folder-open"></i> Lihat Portofolio</a>
+            <a href="project.html" class="btn btn-help-outline"><i class="fa-solid fa-folder-open"></i> <span data-i18n="connect.viewPortfolio">Lihat Portofolio</span></a>
           </div>
         </div>
 
         <div class="connect-cards">
           <div class="connect-card cc-blue">
             <div class="cc-icon"><i class="fa-solid fa-user"></i></div>
-            <h4>Rekrut Saya</h4>
-            <p>Saya siap bergabung dan memberikan kontribusi terbaik untuk Anda.</p>
-            <a href="contact.html">Rekrut Saya Sekarang <i class="fa-solid fa-arrow-right"></i></a>
+            <h4 data-i18n="connect.hireTitle">Rekrut Saya</h4>
+            <p data-i18n="connect.hireDesc">Saya siap bergabung dan memberikan kontribusi terbaik untuk Anda.</p>
+            <a href="contact.html"><span data-i18n="connect.hireLink">Rekrut Saya Sekarang</span> <i class="fa-solid fa-arrow-right"></i></a>
           </div>
           <div class="connect-card cc-green">
             <div class="cc-icon"><i class="fa-solid fa-file-arrow-down"></i></div>
-            <h4>Unduh CV</h4>
-            <p>Unduh CV saya untuk informasi lebih lengkap tentang pengalaman dan keterampilan saya.</p>
-            <a href="assets/files/Dian-Purna-Nugraha_Resume.pdf" download>Unduh CV <i class="fa-solid fa-download"></i></a>
+            <h4 data-i18n="connect.downloadCv">Unduh CV</h4>
+            <p data-i18n="connect.cvDesc">Unduh CV saya untuk informasi lebih lengkap tentang pengalaman dan keterampilan saya.</p>
+            <a href="assets/files/Dian-Purna-Nugraha_Resume.pdf" download><span data-i18n="connect.downloadCv">Unduh CV</span> <i class="fa-solid fa-download"></i></a>
           </div>
         </div>
       </div>
 
       <div class="connect-footer">
-        <span><i class="fa-solid fa-circle-check"></i> Hasil Nyata &nbsp;•&nbsp; Detail Terjaga &nbsp;•&nbsp; Tepat Waktu</span>
+        <span><i class="fa-solid fa-circle-check"></i> <span data-i18n="connect.footerNote">Hasil Nyata &nbsp;•&nbsp; Detail Terjaga &nbsp;•&nbsp; Tepat Waktu</span></span>
       </div>
     </div>
   </div>
@@ -216,7 +243,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <h3>Dian Purna Nugraha, S.Kom.</h3>
-        <p>E-commerce Operations, Business Operations, Graphic Design, Digital Marketing, dan AI Productivity untuk membantu bisnis bekerja lebih efisien, berkembang, dan menciptakan nilai yang berkelanjutan.</p>
+        <p data-i18n="footer.bio">E-commerce Operations, Business Operations, Graphic Design, Digital Marketing, dan AI Productivity untuk membantu bisnis bekerja lebih efisien, berkembang, dan menciptakan nilai yang berkelanjutan.</p>
         <div class="footer-social">
           <a href="https://www.linkedin.com/in/dian-purna-nugraha-s-kom/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
           <a href="https://www.upwork.com/freelancers/~017580231dbed875ca?mp_source=share" target="_blank" rel="noopener" aria-label="Upwork"><svg viewBox="0 0 640 512" style="width:1em;height:1em;fill:currentColor;vertical-align:-0.125em;" xmlns="http://www.w3.org/2000/svg"><path d="M493.9 295.6c-50.3 0-83.5-38.9-92.8-53.9 11.9-95.3 46.8-125.4 92.8-125.4 45.5 0 80.9 36.4 80.9 89.7s-35.4 89.7-80.9 89.7l0-.1zm0-237.8c-81.9 0-127.8 53.4-141 108.4-14.9-28-25.9-65.5-34.5-100.3l-113.2 0 0 141c0 51.1-23.3 89-68.8 89s-71.6-37.8-71.6-89l.5-141-65.3 0 0 141c0 41.1 13.3 78.4 37.6 105.1 25 27.5 59.2 41.8 98.8 41.8 78.8 0 133.8-60.4 133.8-146.9l0-94.8c8.2 31.2 27.8 91.1 65.3 143.6l-35 199.4 66.4 0 23.1-141.3c7.6 6.3 15.7 12 24.2 17 22.2 14 47.7 21.9 73.9 22.8 0 0 4 .2 6.1 .2 81.2 0 145.9-62.9 145.9-147.8S575.3 57.9 494.1 57.9l-.2-.1z"/></svg></a>
@@ -228,7 +255,7 @@
       </div>
 
       <div class="footer-col">
-        <h4>Navigasi</h4>
+        <h4 data-i18n="footer.nav">Navigasi</h4>
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="project.html">Project</a></li>
@@ -242,60 +269,127 @@
       </div>
 
       <div class="footer-col">
-        <h4>Layanan</h4>
+        <h4 data-i18n="footer.services">Layanan</h4>
         <ul>
-          <li>E-commerce &amp; Marketplace Operations</li>
-          <li>Operasional Bisnis &amp; Administrasi</li>
-          <li>Design &amp; Content Creative</li>
-          <li>Digital Marketing &amp; Riset</li>
-          <li>Web &amp; Teknologi</li>
-          <li><a href="services.html">Layanan Lainnya</a></li>
+          <li data-i18n="footer.service1">E-commerce &amp; Marketplace Operations</li>
+          <li data-i18n="footer.service2">Operasional Bisnis &amp; Administrasi</li>
+          <li data-i18n="footer.service3">Design &amp; Content Creative</li>
+          <li data-i18n="footer.service4">Digital Marketing &amp; Riset</li>
+          <li data-i18n="footer.service5">Web &amp; Teknologi</li>
+          <li><a href="services.html" data-i18n="footer.serviceMore">Layanan Lainnya</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4>Kontak</h4>
+        <h4 data-i18n="footer.contact">Kontak</h4>
         <ul>
           <li><i class="fa-solid fa-envelope"></i> dianpurnanugraha@gmail.com</li>
           <li><i class="fa-brands fa-whatsapp"></i> +62 812 9573 3476</li>
-          <li><i class="fa-solid fa-location-dot"></i> Jakarta Timur, DKI Jakarta, Indonesia</li>
+          <li><i class="fa-solid fa-location-dot"></i> <span data-i18n="footer.location">Jakarta Timur, DKI Jakarta, Indonesia</span></li>
         </ul>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <span>&copy; 2026 Dian Purna Nugraha, S.Kom. All rights reserved.</span>
-      <span>Dibuat dengan kreativitas dan bantuan AI.</span>
+      <span data-i18n="footer.rights">&copy; 2026 Dian Purna Nugraha, S.Kom. All rights reserved.</span>
+      <span data-i18n="footer.madeWith">Dibuat dengan kreativitas dan bantuan AI.</span>
     </div>
   </div>
 </footer>
 
+<script src="assets/js/i18n-common.js"></script>
+<script src="assets/js/i18n-project-sales-dashboard.js"></script>
+<script src="assets/js/i18n.js"></script>
 <script src="assets/js/reading-progress.js"></script>
 <script src="assets/js/nav-toggle.js"></script>
 <script src="assets/js/fab-back-to-top-toc.js"></script>
 <script src="assets/js/lightbox.js"></script>
 <script>
 (function(){
-  /* ================================================================
-     DATA GALERI (dipaginasi). Tinggal isi "img" dengan path foto asli
-     kamu -> otomatis tampil sebagai gambar. Kalau "img" dibiarkan
-     kosong, kotak placeholder ikon akan tetap muncul seperti semula.
-     Tambah baris baru untuk foto tambahan, pagination otomatis
-     menyesuaikan.
-     ================================================================ */
-  var GALLERY_ITEMS = [
-    { label: "Tampilan Dashboard Utama", img: "" }, // contoh isi: "assets/img/sales-dashboard/dashboard-utama.webp"
-    { label: "Grafik Tren Penjualan", img: "" }, // contoh isi: "assets/img/sales-dashboard/grafik-tren-penjualan.webp"
-    { label: "Rekap Stok &amp; Produk", img: "" }, // contoh isi: "assets/img/sales-dashboard/rekap-stok-produk.webp"
+  /* Cuplikan sheet All Data, dikelompokkan per kategori Grafik/Tabel.
+     Path menunjuk ke folder assets/ss/sales-dashboard/ — pastikan file
+     WebP-nya sudah diunggah ke sana.
+     Label kategori & caption diambil dari window.I18N_PAGE / I18N_COMMON
+     (via i18n-project-sales-dashboard.js) agar ikut berganti saat bahasa
+     diganti, sama seperti elemen data-i18n lainnya. */
+  function dict(){
+    var lang = localStorage.getItem('site-lang') || 'id';
+    var common = (window.I18N_COMMON && window.I18N_COMMON[lang]) || {};
+    var page = (window.I18N_PAGE && window.I18N_PAGE[lang]) || {};
+    var d = {};
+    for (var k in common) d[k] = common[k];
+    for (var k2 in page) d[k2] = page[k2];
+    return d;
+  }
+
+  var GALLERY_ITEMS_BASE = [
+    { cat: 'grafik', img: 'assets/ss/sales-dashboard/dashboard-grafik-1.webp', labelKey: 'gallery.item1' },
+    { cat: 'grafik', img: 'assets/ss/sales-dashboard/dashboard-grafik-2.webp', labelKey: 'gallery.item2' },
+    { cat: 'grafik', img: 'assets/ss/sales-dashboard/dashboard-grafik-3.webp', labelKey: 'gallery.item3' },
+    { cat: 'grafik', img: 'assets/ss/sales-dashboard/dashboard-grafik-4.webp', labelKey: 'gallery.item4' },
+
+    { cat: 'tabel', img: 'assets/ss/sales-dashboard/dashboard-tabel-1.webp', labelKey: 'gallery.item5' },
+    { cat: 'tabel', img: 'assets/ss/sales-dashboard/dashboard-tabel-2.webp', labelKey: 'gallery.item6' },
+    { cat: 'tabel', img: 'assets/ss/sales-dashboard/dashboard-tabel-3.webp', labelKey: 'gallery.item7' },
+    { cat: 'tabel', img: 'assets/ss/sales-dashboard/dashboard-tabel-4.webp', labelKey: 'gallery.item8' },
+    { cat: 'tabel', img: 'assets/ss/sales-dashboard/dashboard-tabel-5.webp', labelKey: 'gallery.item9' }
   ];
+
+  var ALL_KEY = 'all';
+  var CAT_LABELS, ALL_LABEL, GALLERY_ITEMS;
+
+  function rebuildLabels(){
+    var d = dict();
+    CAT_LABELS = { grafik: d['gallery.catGrafik'] || 'Grafik', tabel: d['gallery.catTabel'] || 'Tabel' };
+    ALL_LABEL = d['gallery.catAll'] || 'Semua';
+    GALLERY_ITEMS = GALLERY_ITEMS_BASE.map(function(it){
+      return { cat: it.cat, img: it.img, label: d[it.labelKey] || it.labelKey };
+    });
+  }
+  rebuildLabels();
+
+  var CATEGORIES = [ALL_KEY];
+  GALLERY_ITEMS_BASE.forEach(function(it){ if (CATEGORIES.indexOf(it.cat) === -1) CATEGORIES.push(it.cat); });
 
   var ITEMS_PER_PAGE = 6;
 
   var grid       = document.getElementById('galleryGrid');
+  var catFilterEl= document.getElementById('galleryCatFilter');
   var paginateEl = document.getElementById('galleryPagination');
   var infoEl     = document.getElementById('galleryPageInfo');
-  var totalPages = Math.ceil(GALLERY_ITEMS.length / ITEMS_PER_PAGE);
+  var currentCat  = ALL_KEY;
+  var currentItems = GALLERY_ITEMS;
+  var totalPages = Math.ceil(currentItems.length / ITEMS_PER_PAGE);
   var currentPage = 1;
+
+  function catLabel(cat){
+    if (cat === ALL_KEY) return ALL_LABEL;
+    return CAT_LABELS[cat] || cat;
+  }
+
+  function getFilteredItems(cat){
+    if (cat === ALL_KEY) return GALLERY_ITEMS;
+    return GALLERY_ITEMS.filter(function(it){ return it.cat === cat; });
+  }
+
+  function renderCatFilter(){
+    catFilterEl.innerHTML = '';
+    CATEGORIES.forEach(function(cat){
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'gallery-cat-btn' + (cat === currentCat ? ' active' : '');
+      btn.textContent = catLabel(cat);
+      btn.addEventListener('click', function(){
+        if (currentCat === cat) return;
+        currentCat = cat;
+        currentItems = getFilteredItems(cat);
+        totalPages = Math.ceil(currentItems.length / ITEMS_PER_PAGE);
+        renderCatFilter();
+        renderPage(1, false);
+      });
+      catFilterEl.appendChild(btn);
+    });
+  }
 
   function buildItem(entry){
     var item = document.createElement('div');
@@ -341,9 +435,26 @@
     window.history.replaceState(null, '', url.toString());
   }
 
+  function itemsCountText(count){
+    var d = dict();
+    var tpl = d['gallery.itemsCount'] || '{count} item pada kategori ini';
+    return tpl.replace('{count}', count);
+  }
+  function noItemsText(){
+    return dict()['gallery.noItems'] || 'Tidak ada item pada kategori ini';
+  }
+  function pageInfoText(page, total, count){
+    var d = dict();
+    var tpl = d['gallery.pageInfo'] || 'Halaman {page} dari {total} — {count} item pada kategori ini';
+    return tpl.replace('{page}', page).replace('{total}', total).replace('{count}', count);
+  }
+
   function renderPagination(){
     paginateEl.innerHTML = '';
-    if (totalPages <= 1) { infoEl.textContent = ''; return; }
+    if (totalPages <= 1) {
+      infoEl.textContent = currentItems.length ? itemsCountText(currentItems.length) : noItemsText();
+      return;
+    }
 
     var prevBtn = document.createElement('button');
     prevBtn.type = 'button';
@@ -377,7 +488,7 @@
     nextBtn.addEventListener('click', function(){ renderPage(currentPage + 1, true); });
     paginateEl.appendChild(nextBtn);
 
-    infoEl.textContent = 'Halaman ' + currentPage + ' dari ' + totalPages + ' — ' + GALLERY_ITEMS.length + ' item total';
+    infoEl.textContent = pageInfoText(currentPage, totalPages, currentItems.length);
   }
 
   function renderPage(page, scroll){
@@ -386,7 +497,7 @@
     grid.innerHTML = '';
 
     var start = (page - 1) * ITEMS_PER_PAGE;
-    GALLERY_ITEMS.slice(start, start + ITEMS_PER_PAGE).forEach(function(entry){
+    currentItems.slice(start, start + ITEMS_PER_PAGE).forEach(function(entry){
       grid.appendChild(buildItem(entry));
     });
 
@@ -394,6 +505,24 @@
     if (scroll) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
+  function refreshLanguage(){
+    rebuildLabels();
+    currentItems = getFilteredItems(currentCat);
+    totalPages = Math.ceil(currentItems.length / ITEMS_PER_PAGE);
+    if (currentPage > totalPages) currentPage = totalPages || 1;
+    renderCatFilter();
+    renderPage(currentPage, false);
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      // localStorage sudah di-set duluan oleh i18n.js pada listener yang sama;
+      // beri jeda 1 tick supaya urutan eksekusi aman.
+      setTimeout(refreshLanguage, 0);
+    });
+  });
+
+  renderCatFilter();
   renderPage(getPageFromURL(totalPages), false);
 })();
 </script>
