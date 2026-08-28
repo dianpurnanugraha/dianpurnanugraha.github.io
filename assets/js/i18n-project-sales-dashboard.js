@@ -63,7 +63,7 @@ window.I18N_PAGE = {
     'gallery.item8': 'Tabel — Kontrol, Audit &amp; Kinerja Channel',
     'gallery.item9': 'Tabel — Stok, Rencana Restock &amp; Keputusan Pembelian',
 
-    'nav.prev': 'Kampanye Iklan Shopee Ads',
+    'nav.prev': 'Manajemen Flash Sale Toko',
     'nav.next': 'Laporan Keuangan &amp; Rekap Otomatis',
 
     'connect.badge': 'Lihat Hasil Kerja Saya',
@@ -140,7 +140,7 @@ window.I18N_PAGE = {
     'gallery.item8': 'Table — Control, Audit &amp; Channel Performance',
     'gallery.item9': 'Table — Stock, Restock Plan &amp; Purchasing Decisions',
 
-    'nav.prev': 'Shopee Ads Campaign',
+    'nav.prev': 'Store Flash Sale Management',
     'nav.next': 'Financial Report &amp; Automated Recap',
 
     'connect.badge': 'See My Work',

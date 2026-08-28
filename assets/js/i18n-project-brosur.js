@@ -49,8 +49,8 @@ window.I18N_PAGE = {
     'example.tagDouble': 'Bolak-balik',
     'example.tagSingle': 'Satu Sisi',
 
-    'navlink.prev': 'Desain Feed Instagram &amp; Konten Promosi',
-    'navlink.next': 'Desain Kemasan &amp; Branding Multi-Brand',
+    'nav.prev': 'Desain Feed Instagram &amp; Konten Promosi',
+    'nav.next': 'Desain Kemasan &amp; Branding Multi-Brand',
 
     'connect.badge': 'Lihat Hasil Kerja Saya',
     'connect.title': 'Punya Proyek <span>di Pikiran?</span>',
@@ -112,8 +112,8 @@ window.I18N_PAGE = {
     'example.tagDouble': 'Double-Sided',
     'example.tagSingle': 'Single-Sided',
 
-    'navlink.prev': 'Instagram Feed Design &amp; Promotional Content',
-    'navlink.next': 'Multi-Brand Packaging &amp; Branding Design',
+    'nav.prev': 'Instagram Feed Design &amp; Promotional Content',
+    'nav.next': 'Multi-Brand Packaging &amp; Branding Design',
 
     'connect.badge': 'See My Work',
     'connect.title': 'Have a Project <span>in Mind?</span>',

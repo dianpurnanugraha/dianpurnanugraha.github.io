@@ -44,8 +44,8 @@ window.I18N_PAGE = {
     'gallery.title': 'Cuplikan <span>Pekerjaan</span>',
     'gallery.desc': 'Dokumentasi lima modul laporan keuangan: Modal, Rincian Modal, Cash, Operational, dan Alokasi Modal Penjualan.',
 
-    'nav.prevProject': 'Dashboard Laporan Penjualan Multi-Marketplace',
-    'nav.nextProject': 'Penyusunan SOP &amp; Workflow Gudang',
+    'nav.prev': 'Dashboard Operasional &amp; Analisis Data Multi-Channel',
+    'nav.next': 'Manajemen Stok, Pembelian &amp; Persediaan',
 
     'pcta.badge': 'Lihat Hasil Kerja Saya',
     'pcta.title': 'Punya Proyek <span>di Pikiran?</span>',
@@ -103,8 +103,8 @@ window.I18N_PAGE = {
     'gallery.title': 'Work <span>Snapshots</span>',
     'gallery.desc': 'Documentation of the five financial report modules: Capital, Capital Detail, Cash, Operational, and Sales Capital Allocation.',
 
-    'nav.prevProject': 'Multi-Marketplace Sales Reporting Dashboard',
-    'nav.nextProject': 'Warehouse SOP &amp; Workflow Development',
+    'nav.prev': 'Multi-Channel Operations &amp; Data Analysis Dashboard',
+    'nav.next': 'Stock, Purchasing &amp; Inventory Management',
 
     'pcta.badge': 'See My Work',
     'pcta.title': 'Got a <span>Project in Mind?</span>',

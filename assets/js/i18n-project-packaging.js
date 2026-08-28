@@ -46,8 +46,8 @@ window.I18N_PAGE = {
     'gallery.slidePrev': 'Sebelumnya',
     'gallery.slideNext': 'Berikutnya',
 
-    'navlink.prev': 'Desain Brosur &amp; Materi Cetak Promosi',
-    'navlink.next': 'Fotografi &amp; Editing Produk',
+    'nav.prev': 'Desain Brosur &amp; Materi Cetak Promosi',
+    'nav.next': 'Fotografi &amp; Editing Produk',
 
     'connect.badge': 'Lihat Hasil Kerja Saya',
     'connect.title': 'Punya Proyek <span>di Pikiran?</span>',
@@ -106,8 +106,8 @@ window.I18N_PAGE = {
     'gallery.slidePrev': 'Previous',
     'gallery.slideNext': 'Next',
 
-    'navlink.prev': 'Brochure &amp; Printed Promotional Material Design',
-    'navlink.next': 'Product Photography &amp; Editing',
+    'nav.prev': 'Brochure &amp; Printed Promotional Material Design',
+    'nav.next': 'Product Photography &amp; Editing',
 
     'connect.badge': 'See My Work',
     'connect.title': 'Have a Project <span>in Mind?</span>',

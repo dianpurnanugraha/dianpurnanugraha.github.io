@@ -42,8 +42,8 @@ window.I18N_PAGE = {
     'gallery.title': 'Galeri <span>Logo &amp; Identitas</span>',
     'gallery.pageInfo': 'Halaman {page} dari {total} — {count} logo total',
 
-    'navlink.prev': 'Setup &amp; Migrasi Toko ke Lazada',
-    'navlink.next': 'Desain Feed Instagram &amp; Konten Promosi',
+    'nav.prev': 'Setup &amp; Migrasi Toko ke Lazada',
+    'nav.next': 'Desain Feed Instagram &amp; Konten Promosi',
 
     'connect.badge': 'Lihat Hasil Kerja Saya',
     'connect.title': 'Punya Proyek <span>di Pikiran?</span>',
@@ -98,8 +98,8 @@ window.I18N_PAGE = {
     'gallery.title': 'Logo &amp; Identity <span>Gallery</span>',
     'gallery.pageInfo': 'Page {page} of {total} — {count} logos total',
 
-    'navlink.prev': 'Store Setup &amp; Migration to Lazada',
-    'navlink.next': 'Instagram Feed Design &amp; Promotional Content',
+    'nav.prev': 'Store Setup &amp; Migration to Lazada',
+    'nav.next': 'Instagram Feed Design &amp; Promotional Content',
 
     'connect.badge': 'See My Work',
     'connect.title': 'Have a Project <span>in Mind?</span>',

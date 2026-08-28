@@ -41,8 +41,8 @@ window.I18N_PAGE = {
     'gallery.title': 'Cuplikan <span>Pekerjaan</span>',
     'gallery.desc': 'Screenshot dashboard Affiliate Marketing Solution langsung dari Shopee Seller Center, dikelompokkan per tab dan periode. Klik kategori atau periode di bawah untuk menyaring tampilan.',
 
-    'nav.prevProject': 'Kampanye Iklan Shopee Ads',
-    'nav.nextProject': 'Dashboard Laporan Penjualan Multi-Marketplace',
+    'nav.prev': 'Kampanye Iklan Shopee Ads',
+    'nav.next': 'Manajemen Flash Sale Toko',
 
     'pcta.badge': 'Lihat Hasil Kerja Saya',
     'pcta.title': 'Punya Proyek <span>di Pikiran?</span>',
@@ -97,8 +97,8 @@ window.I18N_PAGE = {
     'gallery.title': 'Work <span>Snapshots</span>',
     'gallery.desc': 'Affiliate Marketing Solution dashboard screenshots taken directly from Shopee Seller Center, grouped by tab and period. Click a category or period below to filter the view.',
 
-    'nav.prevProject': 'Shopee Ads Campaign',
-    'nav.nextProject': 'Multi-Marketplace Sales Report Dashboard',
+    'nav.prev': 'Shopee Ads Campaign',
+    'nav.next': 'Store Flash Sale Management',
 
     'pcta.badge': 'See My Work',
     'pcta.title': 'Have a Project <span>in Mind?</span>',
