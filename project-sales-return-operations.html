@@ -291,31 +291,31 @@
 <script src="assets/js/lightbox.js"></script>
 <script>
 (function(){
-  var CAT_LABELS={"penjualan":{"id":"Penjualan","en":"Sales"},"retur":{"id":"Retur","en":"Returns"},"otomasi":{"id":"Otomasi","en":"Automation"}};
+  var CAT_LABELS={"penjualan-shopee":{"id":"Penjualan Shopee","en":"Shopee Sales"},"penjualan-tiktok":{"id":"Penjualan TikTok","en":"TikTok Sales"},"penjualan-lazada":{"id":"Penjualan Lazada","en":"Lazada Sales"},"penjualan-offline":{"id":"Penjualan Offline","en":"Offline Sales"},"retur":{"id":"Retur","en":"Returns"},"otomasi":{"id":"Otomasi","en":"Automation"}};
   var ALL_KEY='all';
   var ALL_LABEL={id:'Semua',en:'All'};
   var GALLERY_ITEMS=[
-{"cat":"penjualan","img":"assets/ss/sales-return-operations/sales-shopee-1-1.webp","caption":{"id":"Shopee Sales — Transaksi, Biaya, Modal & Margin","en":"Shopee Sales — Transactions, Fees, Cost & Margin"}},
-{"cat":"penjualan","img":"assets/ss/sales-return-operations/sales-shopee-2-1.webp","caption":{"id":"Shopee Sales — Transaksi, Biaya, Modal & Margin","en":"Shopee Sales — Transactions, Fees, Cost & Margin"}},
-{"cat":"penjualan","img":"assets/ss/sales-return-operations/sales-shopee-3-1.webp","caption":{"id":"Shopee Sales — Transaksi, Biaya, Modal & Margin","en":"Shopee Sales — Transactions, Fees, Cost & Margin"}},
-{"cat":"penjualan","img":"assets/ss/sales-return-operations/sales-shopee-4-1.webp","caption":{"id":"Shopee Sales — Transaksi, Biaya, Modal & Margin","en":"Shopee Sales — Transactions, Fees, Cost & Margin"}},
+{"cat":"penjualan-shopee","img":"assets/ss/sales-return-operations/sales-shopee-1-1.webp","caption":{"id":"Shopee Sales — Transaksi, Biaya, Modal & Margin","en":"Shopee Sales — Transactions, Fees, Cost & Margin"}},
+{"cat":"penjualan-shopee","img":"assets/ss/sales-return-operations/sales-shopee-2-1.webp","caption":{"id":"Shopee Sales — Transaksi, Biaya, Modal & Margin","en":"Shopee Sales — Transactions, Fees, Cost & Margin"}},
+{"cat":"penjualan-shopee","img":"assets/ss/sales-return-operations/sales-shopee-3-1.webp","caption":{"id":"Shopee Sales — Transaksi, Biaya, Modal & Margin","en":"Shopee Sales — Transactions, Fees, Cost & Margin"}},
+{"cat":"penjualan-shopee","img":"assets/ss/sales-return-operations/sales-shopee-4-1.webp","caption":{"id":"Shopee Sales — Transaksi, Biaya, Modal & Margin","en":"Shopee Sales — Transactions, Fees, Cost & Margin"}},
 
-{"cat":"penjualan","img":"assets/ss/sales-return-operations/sales-tiktok-1-1.webp","caption":{"id":"TikTok Sales — Struktur Transaksi Multi-Channel","en":"TikTok Sales — Multi-Channel Transaction Structure"}},
-{"cat":"penjualan","img":"assets/ss/sales-return-operations/sales-tiktok-2-1.webp","caption":{"id":"TikTok Sales — Struktur Transaksi Multi-Channel","en":"TikTok Sales — Multi-Channel Transaction Structure"}},
-{"cat":"penjualan","img":"assets/ss/sales-return-operations/sales-tiktok-3-1.webp","caption":{"id":"TikTok Sales — Struktur Transaksi Multi-Channel","en":"TikTok Sales — Multi-Channel Transaction Structure"}},
-{"cat":"penjualan","img":"assets/ss/sales-return-operations/sales-tiktok-4-1.webp","caption":{"id":"TikTok Sales — Struktur Transaksi Multi-Channel","en":"TikTok Sales — Multi-Channel Transaction Structure"}},
+{"cat":"penjualan-tiktok","img":"assets/ss/sales-return-operations/sales-tiktok-1-1.webp","caption":{"id":"TikTok Sales — Struktur Transaksi Multi-Channel","en":"TikTok Sales — Multi-Channel Transaction Structure"}},
+{"cat":"penjualan-tiktok","img":"assets/ss/sales-return-operations/sales-tiktok-2-1.webp","caption":{"id":"TikTok Sales — Struktur Transaksi Multi-Channel","en":"TikTok Sales — Multi-Channel Transaction Structure"}},
+{"cat":"penjualan-tiktok","img":"assets/ss/sales-return-operations/sales-tiktok-3-1.webp","caption":{"id":"TikTok Sales — Struktur Transaksi Multi-Channel","en":"TikTok Sales — Multi-Channel Transaction Structure"}},
+{"cat":"penjualan-tiktok","img":"assets/ss/sales-return-operations/sales-tiktok-4-1.webp","caption":{"id":"TikTok Sales — Struktur Transaksi Multi-Channel","en":"TikTok Sales — Multi-Channel Transaction Structure"}},
 
 
-{"cat":"penjualan","img":"assets/ss/sales-return-operations/sales-lazada-1-1.webp","caption":{"id":"Lazada Sales — Biaya Platform & Margin Neto","en":"Lazada Sales — Platform Fees & Net Margin"}},
-{"cat":"penjualan","img":"assets/ss/sales-return-operations/sales-lazada-2-1.webp","caption":{"id":"Lazada Sales — Biaya Platform & Margin Neto","en":"Lazada Sales — Platform Fees & Net Margin"}},
-{"cat":"penjualan","img":"assets/ss/sales-return-operations/sales-lazada-3-1.webp","caption":{"id":"Lazada Sales — Biaya Platform & Margin Neto","en":"Lazada Sales — Platform Fees & Net Margin"}},
-{"cat":"penjualan","img":"assets/ss/sales-return-operations/sales-lazada-4-1.webp","caption":{"id":"Lazada Sales — Biaya Platform & Margin Neto","en":"Lazada Sales — Platform Fees & Net Margin"}},
-{"cat":"penjualan","img":"assets/ss/sales-return-operations/sales-lazada-5-1.webp","caption":{"id":"Lazada Sales — Biaya Platform & Margin Neto","en":"Lazada Sales — Platform Fees & Net Margin"}},
+{"cat":"penjualan-lazada","img":"assets/ss/sales-return-operations/sales-lazada-1-1.webp","caption":{"id":"Lazada Sales — Biaya Platform & Margin Neto","en":"Lazada Sales — Platform Fees & Net Margin"}},
+{"cat":"penjualan-lazada","img":"assets/ss/sales-return-operations/sales-lazada-2-1.webp","caption":{"id":"Lazada Sales — Biaya Platform & Margin Neto","en":"Lazada Sales — Platform Fees & Net Margin"}},
+{"cat":"penjualan-lazada","img":"assets/ss/sales-return-operations/sales-lazada-3-1.webp","caption":{"id":"Lazada Sales — Biaya Platform & Margin Neto","en":"Lazada Sales — Platform Fees & Net Margin"}},
+{"cat":"penjualan-lazada","img":"assets/ss/sales-return-operations/sales-lazada-4-1.webp","caption":{"id":"Lazada Sales — Biaya Platform & Margin Neto","en":"Lazada Sales — Platform Fees & Net Margin"}},
+{"cat":"penjualan-lazada","img":"assets/ss/sales-return-operations/sales-lazada-5-1.webp","caption":{"id":"Lazada Sales — Biaya Platform & Margin Neto","en":"Lazada Sales — Platform Fees & Net Margin"}},
 
-{"cat":"penjualan","img":"assets/ss/sales-return-operations/sales-md-public-1-1.webp","caption":{"id":"Md Public Sales — Biaya Platform & Margin Neto","en":"Md Public Sales — Platform Fees & Net Margin"}},
-{"cat":"penjualan","img":"assets/ss/sales-return-operations/sales-md-public-2-1.webp","caption":{"id":"Md Public Sales — Biaya Platform & Margin Neto","en":"Md Public Sales — Platform Fees & Net Margin"}},
-{"cat":"penjualan","img":"assets/ss/sales-return-operations/sales-md-public-3-1.webp","caption":{"id":"Md Public Sales — Biaya Platform & Margin Neto","en":"Md Public Sales — Platform Fees & Net Margin"}},
-{"cat":"penjualan","img":"assets/ss/sales-return-operations/sales-md-public-4-1.webp","caption":{"id":"Md Public Sales — Biaya Platform & Margin Neto","en":"Md Public Sales — Platform Fees & Net Margin"}},
+{"cat":"penjualan-offline","img":"assets/ss/sales-return-operations/sales-md-public-1-1.webp","caption":{"id":"Md Public Sales — Biaya Platform & Margin Neto","en":"Md Public Sales — Platform Fees & Net Margin"}},
+{"cat":"penjualan-offline","img":"assets/ss/sales-return-operations/sales-md-public-2-1.webp","caption":{"id":"Md Public Sales — Biaya Platform & Margin Neto","en":"Md Public Sales — Platform Fees & Net Margin"}},
+{"cat":"penjualan-offline","img":"assets/ss/sales-return-operations/sales-md-public-3-1.webp","caption":{"id":"Md Public Sales — Biaya Platform & Margin Neto","en":"Md Public Sales — Platform Fees & Net Margin"}},
+{"cat":"penjualan-offline","img":"assets/ss/sales-return-operations/sales-md-public-4-1.webp","caption":{"id":"Md Public Sales — Biaya Platform & Margin Neto","en":"Md Public Sales — Platform Fees & Net Margin"}},
 
 
 
