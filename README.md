@@ -62,4 +62,4 @@ lalu buka `http://localhost:8000`.
 
 - Email: dyannugraha.p@gmail.com
 - WhatsApp: +62 812 9573 3476
-- LinkedIn: [dian-purna-nugraha-s-kom](https://www.linkedin.com/in/dian-purna-nugraha-s-kom/)
+- LinkedIn: [dianpurnanugraha](https://www.linkedin.com/in/dianpurnanugraha/)
