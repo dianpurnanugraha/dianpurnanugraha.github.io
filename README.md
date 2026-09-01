@@ -60,6 +60,6 @@ lalu buka `http://localhost:8000`.
 
 ## Kontak
 
-- Email: dyannugraha.p@gmail.com
+- Email: dianpurnanugraha@gmail.com
 - WhatsApp: +62 812 9573 3476
 - LinkedIn: [dianpurnanugraha](https://www.linkedin.com/in/dianpurnanugraha/)
