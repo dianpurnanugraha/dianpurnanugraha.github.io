@@ -23,7 +23,9 @@ window.I18N_PAGE = {
     'about.eduColDesc': 'Riwayat pendidikan formal.',
     'about.edu1Title': 'Sarjana (S1) — Teknik Informatika',
     'about.edu1Meta': 'Universitas Indraprasta PGRI &middot; 2014 - 2018 &middot; IPK 3.00',
+    'about.edu1Desc': 'Mempelajari pengembangan perangkat lunak, basis data, jaringan komputer, analisis dan perancangan sistem, pengembangan web, serta sistem informasi. Sebagai proyek skripsi, mengembangkan Sistem Informasi Penjualan dan Laporan Keuangan berbasis Java berdasarkan studi kasus bisnis nyata. Proyek ini memperkuat kemampuan analisis, pemecahan masalah, pengembangan sistem, dan implementasi proyek.',
     'about.edu2Title': 'SMK — Teknik Komputer & Jaringan',
+    'about.edu2Desc': 'Mempelajari teknik komputer dan jaringan, meliputi perakitan dan pemeliharaan komputer, instalasi perangkat keras dan perangkat lunak, konfigurasi jaringan LAN, sistem operasi, troubleshooting, serta dasar-dasar administrasi jaringan. Mengembangkan keterampilan teknis praktis dalam pemeliharaan sistem komputer, mendiagnosis masalah perangkat keras dan jaringan, serta mendukung infrastruktur TI.',
 
     'about.awardColTitle': 'Penghargaan',
     'about.awardColDesc': 'Penghargaan yang pernah diterima.',
@@ -179,7 +181,9 @@ window.I18N_PAGE = {
     'about.eduColDesc': 'Formal education history.',
     'about.edu1Title': "Bachelor's Degree — Informatics Engineering",
     'about.edu1Meta': 'Universitas Indraprasta PGRI &middot; 2014 - 2018 &middot; GPA 3.00',
+    'about.edu1Desc': 'Studied software development, databases, computer networks, systems analysis and design, web development, and information systems. For the thesis project, developed a Java-based Sales and Financial Reporting Information System based on a real business case study. This project strengthened analytical thinking, problem-solving, system development, and project implementation skills.',
     'about.edu2Title': 'Vocational High School — Computer & Network Engineering',
+    'about.edu2Desc': 'Studied computer and network engineering, covering computer assembly and maintenance, hardware and software installation, LAN network configuration, operating systems, troubleshooting, and the basics of network administration. Developed practical technical skills in maintaining computer systems, diagnosing hardware and network issues, and supporting IT infrastructure.',
 
     'about.awardColTitle': 'Awards',
     'about.awardColDesc': 'Awards received.',
