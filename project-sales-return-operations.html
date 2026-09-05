@@ -291,7 +291,7 @@
 <script src="assets/js/lightbox.js"></script>
 <script>
 (function(){
-  var CAT_LABELS={"penjualan-shopee":{"id":"Penjualan Shopee","en":"Shopee Sales"},"penjualan-tiktok":{"id":"Penjualan TikTok","en":"TikTok Sales"},"penjualan-lazada":{"id":"Penjualan Lazada","en":"Lazada Sales"},"retur-shopee":{"id":"Retur Shopee","en":"Shopee Returns"},"retur-tiktok":{"id":"Retur TikTok","en":"TikTok Returns"},"retur-lazada":{"id":"Retur Lazada","en":"Lazada Returns"},"otomasi":{"id":"Otomasi","en":"Automation"}};
+  var CAT_LABELS={"penjualan-shopee":{"id":"Penjualan Shopee","en":"Shopee Sales"},"penjualan-tiktok":{"id":"Penjualan TikTok","en":"TikTok Sales"},"penjualan-lazada":{"id":"Penjualan Lazada","en":"Lazada Sales"},"retur-shopee":{"id":"Retur Shopee","en":"Shopee Returns"},"retur-tiktok":{"id":"Retur TikTok","en":"TikTok Returns"},"retur-lazada":{"id":"Retur Lazada","en":"Lazada Returns"},"otomasi-cash-auto":{"id":"Otomasi Cash Auto","en":"Cash Auto Automation"},"otomasi-import-bigseller":{"id":"Otomasi Import BigSeller","en":"BigSeller Import Automation"},"otomasi-gas":{"id":"Otomasi Google App Script","en":"Google App Script Automation"}};
   var ALL_KEY='all';
   var ALL_LABEL={id:'Semua',en:'All'};
   var GALLERY_ITEMS=[
@@ -321,7 +321,14 @@
 {"cat":"retur-lazada","img":"assets/ss/sales-return-operations/lazada-return-3-1.webp","caption":{"id":"Lazada Return — Retur Diterima & Penjualan Ulang","en":"Lazada Return — Received Returns & Resale"}},
 
 
-{"cat":"otomasi","img":"assets/ss/sales-return-operations/cash-retur-auto.webp","caption":{"id":"Cash Retur Auto — Saldo, Recovery & Nilai Tersisa","en":"Cash Retur Auto — Balance, Recovery & Remaining Value"}},{"cat":"otomasi","img":"assets/ss/sales-return-operations/import-bigseller.webp","caption":{"id":"Import BigSeller — Log, Status & Jumlah Baris","en":"BigSeller Import — Log, Status & Row Count"}}];
+{"cat":"otomasi-cash-auto","img":"assets/ss/sales-return-operations/cash-retur-auto-1-1.webp","caption":{"id":"Cash Retur Auto — Saldo, Recovery & Nilai Tersisa","en":"Cash Retur Auto — Balance, Recovery & Remaining Value"}},
+{"cat":"otomasi-cash-auto","img":"assets/ss/sales-return-operations/cash-retur-auto-2-1.webp","caption":{"id":"Cash Retur Auto — Saldo, Recovery & Nilai Tersisa","en":"Cash Retur Auto — Balance, Recovery & Remaining Value"}},
+
+{"cat":"otomasi-import-bigseller","img":"assets/ss/sales-return-operations/import-bigseller.webp","caption":{"id":"Import BigSeller — Log, Status & Jumlah Baris","en":"BigSeller Import — Log, Status & Row Count"}},
+
+{"cat":"otomasi-gas","img":"assets/ss/sales-return-operations/gas-automation-1-1.webp","caption":{"id":"Google App Script — Otomasi Alur Kerja Sheets","en":"Google App Script — Sheets Workflow Automation"}},
+{"cat":"otomasi-gas","img":"assets/ss/sales-return-operations/gas-automation-2-1.webp","caption":{"id":"Google App Script — Otomasi Alur Kerja Sheets","en":"Google App Script — Sheets Workflow Automation"}}
+];
   var ITEMS_PER_PAGE=6;
   var currentCat=ALL_KEY;
   var currentItems=GALLERY_ITEMS;
