@@ -17,11 +17,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="assets/css/styles.css?v=11">
 <style>
-.gallery-cat-filter{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-bottom:1.5rem;}
-.gallery-cat-btn{padding:.5rem 1.1rem;border-radius:999px;border:1px solid #d7dee8;background:#fff;color:#324156;font-family:inherit;font-size:.9rem;font-weight:600;cursor:pointer;transition:all .2s ease;}
-.gallery-cat-btn:hover{border-color:#0f9d58;color:#0f9d58;}
-.gallery-cat-btn.active{background:#0F2A4D;border-color:#0F2A4D;color:#fff;}
-
 /* Galeri halaman proyek: responsif dan siap diisi screenshot WebP. */
 #galleryGrid.gallery-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
 #galleryGrid .gallery-item-img{height:auto;background:#f1f3f6;display:block;overflow:hidden;}
@@ -291,10 +286,37 @@
 <script src="assets/js/lightbox.js"></script>
 <script>
 (function(){
-  var CAT_LABELS={"persediaan":{"id":"Persediaan","en":"Inventory"},"pembelian":{"id":"Pembelian","en":"Purchasing"},"rekap":{"id":"Rekap & Kontrol","en":"Recap & Control"}};
+  var CAT_LABELS={
+    "pinjam-stok":{"id":"Pinjam Stok","en":"Borrowed Stock"},
+    "konsinyasi":{"id":"Konsinyasi","en":"Consignment"},
+    "input-bulanan":{"id":"Input Bulanan","en":"Monthly Input"},
+    "output-bulanan":{"id":"Output Bulanan","en":"Monthly Output"},
+    "output-shopee":{"id":"Output Shopee","en":"Shopee Output"},
+    "output-tiktok":{"id":"Output TikTok","en":"TikTok Output"},
+    "pembelian-bulanan":{"id":"Pembelian Bulanan","en":"Monthly Purchase"},
+    "pembelian-harian":{"id":"Pembelian Harian","en":"Daily Purchase"},
+    "return-supplier":{"id":"Return Supplier","en":"Supplier Return"},
+    "stok-masuk-auto":{"id":"Stok Masuk Auto","en":"Auto Stock In"},
+    "stok-keluar-auto":{"id":"Stok Keluar Auto","en":"Auto Stock Out"},
+    "stok":{"id":"Stok","en":"Stock"}
+  };
   var ALL_KEY='all';
   var ALL_LABEL={id:'Semua',en:'All'};
-  var GALLERY_ITEMS=[{"cat":"persediaan","img":"assets/ss/inventory-management/stock-master.webp","caption":{"id":"Stock — Master Produk, Modal, Vendor & Stok Akhir","en":"Stock — Product Master, Cost, Vendor & Ending Stock"}},{"cat":"pembelian","img":"assets/ss/inventory-management/purchase.webp","caption":{"id":"Purchase — Pembelian, Pembayaran & Vendor","en":"Purchase — Purchasing, Payments & Vendors"}},{"cat":"persediaan","img":"assets/ss/inventory-management/stockin-auto.webp","caption":{"id":"Stockin Auto — Stok Masuk Otomatis","en":"Stockin Auto — Automated Stock In"}},{"cat":"persediaan","img":"assets/ss/inventory-management/stockout-auto.webp","caption":{"id":"Stockout Auto — Stok Keluar Otomatis","en":"Stockout Auto — Automated Stock Out"}},{"cat":"rekap","img":"assets/ss/inventory-management/input-monthly.webp","caption":{"id":"Input Monthly — Rekap Stok Masuk Bulanan","en":"Input Monthly — Monthly Stock-In Recap"}},{"cat":"rekap","img":"assets/ss/inventory-management/output-monthly.webp","caption":{"id":"Output Monthly — Penjualan, Retur & Modal Neto","en":"Output Monthly — Sales, Returns & Net Cost"}},{"cat":"rekap","img":"assets/ss/inventory-management/output-shopee-tiktok.webp","caption":{"id":"Output Shopee & TikTok — Jembatan Data ke Stockout","en":"Shopee & TikTok Output — Data Bridge to Stockout"}},{"cat":"persediaan","img":"assets/ss/inventory-management/retur-supplier.webp","caption":{"id":"Retur Supplier, Konsinyasi & Pinjaman Stok","en":"Supplier Returns, Consignment & Borrowed Stock"}}];
+  var GALLERY_ITEMS=[
+    {"cat":"pinjam-stok","img":"assets/ss/inventory-management/borrow-stock.webp","caption":{"id":"Pinjam Stok — Pencatatan Barang Dipinjam Antar Channel","en":"Borrowed Stock — Tracking Items Borrowed Between Channels"}},
+    {"cat":"konsinyasi","img":"assets/ss/inventory-management/incoming-consigment.webp","caption":{"id":"Konsinyasi — Stok Masuk dari Titip Jual","en":"Consignment — Incoming Stock from Consignment"}},
+    {"cat":"input-bulanan","img":"assets/ss/inventory-management/input-monthly.webp","caption":{"id":"Input Bulanan — Rekap Stok Masuk per Bulan","en":"Monthly Input — Monthly Stock-In Recap"}},
+    {"cat":"output-bulanan","img":"assets/ss/inventory-management/output-monthly.webp","caption":{"id":"Output Bulanan — Penjualan, Retur & Modal Neto","en":"Monthly Output — Sales, Returns & Net Cost"}},
+    {"cat":"output-shopee","img":"assets/ss/inventory-management/output-shopee.webp","caption":{"id":"Output Shopee — Jembatan Data Penjualan ke Stockout","en":"Shopee Output — Sales Data Bridge to Stockout"}},
+    {"cat":"output-tiktok","img":"assets/ss/inventory-management/output-tiktok.webp","caption":{"id":"Output TikTok — Jembatan Data Penjualan ke Stockout","en":"TikTok Output — Sales Data Bridge to Stockout"}},
+    {"cat":"pembelian-bulanan","img":"assets/ss/inventory-management/purchase-monthly.webp","caption":{"id":"Pembelian Bulanan — Rekap Total Pembelian per Bulan","en":"Monthly Purchase — Monthly Purchase Total Recap"}},
+    {"cat":"pembelian-harian","img":"assets/ss/inventory-management/purchase.webp","caption":{"id":"Pembelian Harian — Detail Transaksi, Vendor & Pembayaran","en":"Daily Purchase — Transaction Detail, Vendor & Payment"}},
+    {"cat":"return-supplier","img":"assets/ss/inventory-management/return-supplier.webp","caption":{"id":"Return Supplier — Barang Dikembalikan ke Vendor","en":"Supplier Return — Items Returned to Vendor"}},
+    {"cat":"stok-masuk-auto","img":"assets/ss/inventory-management/stockin-auto.webp","caption":{"id":"Stok Masuk Auto — Stok Masuk Otomatis dari Purchase","en":"Auto Stock In — Automated Stock-In from Purchase"}},
+    {"cat":"stok-keluar-auto","img":"assets/ss/inventory-management/stockout-auto.webp","caption":{"id":"Stok Keluar Auto — Stok Keluar Otomatis dari Penjualan","en":"Auto Stock Out — Automated Stock-Out from Sales"}},
+    {"cat":"stok","img":"assets/ss/inventory-management/stok-1.webp","caption":{"id":"Stock — Master Produk, Modal & Vendor","en":"Stock — Product Master, Cost & Vendor"}},
+    {"cat":"stok","img":"assets/ss/inventory-management/stok-2.webp","caption":{"id":"Stock — Stok Akhir per Produk","en":"Stock — Ending Stock per Product"}}
+  ];
   var ITEMS_PER_PAGE=6;
   var currentCat=ALL_KEY;
   var currentItems=GALLERY_ITEMS;
@@ -330,6 +352,16 @@
     }
     return d;
   }
+  function getPageList(current,total){
+    var delta=1;var range=[];
+    for(var i=Math.max(2,current-delta);i<=Math.min(total-1,current+delta);i++){range.push(i);}
+    var result=[1];
+    if(range[0]>2)result.push('...');
+    result=result.concat(range);
+    if(range.length&&range[range.length-1]<total-1)result.push('...');
+    if(total>1)result.push(total);
+    return result;
+  }
   function renderPagination(){
     pagination.innerHTML='';
     if(totalPages>1){
@@ -337,13 +369,18 @@
       prev.type='button';prev.className='gallery-page-btn';prev.innerHTML='<i class="fa-solid fa-chevron-left"></i>';
       prev.disabled=currentPage===1;prev.addEventListener('click',function(){renderPage(currentPage-1,true);});
       pagination.appendChild(prev);
-      for(var p=1;p<=totalPages;p++){
-        (function(page){
+      getPageList(currentPage,totalPages).forEach(function(p){
+        if(p==='...'){
+          var span=document.createElement('span');
+          span.className='gallery-page-ellipsis';
+          span.textContent='...';
+          pagination.appendChild(span);
+        }else{
           var b=document.createElement('button');b.type='button';
-          b.className='gallery-page-btn'+(page===currentPage?' active':'');b.textContent=page;
-          b.addEventListener('click',function(){renderPage(page,true);});pagination.appendChild(b);
-        })(p);
-      }
+          b.className='gallery-page-btn'+(p===currentPage?' active':'');b.textContent=p;
+          b.addEventListener('click',function(){renderPage(p,true);});pagination.appendChild(b);
+        }
+      });
       var next=document.createElement('button');
       next.type='button';next.className='gallery-page-btn';next.innerHTML='<i class="fa-solid fa-chevron-right"></i>';
       next.disabled=currentPage===totalPages;next.addEventListener('click',function(){renderPage(currentPage+1,true);});
@@ -358,7 +395,7 @@
     var start=(page-1)*ITEMS_PER_PAGE;
     currentItems.slice(start,start+ITEMS_PER_PAGE).forEach(function(x){grid.appendChild(item(x));});
     renderPagination();
-    if(scroll)grid.scrollIntoView({behavior:'smooth',block:'start'});
+    if(scroll)filter.scrollIntoView({behavior:'smooth',block:'start'});
   }
   function refresh(){currentItems=filtered();totalPages=Math.max(1,Math.ceil(currentItems.length/ITEMS_PER_PAGE));renderFilter();renderPage(Math.min(currentPage,totalPages),false);}
   document.querySelectorAll('.lang-btn').forEach(function(b){b.addEventListener('click',function(){setTimeout(refresh,0);});});
