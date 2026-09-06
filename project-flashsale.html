@@ -155,9 +155,12 @@
       <p data-i18n="gallery.desc">Screenshot dashboard performa Flash Sale Toko Saya dan proses Salin Promo langsung dari Shopee Seller Center, dikelompokkan per kategori dan periode. Klik kategori atau periode di bawah untuk menyaring tampilan.</p>
     </div>
 
-    <div class="filter-row" id="galleryCatFilter"></div>
+    <div class="filter-group">
+      <div class="filter-row" id="galleryCatFilter"></div>
+    </div>
 
     <div class="gallery-grid gallery-grid-shots" id="galleryGrid"></div>
+    <nav class="gallery-pagination" id="galleryPagination" aria-label="Navigasi halaman galeri"></nav>
     <p class="gallery-page-info" id="galleryPageInfo"></p>
 
     <div class="project-tags project-tags-center">
@@ -374,9 +377,13 @@
   function getLang(){ return localStorage.getItem('site-lang') || 'id'; }
 
   var catState = 'all';
+  var currentPage = 1;
+  var ITEMS_PER_PAGE = 6;
 
   var catFilterEl    = document.getElementById('galleryCatFilter');
+  var filterGroupEl  = document.querySelector('.filter-group');
   var grid            = document.getElementById('galleryGrid');
+  var paginateEl      = document.getElementById('galleryPagination');
   var infoEl           = document.getElementById('galleryPageInfo');
 
   function renderFilters(){
@@ -390,6 +397,7 @@
       btn.textContent = lang === 'en' ? c.en : c.id;
       btn.addEventListener('click', function(){
         catState = c.key;
+        currentPage = 1;
         renderFilters();
         renderGrid();
       });
@@ -432,7 +440,7 @@
     return item;
   }
 
-  function renderGrid(){
+  function renderGrid(scroll){
     var lang = getLang();
     grid.innerHTML = '';
 
@@ -441,14 +449,68 @@
       return true;
     });
 
-    filtered.forEach(function(entry){
+    var totalPages = Math.max(1, Math.ceil(filtered.length / ITEMS_PER_PAGE));
+    if (currentPage > totalPages) currentPage = totalPages;
+    var start = (currentPage - 1) * ITEMS_PER_PAGE;
+    filtered.slice(start, start + ITEMS_PER_PAGE).forEach(function(entry){
       grid.appendChild(buildItem(entry, lang));
     });
 
-    var infoText = lang === 'en'
-      ? filtered.length + ' screenshots shown'
-      : filtered.length + ' screenshot ditampilkan';
-    infoEl.textContent = infoText;
+    renderPagination(totalPages, filtered.length, lang);
+    if (scroll && filterGroupEl) filterGroupEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function getPageList(current, total){
+    var delta = 1;
+    var range = [];
+    for (var i = Math.max(2, current - delta); i <= Math.min(total - 1, current + delta); i++){
+      range.push(i);
+    }
+    var result = [1];
+    if (range[0] > 2) result.push('...');
+    result = result.concat(range);
+    if (range.length && range[range.length - 1] < total - 1) result.push('...');
+    if (total > 1) result.push(total);
+    return result;
+  }
+
+  function renderPagination(totalPages, totalCount, lang){
+    paginateEl.innerHTML = '';
+    if (totalPages > 1){
+      var prev = document.createElement('button');
+      prev.type = 'button'; prev.className = 'gallery-page-btn';
+      prev.innerHTML = '<i class="fa-solid fa-chevron-left"></i>';
+      prev.disabled = currentPage === 1;
+      prev.addEventListener('click', function(){ currentPage--; renderGrid(true); });
+      paginateEl.appendChild(prev);
+
+      getPageList(currentPage, totalPages).forEach(function(p){
+        if (p === '...'){
+          var span = document.createElement('span');
+          span.className = 'gallery-page-ellipsis';
+          span.textContent = '...';
+          paginateEl.appendChild(span);
+        } else {
+          var b = document.createElement('button');
+          b.type = 'button';
+          b.className = 'gallery-page-btn' + (p === currentPage ? ' active' : '');
+          b.textContent = p;
+          b.addEventListener('click', function(){ currentPage = p; renderGrid(true); });
+          paginateEl.appendChild(b);
+        }
+      });
+
+      var next = document.createElement('button');
+      next.type = 'button'; next.className = 'gallery-page-btn';
+      next.innerHTML = '<i class="fa-solid fa-chevron-right"></i>';
+      next.disabled = currentPage === totalPages;
+      next.addEventListener('click', function(){ currentPage++; renderGrid(true); });
+      paginateEl.appendChild(next);
+    }
+
+    infoEl.textContent = lang === 'en'
+      ? (totalPages > 1 ? ('Page ' + currentPage + ' of ' + totalPages + ' — ' + totalCount + ' items') : (totalCount + ' items shown'))
+      : (totalPages > 1 ? ('Halaman ' + currentPage + ' dari ' + totalPages + ' — ' + totalCount + ' item') : (totalCount + ' item ditampilkan'));
   }
 
   renderFilters();

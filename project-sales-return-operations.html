@@ -17,11 +17,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="assets/css/styles.css?v=11">
 <style>
-.gallery-cat-filter{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-bottom:1.5rem;}
-.gallery-cat-btn{padding:.5rem 1.1rem;border-radius:999px;border:1px solid #d7dee8;background:#fff;color:#324156;font-family:inherit;font-size:.9rem;font-weight:600;cursor:pointer;transition:all .2s ease;}
-.gallery-cat-btn:hover{border-color:#0f9d58;color:#0f9d58;}
-.gallery-cat-btn.active{background:#0F2A4D;border-color:#0F2A4D;color:#fff;}
-
 /* Galeri halaman proyek: responsif dan siap diisi screenshot WebP. */
 #galleryGrid.gallery-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
 #galleryGrid .gallery-item-img{height:auto;background:#f1f3f6;display:block;overflow:hidden;}
@@ -321,14 +316,11 @@
 {"cat":"retur-lazada","img":"assets/ss/sales-return-operations/lazada-return-3-1.webp","caption":{"id":"Lazada Return — Retur Diterima & Penjualan Ulang","en":"Lazada Return — Received Returns & Resale"}},
 
 
-{"cat":"otomasi-cash-auto","img":"assets/ss/sales-return-operations/cash-retur-auto-1-1.webp","caption":{"id":"Cash Retur Auto — Saldo, Recovery & Nilai Tersisa","en":"Cash Retur Auto — Balance, Recovery & Remaining Value"}},
-{"cat":"otomasi-cash-auto","img":"assets/ss/sales-return-operations/cash-retur-auto-2-1.webp","caption":{"id":"Cash Retur Auto — Saldo, Recovery & Nilai Tersisa","en":"Cash Retur Auto — Balance, Recovery & Remaining Value"}},
+{"cat":"otomasi-cash-auto","img":"assets/ss/sales-return-operations/cash-retur-auto.webp","caption":{"id":"Cash Retur Auto — Saldo, Recovery & Nilai Tersisa","en":"Cash Retur Auto — Balance, Recovery & Remaining Value"}},
 
 {"cat":"otomasi-import-bigseller","img":"assets/ss/sales-return-operations/import-bigseller.webp","caption":{"id":"Import BigSeller — Log, Status & Jumlah Baris","en":"BigSeller Import — Log, Status & Row Count"}},
 
-{"cat":"otomasi-gas","img":"assets/ss/sales-return-operations/gas-automation-1-1.webp","caption":{"id":"Google App Script — Otomasi Alur Kerja Sheets","en":"Google App Script — Sheets Workflow Automation"}},
-{"cat":"otomasi-gas","img":"assets/ss/sales-return-operations/gas-automation-2-1.webp","caption":{"id":"Google App Script — Otomasi Alur Kerja Sheets","en":"Google App Script — Sheets Workflow Automation"}}
-];
+{"cat":"otomasi-gas","img":"","caption":{"id":"Google App Script — Otomasi Alur Kerja Sheets","en":"Google App Script — Sheets Workflow Automation"}}];
   var ITEMS_PER_PAGE=6;
   var currentCat=ALL_KEY;
   var currentItems=GALLERY_ITEMS;
@@ -364,6 +356,16 @@
     }
     return d;
   }
+  function getPageList(current,total){
+    var delta=1;var range=[];
+    for(var i=Math.max(2,current-delta);i<=Math.min(total-1,current+delta);i++){range.push(i);}
+    var result=[1];
+    if(range[0]>2)result.push('...');
+    result=result.concat(range);
+    if(range.length&&range[range.length-1]<total-1)result.push('...');
+    if(total>1)result.push(total);
+    return result;
+  }
   function renderPagination(){
     pagination.innerHTML='';
     if(totalPages>1){
@@ -371,13 +373,16 @@
       prev.type='button';prev.className='gallery-page-btn';prev.innerHTML='<i class="fa-solid fa-chevron-left"></i>';
       prev.disabled=currentPage===1;prev.addEventListener('click',function(){renderPage(currentPage-1,true);});
       pagination.appendChild(prev);
-      for(var p=1;p<=totalPages;p++){
-        (function(page){
+      getPageList(currentPage,totalPages).forEach(function(p){
+        if(p==='...'){
+          var span=document.createElement('span');span.className='gallery-page-ellipsis';span.textContent='...';
+          pagination.appendChild(span);
+        }else{
           var b=document.createElement('button');b.type='button';
-          b.className='gallery-page-btn'+(page===currentPage?' active':'');b.textContent=page;
-          b.addEventListener('click',function(){renderPage(page,true);});pagination.appendChild(b);
-        })(p);
-      }
+          b.className='gallery-page-btn'+(p===currentPage?' active':'');b.textContent=p;
+          b.addEventListener('click',function(){renderPage(p,true);});pagination.appendChild(b);
+        }
+      });
       var next=document.createElement('button');
       next.type='button';next.className='gallery-page-btn';next.innerHTML='<i class="fa-solid fa-chevron-right"></i>';
       next.disabled=currentPage===totalPages;next.addEventListener('click',function(){renderPage(currentPage+1,true);});
@@ -392,7 +397,7 @@
     var start=(page-1)*ITEMS_PER_PAGE;
     currentItems.slice(start,start+ITEMS_PER_PAGE).forEach(function(x){grid.appendChild(item(x));});
     renderPagination();
-    if(scroll)grid.scrollIntoView({behavior:'smooth',block:'start'});
+    if(scroll)filter.scrollIntoView({behavior:'smooth',block:'start'});
   }
   function refresh(){currentItems=filtered();totalPages=Math.max(1,Math.ceil(currentItems.length/ITEMS_PER_PAGE));renderFilter();renderPage(Math.min(currentPage,totalPages),false);}
   document.querySelectorAll('.lang-btn').forEach(function(b){b.addEventListener('click',function(){setTimeout(refresh,0);});});
