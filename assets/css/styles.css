@@ -739,7 +739,7 @@
   .section-tight-top{padding-top:10px;}
 
   /* Grid kartu dengan slider gambar di dalamnya (dipakai lintas project) */
-  .slider-card-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;}
+  .slider-card-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;scroll-margin-top:66px;}
   /* Modifier: grid 4 kolom di desktop, turun bertahap di layar kecil (dipakai khusus halaman fotografi produk) */
   .slider-card-grid.grid-4up{grid-template-columns:repeat(4,minmax(0,1fr));}
   @media (max-width:980px){
