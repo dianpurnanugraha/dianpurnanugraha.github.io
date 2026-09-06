@@ -617,7 +617,7 @@
   }
 
   .filter-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:36px;}
-  .filter-btn{background:#fff;border:1.5px solid var(--line);color:var(--navy-2);font-weight:600;font-size:12.5px;padding:9px 18px;border-radius:30px;cursor:pointer;transition:.2s;font-family:'Inter',sans-serif;}
+  .filter-btn{background:#fff;border:1px solid var(--line);color:#324156;font-weight:600;font-size:.9rem;padding:.5rem 1.1rem;border-radius:999px;cursor:pointer;transition:all .2s ease;font-family:inherit;}
   .filter-btn:hover{border-color:var(--blue);color:var(--blue);}
   .filter-btn.active{background:var(--navy);color:#fff;border-color:var(--navy);}
   .filter-count{opacity:.65;font-weight:700;font-size:11.5px;}
@@ -628,7 +628,6 @@
 
   @media (max-width: 640px){
     .filter-row{gap:8px;}
-    .filter-btn{padding:8px 14px;font-size:11.5px;}
   }
 
   /* Education & Certifications rows (reuses .skills-box / .skills-col) */
@@ -700,8 +699,10 @@
   .shot-tag.alt{background:var(--navy);color:#fff;}
 
   /* ===== Filter periode (sub-filter di bawah filter kategori) ===== */
-  .filter-row-sub{margin-bottom:26px;margin-top:-16px;}
-  .filter-row-sub .filter-btn{padding:6px 14px;font-size:11.5px;}
+  .filter-row-sub{margin-bottom:26px;margin-top:0;}
+  .filter-group{display:flex;flex-direction:column;gap:8px;position:sticky;top:66px;z-index:50;background:#fff;padding:.75rem 0;margin-bottom:1.5rem;box-shadow:0 4px 10px -6px rgba(15,42,77,.15);scroll-margin-top:66px;}
+  .filter-group .filter-row{margin-bottom:0;}
+  .filter-group .filter-row-sub{margin-top:0;margin-bottom:0;}
 
   /* ===== Brosur Tabs: Potrait / Landscape ===== */
   .brosur-tabnav{display:flex;justify-content:center;gap:10px;margin-bottom:28px;flex-wrap:wrap;}
@@ -777,6 +778,12 @@
   .gallery-page-btn:disabled{opacity:.4;cursor:not-allowed;}
   .gallery-page-ellipsis{padding:0 4px;color:var(--muted);font-size:13.5px;}
   .gallery-page-info{text-align:center;color:var(--muted);font-size:12.5px;margin-top:12px;}
+
+  /* ===== GALLERY CATEGORY FILTER (STICKY) ===== */
+  .gallery-cat-filter{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-bottom:1.5rem;position:sticky;top:66px;z-index:50;background:#fff;padding:.75rem 0;box-shadow:0 4px 10px -6px rgba(15,42,77,.15);scroll-margin-top:66px;}
+  .gallery-cat-btn{padding:.5rem 1.1rem;border-radius:999px;border:1px solid var(--line);background:#fff;color:#324156;font-family:inherit;font-size:.9rem;font-weight:600;cursor:pointer;transition:all .2s ease;}
+  .gallery-cat-btn:hover{border-color:var(--blue);color:var(--blue);}
+  .gallery-cat-btn.active{background:var(--navy);border-color:var(--navy);color:#fff;}
 
   .project-nav-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;border-top:1px solid var(--line);padding-top:24px;}
   .project-nav-link{font-size:13px;font-weight:600;color:var(--navy-2);display:flex;align-items:center;gap:8px;max-width:260px;}
