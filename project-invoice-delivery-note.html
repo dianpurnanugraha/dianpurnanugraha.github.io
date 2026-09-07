@@ -17,11 +17,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="assets/css/styles.css?v=11">
 <style>
-.gallery-cat-filter{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-bottom:1.5rem;}
-.gallery-cat-btn{padding:.5rem 1.1rem;border-radius:999px;border:1px solid #d7dee8;background:#fff;color:#324156;font-family:inherit;font-size:.9rem;font-weight:600;cursor:pointer;transition:all .2s ease;}
-.gallery-cat-btn:hover{border-color:#0f9d58;color:#0f9d58;}
-.gallery-cat-btn.active{background:#0F2A4D;border-color:#0F2A4D;color:#fff;}
-
 /* Galeri halaman proyek: responsif dan siap diisi screenshot WebP. */
 #galleryGrid.gallery-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
 #galleryGrid .gallery-item-img{height:auto;background:#f1f3f6;display:block;overflow:hidden;}
@@ -330,6 +325,25 @@
     }
     return d;
   }
+  function scrollToSticky(el){
+    if(!el)return;
+    var prevPos=el.style.position;
+    el.style.position='static';
+    var rect=el.getBoundingClientRect();
+    var target=window.pageYOffset+rect.top-66;
+    el.style.position=prevPos;
+    window.scrollTo({top:Math.max(0,target),behavior:'smooth'});
+  }
+  function getPageList(current,total){
+    var delta=1;var range=[];
+    for(var i=Math.max(2,current-delta);i<=Math.min(total-1,current+delta);i++){range.push(i);}
+    var result=[1];
+    if(range[0]>2)result.push('...');
+    result=result.concat(range);
+    if(range.length&&range[range.length-1]<total-1)result.push('...');
+    if(total>1)result.push(total);
+    return result;
+  }
   function renderPagination(){
     pagination.innerHTML='';
     if(totalPages>1){
@@ -337,13 +351,18 @@
       prev.type='button';prev.className='gallery-page-btn';prev.innerHTML='<i class="fa-solid fa-chevron-left"></i>';
       prev.disabled=currentPage===1;prev.addEventListener('click',function(){renderPage(currentPage-1,true);});
       pagination.appendChild(prev);
-      for(var p=1;p<=totalPages;p++){
-        (function(page){
+      getPageList(currentPage,totalPages).forEach(function(p){
+        if(p==='...'){
+          var span=document.createElement('span');
+          span.className='gallery-page-ellipsis';
+          span.textContent='...';
+          pagination.appendChild(span);
+        }else{
           var b=document.createElement('button');b.type='button';
-          b.className='gallery-page-btn'+(page===currentPage?' active':'');b.textContent=page;
-          b.addEventListener('click',function(){renderPage(page,true);});pagination.appendChild(b);
-        })(p);
-      }
+          b.className='gallery-page-btn'+(p===currentPage?' active':'');b.textContent=p;
+          b.addEventListener('click',function(){renderPage(p,true);});pagination.appendChild(b);
+        }
+      });
       var next=document.createElement('button');
       next.type='button';next.className='gallery-page-btn';next.innerHTML='<i class="fa-solid fa-chevron-right"></i>';
       next.disabled=currentPage===totalPages;next.addEventListener('click',function(){renderPage(currentPage+1,true);});
@@ -358,7 +377,7 @@
     var start=(page-1)*ITEMS_PER_PAGE;
     currentItems.slice(start,start+ITEMS_PER_PAGE).forEach(function(x){grid.appendChild(item(x));});
     renderPagination();
-    if(scroll)grid.scrollIntoView({behavior:'smooth',block:'start'});
+    if(scroll)scrollToSticky(filter);
   }
   function refresh(){currentItems=filtered();totalPages=Math.max(1,Math.ceil(currentItems.length/ITEMS_PER_PAGE));renderFilter();renderPage(Math.min(currentPage,totalPages),false);}
   document.querySelectorAll('.lang-btn').forEach(function(b){b.addEventListener('click',function(){setTimeout(refresh,0);});});
