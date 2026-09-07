@@ -552,7 +552,7 @@
 
     initSliders(grid);
     renderPagination();
-    if (scroll) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (scroll) document.querySelector('.brosur-tabnav').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   // Render galeri landscape begitu tabnya dibuka pertama kali (hemat kalau
