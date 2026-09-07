@@ -3,6 +3,19 @@ document.addEventListener('DOMContentLoaded', function () {
   var cards = document.querySelectorAll('.project-card');
   if (!buttons.length || !cards.length) return;
 
+  /* ===== SCROLL KE FILTER (anti-bug posisi sticky) =====
+     Dipakai supaya klik kategori auto-scroll ke bar filter, walau
+     bar filternya sedang dalam kondisi "nempel" (position:sticky). */
+  function scrollToSticky(el) {
+    if (!el) return;
+    var prevPos = el.style.position;
+    el.style.position = 'static';
+    var rect = el.getBoundingClientRect();
+    var target = window.pageYOffset + rect.top - 66;
+    el.style.position = prevPos;
+    window.scrollTo({ top: Math.max(0, target), behavior: 'smooth' });
+  }
+
   /* ===== AUTO COUNT PER KATEGORI =====
      Menghitung jumlah .project-card per data-category (dan total),
      lalu menampilkannya sebagai badge di sebelah label tombol filter.
@@ -31,6 +44,8 @@ document.addEventListener('DOMContentLoaded', function () {
         var match = cat === 'all' || card.getAttribute('data-category') === cat;
         card.style.display = match ? '' : 'none';
       });
+
+      scrollToSticky(btn.closest('.filter-group') || btn.closest('.filter-row'));
     });
   });
 });
