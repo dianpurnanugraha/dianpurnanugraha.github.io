@@ -672,7 +672,7 @@
   .result-card b{display:block;font-size:24px;color:var(--blue);font-family:'Poppins',sans-serif;margin-bottom:6px;}
   .result-card span{font-size:11.5px;color:var(--muted);line-height:1.4;}
 
-  .gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;}
+  .gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;scroll-margin-top:66px;}
   .gallery-item{height:160px;border-radius:14px;background:linear-gradient(160deg,#eef3fb,#dbe6f7);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--muted);font-size:11.5px;text-align:center;padding:10px;}
   .gallery-item i{font-size:26px;color:var(--blue);}
   .gallery-grid-dense{grid-template-columns:repeat(4,minmax(0,1fr));}
@@ -705,7 +705,7 @@
   .filter-group .filter-row-sub{margin-top:0;margin-bottom:0;}
 
   /* ===== Brosur Tabs: Potrait / Landscape ===== */
-  .brosur-tabnav{display:flex;justify-content:center;gap:10px;margin-bottom:28px;flex-wrap:wrap;}
+  .brosur-tabnav{display:flex;justify-content:center;gap:10px;margin-bottom:1.5rem;flex-wrap:wrap;position:sticky;top:66px;z-index:50;background:#fff;padding:.75rem 0;box-shadow:0 4px 10px -6px rgba(15,42,77,.15);scroll-margin-top:66px;}
   .brosur-panel{display:none;}
   .brosur-panel.active{display:block;}
 
