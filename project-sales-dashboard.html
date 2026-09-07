@@ -380,7 +380,7 @@
         currentItems = getFilteredItems(cat);
         totalPages = Math.ceil(currentItems.length / ITEMS_PER_PAGE);
         renderCatFilter();
-        renderPage(1, false);
+        renderPage(1, true);
       });
       catFilterEl.appendChild(btn);
     });
@@ -486,6 +486,15 @@
     infoEl.textContent = pageInfoText(currentPage, totalPages, currentItems.length);
   }
 
+  function scrollToSticky(el){
+    if(!el)return;
+    var prevPos=el.style.position;
+    el.style.position='static';
+    var rect=el.getBoundingClientRect();
+    var target=window.pageYOffset+rect.top-66;
+    el.style.position=prevPos;
+    window.scrollTo({top:Math.max(0,target),behavior:'smooth'});
+  }
   function renderPage(page, scroll){
     currentPage = page;
     setPageInURL(page);
@@ -497,7 +506,7 @@
     });
 
     renderPagination();
-    if (scroll) catFilterEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (scroll) scrollToSticky(catFilterEl);
   }
 
   function refreshLanguage(){

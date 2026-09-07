@@ -390,12 +390,21 @@
       ?('Page '+currentPage+' of '+totalPages+' — '+currentItems.length+' items')
       :('Halaman '+currentPage+' dari '+totalPages+' — '+currentItems.length+' item');
   }
+  function scrollToSticky(el){
+    if(!el)return;
+    var prevPos=el.style.position;
+    el.style.position='static';
+    var rect=el.getBoundingClientRect();
+    var target=window.pageYOffset+rect.top-66;
+    el.style.position=prevPos;
+    window.scrollTo({top:Math.max(0,target),behavior:'smooth'});
+  }
   function renderPage(page,scroll){
     currentPage=page;grid.innerHTML='';
     var start=(page-1)*ITEMS_PER_PAGE;
     currentItems.slice(start,start+ITEMS_PER_PAGE).forEach(function(x){grid.appendChild(item(x));});
     renderPagination();
-    if(scroll)filter.scrollIntoView({behavior:'smooth',block:'start'});
+    if(scroll)scrollToSticky(filter);
   }
   function refresh(){currentItems=filtered();totalPages=Math.max(1,Math.ceil(currentItems.length/ITEMS_PER_PAGE));renderFilter();renderPage(Math.min(currentPage,totalPages),false);}
   document.querySelectorAll('.lang-btn').forEach(function(b){b.addEventListener('click',function(){setTimeout(refresh,0);});});

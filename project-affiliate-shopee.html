@@ -418,7 +418,7 @@
         if (!catHasPeriods(catState)) periodState = 'all';
         currentPage = 1;
         renderFilters();
-        renderGrid();
+        renderGrid(true);
       });
       catFilterEl.appendChild(btn);
     });
@@ -432,7 +432,7 @@
       btn.type = 'button';
       btn.className = 'filter-btn' + (periodState === p.key ? ' active' : '');
       btn.textContent = lang === 'en' ? p.en : p.id;
-      btn.addEventListener('click', function(){ periodState = p.key; currentPage = 1; renderFilters(); renderGrid(); });
+      btn.addEventListener('click', function(){ periodState = p.key; currentPage = 1; renderFilters(); renderGrid(true); });
       periodFilterEl.appendChild(btn);
     });
   }
@@ -472,6 +472,15 @@
     return item;
   }
 
+  function scrollToSticky(el){
+    if(!el)return;
+    var prevPos=el.style.position;
+    el.style.position='static';
+    var rect=el.getBoundingClientRect();
+    var target=window.pageYOffset+rect.top-66;
+    el.style.position=prevPos;
+    window.scrollTo({top:Math.max(0,target),behavior:'smooth'});
+  }
   function renderGrid(scroll){
     var lang = getLang();
     grid.innerHTML = '';
@@ -493,7 +502,7 @@
     });
 
     renderPagination(totalPages, filtered.length, lang);
-    if (scroll && filterGroupEl) filterGroupEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (scroll && filterGroupEl) scrollToSticky(filterGroupEl);
   }
 
   function getPageList(current, total){
