@@ -371,7 +371,6 @@
       btn.className = 'gallery-cat-btn' + (cat === currentCat ? ' active' : '');
       btn.textContent = catLabel(cat)[lang] || catLabel(cat).id;
       btn.addEventListener('click', function(){
-        if (currentCat === cat) return;
         currentCat = cat;
         currentItems = getFilteredItems(cat);
         totalPages = Math.ceil(currentItems.length / ITEMS_PER_PAGE);

@@ -311,7 +311,10 @@
   }
 
   tabBtns.forEach(function(btn){
-    btn.addEventListener('click', function(){ switchTab(btn.dataset.brosurTab); });
+    btn.addEventListener('click', function(){
+      switchTab(btn.dataset.brosurTab);
+      scrollToSticky(document.querySelector('.brosur-tabnav'));
+    });
   });
 
   function getPageFromURL(total){
