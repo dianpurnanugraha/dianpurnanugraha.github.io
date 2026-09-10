@@ -30,18 +30,18 @@ window.I18N_PAGE = {
     'pcta.cvDesc': 'Unduh CV saya untuk informasi lebih lengkap tentang pengalaman dan keterampilan saya.',
     'pcta.footerNote': 'Hasil Nyata &nbsp;•&nbsp; Detail Terjaga &nbsp;•&nbsp; Tepat Waktu',
     'lead': 'Selama lebih dari dua tahun terakhir saya mengelola operasional e-commerce lintas Shopee, TikTok Shop, Lazada, dan Blibli untuk toko herbal &amp; suplemen kesehatan. Salah satu pertanyaan yang paling sering muncul dari klien maupun rekan sesama pengelola toko adalah: dari sekian banyak fitur promosi yang ditawarkan marketplace, mana yang benar-benar layak diprioritaskan? Tulisan ini rangkuman lima pelajaran yang saya bawa dari pekerjaan sehari-hari mengelola toko lintas marketplace.',
-    'h2-1': '1. A great ROAS on one product can be misleading in isolation',
+    'h2-1': '1. ROAS tinggi pada satu produk dapat menyesatkan jika dilihat sendiri',
     'p1-1': 'Saat mengelola Iklan Produk Otomatis, Iklan Produk individu (GMV Max ROAS), dan Iklan Toko (Shop+ Ads) sekaligus di Shopee, godaan pertama biasanya adalah menaikkan modal harian untuk produk dengan ROAS tertinggi. Masalahnya, ROAS tinggi pada satu SKU sering kali karena volume pencarian yang memang sudah tinggi secara organik — bukan murni karena iklan yang bekerja optimal. Saya belajar untuk selalu membandingkan tren ROAS dan ACOS dalam rentang 1 bulan vs 3 bulan terakhir sebelum menaikkan budget, bukan hanya melihat angka snapshot hari itu.',
     'p1-2': 'Pendekatan yang lebih aman adalah menyalakan Proteksi ROAS di level target sesuai margin produk, lalu membiarkan sistem menahan diri secara otomatis ketika efisiensi mulai turun, daripada menaikkan modal manual berdasarkan satu angka yang terlihat bagus sesaat.',
-    'h2-2': '2. Flash sales need a system, not one-by-one manual entry',
+    'h2-2': '2. Flash sale membutuhkan sistem, bukan input manual satu per satu',
     'p2-1': 'Ketika toko perlu tampil konsisten di banyak sesi waktu flash sale dalam sehari, menjadwalkan promo produk demi produk secara manual nyaris mustahil dikejar. Cara kerja yang jauh lebih realistis adalah membuat satu promo flash sale acuan lengkap dengan harga promo, diskon, dan stok, lalu menggunakan fitur Salin Promo untuk menduplikasinya ke puluhan produk sekaligus — hingga 50 produk dalam satu proses, lengkap dengan indikator jumlah berhasil dan gagal untuk dicek ulang.',
     'p2-2': 'Pelajaran di sini sederhana tapi sering diabaikan: kalau sebuah proses promosi harus dikerjakan berulang setiap minggu, cari dulu fitur bawaan marketplace yang bisa menduplikasi pekerjaan itu, sebelum buru-buru menambah jam kerja manual.',
-    'h2-3': '3. Affiliate marketing needs commission control, not just headcount',
+    'h2-3': '3. Affiliate marketing membutuhkan kontrol komisi, bukan sekadar jumlah affiliate',
     'p3-1': 'Mengelola program Affiliate Marketing Solution (AMS) di Shopee — merekrut KOL/affiliate, memantau performa konten di Shopee Live, Shopee Video, hingga media sosial eksternal — mengajarkan bahwa jumlah affiliate yang aktif bukan indikator keberhasilan utama. Yang lebih menentukan adalah efisiensi komisi terhadap ROI, yang bisa dipantau lewat KomisiXTRA: berapa affiliate yang mempromosikan satu SKU, dan berapa estimasi komisi yang akan keluar dari sana.',
     'p3-2': 'Validasi tagihan komisi bulanan juga sering dianggap remeh, padahal ini yang menjaga hubungan baik dengan affiliate tetap sehat dalam jangka panjang — pembayaran yang akurat dan tepat waktu membuat affiliate terbaik tetap mau memprioritaskan produk kita dibanding brand lain.',
-    'h2-4': '4. Omnichannel tools only help if the underlying data is clean',
+    'h2-4': '4. Tools omnichannel hanya membantu jika data dasarnya bersih',
     'p4-1': 'Menggunakan BigSeller dan Duoke untuk mengelola operasional omnichannel lintas Shopee, TikTok Shop, Lazada, dan Blibli sangat membantu — tapi hanya jika data produk, stok, dan harga di setiap platform sudah konsisten sejak awal. Tool omnichannel bagus dalam menyinkronkan data yang sudah rapi; ia tidak akan otomatis memperbaiki data yang berantakan dari awal.',
-    'h2-5': '5. Competitors move first, but your own store data is the real anchor',
+    'h2-5': '5. Kompetitor bergerak lebih dulu, tetapi data toko sendiri tetap menjadi acuan utama',
     'p5-1': 'Analisis fee marketplace dan analisis kompetitor tetap penting sebagai konteks, tapi keputusan harga, diskon, dan strategi bundling akhirnya selalu kembali ke kalkulasi COGS dan analisis laba rugi toko sendiri. Mengejar harga kompetitor tanpa mengecek ulang margin adalah salah satu jalan tercepat menuju penjualan yang ramai tapi tidak menguntungkan.',
     'tkh': 'Yang Bisa Langsung Dicoba',
     'tk1': 'Bandingkan tren ROAS/ACOS 1 bulan vs 3 bulan sebelum menaikkan budget iklan, jangan cuma lihat angka hari itu.',
@@ -101,3 +101,4 @@ window.I18N_PAGE = {
     'closing': 'These five lessons aren\'t textbook theory — they\'re the result of direct trial and error inside the Shopee Seller Center and TikTok Shop Seller Center dashboards. If you\'re running a store across marketplaces and want to talk through ad strategy or operations in more depth, check out the full case studies on <a href="project-shopee-tiktok.html">Shopee &amp; TikTok Shop Store Optimization</a>, <a href="project-ads-campaign.html">Shopee Ads Campaign</a>, or <a href="project-affiliate-shopee.html">Shopee Affiliate Marketing Solution Management</a>.',
   }
 };
+

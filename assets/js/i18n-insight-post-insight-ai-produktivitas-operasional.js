@@ -30,15 +30,15 @@ window.I18N_PAGE = {
     'pcta.cvDesc': 'Unduh CV saya untuk informasi lebih lengkap tentang pengalaman dan keterampilan saya.',
     'pcta.footerNote': 'Hasil Nyata &nbsp;•&nbsp; Detail Terjaga &nbsp;•&nbsp; Tepat Waktu',
     'lead': 'AI tools sekarang jadi bagian rutin dari cara saya bekerja — bukan sebagai gimmick, tapi sebagai alat bantu yang benar-benar mempercepat pekerjaan operasional harian. Dalam pekerjaan sehari-hari, saya memanfaatkan ChatGPT, Claude, Google Gemini, dan NotebookLM untuk meningkatkan pembuatan konten, riset, efisiensi workflow, dan produktivitas bisnis secara umum. Tulisan ini cara saya membagi peran masing-masing tool tanpa kehilangan kendali atas kualitas hasil akhirnya.',
-    'h2-1': 'AI for fast research, humans for final validation',
+    'h2-1': 'AI untuk riset cepat, manusia untuk validasi akhir',
     'p1-1': 'Saat perlu memahami tren kompetitor, regulasi produk, atau referensi strategi marketplace baru, AI membantu meringkas informasi jauh lebih cepat dibanding membaca satu per satu sumber secara manual. Tapi keputusan akhir — terutama yang menyangkut angka, harga, atau klaim produk — tetap saya validasi ulang secara manual sebelum dipakai. AI di sini berperan sebagai titik awal riset, bukan sumber kebenaran tunggal.',
-    'h2-2': 'Documentation and reports get built faster',
+    'h2-2': 'Dokumentasi dan laporan dibuat lebih cepat',
     'p2-1': 'Untuk kebutuhan operasional seperti menyusun draf SOP, merapikan catatan meeting, atau menyusun ringkasan laporan bulanan, AI membantu menyusun kerangka awal yang jauh lebih cepat dibanding mengetik dari halaman kosong. NotebookLM khususnya berguna untuk merangkum dokumen panjang jadi poin-poin yang lebih mudah dicerna sebelum didiskusikan dengan tim.',
-    'h2-3': 'Visual content and copywriting: AI speeds up drafts, not creative direction',
+    'h2-3': 'Konten visual dan copywriting: AI mempercepat draf, bukan arah kreatif',
     'p3-1': 'Dalam pembuatan foto produk, copywriting, desain grafis, dan video promosi, saya menggabungkan tools kreatif konvensional seperti Canva, CorelDRAW, Adobe Photoshop, dan CapCut dengan tools berbasis AI untuk mempercepat proses draf awal. Arah kreatif dan keputusan final tetap saya pegang sendiri — AI mempercepat proses eksplorasi, bukan menggantikan keputusan soal apa yang cocok untuk karakter brand tertentu.',
-    'h2-4': 'Boundaries I keep when using AI for client work',
+    'h2-4': 'Batasan yang saya terapkan saat menggunakan AI untuk pekerjaan klien',
     'p4-1': 'Beberapa batasan yang saya terapkan konsisten: data sensitif klien tidak pernah dimasukkan mentah ke prompt AI publik, angka finansial selalu dicek ulang manual sebelum masuk laporan resmi, dan hasil tulisan AI selalu disunting ulang supaya suaranya tetap konsisten dengan gaya komunikasi brand, bukan terasa seperti tulisan generik.',
-    'tkh': 'How to Use AI Without Losing Quality Control',
+    'tkh': 'Cara Menggunakan AI Tanpa Kehilangan Kontrol Kualitas',
     'tk1': 'Pakai AI sebagai titik awal riset, tapi validasi ulang data dan angka penting secara manual.',
     'tk2': 'Manfaatkan AI untuk kerangka dokumen/laporan, lalu sunting supaya sesuai konteks bisnis yang sebenarnya.',
     'tk3': 'Jangan pernah memasukkan data sensitif klien mentah-mentah ke tools AI publik.',
@@ -91,3 +91,4 @@ window.I18N_PAGE = {
     'closing': 'The full mix of tools I use day to day, including the AI &amp; Research category, is on the <a href="skill.html">Skill</a> and <a href="services.html">Services</a> pages.',
   }
 };
+

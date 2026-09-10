@@ -30,16 +30,16 @@ window.I18N_PAGE = {
     'pcta.cvDesc': 'Unduh CV saya untuk informasi lebih lengkap tentang pengalaman dan keterampilan saya.',
     'pcta.footerNote': 'Hasil Nyata &nbsp;•&nbsp; Detail Terjaga &nbsp;•&nbsp; Tepat Waktu',
     'lead': 'SOP paling sering gagal bukan karena isinya salah, tapi karena tidak pernah benar-benar dibuka setelah hari pertama dibagikan. Dari pengalaman menyusun ulang SOP operasional gudang dan template rekap keuangan otomatis, saya belajar bahwa dokumen yang baik harus dirancang supaya dipakai, bukan sekadar disimpan.',
-    'h2-1': 'Start by cutting the most frequent mistakes',
+    'h2-1': 'Mulai dengan mengurangi kesalahan yang paling sering terjadi',
     'p1-1': 'Sebelum menulis satu baris SOP pun, langkah pertama adalah memetakan di titik mana kesalahan paling sering muncul dalam alur kerja gudang — biasanya seputar pengecekan stok, proses packing, atau serah terima antara tim gudang dan tim packing. SOP yang efektif dimulai dari masalah nyata yang berulang, bukan dari template generik yang ditemukan di internet lalu ditempel begitu saja ke bisnis yang karakternya berbeda.',
-    'h2-2': 'Cross-team coordination matters more than the document itself',
+    'h2-2': 'Koordinasi lintas tim lebih penting daripada dokumennya',
     'p2-1': 'Mengoordinasikan operasional gudang, manajemen inventori, dan pemenuhan pesanan hanya berjalan lancar kalau ada kolaborasi yang jelas antara tim gudang dan tim packing untuk memastikan operasional harian tetap efisien. SOP di atas kertas tidak akan banyak membantu kalau kedua tim tidak sepakat soal siapa yang bertanggung jawab di setiap titik serah terima barang.',
-    'h2-3': 'Automated financial reports leave less room for input errors',
+    'h2-3': 'Laporan keuangan otomatis mengurangi ruang terjadinya kesalahan input',
     'p3-1': 'Bagian operasional yang sama rawannya dengan kesalahan gudang adalah administrasi keuangan — pencatatan transaksi, purchasing, kalkulasi COGS, hingga analisis laba rugi. Membuat template rekap keuangan otomatis berbasis spreadsheet untuk laporan bulanan sangat membantu mengurangi kesalahan input manual yang berulang, sekaligus membuat proses penyusunan laporan bulanan jauh lebih cepat dibanding menyusun ulang dari nol setiap periode.',
     'p3-2': 'Prinsipnya sama seperti flash sale di marketplace: kalau sebuah proses harus dikerjakan berulang tiap bulan, cari cara untuk membuatnya semi-otomatis, jangan terus-menerus dikerjakan manual dari awal.',
-    'h2-4': 'Living documentation, not a one-and-done document',
+    'h2-4': 'Dokumentasi yang terus diperbarui, bukan dokumen sekali jadi',
     'p4-1': 'SOP dan template laporan yang saya susun selalu diperlakukan sebagai dokumen hidup — direvisi setiap kali ada perubahan proses, bukan dibuat sekali lalu dibiarkan usang. Ini juga sejalan dengan salah satu fokus kerja saya sehari-hari: terus menyempurnakan alur kerja dan sistem operasional untuk meningkatkan efisiensi dan produktivitas bisnis, bukan menganggap satu SOP berlaku selamanya tanpa evaluasi.',
-    'tkh': 'Principles for SOPs That Actually Get Used',
+    'tkh': 'Prinsip SOP yang Benar-Benar Digunakan',
     'tk1': 'Mulai dari titik kesalahan yang paling sering terjadi, bukan dari template generik.',
     'tk2': 'Pastikan tanggung jawab di setiap serah terima antar tim jelas tertulis, bukan cuma diasumsikan.',
     'tk3': 'Otomatisasi bagian yang berulang (seperti rekap laporan bulanan) supaya ruang human error mengecil.',
@@ -93,3 +93,4 @@ window.I18N_PAGE = {
     'closing': 'The full case studies are on the <a href="project-sop-workflow.html">Warehouse SOP &amp; Workflow Development</a> and <a href="project-finance-report.html">Financial Report &amp; Automated Recap</a> pages.',
   }
 };
+

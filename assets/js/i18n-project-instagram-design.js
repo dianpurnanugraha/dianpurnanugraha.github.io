@@ -16,6 +16,8 @@ window.I18N_PAGE = {
     'challenge.title': '<i class="fa-solid fa-circle-exclamation"></i> Tantangan',
     'challenge.desc': 'Konten media sosial sebelumnya tidak memiliki tema visual yang konsisten sehingga kurang membangun identitas brand di mata audiens.',
     'process.title': '<i class="fa-solid fa-diagram-project"></i> Proses &amp; Solusi',
+    'result.eyebrow': 'HASIL',
+    'result.promise': '<i class="fa-solid fa-circle-check"></i> Hasil Nyata &nbsp;•&nbsp; Detail Terjaga &nbsp;•&nbsp; Tepat Waktu',
     'result.title': 'Dampak &amp; <span>Hasil</span>',
     'result.desc': 'Gambaran hasil dari proyek ini.',
     'gallery.title': 'Cuplikan <span>Pekerjaan</span>',
@@ -62,6 +64,8 @@ window.I18N_PAGE = {
     'challenge.title': '<i class="fa-solid fa-circle-exclamation"></i> Challenge',
     'challenge.desc': 'The previous social media content lacked a consistent visual theme, limiting the brand identity perceived by its audience.',
     'process.title': '<i class="fa-solid fa-diagram-project"></i> Process &amp; Solution',
+    'result.eyebrow': 'RESULTS',
+    'result.promise': '<i class="fa-solid fa-circle-check"></i> Real Results &nbsp;•&nbsp; Attention to Detail &nbsp;•&nbsp; On Time',
     'result.title': 'Impact &amp; <span>Results</span>',
     'result.desc': 'An overview of this project\'s results.',
     'gallery.title': 'Work <span>Highlights</span>',
@@ -93,4 +97,5 @@ window.I18N_PAGE = {
     'nav.next': 'Brochure &amp; Print Promotional Material Design'
   }
 };
+
 
