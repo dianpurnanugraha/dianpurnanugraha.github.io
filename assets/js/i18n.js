@@ -67,7 +67,7 @@
         var lang = btn.getAttribute('data-lang');
         setLang(lang);
         applyLang(lang);
-      });
+      }, true);
     });
     applyLang(getLang());
   }
