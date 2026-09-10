@@ -96,7 +96,8 @@ window.I18N_PAGE = {
     'pcta.cvTitle': 'Download CV',
     'pcta.cvDesc': 'Download my CV for more complete information about my experience and skills.',
     'pcta.cvLink': 'Download CV',
-    'pcta.footer': 'Real Results &nbsp;•&nbsp; Careful Detail &nbsp;•&nbsp; On-Time Delivery',
+    'pcta.footer': 'Real Results &nbsp;•&nbsp; Attention to Detail &nbsp;•&nbsp; On Time',
   }
 };
+
 

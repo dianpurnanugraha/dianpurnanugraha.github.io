@@ -72,7 +72,7 @@ window.I18N_PAGE = {
     "pcta.cvTitle": "Download CV",
     "pcta.cvDesc": "Download my CV for more details about my experience and skills.",
     "pcta.cvLink": "Download CV",
-    "pcta.footer": "Real Results &nbsp;•&nbsp; Careful Attention to Detail &nbsp;•&nbsp; On-Time Delivery",
+    "pcta.footer": "Real Results &nbsp;•&nbsp; Attention to Detail &nbsp;•&nbsp; On Time",
     "_title": "Shopee Product Discount Campaign — Dian Purna Nugraha, S.Kom.",
     "_metaDesc": "Case study of Shopee product discount campaign management and evaluation through sales, orders, units sold, buyers, and monthly trend dashboards.",
     "_ogTitle": "Shopee Product Discount Campaign — Dian Purna Nugraha, S.Kom.",
@@ -99,4 +99,5 @@ window.I18N_PAGE = {
     "result.card4.s": "Total Buyers — July 2026"
   }
 };
+
 

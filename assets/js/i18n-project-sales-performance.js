@@ -72,7 +72,7 @@ window.I18N_PAGE = {
     "pcta.cvTitle": "Download CV",
     "pcta.cvDesc": "Download my CV for more details about my experience and skills.",
     "pcta.cvLink": "Download CV",
-    "pcta.footer": "Real Results &nbsp;•&nbsp; Careful Attention to Detail &nbsp;•&nbsp; On-Time Delivery",
+    "pcta.footer": "Real Results &nbsp;•&nbsp; Attention to Detail &nbsp;•&nbsp; On Time",
     "_title": "Shopee Sales Performance Analysis — Dian Purna Nugraha, S.Kom.",
     "_metaDesc": "Case study of Shopee sales performance using monthly overviews, category mix, price bands, buyer types, funnel metrics, and annual summaries.",
     "_ogTitle": "Shopee Sales Performance Analysis — Dian Purna Nugraha, S.Kom.",
@@ -99,4 +99,5 @@ window.I18N_PAGE = {
     "result.card4.s": "Cancelled Orders — 2026 YTD"
   }
 };
+
 

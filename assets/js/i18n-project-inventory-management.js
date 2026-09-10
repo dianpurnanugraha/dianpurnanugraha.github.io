@@ -106,7 +106,8 @@ window.I18N_PAGE = {
     "connect.hireLink": "Hire Me Now",
     "connect.downloadCv": "Download CV",
     "connect.cvDesc": "Download my CV for more complete information about my experience and skills.",
-    "connect.footerNote": "Real Results &nbsp;•&nbsp; Detail-Oriented &nbsp;•&nbsp; On Time"
+    "connect.footerNote": "Real Results &nbsp;•&nbsp; Attention to Detail &nbsp;•&nbsp; On Time"
   }
 };
+
 

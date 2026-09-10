@@ -72,7 +72,7 @@ window.I18N_PAGE = {
     "pcta.cvTitle": "Download CV",
     "pcta.cvDesc": "Download my CV for more details about my experience and skills.",
     "pcta.cvLink": "Download CV",
-    "pcta.footer": "Real Results &nbsp;•&nbsp; Careful Attention to Detail &nbsp;•&nbsp; On-Time Delivery",
+    "pcta.footer": "Real Results &nbsp;•&nbsp; Attention to Detail &nbsp;•&nbsp; On Time",
     "_title": "Shopee Store Voucher Campaign — Dian Purna Nugraha, S.Kom.",
     "_metaDesc": "Case study of Shopee Store Voucher management and evaluation using claim, usage, order, buyer, sales, and voucher-cost metrics.",
     "_ogTitle": "Shopee Store Voucher Campaign — Dian Purna Nugraha, S.Kom.",
@@ -99,4 +99,5 @@ window.I18N_PAGE = {
     "result.card4.s": "Voucher Usage Rate"
   }
 };
+
 

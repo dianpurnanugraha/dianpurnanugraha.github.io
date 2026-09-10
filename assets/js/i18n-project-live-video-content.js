@@ -72,7 +72,7 @@ window.I18N_PAGE = {
     "pcta.cvTitle": "Download CV",
     "pcta.cvDesc": "Download my CV for more details about my experience and skills.",
     "pcta.cvLink": "Download CV",
-    "pcta.footer": "Real Results &nbsp;•&nbsp; Careful Attention to Detail &nbsp;•&nbsp; On-Time Delivery",
+    "pcta.footer": "Real Results &nbsp;•&nbsp; Attention to Detail &nbsp;•&nbsp; On Time",
     "_title": "Shopee Live & Video Content Performance — Dian Purna Nugraha, S.Kom.",
     "_metaDesc": "Case study of Shopee Live and Video content performance through transaction, audience, conversion, revenue-per-thousand-view, and engagement metrics.",
     "_ogTitle": "Shopee Live & Video Content Performance — Dian Purna Nugraha, S.Kom.",
@@ -99,4 +99,5 @@ window.I18N_PAGE = {
     "result.card4.s": "Revenue-Generating Videos"
   }
 };
+
 

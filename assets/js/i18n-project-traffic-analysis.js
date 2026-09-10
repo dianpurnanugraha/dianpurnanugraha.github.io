@@ -72,7 +72,7 @@ window.I18N_PAGE = {
     "pcta.cvTitle": "Download CV",
     "pcta.cvDesc": "Download my CV for more details about my experience and skills.",
     "pcta.cvLink": "Download CV",
-    "pcta.footer": "Real Results &nbsp;•&nbsp; Careful Attention to Detail &nbsp;•&nbsp; On-Time Delivery",
+    "pcta.footer": "Real Results &nbsp;•&nbsp; Attention to Detail &nbsp;•&nbsp; On Time",
     "_title": "Shopee Store Traffic Analysis — Dian Purna Nugraha, S.Kom.",
     "_metaDesc": "Case study of Shopee store traffic using total visitors, new and returning visitors, average page views, visit duration, and daily trends.",
     "_ogTitle": "Shopee Store Traffic Analysis — Dian Purna Nugraha, S.Kom.",
@@ -99,4 +99,5 @@ window.I18N_PAGE = {
     "result.card4.s": "Average Visit Duration"
   }
 };
+
 
