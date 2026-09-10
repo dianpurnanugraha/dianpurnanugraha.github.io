@@ -112,7 +112,7 @@ window.I18N_PAGE = {
     'example.tagDouble': 'Double-Sided',
     'example.tagSingle': 'Single-Sided',
 
-    'nav.prev': 'Instagram Feed Design &amp; Promotional Content',
+    'nav.prev': 'Instagram Feed &amp; Promotional Content Design',
     'nav.next': 'Multi-Brand Packaging &amp; Branding Design',
 
     'connect.badge': 'See My Work',
@@ -127,3 +127,4 @@ window.I18N_PAGE = {
     'connect.footer': 'Real Results &nbsp;•&nbsp; Detail-Oriented &nbsp;•&nbsp; On Time'
   }
 };
+

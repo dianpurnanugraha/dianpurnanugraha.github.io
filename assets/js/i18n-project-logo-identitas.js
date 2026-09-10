@@ -42,7 +42,7 @@ window.I18N_PAGE = {
     'gallery.title': 'Galeri <span>Logo &amp; Identitas</span>',
     'gallery.pageInfo': 'Halaman {page} dari {total} — {count} logo total',
 
-    'nav.prev': 'Setup &amp; Migrasi Toko ke Lazada',
+    'nav.prev': 'Performa Program Pengiriman Kilat Shopee',
     'nav.next': 'Desain Feed Instagram &amp; Konten Promosi',
 
     'connect.badge': 'Lihat Hasil Kerja Saya',
@@ -98,8 +98,8 @@ window.I18N_PAGE = {
     'gallery.title': 'Logo &amp; Identity <span>Gallery</span>',
     'gallery.pageInfo': 'Page {page} of {total} — {count} logos total',
 
-    'nav.prev': 'Store Setup &amp; Migration to Lazada',
-    'nav.next': 'Instagram Feed Design &amp; Promotional Content',
+    'nav.prev': 'Shopee Express Shipping Program Performance',
+    'nav.next': 'Instagram Feed &amp; Promotional Content Design',
 
     'connect.badge': 'See My Work',
     'connect.title': 'Have a Project <span>in Mind?</span>',
@@ -113,3 +113,4 @@ window.I18N_PAGE = {
     'connect.footer': 'Real Results &nbsp;•&nbsp; Detail-Oriented &nbsp;•&nbsp; On Time'
   }
 };
+

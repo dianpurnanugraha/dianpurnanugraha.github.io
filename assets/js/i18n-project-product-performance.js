@@ -99,3 +99,4 @@ window.I18N_PAGE = {
     "result.card4.s": "Sales from Created Orders"
   }
 };
+

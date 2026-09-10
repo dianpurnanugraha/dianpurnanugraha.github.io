@@ -106,7 +106,7 @@ window.I18N_PAGE = {
     'gallery.slidePrev': 'Previous',
     'gallery.slideNext': 'Next',
 
-    'nav.prev': 'Brochure &amp; Printed Promotional Material Design',
+    'nav.prev': 'Brochure &amp; Print Promotional Material Design',
     'nav.next': 'Product Photography &amp; Editing',
 
     'connect.badge': 'See My Work',
@@ -121,3 +121,4 @@ window.I18N_PAGE = {
     'connect.footer': 'Real Results &nbsp;•&nbsp; Detail-Oriented &nbsp;•&nbsp; On Time'
   }
 };
+

@@ -41,7 +41,7 @@ window.I18N_PAGE = {
     'gallery.title': 'Cuplikan <span>Pekerjaan</span>',
     'gallery.desc': 'Screenshot dashboard performa iklan langsung dari Shopee Seller Center, dikelompokkan per jenis iklan dan periode. Klik kategori atau periode di bawah untuk menyaring tampilan.',
 
-    'nav.prev': 'Fotografi &amp; Editing Produk',
+    'nav.prev': 'Dashboard Operasional &amp; Analisis Data Multi-Channel',
     'nav.next': 'Manajemen Program Affiliate Shopee (AMS)',
 
     'pcta.badge': 'Lihat Hasil Kerja Saya',
@@ -97,7 +97,7 @@ window.I18N_PAGE = {
     'gallery.title': 'Work <span>Snapshots</span>',
     'gallery.desc': 'Ad performance dashboard screenshots taken directly from Shopee Seller Center, grouped by ad type and period. Click a category or period below to filter the view.',
 
-    'nav.prev': 'Product Photography &amp; Editing',
+    'nav.prev': 'Multi-Channel Operations &amp; Data Analysis Dashboard',
     'nav.next': 'Shopee Affiliate Marketing Solution (AMS) Management',
 
     'pcta.badge': 'See My Work',
@@ -113,3 +113,4 @@ window.I18N_PAGE = {
     'pcta.footer': 'Real Results &nbsp;•&nbsp; Careful Attention to Detail &nbsp;•&nbsp; On-Time Delivery'
   }
 };
+

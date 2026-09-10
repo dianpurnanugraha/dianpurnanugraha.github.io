@@ -63,7 +63,7 @@ window.I18N_PAGE = {
     'gallery.item8': 'Tabel — Kontrol, Audit &amp; Kinerja Channel',
     'gallery.item9': 'Tabel — Stok, Rencana Restock &amp; Keputusan Pembelian',
 
-    'nav.prev': 'Manajemen Flash Sale Toko',
+    'nav.prev': 'Kampanye Voucher Toko Shopee',
     'nav.next': 'Laporan Keuangan &amp; Rekap Otomatis',
 
     'connect.badge': 'Lihat Hasil Kerja Saya',
@@ -140,7 +140,7 @@ window.I18N_PAGE = {
     'gallery.item8': 'Table — Control, Audit &amp; Channel Performance',
     'gallery.item9': 'Table — Stock, Restock Plan &amp; Purchasing Decisions',
 
-    'nav.prev': 'Store Flash Sale Management',
+    'nav.prev': 'Shopee Store Voucher Campaign',
     'nav.next': 'Financial Report &amp; Automated Recap',
 
     'connect.badge': 'See My Work',
@@ -155,3 +155,4 @@ window.I18N_PAGE = {
     'connect.footerNote': 'Real Results &nbsp;•&nbsp; Attention to Detail &nbsp;•&nbsp; On Time'
   }
 };
+

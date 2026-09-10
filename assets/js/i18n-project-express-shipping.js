@@ -34,8 +34,8 @@ window.I18N_PAGE = {
     "meta.toolsVal": "Shopee Seller Center — Pengiriman Kilat",
     "challenge.desc": "Program Pengiriman Kilat membutuhkan stok yang siap dan reservasi yang diproses tepat waktu. Tanpa pemantauan rutin, pesanan berisiko terlewat, durasi penerimaan meningkat, dan produk dengan permintaan tinggi tidak segera ditindaklanjuti.",
     "gallery.desc": "Dashboard Program Pengiriman Kilat periode Januari–Juli 2026 yang dapat dipilih langsung berdasarkan bulan.",
-    "nav.prev": "Setup & Migrasi Toko ke Lazada",
-    "nav.next": "Desain Logo & Identitas Visual",
+    "nav.prev": "Setup &amp; Migrasi Toko ke Lazada",
+    "nav.next": "Desain Logo &amp; Identitas Visual",
     "process.item1.title": "Pemantauan Reservasi",
     "process.item1.desc": "Memeriksa reservasi dibuat, reservasi diproses, pesanan terkirim, dan stok per produk.",
     "process.item2.title": "Kontrol Kecepatan Pemrosesan",
@@ -83,8 +83,8 @@ window.I18N_PAGE = {
     "meta.toolsVal": "Shopee Seller Center — Express Shipping",
     "challenge.desc": "The Express Shipping program requires ready stock and timely reservation processing. Without routine monitoring, orders may be missed, acceptance time can increase, and high-demand products may not receive prompt follow-up.",
     "gallery.desc": "Express Shipping Program dashboards for January–July 2026, selectable directly by month.",
-    "nav.prev": "Store Setup & Migration to Lazada",
-    "nav.next": "Logo & Visual Identity Design",
+    "nav.prev": "Store Setup &amp; Migration to Lazada",
+    "nav.next": "Logo &amp; Visual Identity Design",
     "process.item1.title": "Reservation Monitoring",
     "process.item1.desc": "Reviewed created reservations, processed reservations, shipped orders, and stock by product.",
     "process.item2.title": "Processing Speed Control",
@@ -99,3 +99,4 @@ window.I18N_PAGE = {
     "result.card4.s": "Unprocessed Reservations"
   }
 };
+

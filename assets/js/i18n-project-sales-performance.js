@@ -34,7 +34,7 @@ window.I18N_PAGE = {
     "meta.toolsVal": "Shopee Business Insights — Sales",
     "challenge.desc": "Angka penjualan bulanan perlu dibaca bersama funnel, komposisi kategori, rentang harga, serta pembeli baru dan lama. Tanpa struktur ini, perubahan omzet sulit diterjemahkan menjadi keputusan produk dan promosi.",
     "gallery.desc": "Tinjauan dan komposisi penjualan Januari–Juli 2026, ditambah tinjauan tahunan 2025 dan 2026 YTD.",
-    "nav.prev": "Kampanye Voucher Toko Shopee",
+    "nav.prev": "Laporan Keuangan &amp; Rekap Otomatis",
     "nav.next": "Analisis Performa Produk Shopee",
     "process.item1.title": "Konsolidasi Tinjauan Penjualan",
     "process.item1.desc": "Mengumpulkan metrik kunjungan, pesanan dibuat, pesanan siap dikirim, penjualan, dan tingkat konversi per bulan.",
@@ -83,7 +83,7 @@ window.I18N_PAGE = {
     "meta.toolsVal": "Shopee Business Insights — Sales",
     "challenge.desc": "Monthly sales figures need to be read together with funnel, category mix, price bands, and new-versus-returning buyers. Without this structure, revenue changes are difficult to translate into product and promotion decisions.",
     "gallery.desc": "Sales overviews and composition for January–July 2026, plus annual overviews for 2025 and 2026 YTD.",
-    "nav.prev": "Shopee Store Voucher Campaign",
+    "nav.prev": "Financial Report &amp; Automated Recap",
     "nav.next": "Shopee Product Performance Analysis",
     "process.item1.title": "Sales Overview Consolidation",
     "process.item1.desc": "Collected visits, created orders, ready-to-ship orders, sales, and conversion rates by month.",
@@ -99,3 +99,4 @@ window.I18N_PAGE = {
     "result.card4.s": "Cancelled Orders — 2026 YTD"
   }
 };
+

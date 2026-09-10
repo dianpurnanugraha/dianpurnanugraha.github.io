@@ -30,7 +30,7 @@ window.I18N_PAGE = {
     "gallery.catAll": "Semua",
     "gallery.navAriaLabel": "Navigasi halaman galeri",
     "nav.prev": "Sistem Operasional Penjualan &amp; Retur Multi-Channel",
-    "nav.next": "Penyusunan SOP &amp; Workflow Gudang",
+    "nav.next": "Optimasi Toko Shopee &amp; TikTok Shop",
     "process1.title": "Struktur Sumber Transaksi",
     "process1.desc": "Menjadikan MD/Public Sales sebagai sumber tunggal untuk nomor invoice, nomor surat jalan, pelanggan, alamat, produk, qty, harga, diskon, status pembayaran, dan catatan.",
     "process2.title": "Pemilihan Nomor Dokumen",
@@ -42,7 +42,17 @@ window.I18N_PAGE = {
     "results.stat1": "Sheet dalam Alur Dokumen",
     "results.stat2": "Dokumen Dihasilkan",
     "results.stat3": "Produk Maksimal per Dokumen",
-    "results.stat4": "Dropdown Pemilihan Transaksi"
+    "results.stat4": "Dropdown Pemilihan Transaksi",
+    "connect.badge": "LIHAT KARYA SAYA",
+    "connect.title": "Punya Proyek <span>di Pikiran?</span>",
+    "connect.desc": "Saya siap membantu kebutuhan operasional, desain, atau strategi digital marketing Anda.",
+    "connect.viewPortfolio": "Lihat Portofolio",
+    "connect.hireTitle": "Rekrut Saya",
+    "connect.hireDesc": "Saya siap bergabung dan memberikan kontribusi terbaik untuk tim Anda.",
+    "connect.hireLink": "Rekrut Saya Sekarang",
+    "connect.downloadCv": "Unduh CV",
+    "connect.cvDesc": "Unduh CV saya untuk informasi lebih lengkap mengenai pengalaman dan keahlian saya.",
+    "connect.footerNote": "Hasil Nyata &nbsp;•&nbsp; Teliti &nbsp;•&nbsp; Tepat Waktu"
   },
   "en": {
     "_title": "Automated Invoices &amp; Delivery Notes — Dian Purna Nugraha, S.Kom.",
@@ -74,7 +84,7 @@ window.I18N_PAGE = {
     "gallery.catAll": "All",
     "gallery.navAriaLabel": "Gallery page navigation",
     "nav.prev": "Multi-Channel Sales &amp; Return Operations System",
-    "nav.next": "Warehouse SOP &amp; Workflow Development",
+    "nav.next": "Shopee &amp; TikTok Shop Store Optimization",
     "process1.title": "Transaction Source Structure",
     "process1.desc": "Used MD/Public Sales as the single source for invoice numbers, delivery-note numbers, customers, addresses, products, quantities, prices, discounts, payment status, and notes.",
     "process2.title": "Document Number Selection",
@@ -86,6 +96,17 @@ window.I18N_PAGE = {
     "results.stat1": "Sheets in the Document Flow",
     "results.stat2": "Documents Generated",
     "results.stat3": "Maximum Products per Document",
-    "results.stat4": "Transaction Selection Dropdown"
+    "results.stat4": "Transaction Selection Dropdown",
+    "connect.badge": "SEE MY WORK",
+    "connect.title": "Have a Project <span>in Mind?</span>",
+    "connect.desc": "I'm ready to help with your operations, design, or digital marketing strategy needs.",
+    "connect.viewPortfolio": "View Portfolio",
+    "connect.hireTitle": "Hire Me",
+    "connect.hireDesc": "I'm ready to join and bring my best contribution to your team.",
+    "connect.hireLink": "Hire Me Now",
+    "connect.downloadCv": "Download CV",
+    "connect.cvDesc": "Download my CV for more complete information about my experience and skills.",
+    "connect.footerNote": "Real Results &nbsp;•&nbsp; Detail-Oriented &nbsp;•&nbsp; On Time"
   }
 };
+

@@ -1,4 +1,4 @@
-/* ================= KAMUS HALAMAN: project-instagram-design.html ================= */
+/* Navigation translations for project-instagram-design.html */
 window.I18N_PAGE = {
   id: {
     'nav.prev': 'Desain Logo &amp; Identitas Visual',
@@ -6,6 +6,7 @@ window.I18N_PAGE = {
   },
   en: {
     'nav.prev': 'Logo &amp; Visual Identity Design',
-    'nav.next': 'Brochure &amp; Print Promo Material Design'
+    'nav.next': 'Brochure &amp; Print Promotional Material Design'
   }
 };
+

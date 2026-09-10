@@ -42,7 +42,7 @@ window.I18N_PAGE = {
     'gallery.desc': 'Screenshot dashboard performa Flash Sale Toko Saya dan proses Salin Promo langsung dari Shopee Seller Center, dikelompokkan per kategori. Klik kategori di bawah untuk menyaring tampilan.',
 
     'nav.prev': 'Manajemen Program Affiliate Shopee (AMS)',
-    'nav.next': 'Dashboard Operasional &amp; Analisis Data Multi-Channel',
+    'nav.next': 'Kampanye Diskon Produk Shopee',
 
     'pcta.badge': 'Lihat Hasil Kerja Saya',
     'pcta.title': 'Punya Proyek <span>di Pikiran?</span>',
@@ -98,7 +98,7 @@ window.I18N_PAGE = {
     'gallery.desc': 'Flash Sale Toko Saya performance dashboard and Copy Promo process screenshots taken directly from Shopee Seller Center, grouped by category. Click a category below to filter the view.',
 
     'nav.prev': 'Shopee Affiliate Marketing Solution (AMS) Management',
-    'nav.next': 'Multi-Channel Operations &amp; Data Analysis Dashboard',
+    'nav.next': 'Shopee Product Discount Campaign',
 
     'pcta.badge': 'See My Work',
     'pcta.title': 'Have a Project <span>in Mind?</span>',
@@ -113,3 +113,4 @@ window.I18N_PAGE = {
     'pcta.footer': 'Real Results &nbsp;•&nbsp; Careful Attention to Detail &nbsp;•&nbsp; On-Time Delivery'
   }
 };
+

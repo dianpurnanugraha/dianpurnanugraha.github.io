@@ -1,11 +1,12 @@
-/* ================= KAMUS HALAMAN: project-sop-workflow.html ================= */
+/* Navigation translations for project-sop-workflow.html */
 window.I18N_PAGE = {
   id: {
-    'nav.prev': 'Invoice &amp; Surat Jalan Otomatis',
-    'nav.next': 'Optimasi Toko Shopee &amp; TikTok Shop'
+    'nav.prev': 'Analisis Tingkat Kunjungan Toko Shopee',
+    'nav.next': 'Manajemen Stok, Pembelian &amp; Persediaan'
   },
   en: {
-    'nav.prev': 'Automated Invoice &amp; Delivery Note',
-    'nav.next': 'Shopee &amp; TikTok Shop Store Optimization'
+    'nav.prev': 'Shopee Store Traffic Analysis',
+    'nav.next': 'Stock, Purchasing &amp; Inventory Management'
   }
 };
+

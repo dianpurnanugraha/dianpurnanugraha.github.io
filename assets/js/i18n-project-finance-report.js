@@ -45,7 +45,7 @@ window.I18N_PAGE = {
     'gallery.desc': 'Dokumentasi lima modul laporan keuangan: Modal, Rincian Modal, Cash, Operational, dan Alokasi Modal Penjualan.',
 
     'nav.prev': 'Dashboard Operasional &amp; Analisis Data Multi-Channel',
-    'nav.next': 'Manajemen Stok, Pembelian &amp; Persediaan',
+    'nav.next': 'Analisis Performa Penjualan Shopee',
 
     'pcta.badge': 'Lihat Hasil Kerja Saya',
     'pcta.title': 'Punya Proyek <span>di Pikiran?</span>',
@@ -104,7 +104,7 @@ window.I18N_PAGE = {
     'gallery.desc': 'Documentation of the five financial report modules: Capital, Capital Detail, Cash, Operational, and Sales Capital Allocation.',
 
     'nav.prev': 'Multi-Channel Operations &amp; Data Analysis Dashboard',
-    'nav.next': 'Stock, Purchasing &amp; Inventory Management',
+    'nav.next': 'Shopee Sales Performance Analysis',
 
     'pcta.badge': 'See My Work',
     'pcta.title': 'Got a <span>Project in Mind?</span>',
@@ -119,3 +119,4 @@ window.I18N_PAGE = {
     'pcta.footer': 'Real Results &nbsp;•&nbsp; Attention to Detail &nbsp;•&nbsp; On Time'
   }
 };
+

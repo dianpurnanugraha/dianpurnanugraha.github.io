@@ -132,6 +132,21 @@ window.I18N_PAGE = {
     'card15.desc': 'Processed transactions, marketplace fees, cost, margin, order status, BigSeller imports, and returned-stock recovery across channels.',
     'card16.title': 'Automated Invoices &amp; Delivery Notes',
     'card16.desc': 'Generated invoices and delivery notes automatically from MD/Public Sales data via transaction-number selection, print-ready for up to 50 products.',
+    'card17.title': 'Shopee Product Discount Campaign',
+    'card17.desc': 'Manage and evaluate product discounts using sales, orders, units sold, buyers, and monthly trends.',
+    'card18.title': 'Shopee Live &amp; Video Content Performance',
+    'card18.desc': 'Analyze sales, viewers, clicks, buyers, conversions, and engagement from Shopee Live &amp; Video content.',
+    'card19.title': 'Shopee Express Shipping Program Performance',
+    'card19.desc': 'Monitor orders, reservations, acceptance speed, stock readiness, and product performance in the Express Shipping Program.',
+    'card20.title': 'Shopee Sales Performance Analysis',
+    'card20.desc': 'Analyze the sales funnel, sales trends, category composition, price ranges, and new versus returning buyers.',
+    'card21.title': 'Shopee Product Performance Analysis',
+    'card21.desc': 'Analyze the product funnel from visits and add-to-cart actions through orders placed and ready-to-ship status.',
+    'card22.title': 'Shopee Store Traffic Analysis',
+    'card22.desc': 'Analyze new and returning visitors, page views, visit duration, and daily traffic trends.',
+    'card23.title': 'Shopee Store Voucher Campaign',
+    'card23.desc': 'Manage and evaluate store vouchers using claim, usage, order, buyer, sales, and cost data.',
+
 
     'connect.badge': 'HAVE A PROJECT?',
     'connect.title': "Let's Bring <span>Your Idea to Life</span>",
@@ -145,3 +160,4 @@ window.I18N_PAGE = {
     'connect.footerNote': 'Real Results &nbsp;•&nbsp; Attention to Detail &nbsp;•&nbsp; On Time'
   }
 };
+

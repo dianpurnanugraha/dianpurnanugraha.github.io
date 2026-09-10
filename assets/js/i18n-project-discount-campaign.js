@@ -35,7 +35,7 @@ window.I18N_PAGE = {
     "challenge.desc": "Diskon perlu tetap menarik bagi pembeli tanpa kehilangan arah terhadap hasil penjualan. Evaluasi manual per bulan menyulitkan perbandingan antara omzet, pesanan, produk terjual, jumlah pembeli, dan penjualan per pembeli.",
     "gallery.desc": "Dashboard performa Diskon Shopee periode Februari–Juli 2026 yang dapat dipilih langsung berdasarkan bulan.",
     "nav.prev": "Manajemen Flash Sale Toko",
-    "nav.next": "Performa Konten Live & Video Shopee",
+    "nav.next": "Performa Konten Live &amp; Video Shopee",
     "process.item1.title": "Konsolidasi Data Bulanan",
     "process.item1.desc": "Mengumpulkan dashboard Diskon Shopee untuk periode Februari–Juli 2026 dengan status pesanan yang konsisten.",
     "process.item2.title": "Perbandingan Indikator Utama",
@@ -84,7 +84,7 @@ window.I18N_PAGE = {
     "challenge.desc": "Discounts must remain attractive to buyers while still being evaluated against sales outcomes. Manual monthly review makes it difficult to compare revenue, orders, units sold, buyers, and sales per buyer.",
     "gallery.desc": "Shopee Discount performance dashboards for February–July 2026, selectable directly by month.",
     "nav.prev": "Store Flash Sale Management",
-    "nav.next": "Shopee Live & Video Content Performance",
+    "nav.next": "Shopee Live &amp; Video Content Performance",
     "process.item1.title": "Monthly Data Consolidation",
     "process.item1.desc": "Collected Shopee Discount dashboards for February–July 2026 using a consistent order status.",
     "process.item2.title": "Core Metric Comparison",
@@ -99,3 +99,4 @@ window.I18N_PAGE = {
     "result.card4.s": "Total Buyers — July 2026"
   }
 };
+

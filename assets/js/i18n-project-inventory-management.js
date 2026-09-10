@@ -29,7 +29,7 @@ window.I18N_PAGE = {
     "gallery.desc": "Cuplikan sheet operasional untuk master stok, pembelian, pergerakan otomatis, rekap bulanan, dan kontrol persediaan.",
     "gallery.catAll": "Semua",
     "gallery.navAriaLabel": "Navigasi halaman galeri",
-    "nav.prev": "Laporan Keuangan &amp; Rekap Otomatis",
+    "nav.prev": "Penyusunan SOP &amp; Workflow Gudang",
     "nav.next": "Sistem Operasional Penjualan &amp; Retur Multi-Channel",
     "process1.title": "Pemetaan Alur Persediaan",
     "process1.desc": "Memetakan hubungan antara Stock, Purchase, Stockin Auto, Stockout Auto, Input Monthly, Output Monthly, output marketplace, retur supplier, konsinyasi, dan pinjaman stok.",
@@ -42,7 +42,17 @@ window.I18N_PAGE = {
     "results.stat1": "Sheet Operasional Terhubung",
     "results.stat2": "Unit Stok Masuk Terekonsiliasi",
     "results.stat3": "Unit Stok Keluar Tercatat",
-    "results.stat4": "Alur Stok Masuk &amp; Keluar"
+    "results.stat4": "Alur Stok Masuk &amp; Keluar",
+    "connect.badge": "LIHAT KARYA SAYA",
+    "connect.title": "Punya Proyek <span>di Pikiran?</span>",
+    "connect.desc": "Saya siap membantu kebutuhan operasional, desain, atau strategi digital marketing Anda.",
+    "connect.viewPortfolio": "Lihat Portofolio",
+    "connect.hireTitle": "Rekrut Saya",
+    "connect.hireDesc": "Saya siap bergabung dan memberikan kontribusi terbaik untuk tim Anda.",
+    "connect.hireLink": "Rekrut Saya Sekarang",
+    "connect.downloadCv": "Unduh CV",
+    "connect.cvDesc": "Unduh CV saya untuk informasi lebih lengkap mengenai pengalaman dan keahlian saya.",
+    "connect.footerNote": "Hasil Nyata &nbsp;•&nbsp; Teliti &nbsp;•&nbsp; Tepat Waktu"
   },
   "en": {
     "_title": "Stock, Purchasing &amp; Inventory Management — Dian Purna Nugraha, S.Kom.",
@@ -73,7 +83,7 @@ window.I18N_PAGE = {
     "gallery.desc": "Selected operational sheets for stock master data, purchasing, automated movements, monthly recaps, and inventory control.",
     "gallery.catAll": "All",
     "gallery.navAriaLabel": "Gallery page navigation",
-    "nav.prev": "Financial Report &amp; Automated Recap",
+    "nav.prev": "Warehouse SOP &amp; Workflow Development",
     "nav.next": "Multi-Channel Sales &amp; Return Operations System",
     "process1.title": "Inventory Workflow Mapping",
     "process1.desc": "Mapped the connections across Stock, Purchase, Stockin Auto, Stockout Auto, Input Monthly, Output Monthly, marketplace outputs, supplier returns, consignment, and borrowed stock.",
@@ -86,6 +96,17 @@ window.I18N_PAGE = {
     "results.stat1": "Connected Operational Sheets",
     "results.stat2": "Reconciled Stock-In Units",
     "results.stat3": "Recorded Stock-Out Units",
-    "results.stat4": "Stock-In &amp; Stock-Out Workflow"
+    "results.stat4": "Stock-In &amp; Stock-Out Workflow",
+    "connect.badge": "SEE MY WORK",
+    "connect.title": "Have a Project <span>in Mind?</span>",
+    "connect.desc": "I'm ready to help with your operations, design, or digital marketing strategy needs.",
+    "connect.viewPortfolio": "View Portfolio",
+    "connect.hireTitle": "Hire Me",
+    "connect.hireDesc": "I'm ready to join and bring my best contribution to your team.",
+    "connect.hireLink": "Hire Me Now",
+    "connect.downloadCv": "Download CV",
+    "connect.cvDesc": "Download my CV for more complete information about my experience and skills.",
+    "connect.footerNote": "Real Results &nbsp;•&nbsp; Detail-Oriented &nbsp;•&nbsp; On Time"
   }
 };
+

@@ -35,7 +35,7 @@ window.I18N_PAGE = {
     "challenge.desc": "Kenaikan jumlah pengunjung belum tentu menunjukkan kualitas traffic yang lebih baik. Rata-rata halaman dilihat, durasi kunjungan, pengunjung baru dan lama, serta tingkat melihat tanpa membeli perlu dibandingkan bersama.",
     "gallery.desc": "Dashboard Tingkat Kunjungan periode Februari–Juli 2026 yang dapat dipilih langsung berdasarkan bulan.",
     "nav.prev": "Analisis Performa Produk Shopee",
-    "nav.next": "Dashboard Operasional & Analisis Data Multi-Channel",
+    "nav.next": "Penyusunan SOP &amp; Workflow Gudang",
     "process.item1.title": "Standarisasi Snapshot Traffic",
     "process.item1.desc": "Mengumpulkan dashboard Tingkat Kunjungan dengan rentang dan indikator yang konsisten.",
     "process.item2.title": "Analisis Kualitas Kunjungan",
@@ -84,7 +84,7 @@ window.I18N_PAGE = {
     "challenge.desc": "Higher visitor volume does not automatically mean better traffic quality. Average page views, visit duration, new and returning visitors, and view-without-purchase rate must be compared together.",
     "gallery.desc": "Store Traffic dashboards for February–July 2026, selectable directly by month.",
     "nav.prev": "Shopee Product Performance Analysis",
-    "nav.next": "Multi-Channel Operations & Data Analysis Dashboard",
+    "nav.next": "Warehouse SOP &amp; Workflow Development",
     "process.item1.title": "Traffic Snapshot Standardization",
     "process.item1.desc": "Collected Store Traffic dashboards using consistent periods and indicators.",
     "process.item2.title": "Visit Quality Analysis",
@@ -99,3 +99,4 @@ window.I18N_PAGE = {
     "result.card4.s": "Average Visit Duration"
   }
 };
+

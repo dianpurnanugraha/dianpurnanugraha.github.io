@@ -34,8 +34,8 @@ window.I18N_PAGE = {
     "meta.toolsVal": "Shopee Seller Center — Voucher",
     "challenge.desc": "Jumlah klaim yang tinggi belum tentu menghasilkan transaksi. Kinerja voucher perlu dievaluasi dari tingkat penggunaan, pesanan, total pembeli, nilai penjualan, dan biaya agar insentif tidak hanya menarik perhatian tetapi juga mendorong pembelian.",
     "gallery.desc": "Dashboard Voucher Toko Shopee periode Februari–Agustus 2026 yang dapat dipilih langsung berdasarkan bulan.",
-    "nav.prev": "Performa Konten Live & Video Shopee",
-    "nav.next": "Analisis Performa Penjualan Shopee",
+    "nav.prev": "Performa Konten Live &amp; Video Shopee",
+    "nav.next": "Dashboard Operasional &amp; Analisis Data Multi-Channel",
     "process.item1.title": "Pengumpulan Snapshot Bulanan",
     "process.item1.desc": "Mengumpulkan dashboard Voucher Toko periode Februari–Agustus 2026 dengan indikator yang konsisten.",
     "process.item2.title": "Analisis Klaim dan Penggunaan",
@@ -83,8 +83,8 @@ window.I18N_PAGE = {
     "meta.toolsVal": "Shopee Seller Center — Vouchers",
     "challenge.desc": "High claim volume does not automatically produce transactions. Voucher performance must be evaluated through usage rate, orders, buyers, sales value, and cost so incentives drive purchases, not just attention.",
     "gallery.desc": "Shopee Store Voucher dashboards for February–August 2026, selectable directly by month.",
-    "nav.prev": "Shopee Live & Video Content Performance",
-    "nav.next": "Shopee Sales Performance Analysis",
+    "nav.prev": "Shopee Live &amp; Video Content Performance",
+    "nav.next": "Multi-Channel Operations &amp; Data Analysis Dashboard",
     "process.item1.title": "Monthly Snapshot Collection",
     "process.item1.desc": "Collected Store Voucher dashboards for February–August 2026 with consistent indicators.",
     "process.item2.title": "Claim and Usage Analysis",
@@ -99,3 +99,4 @@ window.I18N_PAGE = {
     "result.card4.s": "Voucher Usage Rate"
   }
 };
+

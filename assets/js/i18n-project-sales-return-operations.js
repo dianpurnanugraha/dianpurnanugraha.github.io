@@ -42,7 +42,17 @@ window.I18N_PAGE = {
     "results.stat1": "Sheet Penjualan, Retur &amp; Otomasi",
     "results.stat2": "Pesanan Shopee Tercatat",
     "results.stat3": "Unit Retur Terjual Ulang",
-    "results.stat4": "Recovery Retur Tercatat"
+    "results.stat4": "Recovery Retur Tercatat",
+    "connect.badge": "LIHAT KARYA SAYA",
+    "connect.title": "Punya Proyek <span>di Pikiran?</span>",
+    "connect.desc": "Saya siap membantu kebutuhan operasional, desain, atau strategi digital marketing Anda.",
+    "connect.viewPortfolio": "Lihat Portofolio",
+    "connect.hireTitle": "Rekrut Saya",
+    "connect.hireDesc": "Saya siap bergabung dan memberikan kontribusi terbaik untuk tim Anda.",
+    "connect.hireLink": "Rekrut Saya Sekarang",
+    "connect.downloadCv": "Unduh CV",
+    "connect.cvDesc": "Unduh CV saya untuk informasi lebih lengkap mengenai pengalaman dan keahlian saya.",
+    "connect.footerNote": "Hasil Nyata &nbsp;•&nbsp; Teliti &nbsp;•&nbsp; Tepat Waktu"
   },
   "en": {
     "_title": "Multi-Channel Sales &amp; Return Operations System — Dian Purna Nugraha, S.Kom.",
@@ -86,6 +96,17 @@ window.I18N_PAGE = {
     "results.stat1": "Sales, Return &amp; Automation Sheets",
     "results.stat2": "Recorded Shopee Orders",
     "results.stat3": "Returned Units Resold",
-    "results.stat4": "Recorded Return Recovery"
+    "results.stat4": "Recorded Return Recovery",
+    "connect.badge": "SEE MY WORK",
+    "connect.title": "Have a Project <span>in Mind?</span>",
+    "connect.desc": "I'm ready to help with your operations, design, or digital marketing strategy needs.",
+    "connect.viewPortfolio": "View Portfolio",
+    "connect.hireTitle": "Hire Me",
+    "connect.hireDesc": "I'm ready to join and bring my best contribution to your team.",
+    "connect.hireLink": "Hire Me Now",
+    "connect.downloadCv": "Download CV",
+    "connect.cvDesc": "Download my CV for more complete information about my experience and skills.",
+    "connect.footerNote": "Real Results &nbsp;•&nbsp; Detail-Oriented &nbsp;•&nbsp; On Time"
   }
 };
+

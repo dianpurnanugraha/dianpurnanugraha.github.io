@@ -36,7 +36,7 @@ window.I18N_PAGE = {
     'gallery.desc': 'Geser tiap kartu untuk melihat beberapa angle terbaik dari tiap produk. Setiap produk sebenarnya dipotret dalam beberapa angle, di sini ditampilkan pilihan terbaiknya saja.',
     'gallery.paginationLabel': 'Navigasi halaman galeri produk',
     'nav.prev': 'Desain Kemasan &amp; Branding Multi-Brand',
-    'nav.next': 'Kampanye Iklan Shopee Ads',
+    'nav.next': 'Manajemen Stok, Pembelian &amp; Persediaan',
     'pcta.badge': 'Lihat Hasil Kerja Saya',
     'pcta.title': 'Punya Proyek <span>di Pikiran?</span>',
     'pcta.desc': 'Saya siap membantu mewujudkan kebutuhan operasional, desain, atau strategi digital marketing untuk bisnis Anda.',
@@ -85,7 +85,7 @@ window.I18N_PAGE = {
     'gallery.desc': 'Swipe each card to see some of the best angles for each product. Every product is actually shot from several angles — only the best picks are shown here.',
     'gallery.paginationLabel': 'Product gallery page navigation',
     'nav.prev': 'Multi-Brand Packaging &amp; Branding Design',
-    'nav.next': 'Shopee Ads Campaign',
+    'nav.next': 'Stock, Purchasing &amp; Inventory Management',
     'pcta.badge': 'See My Work',
     'pcta.title': 'Got a Project <span>in Mind?</span>',
     'pcta.desc': 'I\'m ready to help bring your operations, design, or digital marketing strategy needs to life for your business.',
@@ -99,3 +99,4 @@ window.I18N_PAGE = {
     'pcta.footer': 'Real Results &nbsp;•&nbsp; Careful Detail &nbsp;•&nbsp; On-Time Delivery',
   }
 };
+
