@@ -61,6 +61,21 @@ window.I18N_PAGE = {
     'card16.title': 'Invoice &amp; Surat Jalan Otomatis',
     'card16.desc': 'Membuat invoice dan surat jalan otomatis dari data MD/Public Sales lewat pilihan nomor transaksi, siap cetak hingga 50 produk per dokumen.',
 
+    'card17.title': 'Kampanye Diskon Produk Shopee',
+    'card17.desc': 'Mengelola dan mengevaluasi diskon produk melalui penjualan, pesanan, produk terjual, pembeli, dan tren bulanan.',
+    'card18.title': 'Performa Konten Live &amp; Video Shopee',
+    'card18.desc': 'Menganalisis penjualan, penonton, klik, pembeli, konversi, dan interaksi dari konten Live &amp; Video Shopee.',
+    'card19.title': 'Performa Program Pengiriman Kilat Shopee',
+    'card19.desc': 'Memantau pesanan, reservasi, kecepatan penerimaan, kesiapan stok, dan performa produk dalam Program Pengiriman Kilat.',
+    'card20.title': 'Analisis Performa Penjualan Shopee',
+    'card20.desc': 'Menganalisis funnel, tren penjualan, komposisi kategori, rentang harga, serta pembeli baru dan lama.',
+    'card21.title': 'Analisis Performa Produk Shopee',
+    'card21.desc': 'Menganalisis funnel produk dari kunjungan dan tambah ke keranjang hingga pesanan dibuat dan siap dikirim.',
+    'card22.title': 'Analisis Tingkat Kunjungan Toko Shopee',
+    'card22.desc': 'Menganalisis pengunjung baru dan lama, halaman dilihat, durasi kunjungan, serta tren traffic harian.',
+    'card23.title': 'Kampanye Voucher Toko Shopee',
+    'card23.desc': 'Mengelola dan mengevaluasi voucher melalui data klaim, penggunaan, pesanan, pembeli, penjualan, dan biaya.',
+
     'connect.badge': 'PUNYA PROYEK?',
     'connect.title': 'Mari Wujudkan <span>Ide Anda</span>',
     'connect.desc': 'Dari konsep hingga implementasi, saya siap membantu menghadirkan solusi yang sesuai dengan kebutuhan Anda.',
@@ -160,4 +175,3 @@ window.I18N_PAGE = {
     'connect.footerNote': 'Real Results &nbsp;•&nbsp; Attention to Detail &nbsp;•&nbsp; On Time'
   }
 };
-
