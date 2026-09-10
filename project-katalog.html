@@ -3,28 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Desain Kemasan &amp; Branding Multi-Brand — Dian Purna Nugraha, S.Kom.</title>
-<meta name="description" content="Studi kasus: Desain Kemasan & Branding Multi-Brand — Merancang kemasan untuk beberapa varian brand produk lintas industri bagi berbagai klien.">
+<title>Desain Katalog Produk Multi-Brand — Dian Purna Nugraha, S.Kom.</title>
+<meta name="description" content="Studi kasus desain katalog produk multi-brand untuk media digital dan cetak, mulai dari perencanaan konten, tata letak, hingga finalisasi visual.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230F2A4D'/%3E%3Ctext x='50' y='68' font-family='Poppins,Arial,sans-serif' font-size='58' font-weight='700' fill='white' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Desain Kemasan &amp; Branding Multi-Brand — Dian Purna Nugraha, S.Kom.">
-<meta property="og:description" content="Merancang kemasan untuk beberapa varian brand produk lintas industri bagi berbagai klien.">
+<meta property="og:title" content="Desain Katalog Produk Multi-Brand — Dian Purna Nugraha, S.Kom.">
+<meta property="og:description" content="Merancang katalog produk yang terstruktur, konsisten, dan siap digunakan dalam format digital maupun cetak.">
 <meta property="og:image" content="assets/img/profile.webp">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="assets/css/styles.css?v=11">
-<style id="packaging-gallery-caption-layout">
-  #galleryGrid .packaging-card-caption{
+<style id="katalog-gallery-caption-layout">
+  #galleryGrid .shot-caption{
     width:calc(100% + 32px);
     margin:16px -16px -16px;
     box-sizing:border-box;
     justify-content:center;
     text-align:center;
   }
+  #galleryGrid{
+    grid-template-columns:repeat(auto-fit,minmax(280px,360px));
+    justify-content:center;
+  }
+  .catalog-card{overflow:hidden;}
+  .catalog-cover{height:440px;}
+  .catalog-cover img{width:100%;height:100%;object-fit:contain;}
+  .catalog-caption{margin-bottom:0!important;}
+  .catalog-details{margin:12px 16px 0;text-align:center;color:#64748b;font-size:13px;}
+  .catalog-actions{display:grid;gap:8px;padding:12px 16px 16px;}
+  .catalog-action{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:10px 12px;border:1px solid #cfe0f5;border-radius:10px;background:#f5f9ff;color:#1466d8;font:600 12px/1.3 Inter,sans-serif;text-decoration:none;cursor:pointer;}
+  .catalog-action:hover{background:#eaf3ff;}
+  .catalog-pdf-modal{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(4,17,36,.78);}
+  .catalog-pdf-dialog{width:min(100%,980px);height:min(92vh,900px);overflow:hidden;border-radius:16px;background:#fff;box-shadow:0 24px 70px rgba(0,0,0,.35);}
+  .catalog-pdf-head{height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;border-bottom:1px solid #dbe5f1;color:#0f2a4d;}
+  .catalog-pdf-close{display:grid;place-items:center;width:36px;height:36px;border:0;border-radius:50%;background:#edf4ff;color:#0f2a4d;cursor:pointer;}
+  .catalog-pdf-dialog iframe{display:block;width:100%;height:calc(100% - 54px);border:0;}
+  @media(max-width:768px){
+    .catalog-cover{height:400px;}
+    .catalog-pdf-modal{display:none;}
+  }
 </style>
-<link rel="canonical" href="https://dianpurnanugraha.my.id/project-packaging.html">
+<link rel="canonical" href="https://dianpurnanugraha.my.id/project-katalog.html">
 </head>
 <body>
 
@@ -91,7 +112,7 @@
     <i class="fa-solid fa-chevron-right breadcrumb-sep"></i>
     <a href="project.html">Project</a>
     <i class="fa-solid fa-chevron-right breadcrumb-sep"></i>
-    <span class="breadcrumb-current" data-i18n="hero.title">Desain Kemasan &amp; Branding Multi-Brand</span>
+    <span class="breadcrumb-current" data-i18n="hero.title">Desain Katalog Produk Multi-Brand</span>
   </div>
 </nav>
 
@@ -102,20 +123,20 @@
 
 <!-- ===================== DETAIL HERO ===================== -->
 <section class="wrap" style="padding-top:20px;">
-  <div class="detail-hero" style="background:linear-gradient(135deg,#0f9d58,#22c55e);">
+  <div class="detail-hero" style="background:linear-gradient(135deg,#0f766e,#2dd4bf);">
     <span class="project-tag" data-i18n="hero.tag">Branding</span>
-    <h1 data-i18n="hero.title">Desain Kemasan &amp; Branding Multi-Brand</h1>
-    <p data-i18n="hero.desc">Merancang kemasan produk untuk berbagai varian brand lintas industri bagi klien yang memasarkan produk yang sama di bawah beberapa merek berbeda.</p>
-    <div class="detail-hero-icon"><i class="fa-solid fa-box-open"></i></div>
+    <h1 data-i18n="hero.title">Desain Katalog Produk Multi-Brand</h1>
+    <p data-i18n="hero.desc">Merancang katalog produk yang terstruktur dan konsisten untuk berbagai brand, dari sampul dan profil hingga halaman kategori produk.</p>
+    <div class="detail-hero-icon"><i class="fa-solid fa-book"></i></div>
   </div>
 </section>
 
 <!-- ===================== META INFO ===================== -->
 <section class="wrap">
   <div class="detail-meta-grid">
-    <div class="detail-meta-item"><span data-i18n="meta.client">Klien</span><b>4+ Brand</b></div>
-    <div class="detail-meta-item"><span data-i18n="meta.role">Peran</span><b data-i18n="meta.roleValue">Graphic &amp; Packaging Designer</b></div>
-    <div class="detail-meta-item"><span data-i18n="meta.duration">Durasi</span><b data-i18n="meta.durationValue">Berkelanjutan (2023–2026)</b></div>
+    <div class="detail-meta-item"><span data-i18n="meta.client">Klien</span><b data-i18n="meta.clientValue">Multi Brand</b></div>
+    <div class="detail-meta-item"><span data-i18n="meta.role">Peran</span><b data-i18n="meta.roleValue">Graphic &amp; Catalog Designer</b></div>
+    <div class="detail-meta-item"><span data-i18n="meta.duration">Durasi</span><b data-i18n="meta.durationValue">Per Proyek</b></div>
     <div class="detail-meta-item"><span data-i18n="meta.tools">Tools</span><b>Canva, CorelDRAW, Adobe Photoshop, Adobe Illustrator</b></div>
   </div>
 </section>
@@ -125,17 +146,17 @@
   <div class="wrap">
     <div class="detail-block">
       <h3><i class="fa-solid fa-circle-exclamation"></i> <span data-i18n="challenge.title">Tantangan</span></h3>
-      <p data-i18n="challenge.desc">Sejumlah klien lintas industri memasarkan produk yang sama di bawah beberapa nama brand berbeda untuk kanal distribusi yang berbeda pula, sehingga tiap kemasan harus punya identitas visual sendiri namun tetap konsisten menyampaikan komposisi, cara pakai/saji, dan informasi legalitas produk (seperti BPOM, halal, atau SNI) yang sama.</p>
+      <p data-i18n="challenge.desc">Informasi produk yang banyak perlu disusun dalam satu media yang mudah dipindai, konsisten secara visual, serta tetap nyaman digunakan dalam format digital maupun cetak.</p>
     </div>
 
     <div class="detail-block">
       <h3><i class="fa-solid fa-diagram-project"></i> <span data-i18n="process.title">Proses &amp; Solusi</span></h3>
     </div>
     <div class="process-list">
-      <div class="process-item"><div class="process-num">1</div><div><h5 data-i18n="process1.title">Adaptasi Identitas Brand</h5><p data-i18n="process1.desc">Menyesuaikan warna, logo, dan gaya visual untuk tiap nama brand agar tetap punya karakter berbeda satu sama lain.</p></div></div>
-      <div class="process-item"><div class="process-num">2</div><div><h5 data-i18n="process2.title">Layout Informasi Produk</h5><p data-i18n="process2.desc">Menyusun ulang komposisi, cara pakai/saji, QR code, dan info legalitas produk (BPOM, halal, SNI, dll) agar tetap terbaca jelas di setiap varian kemasan.</p></div></div>
-      <div class="process-item"><div class="process-num">3</div><div><h5 data-i18n="process3.title">Desain Multi-Sisi Kemasan</h5><p data-i18n="process3.desc">Mendesain seluruh sisi kemasan (depan, belakang, hingga samping) untuk pouch stand-up maupun karton box, sesuai kebutuhan bentuk kemasan tiap brand.</p></div></div>
-      <div class="process-item"><div class="process-num">4</div><div><h5 data-i18n="process4.title">Finalisasi Siap Cetak</h5><p data-i18n="process4.desc">Menyiapkan file akhir dengan ukuran dan resolusi sesuai standar cetak untuk berbagai jenis kemasan.</p></div></div>
+      <div class="process-item"><div class="process-num">1</div><div><h5 data-i18n="process1.title">Audit Konten</h5><p data-i18n="process1.desc">Mengelompokkan profil brand, kategori, informasi produk, ukuran, dan harga sebagai dasar struktur katalog.</p></div></div>
+      <div class="process-item"><div class="process-num">2</div><div><h5 data-i18n="process2.title">Sistem Layout</h5><p data-i18n="process2.desc">Membuat hierarki dan grid halaman agar puluhan produk tetap mudah dibaca dan dibandingkan.</p></div></div>
+      <div class="process-item"><div class="process-num">3</div><div><h5 data-i18n="process3.title">Desain Visual</h5><p data-i18n="process3.desc">Menerapkan warna, tipografi, elemen grafis, serta gaya gambar yang konsisten dengan identitas brand.</p></div></div>
+      <div class="process-item"><div class="process-num">4</div><div><h5 data-i18n="process4.title">Finalisasi Output</h5><p data-i18n="process4.desc">Memeriksa keterbacaan, konsistensi data, resolusi gambar, dan kesiapan file untuk distribusi digital atau cetak.</p></div></div>
     </div>
   </div>
 </section>
@@ -148,10 +169,10 @@
       <h2 data-i18n="result.title">Dampak &amp; <span>Hasil</span></h2>
     </div>
     <div class="result-grid">
-      <div class="result-card"><b>4+</b><span data-i18n="result1.label">Varian Brand</span></div>
-      <div class="result-card"><b>2023–2026</b><span data-i18n="result2.label">Periode Pengerjaan</span></div>
-      <div class="result-card"><b>100%</b><span data-i18n="result3.label">Siap Cetak</span></div>
-      <div class="result-card"><b data-i18n="result4.value">2–4 Sisi</b><span data-i18n="result4.label">Depan, Belakang &amp; Samping</span></div>
+      <div class="result-card"><b>25</b><span data-i18n="result1.label">Halaman Katalog</span></div>
+      <div class="result-card"><b>5</b><span data-i18n="result2.label">Kategori Produk</span></div>
+      <div class="result-card"><b>1</b><span data-i18n="result3.label">Sistem Layout Konsisten</span></div>
+      <div class="result-card"><b>2</b><span data-i18n="result4.label">Format Digital &amp; Cetak</span></div>
     </div>
   </div>
 </section>
@@ -162,18 +183,20 @@
     <div class="sec-head">
       <div class="eyebrow-line" data-i18n="gallery.eyebrow">DOKUMENTASI</div>
       <h2 data-i18n="gallery.title">Cuplikan <span>Pekerjaan</span></h2>
-      <p data-i18n="gallery.desc">Geser tiap kartu untuk melihat mockup kemasan dan desain flat-nya.</p>
+    </div>
+    <div class="filter-group" id="katalogFilterGroup">
+      <div class="filter-row" id="katalogCategoryFilter"></div>
     </div>
 
     <div class="slider-card-grid" id="galleryGrid"></div>
 
-    <nav class="gallery-pagination" id="galleryPagination" aria-label="Navigasi halaman galeri kemasan"></nav>
+    <nav class="gallery-pagination" id="galleryPagination" aria-label="Navigasi halaman katalog"></nav>
     <p class="gallery-page-info" id="galleryPageInfo"></p>
 
     <div class="project-tags project-tags-center">
-      <span>Packaging Design</span>
-      <span>Multi-Brand</span>
-      <span>CorelDRAW</span>
+      <span>Catalog Design</span>
+      <span>Editorial Layout</span>
+      <span>Print &amp; Digital</span>
     </div>
   </div>
 </section>
@@ -181,8 +204,8 @@
 <!-- ===================== PREV / NEXT ===================== -->
 <section class="wrap" style="padding-bottom:30px;">
   <div class="project-nav-row">
-    <a href="project-katalog.html" class="project-nav-link"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="nav.prev">Desain Katalog Produk Multi-Brand</span></a>
-    <a href="project-fotografi-produk.html" class="project-nav-link next"><span data-i18n="nav.next">Fotografi &amp; Editing Produk</span> <i class="fa-solid fa-arrow-right"></i></a>
+    <a href="project-brosur.html" class="project-nav-link"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="nav.prev">Desain Brosur &amp; Materi Cetak Promosi</span></a>
+    <a href="project-packaging.html" class="project-nav-link next"><span data-i18n="nav.next">Desain Kemasan &amp; Branding Multi-Brand</span> <i class="fa-solid fa-arrow-right"></i></a>
   </div>
 </section>
 
@@ -286,7 +309,7 @@
 </footer>
 
 <script src="assets/js/i18n-common.js"></script>
-<script src="assets/js/i18n-project-packaging.js"></script>
+<script src="assets/js/i18n-project-katalog.js"></script>
 <script src="assets/js/i18n.js"></script>
 <script src="assets/js/reading-progress.js"></script>
 <script src="assets/js/nav-toggle.js"></script>
@@ -294,81 +317,152 @@
 <script src="assets/js/lightbox.js"></script>
 <script>
 (function(){
-  var PRODUCTS = [
-    { tag: "Alanature", tagAlt: false, title: "Teh Rimpang", titleEn: "Rimpang Tea", images: [
-        { src: "assets/img/packaging/project-packaging-alanature-mockup.webp" },
-        { src: "assets/img/packaging/project-packaging-alanature-flat.webp" }
+  return;
+  function getPageFromURL(total){
+    var params = new URLSearchParams(window.location.search);
+    var p = parseInt(params.get('page'), 10);
+    if (!p || p < 1) p = 1;
+    if (p > total) p = total;
+    return p;
+  }
+
+  function setPageInURL(page){
+    if (!window.history || !window.history.replaceState) return;
+    var url = new URL(window.location.href);
+    if (page > 1) url.searchParams.set('page', page);
+    else url.searchParams.delete('page');
+    window.history.replaceState(null, '', url.toString());
+  }
+
+  /* ================================================================
+     DATA CONTOH BROSUR (dipaginasi dan difilter berdasarkan orientasi)
+     type: "double" pakai slider depan/belakang, "single" pakai
+     slider-card-imgbox (satu gambar saja, tanpa panah/dot).
+     ================================================================ */
+  function getLang(){ return localStorage.getItem('site-lang') || 'id'; }
+  function dict(){ return (window.I18N_PAGE && window.I18N_PAGE[getLang()]) || {}; }
+
+  var EXAMPLES = [
+    { name: { id: "SPMB Sekolah", en: "School Admission" }, category: "potrait", type: "single",
+      image: { src: "assets/img/brosur/project-brosur-1.webp", alt: "Desain Brosur SPMB Halaman Depan" }
+    },
+    { name: { id: "SPMB Sekolah", en: "School Admission" }, category: "potrait", type: "single",
+      image: { src: "assets/img/brosur/project-brosur-1.webp", alt: "Desain Brosur SPMB Halaman Dalam" }
+    },
+    { name: { id: "SPMB Sekolah", en: "School Admission" }, category: "landscape", type: "double", images: [
+        { src: "assets/img/brosur/project-brosur-2a.webp" },
+        { src: "assets/img/brosur/project-brosur-2b.webp" }
     ]},
-    { tag: "Xtraherb", tagAlt: false, title: "Teh Rimpang", titleEn: "Rimpang Tea", images: [
-        { src: "assets/img/packaging/project-packaging-xtraherb-mockup.webp" },
-        { src: "assets/img/packaging/project-packaging-xtraherb-flat.webp" }
+    { name: { id: "SPMB Sekolah", en: "School Admission" }, category: "landscape", type: "single",
+      image: { src: "assets/img/brosur/project-brosur-2a.webp" }
+    },
+    { name: { id: "SPMB Sekolah", en: "School Admission" }, category: "landscape", type: "double", images: [
+        { src: "assets/img/brosur/project-brosur-2a.webp" },
+        { src: "assets/img/brosur/project-brosur-2b.webp" }
     ]},
-    { tag: "X-travit", tagAlt: false, title: "Teh Rimpang", titleEn: "Rimpang Tea", images: [
-        { src: "assets/img/packaging/project-packaging-xtravit-mockup.webp" },
-        { src: "assets/img/packaging/project-packaging-xtravit-flat.webp" }
-    ]},
-    { tag: "Sari Rimpang", tagAlt: true, title: "Teh Rimpang", titleEn: "Rimpang Tea", images: [
-        { src: "assets/img/packaging/project-packaging-saririmpang-mockup.webp" },
-        { src: "assets/img/packaging/project-packaging-saririmpang-flat.webp" }
+    { name: { id: "SPMB Sekolah", en: "School Admission" }, category: "landscape", type: "single",
+      image: { src: "assets/img/brosur/project-brosur-2b.webp" }
+    },
+    { name: { id: "SPMB Sekolah", en: "School Admission" }, category: "landscape", type: "double", images: [
+        { src: "assets/img/brosur/project-brosur-2a.webp" },
+        { src: "assets/img/brosur/project-brosur-2b.webp" }
     ]}
   ];
 
   var ITEMS_PER_PAGE = 8;
+  var CATEGORIES = ['all', 'potrait', 'landscape'];
+  var CATEGORY_LABELS = {
+    id: { all: 'Semua', potrait: 'Potrait', landscape: 'Landscape' },
+    en: { all: 'All', potrait: 'Portrait', landscape: 'Landscape' }
+  };
 
-  var grid       = document.getElementById('galleryGrid');
-  var paginateEl = document.getElementById('galleryPagination');
-  var infoEl     = document.getElementById('galleryPageInfo');
-  var totalPages = Math.ceil(PRODUCTS.length / ITEMS_PER_PAGE);
+  var grid          = document.getElementById('galleryGrid');
+  var categoryEl    = document.getElementById('brosurCategoryFilter');
+  var filterGroupEl = document.getElementById('brosurFilterGroup');
+  var paginateEl    = document.getElementById('galleryPagination');
+  var infoEl        = document.getElementById('galleryPageInfo');
+  var currentCategory = 'all';
+  var currentItems  = EXAMPLES;
+  var totalPages    = Math.max(1, Math.ceil(currentItems.length / ITEMS_PER_PAGE));
   var currentPage = 1;
 
-  function getLang(){ return localStorage.getItem('site-lang') || 'id'; }
-  function getSlideLabel(index){
-    if (index === 0) return 'Mockup';
-    return getLang() === 'en' ? 'Flat Design' : 'Desain Flat';
-  }
-  function getProductTitle(product){
-    return getLang() === 'en' ? product.titleEn : product.title;
+  function categoryLabel(category){
+    var labels = CATEGORY_LABELS[getLang()] || CATEGORY_LABELS.id;
+    return labels[category] || category;
   }
 
-  function buildCard(product){
+  function getFilteredItems(){
+    if (currentCategory === 'all') return EXAMPLES;
+    return EXAMPLES.filter(function(ex){ return ex.category === currentCategory; });
+  }
+
+  function renderCategoryFilter(){
+    categoryEl.innerHTML = '';
+    CATEGORIES.forEach(function(category){
+      var button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'filter-btn' + (category === currentCategory ? ' active' : '');
+      button.textContent = categoryLabel(category);
+      button.addEventListener('click', function(){
+        currentCategory = category;
+        currentItems = getFilteredItems();
+        totalPages = Math.max(1, Math.ceil(currentItems.length / ITEMS_PER_PAGE));
+        renderCategoryFilter();
+        renderPage(1, true);
+      });
+      categoryEl.appendChild(button);
+    });
+  }
+
+  function buildCard(ex){
     var card = document.createElement('div');
     card.className = 'slider-card';
-    var productTitle = getProductTitle(product);
+    var d = dict();
+    var lang = getLang();
+    var title = ex.name[lang] || ex.name.id;
+    var tagLabel = ex.type === 'double' ? (d['example.tagDouble'] || 'Bolak-balik') : (d['example.tagSingle'] || 'Satu Sisi');
+    var tagIcon = ex.type === 'double' ? 'fa-arrows-rotate' : 'fa-image';
+    var tagAlt = ex.type === 'single';
 
     var head = document.createElement('div');
     head.className = 'slider-card-head';
     head.innerHTML =
-      '<span class="slider-card-tag"><i class="fa-solid fa-cube"></i> <span class="packaging-slide-label">' + getSlideLabel(0) + '</span></span>';
+      '<span class="slider-card-tag' + (tagAlt ? ' alt' : '') + '"><i class="fa-solid ' + tagIcon + '"></i> ' + tagLabel + '</span>';
     card.appendChild(head);
 
-    var slider = document.createElement('div');
-    slider.className = 'media-slider';
+    if (ex.type === 'single'){
+      var box = document.createElement('div');
+      box.className = 'slider-card-imgbox';
+      box.innerHTML = '<img src="' + ex.image.src + '" alt="' + (ex.image.alt || ('Brosur ' + title)) + '" loading="lazy">';
+      card.appendChild(box);
+    } else {
+      var slider = document.createElement('div');
+      slider.className = 'media-slider';
+      var slidesHtml = ex.images.map(function(img){
+        return '<div class="media-slide">' +
+                 '<img src="' + img.src + '" alt="Brosur Landscape Lipat Bolak-balik ' + title + '" loading="lazy">' +
+               '</div>';
+      }).join('');
+      slider.innerHTML =
+        '<button class="media-arrow prev" aria-label="' + (d['gallery.slidePrev'] || 'Sebelumnya') + '"><i class="fa-solid fa-chevron-left"></i></button>' +
+        '<div class="media-slider-track"><div class="media-slider-slides">' + slidesHtml + '</div></div>' +
+        '<button class="media-arrow next" aria-label="' + (d['gallery.slideNext'] || 'Berikutnya') + '"><i class="fa-solid fa-chevron-right"></i></button>';
+      card.appendChild(slider);
 
-    var slidesHtml = product.images.map(function(img, index){
-      return '<div class="media-slide">' +
-               '<img src="' + img.src + '" alt="Kemasan ' + product.tag + ' ' + productTitle + ' — ' + getSlideLabel(index) + '" loading="lazy">' +
-             '</div>';
-    }).join('');
-
-    slider.innerHTML =
-      '<button class="media-arrow prev" aria-label="' + ((window.I18N_PAGE && window.I18N_PAGE[localStorage.getItem('site-lang') || 'id'] && window.I18N_PAGE[localStorage.getItem('site-lang') || 'id']['gallery.slidePrev']) || 'Sebelumnya') + '"><i class="fa-solid fa-chevron-left"></i></button>' +
-      '<div class="media-slider-track"><div class="media-slider-slides">' + slidesHtml + '</div></div>' +
-      '<button class="media-arrow next" aria-label="' + ((window.I18N_PAGE && window.I18N_PAGE[localStorage.getItem('site-lang') || 'id'] && window.I18N_PAGE[localStorage.getItem('site-lang') || 'id']['gallery.slideNext']) || 'Berikutnya') + '"><i class="fa-solid fa-chevron-right"></i></button>';
-    card.appendChild(slider);
-
-    var dots = document.createElement('div');
-    dots.className = 'media-dots';
-    card.appendChild(dots);
+      var dots = document.createElement('div');
+      dots.className = 'media-dots';
+      card.appendChild(dots);
+    }
 
     var caption = document.createElement('div');
-    caption.className = 'shot-caption packaging-card-caption';
-    var brandTag = document.createElement('span');
-    brandTag.className = 'shot-tag';
-    brandTag.textContent = product.tag;
-    caption.appendChild(brandTag);
-    var productName = document.createElement('span');
-    productName.textContent = productTitle;
-    caption.appendChild(productName);
+    caption.className = 'shot-caption';
+    var tag = document.createElement('span');
+    tag.className = 'shot-tag';
+    tag.textContent = lang === 'en' ? 'Brochure' : 'Brosur';
+    caption.appendChild(tag);
+    var text = document.createElement('span');
+    text.textContent = title;
+    caption.appendChild(text);
     card.appendChild(caption);
 
     return card;
@@ -381,8 +475,10 @@
       var prevBtn = sliderEl.querySelector('.media-arrow.prev');
       var nextBtn = sliderEl.querySelector('.media-arrow.next');
       var dotsBox = sliderEl.parentElement.querySelector('.media-dots');
-      var slideLabelEl = sliderEl.parentElement.querySelector('.packaging-slide-label');
+      var cardEl  = sliderEl.closest('.slider-card');
+      var flipTag = cardEl ? cardEl.querySelector('.slider-card-tag') : null;
       var index = 0;
+      var flipping = false;
 
       if (slides.length <= 1){
         if (prevBtn) prevBtn.style.display = 'none';
@@ -404,10 +500,45 @@
         index = (i + slides.length) % slides.length;
         track.style.transform = 'translateX(-' + (index * 100) + '%)';
         dots.forEach(function(d, di){ d.classList.toggle('active', di === index); });
-        if (slideLabelEl) slideLabelEl.textContent = getSlideLabel(index);
       }
+
+      // Efek flip 3D dipicu klik tag "Bolak-balik" — carousel panah/dot tetap
+      // memakai transisi geser biasa lewat goTo().
+      function flipTo(i){
+        if (flipping || typeof track.animate !== 'function') { goTo(i); return; }
+        var nextIndex = (i + slides.length) % slides.length;
+        var fromX = -(index * 100);
+        var toX   = -(nextIndex * 100);
+        flipping = true;
+        sliderEl.classList.add('is-flipping');
+        var anim = track.animate([
+          { transform: 'translateX(' + fromX + '%) rotateY(0deg)' },
+          { transform: 'translateX(' + fromX + '%) rotateY(90deg)' },
+          { transform: 'translateX(' + toX   + '%) rotateY(90deg)' },
+          { transform: 'translateX(' + toX   + '%) rotateY(0deg)' }
+        ], { duration: 560, easing: 'ease-in-out', fill: 'forwards' });
+        anim.onfinish = function(){
+          index = nextIndex;
+          track.style.transform = 'translateX(' + toX + '%)';
+          anim.cancel();
+          dots.forEach(function(d, di){ d.classList.toggle('active', di === index); });
+          sliderEl.classList.remove('is-flipping');
+          flipping = false;
+        };
+      }
+
       prevBtn.addEventListener('click', function(){ goTo(index - 1); });
       nextBtn.addEventListener('click', function(){ goTo(index + 1); });
+
+      if (flipTag){
+        flipTag.classList.add('is-flip-trigger');
+        flipTag.setAttribute('role', 'button');
+        flipTag.setAttribute('tabindex', '0');
+        flipTag.addEventListener('click', function(){ flipTo(index + 1); });
+        flipTag.addEventListener('keydown', function(e){
+          if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); flipTo(index + 1); }
+        });
+      }
     });
   }
 
@@ -423,22 +554,6 @@
     if (range.length && range[range.length - 1] < total - 1) result.push('...');
     if (total > 1) result.push(total);
     return result;
-  }
-
-  function getPageFromURL(total){
-    var params = new URLSearchParams(window.location.search);
-    var p = parseInt(params.get('page'), 10);
-    if (!p || p < 1) p = 1;
-    if (p > total) p = total;
-    return p;
-  }
-
-  function setPageInURL(page){
-    if (!window.history || !window.history.replaceState) return;
-    var url = new URL(window.location.href);
-    if (page > 1) url.searchParams.set('page', page);
-    else url.searchParams.delete('page');
-    window.history.replaceState(null, '', url.toString());
   }
 
   function renderPagination(){
@@ -477,38 +592,50 @@
     nextBtn.addEventListener('click', function(){ renderPage(currentPage + 1, true); });
     paginateEl.appendChild(nextBtn);
 
-    var lang = localStorage.getItem('site-lang') || 'id';
-    var dict = (window.I18N_PAGE && window.I18N_PAGE[lang]) || {};
-    var template = dict['gallery.pageInfo'] || 'Halaman {page} dari {total} — {count} brand total';
+    var template = dict()['gallery.pageInfo'] || 'Halaman {page} dari {total} — {count} contoh total';
     infoEl.textContent = template
       .replace('{page}', currentPage)
       .replace('{total}', totalPages)
-      .replace('{count}', PRODUCTS.length);
+      .replace('{count}', currentItems.length);
   }
 
+  function scrollToSticky(el){
+    if(!el)return;
+    var prevPos=el.style.position;
+    el.style.position='static';
+    var rect=el.getBoundingClientRect();
+    var target=window.pageYOffset+rect.top-66;
+    el.style.position=prevPos;
+    window.scrollTo({top:Math.max(0,target),behavior:'smooth'});
+  }
   function renderPage(page, scroll){
     currentPage = page;
     setPageInURL(page);
     grid.innerHTML = '';
 
     var start = (page - 1) * ITEMS_PER_PAGE;
-    PRODUCTS.slice(start, start + ITEMS_PER_PAGE).forEach(function(product){
-      grid.appendChild(buildCard(product));
+    currentItems.slice(start, start + ITEMS_PER_PAGE).forEach(function(ex){
+      grid.appendChild(buildCard(ex));
     });
 
     initSliders(grid);
     renderPagination();
-    if (scroll) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (scroll) scrollToSticky(filterGroupEl);
   }
 
+  renderCategoryFilter();
   renderPage(getPageFromURL(totalPages), false);
 
   document.querySelectorAll('.lang-btn').forEach(function (btn) {
     btn.addEventListener('click', function () {
-      setTimeout(function () { renderPage(currentPage, false); }, 0);
+      setTimeout(function () {
+        renderCategoryFilter();
+        renderPage(currentPage, false);
+      }, 0);
     });
   });
 })();
 </script>
+<script src="assets/js/project-katalog-gallery.js"></script>
 </body>
 </html>

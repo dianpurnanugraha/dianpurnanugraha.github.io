@@ -6,7 +6,7 @@ Website portofolio statis bilingual untuk menampilkan profil, pengalaman, layana
 
 ## Ringkasan
 
-- 23 halaman detail proyek
+- 24 halaman detail proyek
 - 6 artikel Insight
 - 5 kategori proyek
 - Bahasa Indonesia dan Inggris
@@ -21,7 +21,7 @@ Website portofolio statis bilingual untuk menampilkan profil, pengalaman, layana
 | `services.html` | Layanan profesional |
 | `skill.html` | Kompetensi, skill, dan tools |
 | `experience.html` | Riwayat pengalaman kerja |
-| `project.html` | Daftar 23 proyek dengan filter kategori |
+| `project.html` | Daftar 24 proyek dengan filter kategori |
 | `insight.html` | Daftar artikel dan insight profesional |
 | `contact.html` | Kontak dan tautan sosial media |
 
@@ -38,6 +38,7 @@ Website portofolio statis bilingual untuk menampilkan profil, pengalaman, layana
 - `project-logo-identitas.html` — Desain Logo & Identitas Visual
 - `project-instagram-design.html` — Desain Feed Instagram & Konten Promosi
 - `project-brosur.html` — Desain Brosur & Materi Cetak Promosi
+- `project-katalog.html` — Desain Katalog Produk Multi-Brand
 - `project-packaging.html` — Desain Kemasan & Branding Multi-Brand
 - `project-fotografi-produk.html` — Fotografi & Editing Produk
 
@@ -114,4 +115,3 @@ Kemudian buka [http://localhost:8000](http://localhost:8000).
 - LinkedIn: [dianpurnanugraha](https://www.linkedin.com/in/dianpurnanugraha/)
 
 _Last updated: 10 September 2026._
-

@@ -121,6 +121,13 @@
   </url>
 
   <url>
+    <loc>https://dianpurnanugraha.my.id/project-katalog.html</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://dianpurnanugraha.my.id/project-discount-campaign.html</loc>
     <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
@@ -261,4 +268,3 @@
   </url>
 
 </urlset>
-
