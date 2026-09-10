@@ -46,7 +46,7 @@ window.I18N_PAGE = {
     'gallery.slidePrev': 'Sebelumnya',
     'gallery.slideNext': 'Berikutnya',
 
-    'nav.prev': 'Desain Brosur &amp; Materi Cetak Promosi',
+    'nav.prev': 'Desain Katalog Produk Multi-Brand',
     'nav.next': 'Fotografi &amp; Editing Produk',
 
     'connect.badge': 'Lihat Hasil Kerja Saya',
@@ -106,7 +106,7 @@ window.I18N_PAGE = {
     'gallery.slidePrev': 'Previous',
     'gallery.slideNext': 'Next',
 
-    'nav.prev': 'Brochure &amp; Print Promotional Material Design',
+    'nav.prev': 'Multi-Brand Product Catalog Design',
     'nav.next': 'Product Photography &amp; Editing',
 
     'connect.badge': 'See My Work',
@@ -121,5 +121,4 @@ window.I18N_PAGE = {
     'connect.footer': 'Real Results &nbsp;•&nbsp; Attention to Detail &nbsp;•&nbsp; On Time'
   }
 };
-
 
