@@ -15,6 +15,37 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="assets/css/styles.css?v=11">
+<style id="logo-gallery-caption-layout">
+  #galleryGrid .logo-card{
+    width:100%;
+    height:auto;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+  }
+  #galleryGrid .logo-card-imgbox{
+    width:100%;
+    height:auto;
+    aspect-ratio:1 / 1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-sizing:border-box;
+  }
+  #galleryGrid .logo-card-imgbox > img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+  }
+  #galleryGrid .logo-card-caption{
+    width:calc(100% + 32px);
+    min-height:44px;
+    margin:16px -16px -16px;
+    box-sizing:border-box;
+    justify-content:center;
+    text-align:center;
+  }
+</style>
 </head>
 <body>
 
@@ -170,7 +201,7 @@
 <!-- ===================== PREV / NEXT ===================== -->
 <section class="wrap" style="padding-bottom:30px;">
   <div class="project-nav-row">
-    <a href="project-lazada-setup.html" class="project-nav-link"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="nav.prev">Setup &amp; Migrasi Toko ke Lazada</span></a>
+    <a href="project-express-shipping.html" class="project-nav-link"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="nav.prev">Performa Program Pengiriman Kilat Shopee</span></a>
     <a href="project-instagram-design.html" class="project-nav-link next"><span data-i18n="nav.next">Desain Feed Instagram &amp; Konten Promosi</span> <i class="fa-solid fa-arrow-right"></i></a>
   </div>
 </section>
@@ -285,24 +316,24 @@
 <script>
 (function(){
   var LOGOS = [
-    { src: "assets/img/logo/logo-brand-a.webp", alt: "Logo Brand A" },
-    { src: "assets/img/logo/logo-brand-b.webp", alt: "Logo Brand B" },
-    { src: "assets/img/logo/logo-brand-c.webp", alt: "Logo Brand C" },
-    { src: "assets/img/logo/logo-brand-d.webp", alt: "Logo Brand D" },
-    { src: "assets/img/logo/logo-brand-e.webp", alt: "Logo Brand E" },
-    { src: "assets/img/logo/logo-brand-f.webp", alt: "Logo Brand F" },
-    { src: "assets/img/logo/logo-brand-g.webp", alt: "Logo Brand G" },
-    { src: "assets/img/logo/logo-brand-h.webp", alt: "Logo Brand H" },
-    { src: "assets/img/logo/logo-brand-i.webp", alt: "Logo Brand I" },
-    { src: "assets/img/logo/logo-brand-j.webp", alt: "Logo Brand J" },
-    { src: "assets/img/logo/logo-brand-k.webp", alt: "Logo Brand K" },
-    { src: "assets/img/logo/logo-brand-l.webp", alt: "Logo Brand L" },
-    { src: "assets/img/logo/logo-brand-m.webp", alt: "Logo Brand M" },
-    { src: "assets/img/logo/logo-brand-n.webp", alt: "Logo Brand N" },
-    { src: "assets/img/logo/logo-brand-o.webp", alt: "Logo Brand O" },
-    { src: "assets/img/logo/logo-brand-p.webp", alt: "Logo Brand P" },
-    { src: "assets/img/logo/logo-brand-q.webp", alt: "Logo Brand Q" },
-    { src: "assets/img/logo/logo-brand-r.webp", alt: "Logo Brand R" }
+    { src: "assets/img/logo/logo-brand-a.webp", alt: "Logo Alananature" },
+    { src: "assets/img/logo/logo-brand-b.webp", alt: "Logo Vita Flakes" },
+    { src: "assets/img/logo/logo-brand-c.webp", alt: "Logo YMI" },
+    { src: "assets/img/logo/logo-brand-d.webp", alt: "Logo Botani Care" },
+    { src: "assets/img/logo/logo-brand-e.webp", alt: "Logo Sehat Care" },
+    { src: "assets/img/logo/logo-brand-f.webp", alt: "Logo Sendi Care" },
+    { src: "assets/img/logo/logo-brand-g.webp", alt: "Logo Bio-Gold Nature" },
+    { src: "assets/img/logo/logo-brand-h.webp", alt: "Logo Bio Sea" },
+    { src: "assets/img/logo/logo-brand-i.webp", alt: "Logo Sari Herb" },
+    { src: "assets/img/logo/logo-brand-j.webp", alt: "Logo Halal Care Indonesia" },
+    { src: "assets/img/logo/logo-brand-k.webp", alt: "Logo Extravia" },
+    { src: "assets/img/logo/logo-brand-l.webp", alt: "Logo Obat Herbal Indonesia" },
+    { src: "assets/img/logo/logo-brand-m.webp", alt: "Logo Naima" },
+    { src: "assets/img/logo/logo-brand-n.webp", alt: "Logo Megabumin &amp; Sagabumin" },
+    { src: "assets/img/logo/logo-brand-o.webp", alt: "Logo Herbaly Store Indonesia" },
+    { src: "assets/img/logo/logo-brand-p.webp", alt: "Logo Republik Herbal Indonesia" },
+    { src: "assets/img/logo/logo-brand-q.webp", alt: "Logo Syifalife" },
+    { src: "assets/img/logo/logo-brand-r.webp", alt: "Logo Bio G" }
   ];
 
   var ITEMS_PER_PAGE = 12; // grid dense (4 kolom desktop) -> 3 baris per halaman
@@ -315,8 +346,16 @@
 
   function buildItem(logo){
     var item = document.createElement('div');
-    item.className = 'gallery-item gallery-item-img';
-    item.innerHTML = '<img src="' + logo.src + '" alt="' + logo.alt + '" loading="lazy">';
+    item.className = 'slider-card logo-card';
+    var brandName = logo.alt.replace(/^Logo\s+/i, '');
+    item.innerHTML =
+      '<div class="slider-card-imgbox logo-card-imgbox">' +
+        '<img src="' + logo.src + '" alt="' + logo.alt + '" loading="lazy">' +
+      '</div>' +
+      '<div class="shot-caption logo-card-caption">' +
+        '<span class="shot-tag">Logo</span>' +
+        '<span>' + brandName + '</span>' +
+      '</div>';
     return item;
   }
 

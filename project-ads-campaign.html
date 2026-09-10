@@ -15,6 +15,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="assets/css/styles.css?v=11">
+<style id="screenshot-caption-separator">
+#galleryGrid .shot-caption{
+  width:100%;
+  max-width:none;
+  align-self:stretch;
+  box-sizing:border-box;
+  justify-content:center;
+}
+</style>
 </head>
 <body>
 
@@ -297,13 +306,13 @@
     // ---- Dashboard Performa (ringkasan + grafik tren) ----
     
     { category: 'dashboard', period: '1bulan', img: 'assets/ss/shopee-ads/dashboard/dashboard-produk-1bulan.webp',
-      caption: { id: 'Dashboard Performa — Iklan Produk (1 Bulan Terakhir)', en: 'Performance Dashboard — Product Ads (Last 1 Month)' } },
+      caption: { id: 'Dashboard Performa — Iklan Produk (1 Bulan)', en: 'Performance Dashboard — Product Ads (1 Month)' } },
     { category: 'dashboard', period: '3bulan', img: 'assets/ss/shopee-ads/dashboard/dashboard-produk-3bulan.webp',
-      caption: { id: 'Dashboard Performa — Iklan Produk (3 Bulan Terakhir)', en: 'Performance Dashboard — Product Ads (Last 3 Months)' } },
+      caption: { id: 'Dashboard Performa — Iklan Produk (3 Bulan)', en: 'Performance Dashboard — Product Ads (3 Months)' } },
     { category: 'dashboard', period: '1bulan', img: 'assets/ss/shopee-ads/dashboard/dashboard-toko-1bulan.webp',
-      caption: { id: 'Dashboard Performa — Iklan Toko (1 Bulan Terakhir)', en: 'Performance Dashboard — Store Ads (Last 1 Month)' } },
+      caption: { id: 'Dashboard Performa — Iklan Toko (1 Bulan)', en: 'Performance Dashboard — Store Ads (1 Month)' } },
     { category: 'dashboard', period: '3bulan', img: 'assets/ss/shopee-ads/dashboard/dashboard-toko-3bulan.webp',
-      caption: { id: 'Dashboard Performa — Iklan Toko (3 Bulan Terakhir)', en: 'Performance Dashboard — Store Ads (Last 3 Months)' } },
+      caption: { id: 'Dashboard Performa — Iklan Toko (3 Bulan)', en: 'Performance Dashboard — Store Ads (3 Months)' } },
 
     // ---- Iklan Produk Otomatis (tabel per SKU) — 1 Bulan ----
     { category: 'otomatis', period: '1bulan', img: 'assets/ss/shopee-ads/produk-otomatis/produk-otomatis-1bulan-01.webp',
@@ -452,14 +461,6 @@
     var catLbl = TAG_LABELS[entry.category];
     catTag.textContent = catLbl ? (lang === 'en' ? catLbl.en : catLbl.id) : entry.category;
     caption.appendChild(catTag);
-
-    if (entry.period){
-      var perTag = document.createElement('span');
-      perTag.className = 'shot-tag alt';
-      var perLbl = TAG_LABELS[entry.period];
-      perTag.textContent = perLbl ? (lang === 'en' ? perLbl.en : perLbl.id) : entry.period;
-      caption.appendChild(perTag);
-    }
 
     var text = document.createElement('span');
     text.textContent = entry.caption[lang] || entry.caption.id;

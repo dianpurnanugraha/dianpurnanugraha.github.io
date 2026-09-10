@@ -16,6 +16,40 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="assets/css/styles.css?v=11">
+<style id="project-card-bottom-alignment">
+  .project-grid{align-items:stretch;}
+  .project-grid .project-card{
+    display:flex;
+    flex-direction:column;
+    height:100%;
+  }
+  .project-grid .project-body{
+    display:flex;
+    flex-direction:column;
+    flex:1;
+  }
+  .project-grid .project-body h4{
+    min-height:36px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    line-height:1.2;
+    margin-bottom:0;
+  }
+  .project-grid .project-body > p{flex:1;}
+  .project-grid .project-body .project-tags{
+    min-height:46px;
+    align-content:center;
+  }
+  .project-grid .project-body .project-link{
+    margin-top:8px;
+    align-self:flex-start;
+  }
+  @media (max-width:640px){
+    .project-grid .project-body h4{min-height:0;display:block;line-height:1.35;margin-bottom:8px;}
+    .project-grid .project-body .project-tags{min-height:0;}
+  }
+</style>
 </head>
 <body>
 
@@ -360,6 +394,40 @@
         </div>
       </div>
 
+      <div class="project-card" data-category="marketing">
+        <div class="project-thumb" style="background:linear-gradient(135deg,#7c3aed,#a855f7);"><span class="project-tag">Marketing</span><i class="fa-solid fa-tags"></i></div>
+        <div class="project-body"><h4 data-i18n="card17.title">Kampanye Diskon Produk Shopee</h4><p data-i18n="card17.desc">Mengelola dan mengevaluasi diskon produk melalui penjualan, pesanan, produk terjual, pembeli, dan tren bulanan.</p><div class="project-tags"><span>Shopee Discount</span><span>Promotion Analytics</span><span>Digital Marketing</span></div><a href="project-discount-campaign.html" class="project-link"><span data-i18n="cta.detail">Lihat Detail</span> <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+
+      <div class="project-card" data-category="marketing">
+        <div class="project-thumb" style="background:linear-gradient(135deg,#db2777,#f43f5e);"><span class="project-tag">Marketing</span><i class="fa-solid fa-video"></i></div>
+        <div class="project-body"><h4 data-i18n="card18.title">Performa Konten Live &amp; Video Shopee</h4><p data-i18n="card18.desc">Menganalisis penjualan, penonton, klik, pembeli, konversi, dan interaksi dari konten Live &amp; Video Shopee.</p><div class="project-tags"><span>Shopee Live</span><span>Shopee Video</span><span>Content Analytics</span></div><a href="project-live-video-content.html" class="project-link"><span data-i18n="cta.detail">Lihat Detail</span> <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+
+      <div class="project-card" data-category="ecommerce">
+        <div class="project-thumb" style="background:linear-gradient(135deg,#0ea5e9,#2563eb);"><span class="project-tag">E-commerce</span><i class="fa-solid fa-truck-fast"></i></div>
+        <div class="project-body"><h4 data-i18n="card19.title">Performa Program Pengiriman Kilat Shopee</h4><p data-i18n="card19.desc">Memantau pesanan, reservasi, kecepatan penerimaan, kesiapan stok, dan performa produk dalam Program Pengiriman Kilat.</p><div class="project-tags"><span>Express Shipping</span><span>Fulfillment</span><span>Order Processing</span></div><a href="project-express-shipping.html" class="project-link"><span data-i18n="cta.detail">Lihat Detail</span> <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+
+      <div class="project-card" data-category="reporting">
+        <div class="project-thumb" style="background:linear-gradient(135deg,#059669,#10b981);"><span class="project-tag">Reporting</span><i class="fa-solid fa-chart-line"></i></div>
+        <div class="project-body"><h4 data-i18n="card20.title">Analisis Performa Penjualan Shopee</h4><p data-i18n="card20.desc">Menganalisis funnel, tren penjualan, komposisi kategori, rentang harga, serta pembeli baru dan lama.</p><div class="project-tags"><span>Sales Analytics</span><span>Sales Funnel</span><span>Buyer Analysis</span></div><a href="project-sales-performance.html" class="project-link"><span data-i18n="cta.detail">Lihat Detail</span> <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+
+      <div class="project-card" data-category="reporting">
+        <div class="project-thumb" style="background:linear-gradient(135deg,#d97706,#f59e0b);"><span class="project-tag">Reporting</span><i class="fa-solid fa-box-open"></i></div>
+        <div class="project-body"><h4 data-i18n="card21.title">Analisis Performa Produk Shopee</h4><p data-i18n="card21.desc">Menganalisis funnel produk dari kunjungan dan tambah ke keranjang hingga pesanan dibuat dan siap dikirim.</p><div class="project-tags"><span>Product Analytics</span><span>Conversion Funnel</span><span>Listing Optimization</span></div><a href="project-product-performance.html" class="project-link"><span data-i18n="cta.detail">Lihat Detail</span> <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+
+      <div class="project-card" data-category="reporting">
+        <div class="project-thumb" style="background:linear-gradient(135deg,#4f46e5,#6366f1);"><span class="project-tag">Reporting</span><i class="fa-solid fa-users-viewfinder"></i></div>
+        <div class="project-body"><h4 data-i18n="card22.title">Analisis Tingkat Kunjungan Toko Shopee</h4><p data-i18n="card22.desc">Menganalisis pengunjung baru dan lama, halaman dilihat, durasi kunjungan, serta tren traffic harian.</p><div class="project-tags"><span>Traffic Analytics</span><span>Visitor Behavior</span><span>Data Analysis</span></div><a href="project-traffic-analysis.html" class="project-link"><span data-i18n="cta.detail">Lihat Detail</span> <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+
+      <div class="project-card" data-category="marketing">
+        <div class="project-thumb" style="background:linear-gradient(135deg,#dc2626,#f97316);"><span class="project-tag">Marketing</span><i class="fa-solid fa-ticket"></i></div>
+        <div class="project-body"><h4 data-i18n="card23.title">Kampanye Voucher Toko Shopee</h4><p data-i18n="card23.desc">Mengelola dan mengevaluasi voucher melalui data klaim, penggunaan, pesanan, pembeli, penjualan, dan biaya.</p><div class="project-tags"><span>Store Voucher</span><span>Promotion Analytics</span><span>Conversion</span></div><a href="project-store-voucher.html" class="project-link"><span data-i18n="cta.detail">Lihat Detail</span> <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
     </div>
   </div>
 </section>

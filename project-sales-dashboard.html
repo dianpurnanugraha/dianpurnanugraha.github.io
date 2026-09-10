@@ -19,8 +19,13 @@
 <style>
 /* Override khusus halaman project sales dashboard ini saja: kotak galeri menjadi portrait */
 #galleryGrid.gallery-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
-#galleryGrid .gallery-item-img{height:auto;background:#f1f3f6;display:block;overflow:hidden;}
-#galleryGrid .gallery-item-img img{width:100%;height:auto;display:block;object-fit:contain;}
+#galleryGrid .shot-caption{
+  width:100%;
+  max-width:none;
+  align-self:stretch;
+  box-sizing:border-box;
+  justify-content:center;
+}
 @media (max-width:900px){
   #galleryGrid.gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
 }
@@ -169,7 +174,7 @@
       <p data-i18n="gallery.desc">Cuplikan khusus dari sheet All Data yang memperlihatkan ringkasan utama, kontrol otomatis, analisis penjualan dan stok, rekonsiliasi, keuangan, retur, masalah operasional, serta perencanaan restock.</p>
     </div>
     <div class="gallery-cat-filter" id="galleryCatFilter"></div>
-    <div class="gallery-grid" id="galleryGrid"></div>
+    <div class="gallery-grid gallery-grid-shots" id="galleryGrid"></div>
 
     <nav class="gallery-pagination" id="galleryPagination" data-i18n-attr="aria-label:gallery.navAriaLabel" aria-label="Navigasi halaman galeri"></nav>
     <p class="gallery-page-info" id="galleryPageInfo"></p>
@@ -188,7 +193,7 @@
 <!-- ===================== PREV / NEXT ===================== -->
 <section class="wrap" style="padding-bottom:30px;">
   <div class="project-nav-row">
-    <a href="project-flashsale.html" class="project-nav-link"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="nav.prev">Manajemen Flash Sale Toko</span></a>
+    <a href="project-traffic-analysis.html" class="project-nav-link"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="nav.prev">Analisis Tingkat Kunjungan Toko Shopee</span></a>
     <a href="project-finance-report.html" class="project-nav-link next"><span data-i18n="nav.next">Laporan Keuangan &amp; Rekap Otomatis</span> <i class="fa-solid fa-arrow-right"></i></a>
   </div>
 </section>
@@ -318,27 +323,32 @@
   }
 
   var GALLERY_ITEMS_BASE = [
-    { cat: 'grafik', img: 'assets/ss/sales-dashboard/dashboard-grafik-1.webp', labelKey: 'gallery.item1' },
-    { cat: 'grafik', img: 'assets/ss/sales-dashboard/dashboard-grafik-2.webp', labelKey: 'gallery.item2' },
-    { cat: 'grafik', img: 'assets/ss/sales-dashboard/dashboard-grafik-3.webp', labelKey: 'gallery.item3' },
-    { cat: 'grafik', img: 'assets/ss/sales-dashboard/dashboard-grafik-4.webp', labelKey: 'gallery.item4' },
+    { cat: 'grafik', img: 'assets/ss/sales-dashboard/dashboard-grafik-1.webp', label: { id: 'Grafik Dashboard (Bagian 1/4)', en: 'Chart Dashboard (Part 1/4)' } },
+    { cat: 'grafik', img: 'assets/ss/sales-dashboard/dashboard-grafik-2.webp', label: { id: 'Grafik Dashboard (Bagian 2/4)', en: 'Chart Dashboard (Part 2/4)' } },
+    { cat: 'grafik', img: 'assets/ss/sales-dashboard/dashboard-grafik-3.webp', label: { id: 'Grafik Dashboard (Bagian 3/4)', en: 'Chart Dashboard (Part 3/4)' } },
+    { cat: 'grafik', img: 'assets/ss/sales-dashboard/dashboard-grafik-4.webp', label: { id: 'Grafik Dashboard (Bagian 4/4)', en: 'Chart Dashboard (Part 4/4)' } },
 
-    { cat: 'tabel', img: 'assets/ss/sales-dashboard/dashboard-tabel-1.webp', labelKey: 'gallery.item5' },
-    { cat: 'tabel', img: 'assets/ss/sales-dashboard/dashboard-tabel-2.webp', labelKey: 'gallery.item6' },
-    { cat: 'tabel', img: 'assets/ss/sales-dashboard/dashboard-tabel-3.webp', labelKey: 'gallery.item7' },
-    { cat: 'tabel', img: 'assets/ss/sales-dashboard/dashboard-tabel-4.webp', labelKey: 'gallery.item8' },
-    { cat: 'tabel', img: 'assets/ss/sales-dashboard/dashboard-tabel-5.webp', labelKey: 'gallery.item9' }
+    { cat: 'tabel', img: 'assets/ss/sales-dashboard/dashboard-tabel-1.webp', label: { id: 'Tabel Dashboard (Bagian 1/5)', en: 'Table Dashboard (Part 1/5)' } },
+    { cat: 'tabel', img: 'assets/ss/sales-dashboard/dashboard-tabel-2.webp', label: { id: 'Tabel Dashboard (Bagian 2/5)', en: 'Table Dashboard (Part 2/5)' } },
+    { cat: 'tabel', img: 'assets/ss/sales-dashboard/dashboard-tabel-3.webp', label: { id: 'Tabel Dashboard (Bagian 3/5)', en: 'Table Dashboard (Part 3/5)' } },
+    { cat: 'tabel', img: 'assets/ss/sales-dashboard/dashboard-tabel-4.webp', label: { id: 'Tabel Dashboard (Bagian 4/5)', en: 'Table Dashboard (Part 4/5)' } },
+    { cat: 'tabel', img: 'assets/ss/sales-dashboard/dashboard-tabel-5.webp', label: { id: 'Tabel Dashboard (Bagian 5/5)', en: 'Table Dashboard (Part 5/5)' } }
   ];
 
   var ALL_KEY = 'all';
-  var CAT_LABELS, ALL_LABEL, GALLERY_ITEMS;
+  var CAT_LABELS, ALL_LABEL, GALLERY_ITEMS, TAG_LABELS;
 
   function rebuildLabels(){
+    var lang = localStorage.getItem('site-lang') || 'id';
     var d = dict();
     CAT_LABELS = { grafik: d['gallery.catGrafik'] || 'Grafik', tabel: d['gallery.catTabel'] || 'Tabel' };
+    TAG_LABELS = {
+      grafik: { id: CAT_LABELS.grafik, en: CAT_LABELS.grafik },
+      tabel: { id: CAT_LABELS.tabel, en: CAT_LABELS.tabel }
+    };
     ALL_LABEL = d['gallery.catAll'] || 'Semua';
     GALLERY_ITEMS = GALLERY_ITEMS_BASE.map(function(it){
-      return { cat: it.cat, img: it.img, label: d[it.labelKey] || it.labelKey };
+      return { cat: it.cat, img: it.img, label: it.label[lang] || it.label.id };
     });
   }
   rebuildLabels();
@@ -385,17 +395,45 @@
     });
   }
 
-  function buildItem(entry){
+  function buildItem(sourceEntry){
+    var lang = localStorage.getItem('site-lang') || 'id';
+    var entry = {
+      category: sourceEntry.cat,
+      period: null,
+      img: sourceEntry.img,
+      caption: { id: sourceEntry.label, en: sourceEntry.label }
+    };
     var item = document.createElement('div');
-    if (entry.img){
-      // Sudah diisi path foto -> render sebagai gambar asli
-      item.className = 'gallery-item gallery-item-img';
-      item.innerHTML = '<img src="' + entry.img + '" alt="' + entry.label + '" loading="lazy">';
-    } else {
-      // Belum diisi -> tampilkan kotak placeholder seperti semula
-      item.className = 'gallery-item';
-      item.innerHTML = '<i class="fa-solid fa-image"></i>' + entry.label;
+    item.className = 'gallery-item gallery-item-img';
+
+    var img = document.createElement('img');
+    img.src = entry.img;
+    img.loading = 'lazy';
+    img.alt = entry.caption[lang] || entry.caption.id;
+    item.appendChild(img);
+
+    var caption = document.createElement('div');
+    caption.className = 'shot-caption';
+
+    var catTag = document.createElement('span');
+    catTag.className = 'shot-tag';
+    var catLbl = TAG_LABELS[entry.category];
+    catTag.textContent = catLbl ? (lang === 'en' ? catLbl.en : catLbl.id) : entry.category;
+    caption.appendChild(catTag);
+
+    if (entry.period){
+      var perTag = document.createElement('span');
+      perTag.className = 'shot-tag alt';
+      var perLbl = TAG_LABELS[entry.period];
+      perTag.textContent = perLbl ? (lang === 'en' ? perLbl.en : perLbl.id) : entry.period;
+      caption.appendChild(perTag);
     }
+
+    var text = document.createElement('span');
+    text.textContent = entry.caption[lang] || entry.caption.id;
+    caption.appendChild(text);
+
+    item.appendChild(caption);
     return item;
   }
 

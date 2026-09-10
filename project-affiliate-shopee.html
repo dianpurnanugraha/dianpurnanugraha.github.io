@@ -15,6 +15,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="assets/css/styles.css?v=11">
+<style id="screenshot-caption-separator">
+#galleryGrid .shot-caption{
+  width:100%;
+  max-width:none;
+  align-self:stretch;
+  box-sizing:border-box;
+  justify-content:center;
+}
+</style>
 </head>
 <body>
 
@@ -336,20 +345,28 @@
 
     // ---- Pengaturan Komisi Produk (Program Komisi) ----
     { category: 'pengaturan', period: null, img: 'assets/ss/affiliate/pengaturan-komisi-01.webp',
-      caption: { id: 'Pengaturan Komisi Produk — Tingkat Komisi per SKU (1)', en: 'Product Commission Settings — Commission Rate per SKU (1)' } },
+      caption: { id: 'Pengaturan Komisi Produk — Tingkat Komisi per SKU (Bagian 1/5)', en: 'Product Commission Settings — Commission Rate per SKU (Part 1/5)' } },
     { category: 'pengaturan', period: null, img: 'assets/ss/affiliate/pengaturan-komisi-02.webp',
-      caption: { id: 'Pengaturan Komisi Produk — Tingkat Komisi per SKU (2)', en: 'Product Commission Settings — Commission Rate per SKU (2)' } },
+      caption: { id: 'Pengaturan Komisi Produk — Tingkat Komisi per SKU (Bagian 2/5)', en: 'Product Commission Settings — Commission Rate per SKU (Part 2/5)' } },
     { category: 'pengaturan', period: null, img: 'assets/ss/affiliate/pengaturan-komisi-03.webp',
-      caption: { id: 'Pengaturan Komisi Produk — Tingkat Komisi per SKU (3)', en: 'Product Commission Settings — Commission Rate per SKU (3)' } },
+      caption: { id: 'Pengaturan Komisi Produk — Tingkat Komisi per SKU (Bagian 3/5)', en: 'Product Commission Settings — Commission Rate per SKU (Part 3/5)' } },
     { category: 'pengaturan', period: null, img: 'assets/ss/affiliate/pengaturan-komisi-04.webp',
-      caption: { id: 'Pengaturan Komisi Produk — Tingkat Komisi per SKU (4)', en: 'Product Commission Settings — Commission Rate per SKU (4)' } },
+      caption: { id: 'Pengaturan Komisi Produk — Tingkat Komisi per SKU (Bagian 4/5)', en: 'Product Commission Settings — Commission Rate per SKU (Part 4/5)' } },
     { category: 'pengaturan', period: null, img: 'assets/ss/affiliate/pengaturan-komisi-05.webp',
-      caption: { id: 'Pengaturan Komisi Produk — Tingkat Komisi per SKU (5)', en: 'Product Commission Settings — Commission Rate per SKU (5)' } },
+      caption: { id: 'Pengaturan Komisi Produk — Tingkat Komisi per SKU (Bagian 5/5)', en: 'Product Commission Settings — Commission Rate per SKU (Part 5/5)' } },
 
     // ---- Validasi Tagihan ----
     { category: 'tagihan', period: null, img: 'assets/ss/affiliate/tagihan-01.webp',
       caption: { id: 'Validasi Tagihan Komisi Bulanan (12 Bulan Terakhir)', en: 'Monthly Commission Billing Validation (Last 12 Months)' } }
   ];
+
+  var CATEGORY_ORDER = { ringkasan: 1, produk: 2, affiliate: 3, konten: 4, komisi: 5, pengaturan: 6, tagihan: 7 };
+  var PERIOD_ORDER = { jun2026: 1, jul2026: 2 };
+  ITEMS.sort(function(a, b){
+    var categoryDiff = (CATEGORY_ORDER[a.category] || 99) - (CATEGORY_ORDER[b.category] || 99);
+    if (categoryDiff) return categoryDiff;
+    return (PERIOD_ORDER[a.period] || 99) - (PERIOD_ORDER[b.period] || 99);
+  });
 
   var CATS = [
     { key: 'all',        id: 'Semua',              en: 'All' },
@@ -363,8 +380,8 @@
   ];
   var PERIODS = [
     { key: 'all',     id: 'Semua Periode', en: 'All Periods' },
-    { key: 'jul2026', id: 'Juli 2026',     en: 'July 2026' },
-    { key: 'jun2026', id: 'Juni 2026',     en: 'June 2026' }
+    { key: 'jun2026', id: 'Juni 2026',     en: 'June 2026' },
+    { key: 'jul2026', id: 'Juli 2026',     en: 'July 2026' }
   ];
 
   var TAG_LABELS = {
@@ -455,14 +472,6 @@
     var catLbl = TAG_LABELS[entry.category];
     catTag.textContent = catLbl ? (lang === 'en' ? catLbl.en : catLbl.id) : entry.category;
     caption.appendChild(catTag);
-
-    if (entry.period){
-      var perTag = document.createElement('span');
-      perTag.className = 'shot-tag alt';
-      var perLbl = TAG_LABELS[entry.period];
-      perTag.textContent = perLbl ? (lang === 'en' ? perLbl.en : perLbl.id) : entry.period;
-      caption.appendChild(perTag);
-    }
 
     var text = document.createElement('span');
     text.textContent = entry.caption[lang] || entry.caption.id;

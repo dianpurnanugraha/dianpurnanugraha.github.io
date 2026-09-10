@@ -15,6 +15,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="assets/css/styles.css?v=11">
+<style>
+#galleryGrid.gallery-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+#galleryGrid .shot-caption{
+  width:100%;
+  max-width:none;
+  align-self:stretch;
+  box-sizing:border-box;
+  justify-content:center;
+}
+#galleryGrid .gallery-placeholder-shot{width:100%;min-height:160px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:linear-gradient(160deg,#eef3fb,#dbe6f7);color:var(--muted);}
+#galleryGrid .gallery-placeholder-shot i{font-size:26px;color:var(--blue);}
+@media (max-width:980px){#galleryGrid.gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media (max-width:640px){#galleryGrid.gallery-grid{grid-template-columns:1fr;}}
+</style>
 </head>
 <body>
 
@@ -149,7 +163,7 @@
       <h2>Cuplikan <span>Pekerjaan</span></h2>
       <p>Ganti kotak di bawah ini dengan screenshot atau foto hasil kerja asli kamu.</p>
     </div>
-    <div class="gallery-grid" id="galleryGrid"></div>
+    <div class="gallery-grid gallery-grid-shots" id="galleryGrid"></div>
 
     <nav class="gallery-pagination" id="galleryPagination" aria-label="Navigasi halaman galeri"></nav>
     <p class="gallery-page-info" id="galleryPageInfo"></p>
@@ -166,7 +180,7 @@
 <section class="wrap" style="padding-bottom:30px;">
   <div class="project-nav-row">
     <a href="project-shopee-tiktok.html" class="project-nav-link"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="nav.prev">Optimasi Toko Shopee &amp; TikTok Shop</span></a>
-    <a href="project-logo-identitas.html" class="project-nav-link next"><span data-i18n="nav.next">Desain Logo &amp; Identitas Visual</span> <i class="fa-solid fa-arrow-right"></i></a>
+    <a href="project-express-shipping.html" class="project-nav-link next"><span data-i18n="nav.next">Performa Program Pengiriman Kilat Shopee</span> <i class="fa-solid fa-arrow-right"></i></a>
   </div>
 </section>
 
@@ -283,10 +297,15 @@
      menyesuaikan.
      ================================================================ */
   var GALLERY_ITEMS = [
-    { label: "Tampilan Etalase Toko Baru", img: "" }, // isi: "assets/img/lazada/etalase-toko.webp"
-    { label: "Listing Produk", img: "" }, // isi: "assets/img/lazada/listing-produk.webp"
-    { label: "Banner Promo Pembukaan", img: "" }, // isi: "assets/img/lazada/banner-promo.webp"
+    { category: 'etalase', period: null, img: '', caption: { id: 'Tampilan Etalase Toko Baru', en: 'New Storefront Display' } },
+    { category: 'listing', period: null, img: '', caption: { id: 'Listing Produk', en: 'Product Listing' } },
+    { category: 'promo', period: null, img: '', caption: { id: 'Banner Promo Pembukaan', en: 'Opening Promotion Banner' } }
   ];
+  var TAG_LABELS = {
+    etalase: { id: 'Etalase', en: 'Storefront' },
+    listing: { id: 'Listing', en: 'Listing' },
+    promo: { id: 'Promo', en: 'Promotion' }
+  };
 
   var ITEMS_PER_PAGE = 6;
 
@@ -297,16 +316,45 @@
   var currentPage = 1;
 
   function buildItem(entry){
+    var lang = localStorage.getItem('site-lang') || 'id';
     var item = document.createElement('div');
+    item.className = 'gallery-item gallery-item-img';
+
     if (entry.img){
-      // Sudah diisi path foto -> render sebagai gambar asli
-      item.className = 'gallery-item gallery-item-img';
-      item.innerHTML = '<img src="' + entry.img + '" alt="' + entry.label + '" loading="lazy">';
+      var img = document.createElement('img');
+      img.src = entry.img;
+      img.loading = 'lazy';
+      img.alt = entry.caption[lang] || entry.caption.id;
+      item.appendChild(img);
     } else {
-      // Belum diisi -> tampilkan kotak placeholder seperti semula
-      item.className = 'gallery-item';
-      item.innerHTML = '<i class="fa-solid fa-image"></i>' + entry.label;
+      var placeholder = document.createElement('div');
+      placeholder.className = 'gallery-placeholder-shot';
+      placeholder.innerHTML = '<i class="fa-solid fa-image"></i>';
+      item.appendChild(placeholder);
     }
+
+    var caption = document.createElement('div');
+    caption.className = 'shot-caption';
+
+    var catTag = document.createElement('span');
+    catTag.className = 'shot-tag';
+    var catLbl = TAG_LABELS[entry.category];
+    catTag.textContent = catLbl ? (lang === 'en' ? catLbl.en : catLbl.id) : entry.category;
+    caption.appendChild(catTag);
+
+    if (entry.period){
+      var perTag = document.createElement('span');
+      perTag.className = 'shot-tag alt';
+      var perLbl = TAG_LABELS[entry.period];
+      perTag.textContent = perLbl ? (lang === 'en' ? perLbl.en : perLbl.id) : entry.period;
+      caption.appendChild(perTag);
+    }
+
+    var text = document.createElement('span');
+    text.textContent = entry.caption[lang] || entry.caption.id;
+    caption.appendChild(text);
+
+    item.appendChild(caption);
     return item;
   }
 

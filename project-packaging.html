@@ -15,6 +15,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="assets/css/styles.css?v=11">
+<style id="packaging-gallery-caption-layout">
+  #galleryGrid .packaging-card-caption{
+    width:calc(100% + 32px);
+    margin:16px -16px -16px;
+    box-sizing:border-box;
+    justify-content:center;
+    text-align:center;
+  }
+</style>
 </head>
 <body>
 
@@ -285,19 +294,19 @@
 <script>
 (function(){
   var PRODUCTS = [
-    { tag: "Alanature", tagAlt: false, title: "Teh Rimpang", images: [
+    { tag: "Alanature", tagAlt: false, title: "Teh Rimpang", titleEn: "Rimpang Tea", images: [
         { src: "assets/img/packaging/project-packaging-alanature-mockup.webp" },
         { src: "assets/img/packaging/project-packaging-alanature-flat.webp" }
     ]},
-    { tag: "Xtraherb", tagAlt: false, title: "Teh Rimpang", images: [
+    { tag: "Xtraherb", tagAlt: false, title: "Teh Rimpang", titleEn: "Rimpang Tea", images: [
         { src: "assets/img/packaging/project-packaging-xtraherb-mockup.webp" },
         { src: "assets/img/packaging/project-packaging-xtraherb-flat.webp" }
     ]},
-    { tag: "X-travit", tagAlt: false, title: "Teh Rimpang", images: [
+    { tag: "X-travit", tagAlt: false, title: "Teh Rimpang", titleEn: "Rimpang Tea", images: [
         { src: "assets/img/packaging/project-packaging-xtravit-mockup.webp" },
         { src: "assets/img/packaging/project-packaging-xtravit-flat.webp" }
     ]},
-    { tag: "Sari Rimpang", tagAlt: true, title: "Teh Rimpang", images: [
+    { tag: "Sari Rimpang", tagAlt: true, title: "Teh Rimpang", titleEn: "Rimpang Tea", images: [
         { src: "assets/img/packaging/project-packaging-saririmpang-mockup.webp" },
         { src: "assets/img/packaging/project-packaging-saririmpang-flat.webp" }
     ]}
@@ -311,23 +320,32 @@
   var totalPages = Math.ceil(PRODUCTS.length / ITEMS_PER_PAGE);
   var currentPage = 1;
 
+  function getLang(){ return localStorage.getItem('site-lang') || 'id'; }
+  function getSlideLabel(index){
+    if (index === 0) return 'Mockup';
+    return getLang() === 'en' ? 'Flat Design' : 'Desain Flat';
+  }
+  function getProductTitle(product){
+    return getLang() === 'en' ? product.titleEn : product.title;
+  }
+
   function buildCard(product){
     var card = document.createElement('div');
     card.className = 'slider-card';
+    var productTitle = getProductTitle(product);
 
     var head = document.createElement('div');
     head.className = 'slider-card-head';
     head.innerHTML =
-      '<span class="slider-card-tag' + (product.tagAlt ? ' alt' : '') + '"><i class="fa-solid fa-tag"></i> ' + product.tag + '</span>' +
-      '<span class="slider-card-title">' + product.title + '</span>';
+      '<span class="slider-card-tag"><i class="fa-solid fa-cube"></i> <span class="packaging-slide-label">' + getSlideLabel(0) + '</span></span>';
     card.appendChild(head);
 
     var slider = document.createElement('div');
     slider.className = 'media-slider';
 
-    var slidesHtml = product.images.map(function(img){
+    var slidesHtml = product.images.map(function(img, index){
       return '<div class="media-slide">' +
-               '<img src="' + img.src + '" alt="Kemasan ' + product.tag + '" loading="lazy">' +
+               '<img src="' + img.src + '" alt="Kemasan ' + product.tag + ' ' + productTitle + ' — ' + getSlideLabel(index) + '" loading="lazy">' +
              '</div>';
     }).join('');
 
@@ -341,6 +359,17 @@
     dots.className = 'media-dots';
     card.appendChild(dots);
 
+    var caption = document.createElement('div');
+    caption.className = 'shot-caption packaging-card-caption';
+    var brandTag = document.createElement('span');
+    brandTag.className = 'shot-tag';
+    brandTag.textContent = product.tag;
+    caption.appendChild(brandTag);
+    var productName = document.createElement('span');
+    productName.textContent = productTitle;
+    caption.appendChild(productName);
+    card.appendChild(caption);
+
     return card;
   }
 
@@ -351,6 +380,7 @@
       var prevBtn = sliderEl.querySelector('.media-arrow.prev');
       var nextBtn = sliderEl.querySelector('.media-arrow.next');
       var dotsBox = sliderEl.parentElement.querySelector('.media-dots');
+      var slideLabelEl = sliderEl.parentElement.querySelector('.packaging-slide-label');
       var index = 0;
 
       if (slides.length <= 1){
@@ -373,6 +403,7 @@
         index = (i + slides.length) % slides.length;
         track.style.transform = 'translateX(-' + (index * 100) + '%)';
         dots.forEach(function(d, di){ d.classList.toggle('active', di === index); });
+        if (slideLabelEl) slideLabelEl.textContent = getSlideLabel(index);
       }
       prevBtn.addEventListener('click', function(){ goTo(index - 1); });
       nextBtn.addEventListener('click', function(){ goTo(index + 1); });
@@ -472,7 +503,9 @@
   renderPage(getPageFromURL(totalPages), false);
 
   document.querySelectorAll('.lang-btn').forEach(function (btn) {
-    btn.addEventListener('click', function () { renderPagination(); });
+    btn.addEventListener('click', function () {
+      setTimeout(function () { renderPage(currentPage, false); }, 0);
+    });
   });
 })();
 </script>

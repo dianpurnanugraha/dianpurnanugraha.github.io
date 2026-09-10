@@ -16,6 +16,40 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="assets/css/styles.css?v=11">
+<style id="project-card-bottom-alignment">
+  .project-grid{align-items:stretch;}
+  .project-grid .project-card{
+    display:flex;
+    flex-direction:column;
+    height:100%;
+  }
+  .project-grid .project-body{
+    display:flex;
+    flex-direction:column;
+    flex:1;
+  }
+  .project-grid .project-body h4{
+    min-height:36px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    line-height:1.2;
+    margin-bottom:0;
+  }
+  .project-grid .project-body > p{flex:1;}
+  .project-grid .project-body .project-tags{
+    min-height:46px;
+    align-content:center;
+  }
+  .project-grid .project-body .project-link{
+    margin-top:8px;
+    align-self:flex-start;
+  }
+  @media (max-width:640px){
+    .project-grid .project-body h4{min-height:0;display:block;line-height:1.35;margin-bottom:8px;}
+    .project-grid .project-body .project-tags{min-height:0;}
+  }
+</style>
 </head>
 <body>
 

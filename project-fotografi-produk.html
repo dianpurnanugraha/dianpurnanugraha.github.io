@@ -15,6 +15,63 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="assets/css/styles.css?v=11">
+<script id="force-top-on-refresh">
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  window.addEventListener('pageshow', function () {
+    var navigation = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+    var isReload = navigation
+      ? navigation.type === 'reload'
+      : performance.navigation && performance.navigation.type === 1;
+    if (isReload) window.scrollTo(0, 0);
+  });
+</script>
+<style id="product-gallery-caption-layout">
+  #galleryGrid .product-card-caption{
+    width:calc(100% + 32px);
+    min-height:44px;
+    margin:-16px -16px 18px;
+    box-sizing:border-box;
+    justify-content:center;
+    text-align:center;
+    border-top:0;
+    border-bottom:1px solid #dce6f3;
+  }
+  #galleryGrid .product-card-actions{
+    width:calc(100% + 32px);
+    margin:0 -16px -16px;
+    padding:18px 12px 12px;
+    box-sizing:border-box;
+    display:grid;
+    gap:7px;
+  }
+  #galleryGrid .media-dots{
+    margin-top:18px;
+  }
+  #galleryGrid .product-card-action{
+    min-height:34px;
+    padding:7px 10px;
+    border:1px solid #dce6f3;
+    border-radius:9px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+    color:#1764e8;
+    background:#f7faff;
+    font-size:11px;
+    font-weight:600;
+    line-height:1.35;
+    text-align:center;
+    text-decoration:none;
+  }
+  #galleryGrid .product-card-action:hover{
+    border-color:#1764e8;
+    background:#edf4ff;
+  }
+  #galleryGrid .product-card-action[aria-disabled="true"]{
+    cursor:default;
+  }
+</style>
 </head>
 <body>
 
@@ -156,6 +213,10 @@
       <p data-i18n="gallery.desc">Geser tiap kartu untuk melihat beberapa angle terbaik dari tiap produk. Setiap produk sebenarnya dipotret dalam beberapa angle, di sini ditampilkan pilihan terbaiknya saja.</p>
     </div>
 
+    <div class="filter-group">
+      <div class="filter-row" id="productCategoryFilter"></div>
+    </div>
+
     <div class="slider-card-grid grid-4up" id="galleryGrid"></div>
 
     <nav class="gallery-pagination" id="galleryPagination" aria-label="Navigasi halaman galeri produk" data-i18n-attr="aria-label:gallery.paginationLabel"></nav>
@@ -284,70 +345,71 @@
 (function(){
   /* ================================================================
      DATA PRODUK — GALERI FOTOGRAFI (dipaginasi)
-     Tambah/kurangi produk cukup dengan edit array ini. tagAlt hanya
-     mengatur warna tag selang-seling (opsional, boleh dihapus semua).
+     Tambah/kurangi produk cukup dengan edit array ini. Gunakan field
+     category untuk filter, brand untuk tag, dan name untuk caption.
      ================================================================ */
+  /* Ganti nilai "#" pada kedua URL di setiap produk saat tautannya sudah tersedia. */
   var PRODUCTS = [
-    { tag: "Acemaxs", tagAlt: false, title: "minuman", images: [
+    { brand: "Acemaxs", category: "minuman", name: "Jus Herbal - Kulit Manggis", nameEn: "Mangosteen Peel - Herbal Juice", landingPageUrl: "#", marketplaceUrl: "#", images: [
         { label: "Front &amp; Back View", src: "assets/img/foto-produk/project-foto-produk-acemaxs-depan.webp" },
         { label: "Right Side View", src: "assets/img/foto-produk/project-foto-produk-acemaxs-samping-kanan.webp" },
         { label: "Left Side View", src: "assets/img/foto-produk/project-foto-produk-acemaxs-samping-kiri.webp" }
     ]},
-    { tag: "Albuminos", tagAlt: false, title: "suplemen", images: [
+    { brand: "Albuminos", category: "suplemen", name: "Ekstrak - Ikan Gabus", nameEn: "Channa Striata - Extract", landingPageUrl: "#", marketplaceUrl: "#", images: [
         { label: "Front View", src: "assets/img/foto-produk/project-foto-produk-albuminos-depan.webp" },
         { label: "Right Side View", src: "assets/img/foto-produk/project-foto-produk-albuminos-samping-kanan.webp" },
         { label: "Left Side View", src: "assets/img/foto-produk/project-foto-produk-albuminos-samping-kiri.webp" }
     ]},
-    { tag: "Albuzay", tagAlt: true, title: "suplemen", images: [
+    { brand: "Albuzay", category: "suplemen", name: "Minyak - Ikan Gabus", nameEn: "Channa Striata - Oleum", landingPageUrl: "#", marketplaceUrl: "#", images: [
         { label: "Front View", src: "assets/img/foto-produk/project-foto-produk-albuzay-depan.webp" },
         { label: "Right Side View", src: "assets/img/foto-produk/project-foto-produk-albuzay-samping-kanan.webp" },
         { label: "Left Side View", src: "assets/img/foto-produk/project-foto-produk-albuzay-samping-kiri.webp" },
         { label: "Back View", src: "assets/img/foto-produk/project-foto-produk-albuzay-belakang.webp" }
     ]},
-    { tag: "Angkak Darusyifa", tagAlt: true, title: "madu", images: [
+    { brand: "Darusyifa", category: "madu", name: "Madu - Sari Kurma Angkak", nameEn: "Date Extract & Red Yeast Rice - Honey", landingPageUrl: "#", marketplaceUrl: "#", images: [
         { label: "Front &amp; Back View", src: "assets/img/foto-produk/project-foto-produk-angkak-darusyifa-280-depan.webp" },
         { label: "Right Side View", src: "assets/img/foto-produk/project-foto-produk-angkak-darusyifa-280-samping-kanan.webp" },
         { label: "Left Side View", src: "assets/img/foto-produk/project-foto-produk-angkak-darusyifa-280-samping-kiri.webp" }
     ]},
-    { tag: "Gemuk Optima", tagAlt: true, title: "madu", images: [
+    { brand: "Bio-Gold Gemuk Optima", category: "madu", name: "Madu - Gemuk", nameEn: "Weight Gain - Honey", landingPageUrl: "#", marketplaceUrl: "#", images: [
         { label: "Front &amp; Back View", src: "assets/img/foto-produk/project-foto-produk-gemuk-optima-depan.webp" },
         { label: "Right Side View", src: "assets/img/foto-produk/project-foto-produk-gemuk-optima-samping-kanan.webp" },
         { label: "Left Side View", src: "assets/img/foto-produk/project-foto-produk-gemuk-optima-samping-kiri.webp" }
     ]},
-    { tag: "Parucare", tagAlt: true, title: "madu", images: [
+    { brand: "Parucare", category: "madu", name: "Madu - Paru-paru", nameEn: "Lungs - Honey", landingPageUrl: "#", marketplaceUrl: "#", images: [
         { label: "Front &amp; Back View", src: "assets/img/foto-produk/project-foto-produk-parucare-depan.webp" },
         { label: "Right Side View", src: "assets/img/foto-produk/project-foto-produk-parucare-samping-kanan.webp" },
         { label: "Left Side View", src: "assets/img/foto-produk/project-foto-produk-parucare-samping-kiri.webp" }
     ]},
-    { tag: "C-bumin", tagAlt: true, title: "suplemen", images: [
+    { brand: "Bio G C-bumin", category: "suplemen", name: "Ekstrak - Ikan Gabus", nameEn: "Channa Striata - Extract", landingPageUrl: "#", marketplaceUrl: "#", images: [
         { label: "Front &amp; Back View", src: "assets/img/foto-produk/project-foto-produk-cbumin-depan.webp" },
         { label: "Right Side View", src: "assets/img/foto-produk/project-foto-produk-cbumin-samping-kanan.webp" },
         { label: "Left Side View", src: "assets/img/foto-produk/project-foto-produk-cbumin-samping-kiri.webp" }
     ]},
-    { tag: "Channagacare", tagAlt: true, title: "suplemen", images: [
+    { brand: "Channagacare", category: "suplemen", name: "Ekstrak - Ikan Gabus", nameEn: "Channa Striata - Extract", landingPageUrl: "#", marketplaceUrl: "#", images: [
         { label: "Front View", src: "assets/img/foto-produk/project-foto-produk-channagacare-depan.webp" },
         { label: "Right Side View", src: "assets/img/foto-produk/project-foto-produk-channagacare-samping-kanan.webp" },
         { label: "Left Side View", src: "assets/img/foto-produk/project-foto-produk-channagacare-samping-kiri.webp" }
     ]},
-    { tag: "Royal Sultan", tagAlt: true, title: "cuka apel", images: [
+    { brand: "Royal Sultan", category: "cuka apel", name: "Cuka - Apel", nameEn: "Apple Cider - Vinegar", landingPageUrl: "#", marketplaceUrl: "#", images: [
         { label: "Front View", src: "assets/img/foto-produk/project-foto-produk-royal-sultan-depan.webp" },
         { label: "Right Side View", src: "assets/img/foto-produk/project-foto-produk-royal-sultan-samping-kanan.webp" },
         { label: "Left Side View", src: "assets/img/foto-produk/project-foto-produk-royal-sultan-samping-kiri.webp" }
     ]},
-    { tag: "Syifacare", tagAlt: true, title: "cuka apel", images: [
+    { brand: "Syifacare", category: "cuka apel", name: "Cuka - Apel", nameEn: "Apple Cider - Vinegar", landingPageUrl: "#", marketplaceUrl: "#", images: [
         { label: "Front View", src: "assets/img/foto-produk/project-foto-produk-cuka-syifacare-depan.webp" },
         { label: "Back View", src: "assets/img/foto-produk/project-foto-produk-cuka-syifacare-belakang.webp" }
     ]},
-    { tag: "Dermathib", tagAlt: true, title: "susu kambing", images: [
+    { brand: "Dermathib", category: "susu kambing", name: "Susu - Kolagen", nameEn: "Collagen - Milk", landingPageUrl: "#", marketplaceUrl: "#", images: [
         { label: "Front View", src: "assets/img/foto-produk/project-foto-produk-dermathib-collagen-depan.webp" },
         { label: "Back View", src: "assets/img/foto-produk/project-foto-produk-dermathib-collagen-belakang.webp" }
     ]},
-    { tag: "Etamilku", tagAlt: true, title: "susu kambing", images: [
+    { brand: "Etamilku", category: "susu kambing", name: "Susu - Kambing Etawa", nameEn: "Etawa Goat - Milk", landingPageUrl: "#", marketplaceUrl: "#", images: [
         { label: "Front &amp; Back View", src: "assets/img/foto-produk/project-foto-produk-etamilku-depan.webp" },
         { label: "Right Side View", src: "assets/img/foto-produk/project-foto-produk-etamilku-samping-kanan.webp" },
         { label: "Left Side View", src: "assets/img/foto-produk/project-foto-produk-etamilku-samping-kiri.webp" }
     ]},
-    { tag: "Etawafood", tagAlt: true, title: "susu kambing", images: [
+    { brand: "Etawafood", category: "susu kambing", name: "Susu - Kambing Etawa", nameEn: "Etawa Goat - Milk", landingPageUrl: "#", marketplaceUrl: "#", images: [
         { label: "Front &amp; back View", src: "assets/img/foto-produk/project-foto-produk-etawafood-ori-1000-depan.webp" },
 	{ label: "Front &amp; back View", src: "assets/img/foto-produk/project-foto-produk-etawafood-aren-1000-depan.webp" },
 	{ label: "Front &amp; back View", src: "assets/img/foto-produk/project-foto-produk-etawafood-vanila-1000-depan.webp" },
@@ -357,27 +419,27 @@
 	{ label: "Front &amp; back View", src: "assets/img/foto-produk/project-foto-produk-etawafood-vanila-500-depan.webp" },
 	{ label: "Front &amp; back View", src: "assets/img/foto-produk/project-foto-produk-etawafood-coklat-500-depan.webp" }
     ]},
- { tag: "Etawagrow", tagAlt: true, title: "susu kambing", images: [
+ { brand: "Etawagrow", category: "susu kambing", name: "Susu - Kambing Etawa", nameEn: "Etawa Goat - Milk", landingPageUrl: "#", marketplaceUrl: "#", images: [
         { label: "Front &amp; Right Side View", src: "assets/img/foto-produk/project-foto-produk-etawagrow-depan-samping-kanan.webp" },
         { label: "Front &amp; Left Side View", src: "assets/img/foto-produk/project-foto-produk-etawagrow-depan-samping-kiri.webp" }
     ]},
-	{ tag: "Etawanutri", tagAlt: true, title: "susu kambing", images: [
+	{ brand: "Etawanutri", category: "susu kambing", name: "Susu - Kambing Etawa", nameEn: "Etawa Goat - Milk", landingPageUrl: "#", marketplaceUrl: "#", images: [
         { label: "Front &amp; Back View", src: "assets/img/foto-produk/project-foto-produk-etawanutri-depan-belakang.webp" },
         { label: "Right Side &amp; Left Side View", src: "assets/img/foto-produk/project-foto-produk-etawanutri-samping-kiri-kanan.webp" }
     ]},
-	{ tag: "Etawapro", tagAlt: true, title: "susu kambing", images: [
+	{ brand: "Etawapro", category: "susu kambing", name: "Susu - Kambing Etawa", nameEn: "Etawa Goat - Milk", landingPageUrl: "#", marketplaceUrl: "#", images: [
         { label: "Front &amp; Right Side View", src: "assets/img/foto-produk/project-foto-produk-etawapro-box-depan-samping-kanan.webp" },
         { label: "Front &amp; Left Side View", src: "assets/img/foto-produk/project-foto-produk-etawapro-box-depan-samping-kiri.webp" },
 	{ label: "Front &amp; Back Side View", src: "assets/img/foto-produk/project-foto-produk-etawapro-sachet-depan.webp" },
 	{ label: "Right Side View", src: "assets/img/foto-produk/project-foto-produk-etawapro-sachet-samping-kanan.webp" },
 	{ label: "Left Side View", src: "assets/img/foto-produk/project-foto-produk-etawapro-sachet-samping-kiri.webp" }
     ]},
-	{ tag: "Extrafit", tagAlt: true, title: "susu kambing", images: [
+	{ brand: "Extrafit", category: "suplemen", name: "Minyak - Habbatussauda", nameEn: "Black Seed - Oil", landingPageUrl: "#", marketplaceUrl: "#", images: [
         { label: "Front View", src: "assets/img/foto-produk/project-foto-produk-extrafit-depan.webp" },
         { label: "Right Side View", src: "assets/img/foto-produk/project-foto-produk-extrafit-samping-kiri.webp" },
 	{ label: "Left Side View", src: "assets/img/foto-produk/project-foto-produk-extrafit-samping-kanan.webp" }
     ]},
-	{ tag: "Gamat Bio-Gold", tagAlt: true, title: "suplemen", images: [
+	{ brand: "Bio-Gold", category: "suplemen", name: "Ekstrak - Gamat", nameEn: "Sea Cucumber - Extract", landingPageUrl: "#", marketplaceUrl: "#", images: [
         { label: "Front View", src: "assets/img/foto-produk/project-foto-produk-gamat-kapsul-depan.webp" },
 	{ label: "Back View", src: "assets/img/foto-produk/project-foto-produk-gamat-kapsul-belakang.webp" },
         { label: "Right Side View", src: "assets/img/foto-produk/project-foto-produk-gamat-kapsul-samping-kanan.webp" },
@@ -393,46 +455,80 @@
      pilihan bahasa navbar (disimpan di localStorage 'site-lang',
      sama seperti assets/js/i18n.js).
      ================================================================ */
-  var TYPE_LABELS = {
-    id: { 'minuman': 'minuman', 'suplemen': 'suplemen', 'madu': 'madu', 'cuka apel': 'cuka apel', 'susu kambing': 'susu kambing' },
-    en: { 'minuman': 'drink', 'suplemen': 'supplement', 'madu': 'honey', 'cuka apel': 'apple cider vinegar', 'susu kambing': 'goat milk' }
+  var CATEGORIES = ['all', 'minuman', 'suplemen', 'madu', 'cuka apel', 'susu kambing'];
+  var CATEGORY_LABELS = {
+    id: { all: 'Semua', 'minuman': 'Minuman', 'suplemen': 'Suplemen', 'madu': 'Madu', 'cuka apel': 'Cuka Apel', 'susu kambing': 'Susu Kambing' },
+    en: { all: 'All', 'minuman': 'Drinks', 'suplemen': 'Supplements', 'madu': 'Honey', 'cuka apel': 'Apple Cider Vinegar', 'susu kambing': 'Goat Milk' }
   };
   var UI_TEXT = {
     id: { prev: 'Sebelumnya', next: 'Berikutnya', slide: 'Slide', photoAlt: 'Foto Produk',
+          landingPage: 'Lihat Implementasi Landing Page', marketplace: 'Lihat Produk di Marketplace', linkUnavailable: 'Tautan belum tersedia',
           pageInfo: function (cur, total, count) { return 'Halaman ' + cur + ' dari ' + total + ' — ' + count + ' produk total'; } },
     en: { prev: 'Previous', next: 'Next', slide: 'Slide', photoAlt: 'Product Photo',
+          landingPage: 'View Landing Page Implementation', marketplace: 'View Product on Marketplace', linkUnavailable: 'Link not available yet',
           pageInfo: function (cur, total, count) { return 'Page ' + cur + ' of ' + total + ' — ' + count + ' products total'; } }
   };
   function getLang(){ return localStorage.getItem('site-lang') || 'id'; }
-  function typeLabel(title){
-    var t = TYPE_LABELS[getLang()];
-    return (t && t[title]) || title;
+  function categoryLabel(category){
+    var labels = CATEGORY_LABELS[getLang()] || CATEGORY_LABELS.id;
+    return labels[category] || category;
   }
   function ui(){ return UI_TEXT[getLang()]; }
 
-  var grid       = document.getElementById('galleryGrid');
-  var paginateEl = document.getElementById('galleryPagination');
-  var infoEl     = document.getElementById('galleryPageInfo');
-  var totalPages = Math.ceil(PRODUCTS.length / ITEMS_PER_PAGE);
+  var grid             = document.getElementById('galleryGrid');
+  var categoryFilterEl = document.getElementById('productCategoryFilter');
+  var filterGroupEl    = categoryFilterEl.closest('.filter-group');
+  var paginateEl       = document.getElementById('galleryPagination');
+  var infoEl           = document.getElementById('galleryPageInfo');
+  var currentCategory  = 'all';
+  var currentProducts  = PRODUCTS;
+  var totalPages       = Math.ceil(currentProducts.length / ITEMS_PER_PAGE);
   var currentPage = 1;
+
+  function getFilteredProducts(){
+    if (currentCategory === 'all') return PRODUCTS;
+    return PRODUCTS.filter(function(product){ return product.category === currentCategory; });
+  }
+
+  function renderCategoryFilter(){
+    categoryFilterEl.innerHTML = '';
+    CATEGORIES.forEach(function(category){
+      var button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'filter-btn' + (category === currentCategory ? ' active' : '');
+      button.textContent = categoryLabel(category);
+      button.addEventListener('click', function(){
+        currentCategory = category;
+        currentProducts = getFilteredProducts();
+        totalPages = Math.max(1, Math.ceil(currentProducts.length / ITEMS_PER_PAGE));
+        renderCategoryFilter();
+        renderPage(1, true);
+      });
+      categoryFilterEl.appendChild(button);
+    });
+  }
 
   function buildCard(product){
     var card = document.createElement('div');
     card.className = 'slider-card';
 
-    var head = document.createElement('div');
-    head.className = 'slider-card-head';
-    head.innerHTML =
-      '<span class="slider-card-tag' + (product.tagAlt ? ' alt' : '') + '"><i class="fa-solid fa-tag"></i> ' + product.tag + '</span>' +
-      '<span class="slider-card-title">' + typeLabel(product.title) + '</span>';
-    card.appendChild(head);
+    var caption = document.createElement('div');
+    caption.className = 'shot-caption product-card-caption';
+    var brandTag = document.createElement('span');
+    brandTag.className = 'shot-tag';
+    brandTag.textContent = product.brand;
+    caption.appendChild(brandTag);
+    var productName = document.createElement('span');
+    productName.textContent = getLang() === 'en' ? product.nameEn : product.name;
+    caption.appendChild(productName);
+    card.appendChild(caption);
 
     var slider = document.createElement('div');
     slider.className = 'media-slider';
 
     var slidesHtml = product.images.map(function(img){
       return '<div class="media-slide">' +
-               '<img src="' + img.src + '" alt="' + ui().photoAlt + ' ' + product.tag + ' ' + img.label + '" loading="lazy">' +
+               '<img src="' + img.src + '" alt="' + ui().photoAlt + ' ' + product.brand + ' ' + img.label + '" loading="lazy">' +
              '</div>';
     }).join('');
 
@@ -445,6 +541,29 @@
     var dots = document.createElement('div');
     dots.className = 'media-dots';
     card.appendChild(dots);
+
+    var actions = document.createElement('div');
+    actions.className = 'product-card-actions';
+
+    function appendAction(label, url, iconClass){
+      var link = document.createElement('a');
+      link.className = 'product-card-action';
+      link.href = url || '#';
+      link.innerHTML = '<i class="' + iconClass + '" aria-hidden="true"></i><span>' + label + '</span>';
+      if (url && url !== '#'){
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+      } else {
+        link.setAttribute('aria-disabled', 'true');
+        link.title = ui().linkUnavailable;
+        link.addEventListener('click', function(event){ event.preventDefault(); });
+      }
+      actions.appendChild(link);
+    }
+
+    appendAction(ui().landingPage, product.landingPageUrl, 'fa-solid fa-display');
+    appendAction(ui().marketplace, product.marketplaceUrl, 'fa-solid fa-store');
+    card.appendChild(actions);
 
     return card;
   }
@@ -553,7 +672,16 @@
     nextBtn.addEventListener('click', function(){ renderPage(currentPage + 1, true); });
     paginateEl.appendChild(nextBtn);
 
-    infoEl.textContent = ui().pageInfo(currentPage, totalPages, PRODUCTS.length);
+    infoEl.textContent = ui().pageInfo(currentPage, totalPages, currentProducts.length);
+  }
+
+  function scrollToGalleryStart(){
+    var targetElement = filterGroupEl || categoryFilterEl;
+    var previousPosition = targetElement.style.position;
+    targetElement.style.position = 'static';
+    var target = window.pageYOffset + targetElement.getBoundingClientRect().top - 66;
+    targetElement.style.position = previousPosition;
+    window.scrollTo({ top: Math.max(0, target), behavior: 'smooth' });
   }
 
   function renderPage(page, scroll){
@@ -562,20 +690,26 @@
     grid.innerHTML = '';
 
     var start = (page - 1) * ITEMS_PER_PAGE;
-    PRODUCTS.slice(start, start + ITEMS_PER_PAGE).forEach(function(product){
+    currentProducts.slice(start, start + ITEMS_PER_PAGE).forEach(function(product){
       grid.appendChild(buildCard(product));
     });
 
     initSliders(grid);
     renderPagination();
-    if (scroll) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (scroll) scrollToGalleryStart();
   }
 
+  renderCategoryFilter();
   renderPage(getPageFromURL(totalPages), false);
 
   // Render ulang kartu galeri (label kategori & teks UI) saat bahasa diganti.
   document.querySelectorAll('.lang-btn').forEach(function (btn) {
-    btn.addEventListener('click', function () { renderPage(currentPage, false); });
+    btn.addEventListener('click', function () {
+      setTimeout(function(){
+        renderCategoryFilter();
+        renderPage(currentPage, false);
+      }, 0);
+    });
   });
 })();
 </script>

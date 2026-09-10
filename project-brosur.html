@@ -15,6 +15,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="assets/css/styles.css?v=11">
+<style id="brosur-gallery-caption-layout">
+  #galleryGrid .shot-caption{
+    width:calc(100% + 32px);
+    margin:16px -16px -16px;
+    box-sizing:border-box;
+    justify-content:center;
+    text-align:center;
+  }
+</style>
 </head>
 <body>
 
@@ -154,27 +163,14 @@
       <div class="eyebrow-line" data-i18n="gallery.eyebrow">DOKUMENTASI</div>
       <h2 data-i18n="gallery.title">Cuplikan <span>Pekerjaan</span></h2>
     </div>
-    <!-- Tab: Potrait / Landscape -->
-    <div class="brosur-tabnav">
-      <button class="filter-btn active" data-brosur-tab="potrait"><span data-i18n="tab.potrait">Potrait</span></button>
-      <button class="filter-btn" data-brosur-tab="landscape"><span data-i18n="tab.landscape">Landscape (Lipat)</span></button>
+    <div class="filter-group" id="brosurFilterGroup">
+      <div class="filter-row" id="brosurCategoryFilter"></div>
     </div>
 
-    <!-- Panel: Potrait (tidak dilipat) -->
-    <div class="brosur-panel active" data-brosur-panel="potrait">
-      <div class="gallery-grid gallery-grid-2col">
-        <div class="gallery-item gallery-item-img"><img src="assets/img/brosur/project-brosur-1.webp" alt="Desain Brosur SPMB Halaman Depan" loading="lazy"></div>
-        <div class="gallery-item gallery-item-img"><img src="assets/img/brosur/project-brosur-1.webp" alt="Desain Brosur SPMB Halaman Dalam" loading="lazy"></div>
-      </div>
-    </div>
+    <div class="slider-card-grid" id="galleryGrid"></div>
 
-    <!-- Panel: Landscape (dilipat) -->
-    <div class="brosur-panel" data-brosur-panel="landscape">
-      <div class="slider-card-grid" id="galleryGrid"></div>
-
-      <nav class="gallery-pagination" id="galleryPagination" aria-label="Navigasi halaman contoh brosur landscape"></nav>
-      <p class="gallery-page-info" id="galleryPageInfo"></p>
-    </div>
+    <nav class="gallery-pagination" id="galleryPagination" aria-label="Navigasi halaman contoh brosur"></nav>
+    <p class="gallery-page-info" id="galleryPageInfo"></p>
 
     <div class="project-tags project-tags-center">
       <span>Brosur</span>
@@ -300,23 +296,6 @@
 <script src="assets/js/lightbox.js"></script>
 <script>
 (function(){
-  // Tab Potrait / Landscape
-  var tabBtns = document.querySelectorAll('[data-brosur-tab]');
-  var panels  = document.querySelectorAll('[data-brosur-panel]');
-
-  function switchTab(tabName){
-    tabBtns.forEach(function(b){ b.classList.toggle('active', b.dataset.brosurTab === tabName); });
-    panels.forEach(function(p){ p.classList.remove('active'); });
-    document.querySelector('[data-brosur-panel="' + tabName + '"]').classList.add('active');
-  }
-
-  tabBtns.forEach(function(btn){
-    btn.addEventListener('click', function(){
-      switchTab(btn.dataset.brosurTab);
-      scrollToSticky(document.querySelector('.brosur-tabnav'));
-    });
-  });
-
   function getPageFromURL(total){
     var params = new URLSearchParams(window.location.search);
     var p = parseInt(params.get('page'), 10);
@@ -334,7 +313,7 @@
   }
 
   /* ================================================================
-     DATA CONTOH BROSUR LANDSCAPE (dipaginasi)
+     DATA CONTOH BROSUR (dipaginasi dan difilter berdasarkan orientasi)
      type: "double" pakai slider depan/belakang, "single" pakai
      slider-card-imgbox (satu gambar saja, tanpa panah/dot).
      ================================================================ */
@@ -342,53 +321,97 @@
   function dict(){ return (window.I18N_PAGE && window.I18N_PAGE[getLang()]) || {}; }
 
   var EXAMPLES = [
-    { name: "Brosur Sekolah", type: "double", tagIcon: "fa-arrows-rotate", tagAlt: false, images: [
+    { name: { id: "SPMB Sekolah", en: "School Admission" }, category: "potrait", type: "single",
+      image: { src: "assets/img/brosur/project-brosur-1.webp", alt: "Desain Brosur SPMB Halaman Depan" }
+    },
+    { name: { id: "SPMB Sekolah", en: "School Admission" }, category: "potrait", type: "single",
+      image: { src: "assets/img/brosur/project-brosur-1.webp", alt: "Desain Brosur SPMB Halaman Dalam" }
+    },
+    { name: { id: "SPMB Sekolah", en: "School Admission" }, category: "landscape", type: "double", images: [
         { src: "assets/img/brosur/project-brosur-2a.webp" },
         { src: "assets/img/brosur/project-brosur-2b.webp" }
     ]},
-    { name: "Brosur Sekolah", type: "single", tagIcon: "fa-image", tagAlt: true,
+    { name: { id: "SPMB Sekolah", en: "School Admission" }, category: "landscape", type: "single",
       image: { src: "assets/img/brosur/project-brosur-2a.webp" }
     },
-    { name: "Brosur Sekolah", type: "double", tagIcon: "fa-arrows-rotate", tagAlt: false, images: [
+    { name: { id: "SPMB Sekolah", en: "School Admission" }, category: "landscape", type: "double", images: [
         { src: "assets/img/brosur/project-brosur-2a.webp" },
         { src: "assets/img/brosur/project-brosur-2b.webp" }
     ]},
-    { name: "Brosur Sekolah", type: "single", tagIcon: "fa-image", tagAlt: true,
+    { name: { id: "SPMB Sekolah", en: "School Admission" }, category: "landscape", type: "single",
       image: { src: "assets/img/brosur/project-brosur-2b.webp" }
     },
-    { name: "Brosur Sekolah", type: "double", tagIcon: "fa-arrows-rotate", tagAlt: false, images: [
+    { name: { id: "SPMB Sekolah", en: "School Admission" }, category: "landscape", type: "double", images: [
         { src: "assets/img/brosur/project-brosur-2a.webp" },
         { src: "assets/img/brosur/project-brosur-2b.webp" }
     ]}
   ];
 
   var ITEMS_PER_PAGE = 8;
+  var CATEGORIES = ['all', 'potrait', 'landscape'];
+  var CATEGORY_LABELS = {
+    id: { all: 'Semua', potrait: 'Potrait', landscape: 'Landscape' },
+    en: { all: 'All', potrait: 'Portrait', landscape: 'Landscape' }
+  };
 
-  var grid       = document.getElementById('galleryGrid');
-  var paginateEl = document.getElementById('galleryPagination');
-  var infoEl     = document.getElementById('galleryPageInfo');
-  var totalPages = Math.ceil(EXAMPLES.length / ITEMS_PER_PAGE);
+  var grid          = document.getElementById('galleryGrid');
+  var categoryEl    = document.getElementById('brosurCategoryFilter');
+  var filterGroupEl = document.getElementById('brosurFilterGroup');
+  var paginateEl    = document.getElementById('galleryPagination');
+  var infoEl        = document.getElementById('galleryPageInfo');
+  var currentCategory = 'all';
+  var currentItems  = EXAMPLES;
+  var totalPages    = Math.max(1, Math.ceil(currentItems.length / ITEMS_PER_PAGE));
   var currentPage = 1;
-  var rendered = false; // baru render galeri saat tab landscape pertama kali dibuka
+
+  function categoryLabel(category){
+    var labels = CATEGORY_LABELS[getLang()] || CATEGORY_LABELS.id;
+    return labels[category] || category;
+  }
+
+  function getFilteredItems(){
+    if (currentCategory === 'all') return EXAMPLES;
+    return EXAMPLES.filter(function(ex){ return ex.category === currentCategory; });
+  }
+
+  function renderCategoryFilter(){
+    categoryEl.innerHTML = '';
+    CATEGORIES.forEach(function(category){
+      var button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'filter-btn' + (category === currentCategory ? ' active' : '');
+      button.textContent = categoryLabel(category);
+      button.addEventListener('click', function(){
+        currentCategory = category;
+        currentItems = getFilteredItems();
+        totalPages = Math.max(1, Math.ceil(currentItems.length / ITEMS_PER_PAGE));
+        renderCategoryFilter();
+        renderPage(1, true);
+      });
+      categoryEl.appendChild(button);
+    });
+  }
 
   function buildCard(ex){
     var card = document.createElement('div');
     card.className = 'slider-card';
     var d = dict();
-    var title = ex.name;
+    var lang = getLang();
+    var title = ex.name[lang] || ex.name.id;
     var tagLabel = ex.type === 'double' ? (d['example.tagDouble'] || 'Bolak-balik') : (d['example.tagSingle'] || 'Satu Sisi');
+    var tagIcon = ex.type === 'double' ? 'fa-arrows-rotate' : 'fa-image';
+    var tagAlt = ex.type === 'single';
 
     var head = document.createElement('div');
     head.className = 'slider-card-head';
     head.innerHTML =
-      '<span class="slider-card-tag' + (ex.tagAlt ? ' alt' : '') + '"><i class="fa-solid ' + ex.tagIcon + '"></i> ' + tagLabel + '</span>' +
-      '<span class="slider-card-title">' + title + '</span>';
+      '<span class="slider-card-tag' + (tagAlt ? ' alt' : '') + '"><i class="fa-solid ' + tagIcon + '"></i> ' + tagLabel + '</span>';
     card.appendChild(head);
 
     if (ex.type === 'single'){
       var box = document.createElement('div');
       box.className = 'slider-card-imgbox';
-      box.innerHTML = '<img src="' + ex.image.src + '" alt="Brosur Landscape Lipat Satu Sisi ' + title + '" loading="lazy">';
+      box.innerHTML = '<img src="' + ex.image.src + '" alt="' + (ex.image.alt || ('Brosur ' + title)) + '" loading="lazy">';
       card.appendChild(box);
     } else {
       var slider = document.createElement('div');
@@ -408,6 +431,17 @@
       dots.className = 'media-dots';
       card.appendChild(dots);
     }
+
+    var caption = document.createElement('div');
+    caption.className = 'shot-caption';
+    var tag = document.createElement('span');
+    tag.className = 'shot-tag';
+    tag.textContent = lang === 'en' ? 'Brochure' : 'Brosur';
+    caption.appendChild(tag);
+    var text = document.createElement('span');
+    text.textContent = title;
+    caption.appendChild(text);
+    card.appendChild(caption);
 
     return card;
   }
@@ -447,7 +481,7 @@
       }
 
       // Efek flip 3D dipicu klik tag "Bolak-balik" — carousel panah/dot tetap
-      // pakai transisi geser biasa lewat goTo().
+      // memakai transisi geser biasa lewat goTo().
       function flipTo(i){
         if (flipping || typeof track.animate !== 'function') { goTo(i); return; }
         var nextIndex = (i + slides.length) % slides.length;
@@ -540,7 +574,7 @@
     infoEl.textContent = template
       .replace('{page}', currentPage)
       .replace('{total}', totalPages)
-      .replace('{count}', EXAMPLES.length);
+      .replace('{count}', currentItems.length);
   }
 
   function scrollToSticky(el){
@@ -558,37 +592,24 @@
     grid.innerHTML = '';
 
     var start = (page - 1) * ITEMS_PER_PAGE;
-    EXAMPLES.slice(start, start + ITEMS_PER_PAGE).forEach(function(ex){
+    currentItems.slice(start, start + ITEMS_PER_PAGE).forEach(function(ex){
       grid.appendChild(buildCard(ex));
     });
 
     initSliders(grid);
     renderPagination();
-    if (scroll) scrollToSticky(document.querySelector('.brosur-tabnav'));
+    if (scroll) scrollToSticky(filterGroupEl);
   }
 
-  // Render galeri landscape begitu tabnya dibuka pertama kali (hemat kalau
-  // pengunjung cuma lihat tab Potrait saja)
-  var landscapeTabBtn = document.querySelector('[data-brosur-tab="landscape"]');
-  landscapeTabBtn.addEventListener('click', function(){
-    if (!rendered){
-      rendered = true;
-      renderPage(currentPage, false);
-    }
-  });
-
-  // Kalau URL bawa ?page=N (misal habis refresh di tab landscape halaman 2/3),
-  // langsung buka tab landscape dan render ke halaman itu
-  var initialPage = getPageFromURL(totalPages);
-  if (initialPage > 1){
-    switchTab('landscape');
-    rendered = true;
-    renderPage(initialPage, false);
-  }
+  renderCategoryFilter();
+  renderPage(getPageFromURL(totalPages), false);
 
   document.querySelectorAll('.lang-btn').forEach(function (btn) {
     btn.addEventListener('click', function () {
-      if (rendered) renderPage(currentPage, false);
+      setTimeout(function () {
+        renderCategoryFilter();
+        renderPage(currentPage, false);
+      }, 0);
     });
   });
 })();

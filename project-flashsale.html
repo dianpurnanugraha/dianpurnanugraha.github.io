@@ -15,6 +15,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="assets/css/styles.css?v=11">
+<style>
+#galleryGrid .shot-caption{
+  width:100%;
+  max-width:none;
+  align-self:stretch;
+  box-sizing:border-box;
+  justify-content:center;
+}
+</style>
 </head>
 <body>
 
@@ -176,7 +185,7 @@
 <section class="wrap" style="padding-bottom:30px;">
   <div class="project-nav-row">
     <a href="project-affiliate-shopee.html" class="project-nav-link"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="nav.prev">Manajemen Program Affiliate Shopee (AMS)</span></a>
-    <a href="project-sales-dashboard.html" class="project-nav-link next"><span data-i18n="nav.next">Dashboard Operasional &amp; Analisis Data Multi-Channel</span> <i class="fa-solid fa-arrow-right"></i></a>
+    <a href="project-discount-campaign.html" class="project-nav-link next"><span data-i18n="nav.next">Kampanye Diskon Produk Shopee</span> <i class="fa-solid fa-arrow-right"></i></a>
   </div>
 </section>
 
@@ -424,7 +433,7 @@
     catTag.textContent = catLbl ? (lang === 'en' ? catLbl.en : catLbl.id) : entry.category;
     caption.appendChild(catTag);
 
-    if (entry.period){
+    if (entry.period && entry.category !== 'kinerja'){
       var perTag = document.createElement('span');
       perTag.className = 'shot-tag alt';
       var perLbl = TAG_LABELS[entry.period];
