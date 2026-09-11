@@ -1,15 +1,15 @@
 /* ===================== KAMUS HALAMAN: project-brosur.html ===================== */
 window.I18N_PAGE = {
   id: {
-    '_title': 'Desain Brosur & Materi Cetak Promosi — Dian Purna Nugraha, S.Kom.',
-    '_metaDesc': 'Studi kasus (contoh): Desain Brosur & Materi Cetak Promosi — Merancang brosur dan materi cetak promosi untuk mendukung penjualan produk, promosi jasa, hingga kebutuhan institusi seperti sekolah.',
-    '_ogTitle': 'Desain Brosur &amp; Materi Cetak Promosi — Dian Purna Nugraha, S.Kom.',
+    '_title': 'Desain Materi Promosi Cetak & Display — Dian Purna Nugraha, S.Kom.',
+    '_metaDesc': 'Studi kasus desain materi promosi cetak dan display, meliputi brosur, spanduk, banner, X-banner, flyer, poster, dan daftar harga.',
+    '_ogTitle': 'Desain Materi Promosi Cetak &amp; Display — Dian Purna Nugraha, S.Kom.',
 
     'back.toProjects': 'Kembali ke Semua Project',
 
     'hero.tag': 'Branding',
-    'hero.title': 'Desain Brosur &amp; Materi Cetak Promosi',
-    'hero.desc': 'Merancang brosur dan materi cetak promosi untuk mendukung penjualan produk, promosi jasa, hingga kebutuhan institusi seperti sekolah.',
+    'hero.title': 'Desain Materi Promosi Cetak &amp; Display',
+    'hero.desc': 'Merancang berbagai materi visual untuk promosi cetak dan display, mulai dari brosur hingga banner, flyer, dan daftar harga.',
 
     'meta.client': 'Klien',
     'meta.clientValue': 'Multi Klien',
@@ -20,24 +20,24 @@ window.I18N_PAGE = {
     'meta.tools': 'Tools',
 
     'challenge.title': 'Tantangan',
-    'challenge.desc': 'Belum ada materi cetak yang representatif untuk kebutuhan pameran, promosi produk atau jasa, maupun materi institusi (misalnya brosur sekolah), sehingga informasi sulit dijelaskan tanpa penjelasan lisan.',
+    'challenge.desc': 'Setiap media memiliki ukuran, jarak pandang, dan kebutuhan informasi yang berbeda, sehingga desain harus tetap terbaca dan konsisten pada format potrait maupun landscape.',
 
     'process.title': 'Proses &amp; Solusi',
     'process1.title': 'Riset Konten',
-    'process1.desc': 'Mengumpulkan poin jual utama, keunggulan produk/jasa, atau informasi program (untuk institusi) yang wajib ada di brosur.',
-    'process2.title': 'Perancangan Layout',
-    'process2.desc': 'Menyusun struktur informasi dan alur baca agar brosur mudah dipahami dalam sekali lihat.',
+    'process1.desc': 'Mengumpulkan pesan utama, informasi produk, harga, kontak, dan ajakan bertindak yang dibutuhkan pada setiap media.',
+    'process2.title': 'Penyesuaian Format',
+    'process2.desc': 'Menentukan hierarki serta komposisi berdasarkan ukuran, orientasi, dan jarak pandang media.',
     'process3.title': 'Desain Visual',
-    'process3.desc': 'Mengaplikasikan identitas brand ke desain brosur, mulai dari warna, tipografi, hingga ilustrasi.',
-    'process4.title': 'Finalisasi Cetak',
-    'process4.desc': 'Menyiapkan file siap cetak dengan ukuran, bleed, dan resolusi sesuai standar percetakan.',
+    'process3.desc': 'Menerapkan warna, tipografi, gambar, dan elemen grafis yang sesuai dengan identitas serta tujuan komunikasi.',
+    'process4.title': 'Finalisasi Output',
+    'process4.desc': 'Memeriksa keterbacaan, resolusi, ukuran, bleed, dan kesiapan file untuk dicetak atau digunakan sebagai display.',
 
     'result.eyebrow': 'HASIL',
     'result.title': 'Dampak &amp; <span>Hasil</span>',
-    'result1.label': 'Varian Brosur',
+    'result1.label': 'Jenis Materi Promosi',
     'result2.label': 'Siap Cetak',
-    'result3.label': 'Panduan Layout Brand',
-    'result4.label': 'Dipakai di Berbagai Acara',
+    'result3.label': 'Orientasi Desain',
+    'result4.label': 'Contoh Karya',
 
     'gallery.eyebrow': 'DOKUMENTASI',
     'gallery.title': 'Cuplikan <span>Pekerjaan</span>',
@@ -64,15 +64,15 @@ window.I18N_PAGE = {
     'connect.footer': 'Hasil Nyata &nbsp;•&nbsp; Detail Terjaga &nbsp;•&nbsp; Tepat Waktu'
   },
   en: {
-    '_title': 'Brochure & Print Promotional Material Design — Dian Purna Nugraha, S.Kom.',
-    '_metaDesc': 'Case study (example): Brochure & Print Promotional Material Design — Designing brochures and print promotional materials to support product sales, service promotion, and institutional needs such as schools.',
-    '_ogTitle': 'Brochure &amp; Print Promotional Material Design — Dian Purna Nugraha, S.Kom.',
+    '_title': 'Print Promotional & Display Material Design — Dian Purna Nugraha, S.Kom.',
+    '_metaDesc': 'A print promotional and display material design case study covering brochures, banners, X-banners, flyers, posters, and price lists.',
+    '_ogTitle': 'Print Promotional &amp; Display Material Design — Dian Purna Nugraha, S.Kom.',
 
     'back.toProjects': 'Back to All Projects',
 
     'hero.tag': 'Branding',
-    'hero.title': 'Brochure &amp; Print Promotional Material Design',
-    'hero.desc': 'Designing brochures and print promotional materials to support product sales, service promotion, and institutional needs such as schools.',
+    'hero.title': 'Print Promotional &amp; Display Material Design',
+    'hero.desc': 'Designing visual materials for print promotion and display, from brochures to banners, flyers, and price lists.',
 
     'meta.client': 'Client',
     'meta.clientValue': 'Multiple Clients',
@@ -83,24 +83,24 @@ window.I18N_PAGE = {
     'meta.tools': 'Tools',
 
     'challenge.title': 'Challenge',
-    'challenge.desc': 'There was no representative printed material for exhibitions, product or service promotion, or institutional needs (such as school brochures), making information hard to convey without verbal explanation.',
+    'challenge.desc': 'Each medium has different dimensions, viewing distances, and information needs, so the design must remain readable and consistent in both portrait and landscape formats.',
 
     'process.title': 'Process &amp; Solution',
     'process1.title': 'Content Research',
-    'process1.desc': 'Gathering the key selling points, product/service advantages, or program information (for institutions) that must appear in the brochure.',
-    'process2.title': 'Layout Design',
-    'process2.desc': 'Structuring the information and reading flow so the brochure is easy to understand at a glance.',
+    'process1.desc': 'Gathering the primary message, product information, prices, contact details, and calls to action required for each medium.',
+    'process2.title': 'Format Adaptation',
+    'process2.desc': 'Defining the hierarchy and composition according to the medium’s dimensions, orientation, and viewing distance.',
     'process3.title': 'Visual Design',
-    'process3.desc': "Applying the brand identity to the brochure design, from colors and typography to illustrations.",
-    'process4.title': 'Print Finalization',
-    'process4.desc': 'Preparing print-ready files with sizes, bleed, and resolution that meet printing standards.',
+    'process3.desc': 'Applying colors, typography, imagery, and graphic elements that support the identity and communication objective.',
+    'process4.title': 'Output Finalization',
+    'process4.desc': 'Checking readability, resolution, dimensions, bleed, and file readiness for print or display use.',
 
     'result.eyebrow': 'RESULTS',
     'result.title': 'Impact &amp; <span>Results</span>',
-    'result1.label': 'Brochure Variants',
+    'result1.label': 'Promotional Material Types',
     'result2.label': 'Print-Ready',
-    'result3.label': 'Brand Layout Guide',
-    'result4.label': 'Used Across Multiple Events',
+    'result3.label': 'Design Orientations',
+    'result4.label': 'Work Samples',
 
     'gallery.eyebrow': 'DOCUMENTATION',
     'gallery.title': 'Work <span>Highlights</span>',
@@ -127,5 +127,4 @@ window.I18N_PAGE = {
     'connect.footer': 'Real Results &nbsp;•&nbsp; Attention to Detail &nbsp;•&nbsp; On Time'
   }
 };
-
 
