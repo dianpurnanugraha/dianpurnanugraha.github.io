@@ -6,7 +6,7 @@ Website portofolio statis bilingual untuk menampilkan profil, pengalaman, layana
 
 ## Ringkasan
 
-- 24 halaman detail proyek
+- 22 halaman detail proyek
 - 6 artikel Insight
 - 5 kategori proyek
 - Bahasa Indonesia dan Inggris
@@ -21,7 +21,7 @@ Website portofolio statis bilingual untuk menampilkan profil, pengalaman, layana
 | `services.html` | Layanan profesional |
 | `skill.html` | Kompetensi, skill, dan tools |
 | `experience.html` | Riwayat pengalaman kerja |
-| `project.html` | Daftar 24 proyek dengan filter kategori |
+| `project.html` | Daftar 22 proyek dengan filter kategori |
 | `insight.html` | Daftar artikel dan insight profesional |
 | `contact.html` | Kontak dan tautan sosial media |
 
@@ -30,13 +30,11 @@ Website portofolio statis bilingual untuk menampilkan profil, pengalaman, layana
 ### E-commerce
 
 - `project-shopee-tiktok.html` — Optimasi Toko Shopee & TikTok Shop
-- `project-lazada-setup.html` — Setup & Migrasi Toko ke Lazada
 - `project-express-shipping.html` — Performa Program Pengiriman Kilat Shopee
 
 ### Branding & Design
 
 - `project-logo-identitas.html` — Desain Logo & Identitas Visual
-- `project-instagram-design.html` — Desain Feed Instagram & Konten Promosi
 - `project-brosur.html` — Desain Materi Promosi Cetak & Display
 - `project-katalog.html` — Desain Katalog Produk Multi-Brand
 - `project-packaging.html` — Desain Kemasan & Branding Multi-Brand
