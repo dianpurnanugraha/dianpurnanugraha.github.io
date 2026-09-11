@@ -37,7 +37,7 @@ Website portofolio statis bilingual untuk menampilkan profil, pengalaman, layana
 
 - `project-logo-identitas.html` — Desain Logo & Identitas Visual
 - `project-instagram-design.html` — Desain Feed Instagram & Konten Promosi
-- `project-brosur.html` — Desain Brosur & Materi Cetak Promosi
+- `project-brosur.html` — Desain Materi Promosi Cetak & Display
 - `project-katalog.html` — Desain Katalog Produk Multi-Brand
 - `project-packaging.html` — Desain Kemasan & Branding Multi-Brand
 - `project-fotografi-produk.html` — Fotografi & Editing Produk
