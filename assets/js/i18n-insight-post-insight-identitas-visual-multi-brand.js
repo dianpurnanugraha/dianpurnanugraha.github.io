@@ -44,7 +44,7 @@ window.I18N_PAGE = {
     'tk2': 'Info legalitas (BPOM/halal/SNI), komposisi, dan cara pakai/saji terbaca jelas di setiap varian brand.',
     'tk3': 'Ukuran, bleed, dan resolusi file sudah sesuai standar percetakan sebelum dikirim ke vendor.',
     'tk4': 'Ada panduan ringkas warna dan tipografi supaya materi promosi berikutnya tetap konsisten.',
-    'closing': 'Beberapa contoh hasil kerjanya bisa dilihat langsung di halaman <a href="project-logo-identitas.html">Desain Logo &amp; Identitas Visual</a>, <a href="project-packaging.html">Desain Kemasan &amp; Branding Multi-Brand</a>, dan <a href="project-brosur.html">Desain Brosur &amp; Materi Cetak Promosi</a>.',
+    'closing': 'Beberapa contoh hasil kerjanya bisa dilihat langsung di halaman <a href="project-logo-identitas.html">Desain Logo &amp; Identitas Visual</a>, <a href="project-packaging.html">Desain Kemasan &amp; Branding Multi-Brand</a>, dan <a href="project-brosur.html">Desain Materi Promosi Cetak &amp; Display</a>.',
   },
   en: {
     '_title': 'Building a Consistent Visual Identity Across Multiple Brands — Dian Purna Nugraha, S.Kom.',
@@ -90,6 +90,6 @@ window.I18N_PAGE = {
     'tk2': 'Legal information (BPOM/halal/SNI), composition, and usage/serving instructions are clearly readable on every brand variant.',
     'tk3': 'File size, bleed, and resolution meet print standards before being sent to the vendor.',
     'tk4': 'A short color and typography guide exists so future promotional materials stay consistent.',
-    'closing': 'A few examples of this work are on the <a href="project-logo-identitas.html">Logo &amp; Visual Identity Design</a>, <a href="project-packaging.html">Multi-Brand Packaging &amp; Branding Design</a>, and <a href="project-brosur.html">Brochure &amp; Print Promotional Material Design</a> pages.',
+    'closing': 'A few examples of this work are on the <a href="project-logo-identitas.html">Logo &amp; Visual Identity Design</a>, <a href="project-packaging.html">Multi-Brand Packaging &amp; Branding Design</a>, and <a href="project-brosur.html">Print Promotional &amp; Display Material Design</a> pages.',
   }
 };

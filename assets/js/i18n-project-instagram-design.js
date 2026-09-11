@@ -46,7 +46,7 @@ window.I18N_PAGE = {
     'connect.hireLink': 'Rekrut Saya Sekarang',
     'connect.downloadCv': 'Unduh CV',
     'nav.prev': 'Desain Logo &amp; Identitas Visual',
-    'nav.next': 'Desain Brosur &amp; Materi Cetak Promosi'
+    'nav.next': 'Desain Materi Promosi Cetak &amp; Display'
   },
   en: {
     '_title': 'Instagram Feed & Promotional Content Design — Dian Purna Nugraha, S.Kom.',
@@ -94,8 +94,7 @@ window.I18N_PAGE = {
     'connect.hireLink': 'Hire Me Now',
     'connect.downloadCv': 'Download CV',
     'nav.prev': 'Logo &amp; Visual Identity Design',
-    'nav.next': 'Brochure &amp; Print Promotional Material Design'
+    'nav.next': 'Print Promotional &amp; Display Material Design'
   }
 };
-
 
