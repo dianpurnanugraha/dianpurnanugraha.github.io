@@ -46,7 +46,7 @@ window.I18N_PAGE = {
     'connect.hireLink': 'Rekrut Saya Sekarang',
     'connect.downloadCv': 'Unduh CV',
     'nav.prev': 'Invoice &amp; Surat Jalan Otomatis',
-    'nav.next': 'Setup &amp; Migrasi Toko ke Lazada'
+    'nav.next': 'Performa Program Pengiriman Kilat Shopee'
   },
   en: {
     '_title': 'Shopee & TikTok Shop Store Optimization — Dian Purna Nugraha, S.Kom.',
@@ -94,8 +94,7 @@ window.I18N_PAGE = {
     'connect.hireLink': 'Hire Me Now',
     'connect.downloadCv': 'Download CV',
     'nav.prev': 'Automated Invoices &amp; Delivery Notes',
-    'nav.next': 'Store Setup &amp; Migration to Lazada'
+    'nav.next': 'Shopee Express Shipping Program Performance'
   }
 };
-
 

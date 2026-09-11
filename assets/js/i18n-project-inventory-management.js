@@ -109,5 +109,3 @@ window.I18N_PAGE = {
     "connect.footerNote": "Real Results &nbsp;•&nbsp; Attention to Detail &nbsp;•&nbsp; On Time"
   }
 };
-
-

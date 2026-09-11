@@ -43,7 +43,7 @@ window.I18N_PAGE = {
     'gallery.pageInfo': 'Halaman {page} dari {total} — {count} logo total',
 
     'nav.prev': 'Performa Program Pengiriman Kilat Shopee',
-    'nav.next': 'Desain Feed Instagram &amp; Konten Promosi',
+    'nav.next': 'Desain Materi Promosi Cetak &amp; Display',
 
     'connect.badge': 'Lihat Hasil Kerja Saya',
     'connect.title': 'Punya Proyek <span>di Pikiran?</span>',
@@ -99,7 +99,7 @@ window.I18N_PAGE = {
     'gallery.pageInfo': 'Page {page} of {total} — {count} logos total',
 
     'nav.prev': 'Shopee Express Shipping Program Performance',
-    'nav.next': 'Instagram Feed &amp; Promotional Content Design',
+    'nav.next': 'Print Promotional &amp; Display Material Design',
 
     'connect.badge': 'See My Work',
     'connect.title': 'Have a Project <span>in Mind?</span>',
@@ -113,6 +113,5 @@ window.I18N_PAGE = {
     'connect.footer': 'Real Results &nbsp;•&nbsp; Attention to Detail &nbsp;•&nbsp; On Time'
   }
 };
-
 
 

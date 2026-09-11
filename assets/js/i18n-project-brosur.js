@@ -49,7 +49,7 @@ window.I18N_PAGE = {
     'example.tagDouble': 'Bolak-balik',
     'example.tagSingle': 'Satu Sisi',
 
-    'nav.prev': 'Desain Feed Instagram &amp; Konten Promosi',
+    'nav.prev': 'Desain Logo &amp; Identitas Visual',
     'nav.next': 'Desain Katalog Produk Multi-Brand',
 
     'connect.badge': 'Lihat Hasil Kerja Saya',
@@ -112,7 +112,7 @@ window.I18N_PAGE = {
     'example.tagDouble': 'Double-Sided',
     'example.tagSingle': 'Single-Sided',
 
-    'nav.prev': 'Instagram Feed &amp; Promotional Content Design',
+    'nav.prev': 'Logo &amp; Visual Identity Design',
     'nav.next': 'Multi-Brand Product Catalog Design',
 
     'connect.badge': 'See My Work',
@@ -127,4 +127,3 @@ window.I18N_PAGE = {
     'connect.footer': 'Real Results &nbsp;•&nbsp; Attention to Detail &nbsp;•&nbsp; On Time'
   }
 };
-

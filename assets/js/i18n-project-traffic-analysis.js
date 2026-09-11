@@ -99,5 +99,3 @@ window.I18N_PAGE = {
     "result.card4.s": "Average Visit Duration"
   }
 };
-
-

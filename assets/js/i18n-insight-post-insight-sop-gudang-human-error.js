@@ -93,4 +93,3 @@ window.I18N_PAGE = {
     'closing': 'The full case studies are on the <a href="project-sop-workflow.html">Warehouse SOP &amp; Workflow Development</a> and <a href="project-finance-report.html">Financial Report &amp; Automated Recap</a> pages.',
   }
 };
-
