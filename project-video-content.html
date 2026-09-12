@@ -18,12 +18,13 @@
 <style id="video-project-preview">
   .video-project-playlists{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;max-width:920px;margin:26px auto 0;}
   .video-project-preview{display:flex;flex-direction:column;align-items:center;min-width:0;}
+  .video-project-preview[hidden]{display:none;}
   .video-project-preview-badge{display:inline-flex;align-items:center;gap:7px;padding:7px 11px;border:1px solid #dbe7ff;border-radius:999px;background:#f4f7ff;color:var(--blue);font-size:10px;font-weight:800;letter-spacing:.7px;}
   .video-project-playlist-title{margin:12px 0 0;color:var(--navy);font-size:14px;font-weight:700;line-height:1.4;text-align:center;}
   .video-project-player{width:min(100%,380px);aspect-ratio:9/16;margin-top:14px;border:1px solid rgba(15,42,77,.1);border-radius:18px;overflow:hidden;background:#0b1e3a;box-shadow:0 18px 45px rgba(15,42,77,.16);}
   .video-project-player iframe{display:block;width:100%;height:100%;border:0;}
-  .video-project-preview-note{max-width:380px;margin:16px 0 0;text-align:center;color:var(--muted);font-size:12px;line-height:1.65;}
-  .video-project-links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:18px;}
+  .video-project-preview-note{max-width:380px;min-height:40px;margin:16px 0 0;text-align:center;color:var(--muted);font-size:12px;line-height:1.65;}
+  .video-project-links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:auto;padding-top:18px;}
   .video-project-links a{display:inline-flex;align-items:center;gap:8px;padding:10px 15px;border:1px solid #dbe7ff;border-radius:999px;background:#eef4ff;color:#174ea6;font-size:.86rem;font-weight:700;text-decoration:none;transition:transform .2s ease,background .2s ease,border-color .2s ease;}
   .video-project-links a:hover{transform:translateY(-1px);border-color:#b7cdfb;background:#e5efff;}
   @media (max-width:760px){.video-project-playlists{grid-template-columns:1fr;max-width:560px;}}
@@ -111,7 +112,44 @@
 <section class="section tools-section" id="toc-hasil" data-toc="Hasil"><div class="wrap"><div class="sec-head"><div class="eyebrow-line" data-i18n="result.eyebrow">HASIL</div><h2 data-i18n="result.title">Dampak &amp; <span>Hasil</span></h2></div><div class="result-grid"><div class="result-card"><b>4</b><span data-i18n="result.card1.s">Platform distribusi utama</span></div><div class="result-card"><b>9:16</b><span data-i18n="result.card2.s">Format video master</span></div><div class="result-card"><b>1→4</b><span data-i18n="result.card3.s">Satu materi utama untuk empat channel</span></div><div class="result-card"><b>CTA</b><span data-i18n="result.card4.s">Struktur hook, pesan, dan ajakan bertindak</span></div></div></div></section>
 
 <!-- ===================== LIVE VIDEO PREVIEW ===================== -->
-<section class="section" id="toc-galeri" data-toc="Dokumentasi"><div class="wrap"><div class="sec-head"><div class="eyebrow-line" data-i18n="gallery.eyebrow">DOKUMENTASI</div><h2 data-i18n="gallery.title">Cuplikan <span>Konten Video</span></h2><p data-i18n="gallery.desc">Live preview dari dua playlist YouTube untuk konten produk Stevia Syifacare dan Acemaxs; materi yang sama didistribusikan ulang ke TikTok, Instagram, dan Facebook.</p></div><div class="video-project-playlists"><article class="video-project-preview"><div class="video-project-preview-badge"><i class="fa-solid fa-circle-play"></i> <span data-i18n="gallery.previewBadge">LIVE PREVIEW</span></div><h3 class="video-project-playlist-title" data-i18n="gallery.playlist1Title">Produk Stevia Syifacare</h3><div class="video-project-player"><iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=PL_CJ0Qhkb-XmsNpM8OD1Fjfq4feYY0QKe" title="Playlist Konten Reels &amp; Video Produk Stevia Syifacare" data-i18n-attr="title:gallery.iframeTitle1" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><p class="video-project-preview-note" data-i18n="gallery.previewDesc1">Preview langsung playlist YouTube untuk konten produk Stevia Syifacare.</p><div class="video-project-links"><a href="https://www.youtube.com/playlist?list=PL_CJ0Qhkb-XmsNpM8OD1Fjfq4feYY0QKe" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i> <span data-i18n="gallery.youtubeLink1">Buka Playlist Stevia Syifacare</span></a></div></article><article class="video-project-preview"><div class="video-project-preview-badge"><i class="fa-solid fa-circle-play"></i> <span data-i18n="gallery.previewBadge">LIVE PREVIEW</span></div><h3 class="video-project-playlist-title" data-i18n="gallery.playlist2Title">Produk Acemaxs</h3><div class="video-project-player"><iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=PLc6dvHbc9h9o" title="Playlist Konten Reels &amp; Video Produk Acemaxs" data-i18n-attr="title:gallery.iframeTitle2" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><p class="video-project-preview-note" data-i18n="gallery.previewDesc2">Preview langsung playlist YouTube untuk konten produk Acemaxs.</p><div class="video-project-links"><a href="https://www.youtube.com/playlist?list=PLc6dvHbc9h9o" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i> <span data-i18n="gallery.youtubeLink2">Buka Playlist Acemaxs</span></a></div></article></div><div class="project-tags project-tags-center"><span>YouTube Shorts</span><span>TikTok</span><span>Instagram Reels</span><span>Facebook Reels</span></div></div></section>
+<section class="section" id="toc-galeri" data-toc="Dokumentasi">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow-line" data-i18n="gallery.eyebrow">DOKUMENTASI</div>
+      <h2 data-i18n="gallery.title">Cuplikan <span>Konten Video</span></h2>
+      <p data-i18n="gallery.desc">Live preview dari dua playlist YouTube untuk konten produk Stevia Syifacare dan Acemaxs; materi yang sama didistribusikan ulang ke TikTok, Instagram, dan Facebook.</p>
+    </div>
+
+    <div class="filter-group video-project-filter-group">
+      <div class="filter-row" id="videoProjectCategoryFilter" role="group" data-i18n-attr="aria-label:gallery.filterAria"></div>
+    </div>
+
+    <div class="video-project-playlists" id="videoProjectPlaylists" aria-live="polite">
+      <article class="video-project-preview" data-category="stevia">
+        <div class="video-project-preview-badge"><i class="fa-solid fa-circle-play"></i> <span data-i18n="gallery.previewBadge">LIVE PREVIEW</span></div>
+        <h3 class="video-project-playlist-title" data-i18n="gallery.playlist1Title">Produk Stevia Syifacare</h3>
+        <div class="video-project-player"><iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=PL_CJ0Qhkb-XmsNpM8OD1Fjfq4feYY0QKe" title="Playlist Konten Reels &amp; Video Produk Stevia Syifacare" data-i18n-attr="title:gallery.iframeTitle1" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <p class="video-project-preview-note" data-i18n="gallery.previewDesc1">Preview langsung playlist YouTube untuk konten produk Stevia Syifacare.</p>
+        <div class="video-project-links"><a href="https://www.youtube.com/playlist?list=PL_CJ0Qhkb-XmsNpM8OD1Fjfq4feYY0QKe" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i> <span data-i18n="gallery.youtubeLink1">Buka Playlist Stevia Syifacare</span></a></div>
+      </article>
+
+      <article class="video-project-preview" data-category="acemaxs">
+        <div class="video-project-preview-badge"><i class="fa-solid fa-circle-play"></i> <span data-i18n="gallery.previewBadge">LIVE PREVIEW</span></div>
+        <h3 class="video-project-playlist-title" data-i18n="gallery.playlist2Title">Produk Acemaxs</h3>
+        <div class="video-project-player"><iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=PLc6dvHbc9h9o" title="Playlist Konten Reels &amp; Video Produk Acemaxs" data-i18n-attr="title:gallery.iframeTitle2" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <p class="video-project-preview-note" data-i18n="gallery.previewDesc2">Preview langsung playlist YouTube untuk konten produk Acemaxs.</p>
+        <div class="video-project-links"><a href="https://www.youtube.com/playlist?list=PLc6dvHbc9h9o" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i> <span data-i18n="gallery.youtubeLink2">Buka Playlist Acemaxs</span></a></div>
+      </article>
+    </div>
+
+    <div class="project-tags project-tags-center">
+      <span>YouTube Shorts</span>
+      <span>TikTok</span>
+      <span>Instagram Reels</span>
+      <span>Facebook Reels</span>
+    </div>
+  </div>
+</section>
 
 <!-- ===================== PREV / NEXT ===================== -->
 <section class="wrap" style="padding-bottom:30px;"><div class="project-nav-row"><a href="project-live-video-content.html" class="project-nav-link"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="nav.prev">Performa Konten Live &amp; Video Shopee</span></a><a href="project-store-voucher.html" class="project-nav-link next"><span data-i18n="nav.next">Kampanye Voucher Toko Shopee</span> <i class="fa-solid fa-arrow-right"></i></a></div></section>
@@ -222,5 +260,73 @@
 <script src="assets/js/i18n-common.js"></script>
 <script src="assets/js/i18n-project-video-content.js"></script>
 <script src="assets/js/i18n.js"></script>
+<script>
+/* ===================== FILTER KATEGORI PRODUK ===================== */
+(function () {
+  var CATEGORIES = [
+    { key: 'all',     id: 'Semua',          en: 'All' },
+    { key: 'stevia',  id: 'Produk Stevia',  en: 'Stevia Products' },
+    { key: 'acemaxs', id: 'Produk Acemaxs', en: 'Acemaxs Products' }
+  ];
+  var categoryState = 'all';
+  var filterEl = document.getElementById('videoProjectCategoryFilter');
+  var filterGroupEl = document.querySelector('.filter-group');
+  var playlistGrid = document.getElementById('videoProjectPlaylists');
+
+  if (!filterEl || !playlistGrid) return;
+
+  function getLang() {
+    return localStorage.getItem('site-lang') || 'id';
+  }
+
+  function scrollToSticky(el) {
+    if (!el) return;
+    var prevPos = el.style.position;
+    el.style.position = 'static';
+    var rect = el.getBoundingClientRect();
+    var target = window.pageYOffset + rect.top - 66;
+    el.style.position = prevPos;
+    window.scrollTo({ top: Math.max(0, target), behavior: 'smooth' });
+  }
+
+  function renderFilters() {
+    var lang = getLang();
+    filterEl.innerHTML = '';
+
+    CATEGORIES.forEach(function (category) {
+      var button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'filter-btn' + (categoryState === category.key ? ' active' : '');
+      button.textContent = lang === 'en' ? category.en : category.id;
+      button.setAttribute('aria-pressed', categoryState === category.key ? 'true' : 'false');
+      button.addEventListener('click', function () {
+        categoryState = category.key;
+        renderFilters();
+        renderPlaylists();
+        scrollToSticky(filterGroupEl);
+      });
+      filterEl.appendChild(button);
+    });
+  }
+
+  function renderPlaylists() {
+    playlistGrid.querySelectorAll('[data-category]').forEach(function (playlist) {
+      var visible = categoryState === 'all' || playlist.getAttribute('data-category') === categoryState;
+      playlist.hidden = !visible;
+      playlist.setAttribute('aria-hidden', visible ? 'false' : 'true');
+    });
+  }
+
+  renderFilters();
+  renderPlaylists();
+
+  // Perbarui label filter saat bahasa halaman diganti.
+  document.querySelectorAll('.lang-btn').forEach(function (button) {
+    button.addEventListener('click', function () {
+      renderFilters();
+    });
+  });
+})();
+</script>
 </body>
 </html>
