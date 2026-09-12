@@ -28,6 +28,7 @@
   var currentCategory = 'all';
   var grid = document.getElementById('galleryGrid');
   var categoryEl = document.getElementById('katalogCategoryFilter');
+  var filterGroupEl = document.getElementById('katalogFilterGroup');
   var paginateEl = document.getElementById('galleryPagination');
   var infoEl = document.getElementById('galleryPageInfo');
 
@@ -123,6 +124,16 @@
     });
   }
 
+  function scrollToSticky(el){
+    if(!el)return;
+    var prevPos=el.style.position;
+    el.style.position='static';
+    var rect=el.getBoundingClientRect();
+    var target=window.pageYOffset+rect.top-66;
+    el.style.position=prevPos;
+    window.scrollTo({top:Math.max(0,target),behavior:'smooth'});
+  }
+
   function renderCatalogs(shouldScroll) {
     var catalogs = filteredCatalogs();
     grid.innerHTML = '';
@@ -132,11 +143,7 @@
     paginateEl.hidden = true;
     var template = dict()['gallery.pageInfo'] || '{count} katalog';
     infoEl.textContent = template.replace('{count}', catalogs.length);
-    if (shouldScroll) {
-      var filter = document.getElementById('katalogFilterGroup');
-      var top = window.pageYOffset + filter.getBoundingClientRect().top - 66;
-      window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
-    }
+    if (shouldScroll) scrollToSticky(filterGroupEl);
   }
 
   renderFilters();
