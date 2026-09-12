@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Produksi Konten Reels &amp; Video — Dian Purna Nugraha, S.Kom.</title>
+<meta name="description" content="Dokumentasi produksi dan publikasi konten video pendek untuk YouTube, TikTok, Instagram, dan Facebook.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230F2A4D'/%3E%3Ctext x='50' y='68' font-family='Poppins,Arial,sans-serif' font-size='58' font-weight='700' fill='white' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Produksi Konten Reels &amp; Video — Dian Purna Nugraha, S.Kom.">
+<meta property="og:description" content="Dokumentasi produksi dan publikasi konten video pendek untuk YouTube, TikTok, Instagram, dan Facebook.">
+<meta property="og:image" content="assets/img/profile/profile.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="assets/css/styles.css?v=11">
+<style id="video-project-preview">
+  .video-project-playlists{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;max-width:920px;margin:26px auto 0;}
+  .video-project-preview{display:flex;flex-direction:column;align-items:center;min-width:0;}
+  .video-project-preview-badge{display:inline-flex;align-items:center;gap:7px;padding:7px 11px;border:1px solid #dbe7ff;border-radius:999px;background:#f4f7ff;color:var(--blue);font-size:10px;font-weight:800;letter-spacing:.7px;}
+  .video-project-playlist-title{margin:12px 0 0;color:var(--navy);font-size:14px;font-weight:700;line-height:1.4;text-align:center;}
+  .video-project-player{width:min(100%,380px);aspect-ratio:9/16;margin-top:14px;border:1px solid rgba(15,42,77,.1);border-radius:18px;overflow:hidden;background:#0b1e3a;box-shadow:0 18px 45px rgba(15,42,77,.16);}
+  .video-project-player iframe{display:block;width:100%;height:100%;border:0;}
+  .video-project-preview-note{max-width:380px;margin:16px 0 0;text-align:center;color:var(--muted);font-size:12px;line-height:1.65;}
+  .video-project-links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:18px;}
+  .video-project-links a{display:inline-flex;align-items:center;gap:8px;padding:10px 15px;border:1px solid #dbe7ff;border-radius:999px;background:#eef4ff;color:#174ea6;font-size:.86rem;font-weight:700;text-decoration:none;transition:transform .2s ease,background .2s ease,border-color .2s ease;}
+  .video-project-links a:hover{transform:translateY(-1px);border-color:#b7cdfb;background:#e5efff;}
+  @media (max-width:760px){.video-project-playlists{grid-template-columns:1fr;max-width:560px;}}
+  @media (max-width:640px){.video-project-player{border-radius:14px;}.video-project-links a{font-size:.82rem;}}
+</style>
+<link rel="canonical" href="https://dianpurnanugraha.my.id/project-video-content.html">
+</head>
+<body>
+
+<!-- ===================== NAVBAR ===================== -->
+<nav class="navbar">
+  <div class="wrap navbar-inner">
+    <a href="index.html" class="nav-logo">My Portofolio</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="project.html" class="active">Project</a></li>
+      <li><a href="skill.html">Skill</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="insight.html">Insight</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-switch">
+        <button class="lang-btn" data-lang="id">ID</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- ===================== CORE COMPETENCIES TICKER ===================== -->
+<div class="cc-ticker" aria-label="Core competencies">
+  <span class="cc-label">CORE COMPETENCIES</span>
+  <div class="cc-track-wrap">
+    <div class="cc-track" id="ccTrack">
+      <!-- filled by JS: content duplicated for seamless loop -->
+    </div>
+  </div>
+</div>
+<script>
+  (function(){
+    var items = [
+      "E-commerce Operations",
+      "Business Operations",
+      "Digital Marketing",
+      "Graphic Design",
+      "AI Productivity",
+      "Marketplace Management",
+      "Inventory Management",
+      "Financial Administration",
+      "Business Process Improvement",
+      "Data Analysis & Reporting"
+    ];
+    var track = document.getElementById('ccTrack');
+    if(!track) return;
+    var html = items.map(function(t){ return '<span class="cc-item"><span class="dot"></span>' + t + '</span>'; }).join('');
+    track.innerHTML = html + html;
+  })();
+</script>
+
+<!-- ===================== BREADCRUMB ===================== -->
+<nav class="breadcrumb" aria-label="Breadcrumb"><div class="wrap breadcrumb-inner"><a href="index.html"><i class="fa-solid fa-house"></i> Home</a><i class="fa-solid fa-chevron-right breadcrumb-sep"></i><a href="project.html">Project</a><i class="fa-solid fa-chevron-right breadcrumb-sep"></i><span class="breadcrumb-current" data-i18n="hero.title">Produksi Konten Reels &amp; Video</span></div></nav>
+
+<!-- ===================== BACK LINK ===================== -->
+<section class="wrap" style="padding-top:18px;"><a href="project.html" class="project-back"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="back.link">Kembali ke Semua Project</span></a></section>
+
+<!-- ===================== DETAIL HERO ===================== -->
+<section class="wrap" style="padding-top:20px;"><div class="detail-hero" style="background:linear-gradient(135deg,#7c3aed,#ec4899);"><span class="project-tag">Digital Marketing</span><h1 data-i18n="hero.title">Produksi Konten Reels &amp; Video</h1><p data-i18n="hero.desc">Membuat video pendek format 9:16, mengeditnya menjadi materi yang siap dipublikasikan, lalu mendistribusikannya ke YouTube, TikTok, Instagram, dan Facebook.</p><div class="detail-hero-icon"><i class="fa-solid fa-film"></i></div></div></section>
+
+<!-- ===================== META INFO ===================== -->
+<section class="wrap"><div class="detail-meta-grid"><div class="detail-meta-item"><span data-i18n="meta.client">Klien</span><b data-i18n="meta.clientVal">Toko Herbal &amp; Suplemen Kesehatan (Multi-Platform)</b></div><div class="detail-meta-item"><span data-i18n="meta.role">Peran</span><b data-i18n="meta.roleVal">Produksi &amp; Distribusi Konten Video</b></div><div class="detail-meta-item"><span data-i18n="meta.duration">Durasi</span><b data-i18n="meta.durationVal">Multi-platform</b></div><div class="detail-meta-item"><span data-i18n="meta.tools">Tools</span><b data-i18n="meta.toolsVal">CapCut, YouTube, TikTok, Instagram &amp; Facebook</b></div></div></section>
+
+<!-- ===================== TANTANGAN ===================== -->
+<section class="section" id="toc-tantangan" data-toc="Tantangan &amp; Solusi"><div class="wrap"><div class="detail-block"><h3><i class="fa-solid fa-circle-exclamation"></i> <span data-i18n="challenge.title">Tantangan</span></h3><p data-i18n="challenge.desc">Satu materi video perlu tetap menarik di empat platform dengan kebiasaan audiens yang berbeda. Workflow harus efisien agar konten dapat diproduksi dan didistribusikan secara konsisten tanpa kehilangan pesan utama maupun identitas visual brand.</p></div><div class="detail-block"><h3><i class="fa-solid fa-diagram-project"></i> <span data-i18n="process.title">Proses &amp; Solusi</span></h3></div><div class="process-list">
+      <div class="process-item"><div class="process-num">1</div><div><h5 data-i18n="process.item1.title">Perencanaan Ide &amp; Hook</h5><p data-i18n="process.item1.desc">Menentukan tujuan, topik, produk, pesan utama, hook, dan call to action agar video singkat langsung memiliki arah komunikasi yang jelas.</p></div></div>
+      <div class="process-item"><div class="process-num">2</div><div><h5 data-i18n="process.item2.title">Produksi &amp; Editing Format 9:16</h5><p data-i18n="process.item2.desc">Mengolah footage menjadi video vertikal dengan pemotongan yang dinamis, teks pendukung, musik, identitas visual, dan pacing yang sesuai untuk format pendek.</p></div></div>
+      <div class="process-item"><div class="process-num">3</div><div><h5 data-i18n="process.item3.title">Penyesuaian Materi Publikasi</h5><p data-i18n="process.item3.desc">Menyiapkan judul, caption, cover, hashtag, dan CTA yang relevan sambil mempertahankan satu master video sebagai sumber materi utama.</p></div></div>
+      <div class="process-item"><div class="process-num">4</div><div><h5 data-i18n="process.item4.title">Distribusi Multi-Platform</h5><p data-i18n="process.item4.desc">Mempublikasikan dan mendistribusikan materi ke YouTube Shorts, TikTok, Instagram Reels, dan Facebook Reels dengan pesan serta identitas visual yang konsisten.</p></div></div>
+    </div></div></section>
+
+<!-- ===================== HASIL ===================== -->
+<section class="section tools-section" id="toc-hasil" data-toc="Hasil"><div class="wrap"><div class="sec-head"><div class="eyebrow-line" data-i18n="result.eyebrow">HASIL</div><h2 data-i18n="result.title">Dampak &amp; <span>Hasil</span></h2></div><div class="result-grid"><div class="result-card"><b>4</b><span data-i18n="result.card1.s">Platform distribusi utama</span></div><div class="result-card"><b>9:16</b><span data-i18n="result.card2.s">Format video master</span></div><div class="result-card"><b>1→4</b><span data-i18n="result.card3.s">Satu materi utama untuk empat channel</span></div><div class="result-card"><b>CTA</b><span data-i18n="result.card4.s">Struktur hook, pesan, dan ajakan bertindak</span></div></div></div></section>
+
+<!-- ===================== LIVE VIDEO PREVIEW ===================== -->
+<section class="section" id="toc-galeri" data-toc="Dokumentasi"><div class="wrap"><div class="sec-head"><div class="eyebrow-line" data-i18n="gallery.eyebrow">DOKUMENTASI</div><h2 data-i18n="gallery.title">Cuplikan <span>Konten Video</span></h2><p data-i18n="gallery.desc">Live preview dari dua playlist YouTube untuk konten produk Stevia Syifacare dan Acemaxs; materi yang sama didistribusikan ulang ke TikTok, Instagram, dan Facebook.</p></div><div class="video-project-playlists"><article class="video-project-preview"><div class="video-project-preview-badge"><i class="fa-solid fa-circle-play"></i> <span data-i18n="gallery.previewBadge">LIVE PREVIEW</span></div><h3 class="video-project-playlist-title" data-i18n="gallery.playlist1Title">Produk Stevia Syifacare</h3><div class="video-project-player"><iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=PL_CJ0Qhkb-XmsNpM8OD1Fjfq4feYY0QKe" title="Playlist Konten Reels &amp; Video Produk Stevia Syifacare" data-i18n-attr="title:gallery.iframeTitle1" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><p class="video-project-preview-note" data-i18n="gallery.previewDesc1">Preview langsung playlist YouTube untuk konten produk Stevia Syifacare.</p><div class="video-project-links"><a href="https://www.youtube.com/playlist?list=PL_CJ0Qhkb-XmsNpM8OD1Fjfq4feYY0QKe" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i> <span data-i18n="gallery.youtubeLink1">Buka Playlist Stevia Syifacare</span></a></div></article><article class="video-project-preview"><div class="video-project-preview-badge"><i class="fa-solid fa-circle-play"></i> <span data-i18n="gallery.previewBadge">LIVE PREVIEW</span></div><h3 class="video-project-playlist-title" data-i18n="gallery.playlist2Title">Produk Acemaxs</h3><div class="video-project-player"><iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=PLc6dvHbc9h9o" title="Playlist Konten Reels &amp; Video Produk Acemaxs" data-i18n-attr="title:gallery.iframeTitle2" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><p class="video-project-preview-note" data-i18n="gallery.previewDesc2">Preview langsung playlist YouTube untuk konten produk Acemaxs.</p><div class="video-project-links"><a href="https://www.youtube.com/playlist?list=PLc6dvHbc9h9o" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i> <span data-i18n="gallery.youtubeLink2">Buka Playlist Acemaxs</span></a></div></article></div><div class="project-tags project-tags-center"><span>YouTube Shorts</span><span>TikTok</span><span>Instagram Reels</span><span>Facebook Reels</span></div></div></section>
+
+<!-- ===================== PREV / NEXT ===================== -->
+<section class="wrap" style="padding-bottom:30px;"><div class="project-nav-row"><a href="project-live-video-content.html" class="project-nav-link"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="nav.prev">Performa Konten Live &amp; Video Shopee</span></a><a href="project-store-voucher.html" class="project-nav-link next"><span data-i18n="nav.next">Kampanye Voucher Toko Shopee</span> <i class="fa-solid fa-arrow-right"></i></a></div></section>
+
+<!-- ===================== READY TO WORK TOGETHER ===================== -->
+<section class="section section-tight-top">
+  <div class="wrap">
+    <div class="connect-section">
+      <div class="connect-grid">
+        <div>
+          <span class="connect-badge" data-i18n="pcta.badge">Lihat Hasil Kerja Saya</span>
+          <h2 data-i18n="pcta.title">Punya Proyek <span>di Pikiran?</span></h2>
+          <p data-i18n="pcta.desc">Saya siap membantu mewujudkan kebutuhan operasional, desain, atau strategi digital marketing untuk bisnis Anda.</p>
+          <div class="help-cta-row" style="margin-top:22px;">
+            <a href="https://www.linkedin.com/in/dianpurnanugraha/" target="_blank" rel="noopener" class="btn btn-help-outline"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            <a href="https://wa.me/6281295733476" target="_blank" rel="noopener" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="project.html" class="btn btn-help-outline"><i class="fa-solid fa-folder-open"></i> <span data-i18n="pcta.viewPortfolio">Lihat Portofolio</span></a>
+          </div>
+        </div>
+
+        <div class="connect-cards">
+          <div class="connect-card cc-blue">
+            <div class="cc-icon"><i class="fa-solid fa-user"></i></div>
+            <h4 data-i18n="pcta.hireTitle">Rekrut Saya</h4>
+            <p data-i18n="pcta.hireDesc">Saya siap bergabung dan memberikan kontribusi terbaik untuk Anda.</p>
+            <a href="contact.html"><span data-i18n="pcta.hireLink">Rekrut Saya Sekarang</span> <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="connect-card cc-green">
+            <div class="cc-icon"><i class="fa-solid fa-file-arrow-down"></i></div>
+            <h4 data-i18n="pcta.cvTitle">Unduh CV</h4>
+            <p data-i18n="pcta.cvDesc">Unduh CV saya untuk informasi lebih lengkap tentang pengalaman dan keterampilan saya.</p>
+            <a href="assets/files/resume/Dian-Purna-Nugraha_Resume.pdf" download><span data-i18n="pcta.cvLink">Unduh CV</span> <i class="fa-solid fa-download"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="connect-footer">
+        <span><i class="fa-solid fa-circle-check"></i> <span data-i18n="pcta.footer">Hasil Nyata &nbsp;•&nbsp; Detail Terjaga &nbsp;•&nbsp; Tepat Waktu</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Dian Purna Nugraha, S.Kom.</h3>
+        <p data-i18n="footer.bio">E-commerce Operations, Business Operations, Graphic Design, Digital Marketing, dan AI Productivity untuk membantu bisnis bekerja lebih efisien, berkembang, dan menciptakan nilai yang berkelanjutan.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/dianpurnanugraha/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://www.upwork.com/freelancers/~017580231dbed875ca?mp_source=share" target="_blank" rel="noopener" aria-label="Upwork"><svg viewBox="0 0 640 512" style="width:1em;height:1em;fill:currentColor;vertical-align:-0.125em;" xmlns="http://www.w3.org/2000/svg"><path d="M493.9 295.6c-50.3 0-83.5-38.9-92.8-53.9 11.9-95.3 46.8-125.4 92.8-125.4 45.5 0 80.9 36.4 80.9 89.7s-35.4 89.7-80.9 89.7l0-.1zm0-237.8c-81.9 0-127.8 53.4-141 108.4-14.9-28-25.9-65.5-34.5-100.3l-113.2 0 0 141c0 51.1-23.3 89-68.8 89s-71.6-37.8-71.6-89l.5-141-65.3 0 0 141c0 41.1 13.3 78.4 37.6 105.1 25 27.5 59.2 41.8 98.8 41.8 78.8 0 133.8-60.4 133.8-146.9l0-94.8c8.2 31.2 27.8 91.1 65.3 143.6l-35 199.4 66.4 0 23.1-141.3c7.6 6.3 15.7 12 24.2 17 22.2 14 47.7 21.9 73.9 22.8 0 0 4 .2 6.1 .2 81.2 0 145.9-62.9 145.9-147.8S575.3 57.9 494.1 57.9l-.2-.1z"/></svg></a>
+          <a href="https://t.me/dianpurnanugraha" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="73 113 311 311" style="width:1em;height:1em;fill:currentColor;vertical-align:-0.125em;" xmlns="http://www.w3.org/2000/svg"><path d="M363 176.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7 .2-.7 .3-3.1-1.2-4.4s-3.6-.8-5.1-.5q-3.3 .7-104.6 69.1-14.8 10.2-26.9 9.9c-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3q.8-6.7 18.5-13.7 108.4-47.2 144.6-62.3c68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6 .5 9.6 2.9a10.5 10.5 0 0 1 3.5 6.7A43.8 43.8 0 0 1 363 176.7z"/></svg></a>
+          <a href="https://www.instagram.com/dianpurnanugraha" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://github.com/dianpurnanugraha" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://lynk.id/dianpurnanugraha" target="_blank" rel="noopener" aria-label="Lynk.id"><svg viewBox="0 0 100 100" style="width:1.05em;height:1.05em;vertical-align:-0.12em;" xmlns="http://www.w3.org/2000/svg"><path d="M19 84.5V44a31 31 0 0 1 62 0V84.5" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/><path d="M36 84 L36 52 A14 14 0 0 1 64 52 L64 84 A4 4 0 0 1 60 88 L40 88 A4 4 0 0 1 36 84 Z" fill="currentColor"/></svg></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.nav">Navigasi</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="project.html">Project</a></li>
+          <li><a href="skill.html">Skill</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="insight.html">Insight</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.services">Layanan</h4>
+        <ul>
+          <li data-i18n="footer.service1">E-commerce &amp; Marketplace Operations</li>
+          <li data-i18n="footer.service2">Operasional Bisnis &amp; Administrasi</li>
+          <li data-i18n="footer.service3">Design &amp; Content Creative</li>
+          <li data-i18n="footer.service4">Digital Marketing &amp; Riset</li>
+          <li data-i18n="footer.service5">Web &amp; Teknologi</li>
+          <li><a href="services.html" data-i18n="footer.serviceMore">Layanan Lainnya</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.contact">Kontak</h4>
+        <ul>
+          <li><i class="fa-solid fa-envelope"></i> dianpurnanugraha@gmail.com</li>
+          <li><i class="fa-brands fa-whatsapp"></i> +62 812 9573 3476</li>
+          <li><i class="fa-solid fa-location-dot"></i> <span data-i18n="footer.location">Jakarta Timur, DKI Jakarta, Indonesia</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span data-i18n="footer.rights">&copy; 2026 Dian Purna Nugraha, S.Kom. All rights reserved.</span>
+      <span data-i18n="footer.madeWith">Dibuat dengan kreativitas dan bantuan AI.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/reading-progress.js"></script>
+<script src="assets/js/nav-toggle.js"></script>
+<script src="assets/js/fab-back-to-top-toc.js"></script>
+<script src="assets/js/lightbox.js"></script>
+<script src="assets/js/i18n-common.js"></script>
+<script src="assets/js/i18n-project-video-content.js"></script>
+<script src="assets/js/i18n.js"></script>
+</body>
+</html>

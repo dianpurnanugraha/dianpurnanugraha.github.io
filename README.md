@@ -6,7 +6,7 @@ Website portofolio statis bilingual untuk menampilkan profil, pengalaman, layana
 
 ## Ringkasan
 
-- 22 halaman detail proyek
+- 23 halaman detail proyek
 - 6 artikel Insight
 - 5 kategori proyek
 - Bahasa Indonesia dan Inggris
@@ -21,7 +21,7 @@ Website portofolio statis bilingual untuk menampilkan profil, pengalaman, layana
 | `services.html` | Layanan profesional |
 | `skill.html` | Kompetensi, skill, dan tools |
 | `experience.html` | Riwayat pengalaman kerja |
-| `project.html` | Daftar 22 proyek dengan filter kategori |
+| `project.html` | Daftar 23 proyek dengan filter kategori |
 | `insight.html` | Daftar artikel dan insight profesional |
 | `contact.html` | Kontak dan tautan sosial media |
 
@@ -47,6 +47,7 @@ Website portofolio statis bilingual untuk menampilkan profil, pengalaman, layana
 - `project-flashsale.html` — Manajemen Flash Sale Toko
 - `project-discount-campaign.html` — Kampanye Diskon Produk Shopee
 - `project-live-video-content.html` — Performa Konten Live & Video Shopee
+- `project-video-content.html` — Produksi Konten Reels & Video
 - `project-store-voucher.html` — Kampanye Voucher Toko Shopee
 
 ### Reporting & Data
@@ -112,4 +113,4 @@ Kemudian buka [http://localhost:8000](http://localhost:8000).
 - WhatsApp: +62 812 9573 3476
 - LinkedIn: [dianpurnanugraha](https://www.linkedin.com/in/dianpurnanugraha/)
 
-_Last updated: 10 September 2026._
+_Last updated: 12 September 2026._
