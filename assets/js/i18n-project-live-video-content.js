@@ -35,7 +35,7 @@ window.I18N_PAGE = {
     "challenge.desc": "Performa konten tidak cukup dinilai dari jumlah tayangan. Data penonton, klik, pembeli, pesanan, produk terjual, dan pendapatan perlu dibaca bersama agar konten yang benar-benar menghasilkan transaksi dapat dikenali.",
     "gallery.desc": "Dashboard periode Januari–Juni 2026 yang dipisahkan menjadi Penjualan & Penonton serta Konversi.",
     "nav.prev": "Kampanye Diskon Produk Shopee",
-    "nav.next": "Kampanye Voucher Toko Shopee",
+    "nav.next": "Produksi Konten Reels &amp; Video",
     "process.item1.title": "Pemisahan Data Live dan Video",
     "process.item1.desc": "Memisahkan dashboard transaksi/penonton Video dari dashboard konversi agar setiap tahap funnel dapat dianalisis.",
     "process.item2.title": "Analisis Jangkauan dan Penonton",
@@ -84,7 +84,7 @@ window.I18N_PAGE = {
     "challenge.desc": "Content performance cannot be judged by views alone. Audience, clicks, buyers, orders, units sold, and revenue must be read together to identify content that actually produces transactions.",
     "gallery.desc": "January–June 2026 dashboards separated into Sales & Audience and Conversion.",
     "nav.prev": "Shopee Product Discount Campaign",
-    "nav.next": "Shopee Store Voucher Campaign",
+    "nav.next": "Reels &amp; Video Content Production",
     "process.item1.title": "Live and Video Data Separation",
     "process.item1.desc": "Separated Video transaction/audience dashboards from conversion dashboards so each funnel stage could be analyzed.",
     "process.item2.title": "Reach and Audience Analysis",
@@ -99,5 +99,4 @@ window.I18N_PAGE = {
     "result.card4.s": "Revenue-Generating Videos"
   }
 };
-
 

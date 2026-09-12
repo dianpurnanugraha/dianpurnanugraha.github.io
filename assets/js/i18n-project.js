@@ -72,6 +72,8 @@ window.I18N_PAGE = {
     'card22.desc': 'Menganalisis pengunjung baru dan lama, halaman dilihat, durasi kunjungan, serta tren traffic harian.',
     'card23.title': 'Kampanye Voucher Toko Shopee',
     'card23.desc': 'Mengelola dan mengevaluasi voucher melalui data klaim, penggunaan, pesanan, pembeli, penjualan, dan biaya.',
+    'card25.title': 'Produksi Konten Reels &amp; Video',
+    'card25.desc': 'Membuat dan mendistribusikan konten video pendek untuk YouTube, TikTok, Instagram, dan Facebook.',
 
     'connect.badge': 'PUNYA PROYEK?',
     'connect.title': 'Mari Wujudkan <span>Ide Anda</span>',
@@ -155,6 +157,8 @@ window.I18N_PAGE = {
     'card22.desc': 'Analyze new and returning visitors, page views, visit duration, and daily traffic trends.',
     'card23.title': 'Shopee Store Voucher Campaign',
     'card23.desc': 'Manage and evaluate store vouchers using claim, usage, order, buyer, sales, and cost data.',
+    'card25.title': 'Reels &amp; Video Content Production',
+    'card25.desc': 'Create and distribute short-form video content for YouTube, TikTok, Instagram, and Facebook.',
 
 
     'connect.badge': 'HAVE A PROJECT?',
