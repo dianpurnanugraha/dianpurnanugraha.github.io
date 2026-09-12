@@ -384,6 +384,65 @@
       caption: { id: 'Iklan Toko (Shop+ Ads) — Modal Harian, SOV & ROAS (3 Bulan)', en: 'Store Ads (Shop+ Ads) — Daily Budget, SOV & ROAS (3 Months)' } }
   ];
 
+  function getGroupKey(entry){
+    if (entry.category === 'otomatis' || entry.category === 'toko'){
+      return entry.category + '-' + entry.period;
+    }
+    if (entry.category === 'individu'){
+      var match = entry.caption.id.match(/Produk (\d+-\d+)/);
+      return match ? entry.category + '-' + entry.period + '-' + match[1] : null;
+    }
+    return null;
+  }
+
+  function getGroupCaption(entry){
+    var periodId = entry.period === '1bulan' ? '1 Bulan' : '3 Bulan';
+    var periodEn = entry.period === '1bulan' ? '1 Month' : '3 Months';
+    if (entry.category === 'otomatis'){
+      return {
+        id: 'Iklan Produk Otomatis — Ringkasan Performa (' + periodId + ')',
+        en: 'Automated Product Ads — Performance Summary (' + periodEn + ')'
+      };
+    }
+    if (entry.category === 'toko'){
+      return {
+        id: 'Iklan Toko (Shop+ Ads) — Ringkasan Performa (' + periodId + ')',
+        en: 'Store Ads (Shop+ Ads) — Performance Summary (' + periodEn + ')'
+      };
+    }
+    var match = entry.caption.id.match(/Produk (\d+-\d+)/);
+    var range = match ? match[1] : '';
+    return {
+      id: 'Produk Individu (GMV Max ROAS) — Produk ' + range + ' (' + periodId + ')',
+      en: 'Individual Product Ads (GMV Max ROAS) — Products ' + range + ' (' + periodEn + ')'
+    };
+  }
+
+  function groupItems(items){
+    var result = [];
+    var groups = {};
+    items.forEach(function(entry){
+      var key = getGroupKey(entry);
+      if (!key){
+        result.push(entry);
+        return;
+      }
+      if (!groups[key]){
+        groups[key] = {
+          category: entry.category,
+          period: entry.period,
+          caption: getGroupCaption(entry),
+          images: []
+        };
+        result.push(groups[key]);
+      }
+      groups[key].images.push({ img: entry.img, caption: entry.caption });
+    });
+    return result;
+  }
+
+  ITEMS = groupItems(ITEMS);
+
   var CATS = [
     { key: 'all',       id: 'Semua',                          en: 'All' },
     { key: 'dashboard', id: 'Dashboard Performa',              en: 'Performance Dashboard' },
@@ -445,6 +504,8 @@
   }
 
   function buildItem(entry, lang){
+    if (entry.images && entry.images.length > 1) return buildSliderItem(entry, lang);
+
     var item = document.createElement('div');
     item.className = 'gallery-item gallery-item-img';
 
@@ -469,6 +530,76 @@
 
     item.appendChild(caption);
     return item;
+  }
+
+  function buildSliderItem(entry, lang){
+    var label = entry.caption[lang] || entry.caption.id;
+    var item = document.createElement('div');
+    item.className = 'slider-card';
+
+    var head = document.createElement('div');
+    head.className = 'slider-card-head';
+    var catLbl = TAG_LABELS[entry.category];
+    var tagLabel = catLbl ? (lang === 'en' ? catLbl.en : catLbl.id) : entry.category;
+    head.innerHTML = '<span class="slider-card-tag"><i class="fa-solid fa-clipboard-list"></i> ' + tagLabel + '</span>';
+    item.appendChild(head);
+
+    var slider = document.createElement('div');
+    slider.className = 'media-slider';
+    var slidesHtml = entry.images.map(function(image, index){
+      var partLabel = lang === 'en' ? 'Part ' + (index + 1) + '/' + entry.images.length : 'Bagian ' + (index + 1) + '/' + entry.images.length;
+      var imageLabel = image.caption[lang] || image.caption.id;
+      return '<div class="media-slide">' +
+        '<span class="media-slide-label">' + partLabel + '</span>' +
+        '<img src="' + image.img + '" alt="' + imageLabel + ' — ' + partLabel + '" loading="lazy">' +
+      '</div>';
+    }).join('');
+    slider.innerHTML =
+      '<button class="media-arrow prev" type="button" aria-label="' + (lang === 'en' ? 'Previous slide' : 'Slide sebelumnya') + '"><i class="fa-solid fa-chevron-left"></i></button>' +
+      '<div class="media-slider-track"><div class="media-slider-slides">' + slidesHtml + '</div></div>' +
+      '<button class="media-arrow next" type="button" aria-label="' + (lang === 'en' ? 'Next slide' : 'Slide berikutnya') + '"><i class="fa-solid fa-chevron-right"></i></button>';
+    item.appendChild(slider);
+
+    var dots = document.createElement('div');
+    dots.className = 'media-dots';
+    item.appendChild(dots);
+
+    var caption = document.createElement('div');
+    caption.className = 'shot-caption';
+    caption.innerHTML = '<span class="shot-tag">' + tagLabel + '</span><span>' + label + '</span>';
+    item.appendChild(caption);
+    return item;
+  }
+
+  function initSliders(scopeEl){
+    var lang = getLang();
+    scopeEl.querySelectorAll('.media-slider').forEach(function(sliderEl){
+      var track = sliderEl.querySelector('.media-slider-slides');
+      var slides = sliderEl.querySelectorAll('.media-slide');
+      var prevBtn = sliderEl.querySelector('.media-arrow.prev');
+      var nextBtn = sliderEl.querySelector('.media-arrow.next');
+      var dotsBox = sliderEl.parentElement.querySelector('.media-dots');
+      var index = 0;
+
+      slides.forEach(function(_, i){
+        var dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'media-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', lang === 'en' ? 'Go to part ' + (i + 1) : 'Ke bagian ' + (i + 1));
+        dot.addEventListener('click', function(){ goTo(i); });
+        dotsBox.appendChild(dot);
+      });
+      var dots = dotsBox.querySelectorAll('.media-dot');
+
+      function goTo(i){
+        index = (i + slides.length) % slides.length;
+        track.style.transform = 'translateX(-' + (index * 100) + '%)';
+        dots.forEach(function(dot, dotIndex){ dot.classList.toggle('active', dotIndex === index); });
+      }
+
+      prevBtn.addEventListener('click', function(){ goTo(index - 1); });
+      nextBtn.addEventListener('click', function(){ goTo(index + 1); });
+    });
   }
 
   function scrollToSticky(el){
@@ -500,6 +631,7 @@
       grid.appendChild(buildItem(entry, lang));
     });
 
+    initSliders(grid);
     renderPagination(totalPages, filtered.length, lang);
     if (scroll && filterGroupEl) scrollToSticky(filterGroupEl);
   }
