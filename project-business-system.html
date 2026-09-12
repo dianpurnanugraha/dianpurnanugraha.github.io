@@ -314,6 +314,7 @@
   var currentCategory = 'all';
   var currentItems = GALLERY_ITEMS;
   var filterEl = document.getElementById('galleryCatFilter');
+  var filterGroupEl = document.querySelector('.filter-group');
   var grid = document.getElementById('galleryGrid');
   var paginateEl = document.getElementById('galleryPagination');
   var infoEl = document.getElementById('galleryPageInfo');
@@ -326,18 +327,14 @@
 
   function getLang(){ return localStorage.getItem('site-lang') || 'id'; }
 
-  function scrollToCardTop(){
-    if (!grid) return;
-    var firstCard = grid.querySelector('.slider-card');
-    if (!firstCard) return;
-
-    var navHeight = 66;
-    var filterGroup = filterEl.closest('.filter-group');
-    var filterHeight = filterGroup ? filterGroup.offsetHeight : 0;
-    var rect = firstCard.getBoundingClientRect();
-    var target = window.pageYOffset + rect.top - navHeight - filterHeight;
-
-    window.scrollTo({ top: Math.max(0, target), behavior: 'smooth' });
+  function scrollToSticky(el){
+    if(!el)return;
+    var prevPos=el.style.position;
+    el.style.position='static';
+    var rect=el.getBoundingClientRect();
+    var target=window.pageYOffset+rect.top-66;
+    el.style.position=prevPos;
+    window.scrollTo({top:Math.max(0,target),behavior:'smooth'});
   }
 
   function renderFilter(){
@@ -497,7 +494,7 @@
     currentItems.slice(start, start + ITEMS_PER_PAGE).forEach(function(entry){ grid.appendChild(buildItem(entry)); });
     initSliders(grid);
     renderPagination();
-    if (scroll) scrollToCardTop();
+    if (scroll && filterGroupEl) scrollToSticky(filterGroupEl);
   }
 
   document.querySelectorAll('.lang-btn').forEach(function(btn){

@@ -319,6 +319,7 @@
   var currentCategory = 'all';
   var currentItems = GALLERY_ITEMS;
   var filterEl = document.getElementById('galleryCatFilter');
+  var filterGroupEl = document.querySelector('.filter-group');
   var CATEGORY_LABELS = {
     id: { all: 'Semua', documents: 'Dokumen Gudang', picking: 'Picking' },
     en: { all: 'All', documents: 'Warehouse Documents', picking: 'Picking' }
@@ -497,6 +498,16 @@
       : 'Halaman ' + currentPage + ' dari ' + totalPages + ' — ' + currentItems.length + ' item total';
   }
 
+  function scrollToSticky(el){
+    if(!el)return;
+    var prevPos=el.style.position;
+    el.style.position='static';
+    var rect=el.getBoundingClientRect();
+    var target=window.pageYOffset+rect.top-66;
+    el.style.position=prevPos;
+    window.scrollTo({top:Math.max(0,target),behavior:'smooth'});
+  }
+
   function renderPage(page, scroll){
     currentPage = page;
     setPageInURL(page);
@@ -510,7 +521,7 @@
     initSliders(grid);
 
     renderPagination();
-    if (scroll) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (scroll && filterGroupEl) scrollToSticky(filterGroupEl);
   }
   document.querySelectorAll('.lang-btn').forEach(function(btn){
     btn.addEventListener('click', function(){
