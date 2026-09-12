@@ -21,8 +21,10 @@
   .video-project-preview[hidden]{display:none;}
   .video-project-preview-badge{display:inline-flex;align-items:center;gap:7px;padding:7px 11px;border:1px solid #dbe7ff;border-radius:999px;background:#f4f7ff;color:var(--blue);font-size:10px;font-weight:800;letter-spacing:.7px;}
   .video-project-playlist-title{margin:12px 0 0;color:var(--navy);font-size:14px;font-weight:700;line-height:1.4;text-align:center;}
-  .video-project-player{width:min(100%,380px);aspect-ratio:9/16;margin-top:14px;border:1px solid rgba(15,42,77,.1);border-radius:18px;overflow:hidden;background:#0b1e3a;box-shadow:0 18px 45px rgba(15,42,77,.16);}
+  .video-project-player{position:relative;width:min(100%,380px);aspect-ratio:9/16;margin-top:14px;border:1px solid rgba(15,42,77,.1);border-radius:18px;overflow:hidden;background:#0b1e3a;box-shadow:0 18px 45px rgba(15,42,77,.16);}
   .video-project-player iframe{display:block;width:100%;height:100%;border:0;}
+  .video-project-retry-status{position:absolute;left:16px;right:16px;bottom:18px;z-index:2;display:none;padding:10px 13px;border:1px solid rgba(255,255,255,.22);border-radius:11px;background:rgba(8,24,51,.92);color:#fff;font-size:11px;font-weight:700;line-height:1.45;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.22);pointer-events:none;}
+  .video-project-retry-status.is-visible{display:block;}
   .video-project-preview-note{max-width:380px;min-height:40px;margin:16px 0 0;text-align:center;color:var(--muted);font-size:12px;line-height:1.65;}
   .video-project-links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:auto;padding-top:18px;}
   .video-project-links a{display:inline-flex;align-items:center;gap:8px;padding:10px 15px;border:1px solid #dbe7ff;border-radius:999px;background:#eef4ff;color:#174ea6;font-size:.86rem;font-weight:700;text-decoration:none;transition:transform .2s ease,background .2s ease,border-color .2s ease;}
@@ -321,11 +323,257 @@
   renderPlaylists();
 
   // Perbarui label filter saat bahasa halaman diganti.
-  document.querySelectorAll('.lang-btn').forEach(function (button) {
+document.querySelectorAll('.lang-btn').forEach(function (button) {
     button.addEventListener('click', function () {
       renderFilters();
     });
   });
+})();
+</script>
+<script>
+/* ===================== YOUTUBE PREVIEW AUTO-RETRY ===================== */
+(function () {
+  var MAX_RETRIES = 3;
+  var RETRY_DELAY = 1600;
+  var WATCHDOG_DELAY = 8000;
+  var frames = Array.prototype.slice.call(document.querySelectorAll('.video-project-player iframe'));
+  var pageOrigin = (window.location.protocol === 'http:' || window.location.protocol === 'https:')
+    ? window.location.origin
+    : '';
+
+  if (!frames.length) return;
+
+  function addParam(url, key, value) {
+    var separator = url.indexOf('?') === -1 ? '?' : '&';
+    return url + separator + key + '=' + encodeURIComponent(value);
+  }
+
+  function setParam(url, key, value) {
+    var pattern = new RegExp('([?&])' + key + '=[^&]*');
+    var replacement = '$1' + key + '=' + encodeURIComponent(value);
+    return pattern.test(url) ? url.replace(pattern, replacement) : addParam(url, key, value);
+  }
+
+  function getPlaylistId(url) {
+    var match = url.match(/[?&]list=([^&]+)/);
+    return match ? decodeURIComponent(match[1]) : '';
+  }
+
+  var configs = frames.map(function (iframe) {
+    var source = iframe.getAttribute('src') || '';
+    var playlistId = getPlaylistId(source);
+
+    source = setParam(source, 'enablejsapi', '1');
+    if (pageOrigin) source = setParam(source, 'origin', pageOrigin);
+    iframe.setAttribute('src', source);
+
+    return {
+      iframe: iframe,
+      container: iframe.parentNode,
+      baseSource: source,
+      playlistId: playlistId,
+      player: null,
+      ready: false,
+      retryCount: 0,
+      retryPending: false,
+      watchdog: null,
+      statusTimer: null
+    };
+  });
+
+  function clearWatchdog(config) {
+    if (config.watchdog) {
+      window.clearTimeout(config.watchdog);
+      config.watchdog = null;
+    }
+  }
+
+  function getRetryStatus(config) {
+    var status = config.container.querySelector('.video-project-retry-status');
+    if (status) return status;
+
+    status = document.createElement('div');
+    status.className = 'video-project-retry-status';
+    status.setAttribute('role', 'status');
+    status.setAttribute('aria-live', 'polite');
+    config.container.appendChild(status);
+    return status;
+  }
+
+  function setRetryStatus(config, message, duration) {
+    var status = getRetryStatus(config);
+    status.textContent = message;
+    status.classList.add('is-visible');
+
+    if (config.statusTimer) window.clearTimeout(config.statusTimer);
+    if (duration) {
+      config.statusTimer = window.setTimeout(function () {
+        status.classList.remove('is-visible');
+        config.statusTimer = null;
+      }, duration);
+    }
+  }
+
+  function retryMessage(config) {
+    var lang = (document.documentElement.lang || 'id').toLowerCase();
+    return lang.indexOf('en') === 0
+      ? 'Retrying preview (' + config.retryCount + '/' + MAX_RETRIES + ')...'
+      : 'Mencoba memuat ulang preview (' + config.retryCount + '/' + MAX_RETRIES + ')...';
+  }
+
+  function successMessage() {
+    var lang = (document.documentElement.lang || 'id').toLowerCase();
+    return lang.indexOf('en') === 0 ? 'Preview reloaded' : 'Preview berhasil dimuat ulang';
+  }
+
+  function failedMessage() {
+    var lang = (document.documentElement.lang || 'id').toLowerCase();
+    return lang.indexOf('en') === 0
+      ? 'Preview is still unavailable. Open the YouTube playlist below.'
+      : 'Preview masih tidak tersedia. Buka playlist YouTube di bawah.';
+  }
+
+  function rebuildFrame(config) {
+    var oldFrame = config.iframe;
+    var container = config.container;
+    if (!oldFrame || !container) return;
+
+    // Destroy the old API instance before replacing the iframe. This makes the
+    // recovery equivalent to refreshing only this preview, not the whole page.
+    var freshFrame = oldFrame.cloneNode(false);
+    freshFrame.setAttribute('src', addParam(config.baseSource, 'retry', Date.now()));
+
+    try {
+      if (config.player && typeof config.player.destroy === 'function') {
+        config.player.destroy();
+      }
+    } catch (error) {
+      // The iframe can already be in a failed state; replacing it is enough.
+    }
+
+    config.player = null;
+    config.ready = false;
+    config.iframe = freshFrame;
+
+    while (container.firstChild) container.removeChild(container.firstChild);
+    container.appendChild(freshFrame);
+    setRetryStatus(config, retryMessage(config));
+
+    window.setTimeout(function () {
+      initPlayer(config);
+    }, 350);
+  }
+
+  function scheduleWatchdog(config) {
+    clearWatchdog(config);
+    config.watchdog = window.setTimeout(function () {
+      if (!config.player || !config.ready) {
+        retryPlayer(config);
+        return;
+      }
+
+      var state = -1;
+      try {
+        state = config.player.getPlayerState();
+      } catch (error) {
+        state = -1;
+      }
+
+      // -1 = unstarted, 3 = buffering. If it stays there too long, retry the playlist.
+      if (state === -1 || state === 3) retryPlayer(config);
+    }, WATCHDOG_DELAY);
+  }
+
+  function retryPlayer(config) {
+    if (!config.playlistId || config.retryPending) return;
+
+    if (config.retryCount >= MAX_RETRIES) {
+      setRetryStatus(config, failedMessage());
+      return;
+    }
+
+    config.retryPending = true;
+    config.retryCount += 1;
+    clearWatchdog(config);
+    setRetryStatus(config, retryMessage(config));
+
+    window.setTimeout(function () {
+      config.retryPending = false;
+      rebuildFrame(config);
+      scheduleWatchdog(config);
+    }, RETRY_DELAY * config.retryCount);
+  }
+
+  function handleReady(config, event) {
+    config.player = event.target;
+    config.ready = true;
+    if (config.retryCount > 0) setRetryStatus(config, successMessage(), 1800);
+    scheduleWatchdog(config);
+  }
+
+  function handleStateChange(config, event) {
+    if (event.data === 1 || event.data === 2 || event.data === 0) {
+      clearWatchdog(config);
+      config.retryCount = 0;
+      var status = config.container.querySelector('.video-project-retry-status');
+      if (status) status.classList.remove('is-visible');
+    } else if (event.data === 5) {
+      // A cued playlist can still be visually stuck, so keep a health check.
+      scheduleWatchdog(config);
+    } else if (event.data === -1 || event.data === 3) {
+      scheduleWatchdog(config);
+    }
+  }
+
+  function handleError(config, event) {
+    // Retry player/HTML5, missing-referrer, and transient availability errors.
+    if ([2, 5, 100, 101, 150, 153].indexOf(event.data) !== -1) retryPlayer(config);
+  }
+
+  function initPlayer(config) {
+    if (!window.YT || !window.YT.Player || config.player) return;
+
+    try {
+      config.player = new window.YT.Player(config.iframe, {
+        events: {
+          onReady: function (event) { handleReady(config, event); },
+          onStateChange: function (event) { handleStateChange(config, event); },
+          onError: function (event) { handleError(config, event); }
+        }
+      });
+    } catch (error) {
+      config.player = null;
+    }
+    scheduleWatchdog(config);
+  }
+
+  function initPlayers() {
+    if (!window.YT || !window.YT.Player) return;
+
+    configs.forEach(function (config) {
+      initPlayer(config);
+    });
+  }
+
+  // Start a fallback timer even when the YouTube API is slow or fails to attach.
+  configs.forEach(function (config) {
+    scheduleWatchdog(config);
+  });
+
+  var previousReady = window.onYouTubeIframeAPIReady;
+  window.onYouTubeIframeAPIReady = function () {
+    if (typeof previousReady === 'function') previousReady();
+    initPlayers();
+  };
+
+  if (window.YT && window.YT.Player) {
+    initPlayers();
+  } else {
+    var apiScript = document.createElement('script');
+    apiScript.src = 'https://www.youtube.com/iframe_api';
+    apiScript.async = true;
+    document.head.appendChild(apiScript);
+  }
 })();
 </script>
 </body>
