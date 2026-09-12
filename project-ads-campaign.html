@@ -23,6 +23,12 @@
   box-sizing:border-box;
   justify-content:center;
 }
+#galleryGrid .sop-card-caption{
+  width:calc(100% + 32px);
+  margin:16px -16px -16px;
+  box-sizing:border-box;
+  justify-content:center;
+}
 </style>
 <link rel="canonical" href="https://dianpurnanugraha.my.id/project-ads-campaign.html">
 </head>
@@ -565,7 +571,7 @@
     item.appendChild(dots);
 
     var caption = document.createElement('div');
-    caption.className = 'shot-caption';
+    caption.className = 'shot-caption sop-card-caption';
     caption.innerHTML = '<span class="shot-tag">' + tagLabel + '</span><span>' + label + '</span>';
     item.appendChild(caption);
     return item;
