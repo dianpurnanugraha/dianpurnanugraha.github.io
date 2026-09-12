@@ -15,6 +15,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="assets/css/styles.css?v=11">
+<style id="screenshot-caption-separator">
+#galleryGrid .sop-card-caption{
+  width:calc(100% + 32px);
+  margin:16px -16px -16px;
+  box-sizing:border-box;
+  justify-content:center;
+}
+</style>
 <link rel="canonical" href="https://dianpurnanugraha.my.id/project-sop-workflow.html">
 </head>
 <body>
@@ -381,7 +389,7 @@
     }
 
     var caption = document.createElement('div');
-    caption.className = 'shot-caption';
+    caption.className = 'shot-caption sop-card-caption';
     caption.innerHTML = '<span class="shot-tag">' + tagLabel + '</span><span>' + label + '</span>';
     item.appendChild(caption);
     return item;
