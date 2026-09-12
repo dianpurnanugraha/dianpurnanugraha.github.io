@@ -3,28 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Optimasi Toko Shopee &amp; TikTok Shop — Dian Purna Nugraha, S.Kom.</title>
-<meta name="description" content="Pengelolaan produk marketplace melalui BigSeller. Dokumentasi pada halaman ini berfokus pada listing Shopee: kategori, atribut, harga, stok, pre-order, jasa kirim, dan promo massal.">
+<title>Sistem Bisnis &amp; Dokumentasi Keanggotaan Mitra HCI — Dian Purna Nugraha, S.Kom.</title>
+<meta name="description" content="Dokumentasi sistem bisnis dan administrasi keanggotaan Mitra HCI: level kemitraan, skema diskon, target omzet, sharing profit, serta formulir pendaftaran.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230F2A4D'/%3E%3Ctext x='50' y='68' font-family='Poppins,Arial,sans-serif' font-size='58' font-weight='700' fill='white' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Optimasi Toko Shopee &amp; TikTok Shop — Dian Purna Nugraha, S.Kom.">
-<meta property="og:description" content="Pengelolaan produk marketplace melalui BigSeller. Dokumentasi pada halaman ini berfokus pada listing Shopee: kategori, atribut, harga, stok, pre-order, jasa kirim, dan promo massal.">
+<meta property="og:title" content="Sistem Bisnis &amp; Dokumentasi Keanggotaan Mitra HCI — Dian Purna Nugraha, S.Kom.">
+<meta property="og:description" content="Dokumentasi level kemitraan, skema diskon, sharing profit, dan formulir pendaftaran Mitra HCI dalam format referensi yang terstruktur.">
 <meta property="og:image" content="assets/img/profile/profile.webp">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="assets/css/styles.css?v=11">
-<style id="screenshot-caption-separator">
-#galleryGrid .shot-caption{
-  width:100%;
-  max-width:none;
-  align-self:stretch;
+<style id="business-system-gallery-layout">
+#galleryGrid .business-system-card-caption{
+  width:calc(100% + 32px);
+  margin:16px -16px -16px;
   box-sizing:border-box;
   justify-content:center;
 }
 </style>
-<link rel="canonical" href="https://dianpurnanugraha.my.id/project-shopee-tiktok.html">
+<link rel="canonical" href="https://dianpurnanugraha.my.id/project-business-system.html">
 </head>
 <body>
 
@@ -56,9 +55,7 @@
 <div class="cc-ticker" aria-label="Core competencies">
   <span class="cc-label">CORE COMPETENCIES</span>
   <div class="cc-track-wrap">
-    <div class="cc-track" id="ccTrack">
-      <!-- filled by JS: content duplicated for seamless loop -->
-    </div>
+    <div class="cc-track" id="ccTrack"></div>
   </div>
 </div>
 <script>
@@ -78,11 +75,9 @@
     var track = document.getElementById('ccTrack');
     if(!track) return;
     var html = items.map(function(t){ return '<span class="cc-item"><span class="dot"></span>' + t + '</span>'; }).join('');
-    // digandakan 2x supaya loop translateX(-50%) mulus tanpa jeda
     track.innerHTML = html + html;
   })();
 </script>
-
 
 <!-- ===================== BREADCRUMB ===================== -->
 <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -91,7 +86,7 @@
     <i class="fa-solid fa-chevron-right breadcrumb-sep"></i>
     <a href="project.html">Project</a>
     <i class="fa-solid fa-chevron-right breadcrumb-sep"></i>
-    <span class="breadcrumb-current" data-i18n="breadcrumb.current">Optimasi Toko Shopee &amp; TikTok Shop</span>
+    <span class="breadcrumb-current" data-i18n="breadcrumb.current">Sistem Bisnis &amp; Dokumentasi Keanggotaan Mitra HCI</span>
   </div>
 </nav>
 
@@ -102,21 +97,21 @@
 
 <!-- ===================== DETAIL HERO ===================== -->
 <section class="wrap" style="padding-top:20px;">
-  <div class="detail-hero" style="background:linear-gradient(135deg,#2F6FED,#5A9CFF);">
-    <span class="project-tag">E-commerce</span>
-    <h1 data-i18n="hero.title">Optimasi Toko Shopee &amp; TikTok Shop</h1>
-    <p data-i18n="hero.desc">Pengelolaan produk marketplace melalui BigSeller. Dokumentasi pada halaman ini berfokus pada listing Shopee: kategori, atribut, harga, stok, pre-order, jasa kirim, dan promo massal.</p>
-    <div class="detail-hero-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+  <div class="detail-hero" style="background:linear-gradient(135deg,#075985,#06b6d4);">
+    <span class="project-tag">Operations</span>
+    <h1 data-i18n="hero.title">Sistem Bisnis &amp; Dokumentasi Keanggotaan Mitra HCI</h1>
+    <p data-i18n="hero.desc">Mendokumentasikan struktur level kemitraan, skema diskon, target omzet, sharing profit, serta formulir pendaftaran Mitra HCI dalam format yang terstruktur dan mudah digunakan sebagai referensi.</p>
+    <div class="detail-hero-icon"><i class="fa-solid fa-sitemap"></i></div>
   </div>
 </section>
 
 <!-- ===================== META INFO ===================== -->
 <section class="wrap">
   <div class="detail-meta-grid">
-    <div class="detail-meta-item"><span data-i18n="meta.client">Lingkup</span><b data-i18n="meta.clientValue">Beberapa Toko Shopee</b></div>
-    <div class="detail-meta-item"><span data-i18n="meta.role">Peran</span><b>E-commerce &amp; Business Operations Specialist</b></div>
-    <div class="detail-meta-item"><span data-i18n="meta.duration">Dokumentasi</span><b data-i18n="meta.durationValue">September 2026</b></div>
-    <div class="detail-meta-item"><span data-i18n="meta.tools">Tools</span><b>BigSeller</b></div>
+    <div class="detail-meta-item"><span data-i18n="meta.client">Klien</span><b data-i18n="meta.clientValue">Halal Care Indonesia (HCI)</b></div>
+    <div class="detail-meta-item"><span data-i18n="meta.role">Peran</span><b data-i18n="meta.roleValue">Business System &amp; Documentation</b></div>
+    <div class="detail-meta-item"><span data-i18n="meta.duration">Dokumentasi</span><b data-i18n="meta.durationValue">Dokumentasi Berjalan</b></div>
+    <div class="detail-meta-item"><span data-i18n="meta.tools">Tools</span><b data-i18n="meta.toolsValue">Google Sheets, Google Docs &amp; Layout Design</b></div>
   </div>
 </section>
 
@@ -125,17 +120,17 @@
   <div class="wrap">
     <div class="detail-block">
       <h3 data-i18n="challenge.title"><i class="fa-solid fa-circle-exclamation"></i> Tantangan</h3>
-      <p data-i18n="challenge.desc">Pengelolaan banyak listing di beberapa toko memerlukan penyesuaian kategori, atribut, harga, stok, dan jasa kirim. Pemilihan produk serta jenis perubahan perlu diperiksa agar pengaturan massal diterapkan pada listing yang tepat.</p>
+      <p data-i18n="challenge.desc">Informasi level kemitraan, persentase diskon, syarat naik level, minimal repeat order, target omzet, dan sharing profit perlu disajikan dalam satu referensi yang jelas. Formulir pendaftaran juga harus menampung data pribadi, kontak, referensi, serta distributor secara rapi.</p>
     </div>
 
     <div class="detail-block">
       <h3 data-i18n="process.title"><i class="fa-solid fa-diagram-project"></i> Proses &amp; Solusi</h3>
     </div>
     <div class="process-list">
-      <div class="process-item"><div class="process-num">1</div><div><h5 data-i18n="process1.title">Pemilihan Produk</h5><p data-i18n="process1.desc">Menentukan toko dan memilih listing yang akan diperbarui melalui daftar produk Shopee di BigSeller, lalu membuka menu aksi massal.</p></div></div>
-      <div class="process-item"><div class="process-num">2</div><div><h5 data-i18n="process2.title">Kategori &amp; Atribut</h5><p data-i18n="process2.desc">Menyesuaikan kategori produk antar-toko dan mengisi atribut berdasarkan kategori, seperti merek, volume, serta informasi penyimpanan.</p></div></div>
-      <div class="process-item"><div class="process-num">3</div><div><h5 data-i18n="process3.title">Harga, Stok &amp; Pengiriman</h5><p data-i18n="process3.desc">Mengatur harga HET, mengubah atau menambah dan mengurangi stok, serta menentukan status pre-order dan pilihan jasa kirim untuk produk terpilih.</p></div></div>
-      <div class="process-item"><div class="process-num">4</div><div><h5 data-i18n="process4.title">Pengelolaan Promo</h5><p data-i18n="process4.desc">Menyesuaikan harga promo secara massal dan memilih jenis promo yang ingin dihentikan untuk produk terpilih, kemudian memeriksa pengaturan sebelum konfirmasi.</p></div></div>
+      <div class="process-item"><div class="process-num">1</div><div><h5 data-i18n="process1.title">Pemetaan Level Kemitraan</h5><p data-i18n="process1.desc">Merangkum lima tingkatan—Marketer, Reseller, Sub Agen, Agen, dan Distributor—beserta posisi masing-masing dalam struktur bisnis.</p></div></div>
+      <div class="process-item"><div class="process-num">2</div><div><h5 data-i18n="process2.title">Perincian Insentif &amp; Persyaratan</h5><p data-i18n="process2.desc">Menyusun informasi diskon, komisi, cara bergabung, syarat naik level, minimal repeat order, dan target penjualan agar mudah dibandingkan antar-level.</p></div></div>
+      <div class="process-item"><div class="process-num">3</div><div><h5 data-i18n="process3.title">Dokumentasi Sharing Profit</h5><p data-i18n="process3.desc">Menata referensi pembagian keuntungan antar-generasi, termasuk pihak pemberi, batas omzet pribadi, dan jumlah generasi yang berlaku pada setiap skema.</p></div></div>
+      <div class="process-item"><div class="process-num">4</div><div><h5 data-i18n="process4.title">Penyusunan Formulir Mitra</h5><p data-i18n="process4.desc">Mengorganisasi formulir keanggotaan untuk data pribadi, alamat, kontak, akun sosial, ahli waris, hubungan dengan mitra, pemberi referensi, dan distributor koresponden.</p></div></div>
     </div>
   </div>
 </section>
@@ -146,13 +141,13 @@
     <div class="sec-head">
       <div class="eyebrow-line" data-i18n="result.eyebrow">RINGKASAN</div>
       <h2 data-i18n="result.title">Cakupan &amp; <span>Dokumentasi</span></h2>
-      <p data-i18n="result.desc">Ringkasan fitur pengelolaan yang ditampilkan pada sembilan screenshot BigSeller.</p>
+      <p data-i18n="result.desc">Ringkasan berikut mengikuti isi dokumentasi referensi yang tersedia dan tidak menambahkan angka atau ketentuan di luar materi tersebut.</p>
     </div>
     <div class="result-grid">
-      <div class="result-card"><b data-i18n="result1.value">3</b><span data-i18n="result1.label">Kategori Dokumentasi</span></div>
-      <div class="result-card"><b data-i18n="result2.value">9</b><span data-i18n="result2.label">Screenshot Pengaturan</span></div>
-      <div class="result-card"><b data-i18n="result3.value">Massal</b><span data-i18n="result3.label">Pengaturan Produk</span></div>
-      <div class="result-card"><b data-i18n="result4.value">BigSeller</b><span data-i18n="result4.label">Platform Pengelolaan</span></div>
+      <div class="result-card"><b data-i18n="result1.value">5</b><span data-i18n="result1.label">Level kemitraan</span></div>
+      <div class="result-card"><b data-i18n="result2.value">15–50%</b><span data-i18n="result2.label">Rentang diskon</span></div>
+      <div class="result-card"><b data-i18n="result3.value">2</b><span data-i18n="result3.label">Maksimal generasi sharing profit</span></div>
+      <div class="result-card"><b data-i18n="result4.value">3</b><span data-i18n="result4.label">Halaman dokumentasi</span></div>
     </div>
   </div>
 </section>
@@ -161,22 +156,20 @@
 <section class="section" id="toc-galeri" data-toc="Dokumentasi">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow-line">DOKUMENTASI</div>
+      <div class="eyebrow-line" data-i18n="gallery.eyebrow">DOKUMENTASI</div>
       <h2 data-i18n="gallery.title">Cuplikan <span>Pekerjaan</span></h2>
-      <p data-i18n="gallery.desc">Dokumentasi pengelolaan listing, pengaturan operasional produk, dan promo massal Shopee melalui BigSeller.</p>
+      <p data-i18n="gallery.desc">Dokumentasi sistem bisnis dan formulir keanggotaan Mitra HCI, ditampilkan sebagai dua referensi terpisah agar setiap bagian tetap mudah dibaca.</p>
     </div>
-    <div class="filter-group">
-      <div class="filter-row" id="galleryCatFilter"></div>
-    </div>
-    <div class="gallery-grid gallery-grid-shots" id="galleryGrid"></div>
-
+    <div class="filter-group"><div class="filter-row" id="galleryCatFilter"></div></div>
+    <div class="slider-card-grid" id="galleryGrid"></div>
     <nav class="gallery-pagination" id="galleryPagination" aria-label="Navigasi halaman galeri"></nav>
     <p class="gallery-page-info" id="galleryPageInfo"></p>
 
     <div class="project-tags project-tags-center">
-      <span>Shopee</span>
-      <span>TikTok Shop</span>
-      <span>BigSeller</span>
+      <span>Business Operations</span>
+      <span>Partner Program</span>
+      <span>Google Sheets</span>
+      <span>Documentation</span>
     </div>
   </div>
 </section>
@@ -184,8 +177,8 @@
 <!-- ===================== PREV / NEXT ===================== -->
 <section class="wrap" style="padding-bottom:30px;">
   <div class="project-nav-row">
-    <a href="project-business-system.html" class="project-nav-link"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="nav.prev">Sistem Bisnis &amp; Dokumentasi Keanggotaan Mitra HCI</span></a>
-    <a href="project-express-shipping.html" class="project-nav-link next"><span data-i18n="nav.next">Performa Program Pengiriman Kilat Shopee</span> <i class="fa-solid fa-arrow-right"></i></a>
+    <a href="project-invoice-delivery-note.html" class="project-nav-link"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="nav.prev">Invoice &amp; Surat Jalan Otomatis</span></a>
+    <a href="project-shopee-tiktok.html" class="project-nav-link next"><span data-i18n="nav.next">Optimasi Toko Shopee &amp; TikTok Shop</span> <i class="fa-solid fa-arrow-right"></i></a>
   </div>
 </section>
 
@@ -193,7 +186,7 @@
 <section class="section section-tight-top">
   <div class="wrap">
     <div class="connect-section">
-            <div class="connect-grid">
+      <div class="connect-grid">
         <div>
           <span class="connect-badge" data-i18n="connect.badge">Lihat Hasil Kerja Saya</span>
           <h2 data-i18n="connect.title">Punya Proyek <span>di Pikiran?</span></h2>
@@ -289,7 +282,7 @@
 </footer>
 
 <script src="assets/js/i18n-common.js"></script>
-<script src="assets/js/i18n-project-shopee-tiktok.js"></script>
+<script src="assets/js/i18n-project-business-system.js"></script>
 <script src="assets/js/i18n.js"></script>
 <script src="assets/js/reading-progress.js"></script>
 <script src="assets/js/nav-toggle.js"></script>
@@ -299,91 +292,67 @@
 (function(){
   var GALLERY_ITEMS = [
     {
-      cat: "listing",
-      title: { id: "Optimasi Listing Massal Shopee", en: "Shopee Bulk Listing Optimization" },
+      cat: "business-system",
+      tag: { id: "Sistem Bisnis", en: "Business System" },
+      label: { id: "Struktur Level Kemitraan, Diskon & Sharing Profit", en: "Partner Levels, Discounts & Profit Sharing Structure" },
       images: [
-        { src: "assets/ss/shopee-tiktok/menu-edit-massal.webp", caption: { id: "Pengelolaan Produk Shopee — Menu Edit Massal", en: "Shopee Product Management — Bulk Edit Menu" } },
-        { src: "assets/ss/shopee-tiktok/ubah-kategori-massal.webp", caption: { id: "Ubah Kategori Produk Massal — Kategori Antar-Toko", en: "Bulk Product Category Editing — Cross-Store Categories" } },
-        { src: "assets/ss/shopee-tiktok/edit-atribut-massal.webp", caption: { id: "Edit Atribut Produk Massal — Atribut Berdasarkan Kategori", en: "Bulk Product Attribute Editing — Category-Based Attributes" } }
+        { src: "assets/ss/business-system/sistem-bisnis-level-kemitraan.webp", part: null }
       ]
     },
     {
-      cat: "operational",
-      title: { id: "Pengaturan Produk & Pemenuhan Massal", en: "Bulk Product & Fulfillment Settings" },
+      cat: "membership-form",
+      tag: { id: "Formulir Mitra", en: "Membership Form" },
+      label: { id: "Formulir Permohonan Keanggotaan Mitra HCI", en: "HCI Partner Membership Application Form" },
       images: [
-        { src: "assets/ss/shopee-tiktok/harga-het-massal.webp", caption: { id: "Pengaturan Harga HET Massal — Tambah, Kurangi & Ubah Harga", en: "Bulk Retail Price Settings — Increase, Reduce & Replace Prices" } },
-        { src: "assets/ss/shopee-tiktok/stok-massal.webp", caption: { id: "Pengaturan Stok Massal — Ubah, Tambah & Kurangi Stok", en: "Bulk Stock Settings — Edit, Add & Reduce Stock" } },
-        { src: "assets/ss/shopee-tiktok/pre-order-massal.webp", caption: { id: "Pengaturan Pre-Order Massal — Waktu Pemrosesan Produk", en: "Bulk Pre-Order Settings — Product Processing Time" } },
-        { src: "assets/ss/shopee-tiktok/jasa-kirim-massal.webp", caption: { id: "Pengaturan Jasa Kirim Massal — Ekspedisi & Ongkos Kirim", en: "Bulk Shipping Settings — Couriers & Shipping Fees" } }
-      ]
-    },
-    {
-      cat: "promo",
-      title: { id: "Pengelolaan Promo Massal Shopee", en: "Shopee Bulk Promotion Management" },
-      images: [
-        { src: "assets/ss/shopee-tiktok/harga-promo-massal.webp", caption: { id: "Pengaturan Harga Promo Massal — Kurangi, Tambah & Ubah Harga", en: "Bulk Promotional Pricing — Reduce, Increase & Replace Prices" } },
-        { src: "assets/ss/shopee-tiktok/keluarkan-promo-massal.webp", caption: { id: "Pengelolaan Promo Massal — Mengeluarkan Produk dari Promo", en: "Bulk Promotion Management — Removing Products from Promotions" } }
+        { src: "assets/ss/business-system/formulir-keanggotaan-mitra-hci-1.webp", part: 1 },
+        { src: "assets/ss/business-system/formulir-keanggotaan-mitra-hci-2.webp", part: 2 }
       ]
     }
   ];
 
-  GALLERY_ITEMS = GALLERY_ITEMS.reduce(function(items, group){
-    return items.concat(group.images.map(function(image){
-      return { cat: group.cat, src: image.src, caption: image.caption };
-    }));
-  }, []);
-
   var ITEMS_PER_PAGE = 6;
-  var CATEGORIES = ["all", "listing", "operational", "promo"];
-  var CATEGORY_LABELS = {
-    id: { all: "Semua", listing: "Listing", operational: "Operasional", promo: "Promo" },
-    en: { all: "All", listing: "Listings", operational: "Operations", promo: "Promotions" }
-  };
-
-  var grid       = document.getElementById('galleryGrid');
-  var filterEl   = document.getElementById('galleryCatFilter');
-  var paginateEl = document.getElementById('galleryPagination');
-  var infoEl     = document.getElementById('galleryPageInfo');
   var currentCategory = 'all';
   var currentItems = GALLERY_ITEMS;
-  var totalPages = Math.ceil(currentItems.length / ITEMS_PER_PAGE);
+  var filterEl = document.getElementById('galleryCatFilter');
+  var grid = document.getElementById('galleryGrid');
+  var paginateEl = document.getElementById('galleryPagination');
+  var infoEl = document.getElementById('galleryPageInfo');
+  var CATEGORY_LABELS = {
+    id: { all: 'Semua', 'business-system': 'Sistem Bisnis', 'membership-form': 'Formulir Mitra' },
+    en: { all: 'All', 'business-system': 'Business System', 'membership-form': 'Membership Form' }
+  };
+  var totalPages = Math.max(1, Math.ceil(currentItems.length / ITEMS_PER_PAGE));
   var currentPage = 1;
 
-  function buildItem(entry){
-    var lang = localStorage.getItem('site-lang') || 'id';
-    var label = entry.caption[lang] || entry.caption.id;
-    var item = document.createElement('div');
-    item.className = 'gallery-item gallery-item-img';
-    var img = document.createElement('img');
-    img.src = entry.src;
-    img.alt = label;
-    img.loading = 'lazy';
-    item.appendChild(img);
-    var caption = document.createElement('div');
-    caption.className = 'shot-caption';
-    var tag = document.createElement('span');
-    tag.className = 'shot-tag';
-    tag.textContent = 'BigSeller';
-    var text = document.createElement('span');
-    text.textContent = label;
-    caption.appendChild(tag);
-    caption.appendChild(text);
-    item.appendChild(caption);
-    return item;
+  function getLang(){ return localStorage.getItem('site-lang') || 'id'; }
+
+  function scrollToCardTop(){
+    if (!grid) return;
+    var firstCard = grid.querySelector('.slider-card');
+    if (!firstCard) return;
+
+    var navHeight = 66;
+    var filterGroup = filterEl.closest('.filter-group');
+    var filterHeight = filterGroup ? filterGroup.offsetHeight : 0;
+    var rect = firstCard.getBoundingClientRect();
+    var target = window.pageYOffset + rect.top - navHeight - filterHeight;
+
+    window.scrollTo({ top: Math.max(0, target), behavior: 'smooth' });
   }
 
   function renderFilter(){
-    var lang = localStorage.getItem('site-lang') || 'id';
+    var lang = getLang();
     var labels = CATEGORY_LABELS[lang] || CATEGORY_LABELS.id;
     filterEl.innerHTML = '';
-    CATEGORIES.forEach(function(category){
+    ['all', 'business-system', 'membership-form'].forEach(function(category){
       var button = document.createElement('button');
       button.type = 'button';
       button.className = 'filter-btn' + (category === currentCategory ? ' active' : '');
       button.textContent = labels[category];
+      button.setAttribute('aria-pressed', category === currentCategory ? 'true' : 'false');
       button.addEventListener('click', function(){
         currentCategory = category;
-        currentItems = category === 'all' ? GALLERY_ITEMS : GALLERY_ITEMS.filter(function(item){ return item.cat === category; });
+        currentItems = GALLERY_ITEMS.filter(function(item){ return category === 'all' || item.cat === category; });
         totalPages = Math.max(1, Math.ceil(currentItems.length / ITEMS_PER_PAGE));
         renderFilter();
         renderPage(1, true);
@@ -392,34 +361,92 @@
     });
   }
 
+  function buildItem(entry){
+    var lang = getLang();
+    var label = entry.label[lang] || entry.label.id;
+    var tagLabel = entry.tag[lang] || entry.tag.id;
+    var item = document.createElement('div');
+    item.className = 'slider-card';
+
+    var head = document.createElement('div');
+    head.className = 'slider-card-head';
+    head.innerHTML = '<span class="slider-card-tag"><i class="fa-solid fa-clipboard-list"></i> ' + tagLabel + '</span>';
+    item.appendChild(head);
+
+    if (entry.images.length === 1) {
+      var box = document.createElement('div');
+      box.className = 'slider-card-imgbox';
+      box.innerHTML = '<img src="' + entry.images[0].src + '" alt="' + label + '" loading="lazy">';
+      item.appendChild(box);
+    } else {
+      var slider = document.createElement('div');
+      slider.className = 'media-slider';
+      var slidesHtml = entry.images.map(function(image, index){
+        var partLabel = lang === 'en'
+          ? 'Part ' + (index + 1) + '/' + entry.images.length
+          : 'Bagian ' + (index + 1) + '/' + entry.images.length;
+        return '<div class="media-slide">' +
+          '<span class="media-slide-label">' + partLabel + '</span>' +
+          '<img src="' + image.src + '" alt="' + label + ' — ' + partLabel + '" loading="lazy">' +
+        '</div>';
+      }).join('');
+      slider.innerHTML =
+        '<button class="media-arrow prev" type="button" aria-label="' + (lang === 'en' ? 'Previous slide' : 'Slide sebelumnya') + '"><i class="fa-solid fa-chevron-left"></i></button>' +
+        '<div class="media-slider-track"><div class="media-slider-slides">' + slidesHtml + '</div></div>' +
+        '<button class="media-arrow next" type="button" aria-label="' + (lang === 'en' ? 'Next slide' : 'Slide berikutnya') + '"><i class="fa-solid fa-chevron-right"></i></button>';
+      item.appendChild(slider);
+
+      var dots = document.createElement('div');
+      dots.className = 'media-dots';
+      item.appendChild(dots);
+    }
+
+    var caption = document.createElement('div');
+    caption.className = 'shot-caption business-system-card-caption';
+    caption.innerHTML = '<span class="shot-tag">' + tagLabel + '</span><span>' + label + '</span>';
+    item.appendChild(caption);
+    return item;
+  }
+
+  function initSliders(scopeEl){
+    scopeEl.querySelectorAll('.media-slider').forEach(function(sliderEl){
+      var track = sliderEl.querySelector('.media-slider-slides');
+      var slides = sliderEl.querySelectorAll('.media-slide');
+      var prevBtn = sliderEl.querySelector('.media-arrow.prev');
+      var nextBtn = sliderEl.querySelector('.media-arrow.next');
+      var dotsBox = sliderEl.parentElement.querySelector('.media-dots');
+      var index = 0;
+
+      slides.forEach(function(_, i){
+        var dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'media-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', getLang() === 'en' ? 'Go to part ' + (i + 1) : 'Ke bagian ' + (i + 1));
+        dot.addEventListener('click', function(){ goTo(i); });
+        dotsBox.appendChild(dot);
+      });
+      var dots = dotsBox.querySelectorAll('.media-dot');
+
+      function goTo(i){
+        index = (i + slides.length) % slides.length;
+        track.style.transform = 'translateX(-' + (index * 100) + '%)';
+        dots.forEach(function(dot, dotIndex){ dot.classList.toggle('active', dotIndex === index); });
+      }
+      prevBtn.addEventListener('click', function(){ goTo(index - 1); });
+      nextBtn.addEventListener('click', function(){ goTo(index + 1); });
+    });
+  }
+
   function getPageList(current, total){
     var delta = 1;
     var range = [];
-    for (var i = Math.max(2, current - delta); i <= Math.min(total - 1, current + delta); i++){
-      range.push(i);
-    }
+    for (var i = Math.max(2, current - delta); i <= Math.min(total - 1, current + delta); i++) range.push(i);
     var result = [1];
     if (range[0] > 2) result.push('...');
     result = result.concat(range);
     if (range.length && range[range.length - 1] < total - 1) result.push('...');
     if (total > 1) result.push(total);
     return result;
-  }
-
-  function getPageFromURL(total){
-    var params = new URLSearchParams(window.location.search);
-    var p = parseInt(params.get('page'), 10);
-    if (!p || p < 1) p = 1;
-    if (p > total) p = total;
-    return p;
-  }
-
-  function setPageInURL(page){
-    if (!window.history || !window.history.replaceState) return;
-    var url = new URL(window.location.href);
-    if (page > 1) url.searchParams.set('page', page);
-    else url.searchParams.delete('page');
-    window.history.replaceState(null, '', url.toString());
   }
 
   function renderPagination(){
@@ -436,10 +463,10 @@
 
     getPageList(currentPage, totalPages).forEach(function(p){
       if (p === '...'){
-        var span = document.createElement('span');
-        span.className = 'gallery-page-ellipsis';
-        span.textContent = '...';
-        paginateEl.appendChild(span);
+        var ellipsis = document.createElement('span');
+        ellipsis.className = 'gallery-page-ellipsis';
+        ellipsis.textContent = '...';
+        paginateEl.appendChild(ellipsis);
       } else {
         var btn = document.createElement('button');
         btn.type = 'button';
@@ -458,25 +485,21 @@
     nextBtn.addEventListener('click', function(){ renderPage(currentPage + 1, true); });
     paginateEl.appendChild(nextBtn);
 
-    var lang = localStorage.getItem('site-lang') || 'id';
-    infoEl.textContent = lang === 'en'
+    infoEl.textContent = getLang() === 'en'
       ? 'Page ' + currentPage + ' of ' + totalPages + ' — ' + currentItems.length + ' items total'
       : 'Halaman ' + currentPage + ' dari ' + totalPages + ' — ' + currentItems.length + ' item total';
   }
 
   function renderPage(page, scroll){
-    currentPage = page;
-    setPageInURL(page);
+    currentPage = Math.max(1, Math.min(page, totalPages));
     grid.innerHTML = '';
-
-    var start = (page - 1) * ITEMS_PER_PAGE;
-    currentItems.slice(start, start + ITEMS_PER_PAGE).forEach(function(entry){
-      grid.appendChild(buildItem(entry));
-    });
-
+    var start = (currentPage - 1) * ITEMS_PER_PAGE;
+    currentItems.slice(start, start + ITEMS_PER_PAGE).forEach(function(entry){ grid.appendChild(buildItem(entry)); });
+    initSliders(grid);
     renderPagination();
-    if (scroll) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (scroll) scrollToCardTop();
   }
+
   document.querySelectorAll('.lang-btn').forEach(function(btn){
     btn.addEventListener('click', function(){
       setTimeout(function(){ renderFilter(); renderPage(currentPage, false); }, 0);
@@ -484,7 +507,7 @@
   });
 
   renderFilter();
-  renderPage(getPageFromURL(totalPages), false);
+  renderPage(1, false);
 })();
 </script>
 </body>

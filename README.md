@@ -64,6 +64,7 @@ Website portofolio statis bilingual untuk menampilkan profil, pengalaman, layana
 - `project-inventory-management.html` — Manajemen Stok, Pembelian & Persediaan
 - `project-sales-return-operations.html` — Sistem Operasional Penjualan & Retur Multi-Channel
 - `project-invoice-delivery-note.html` — Invoice & Surat Jalan Otomatis
+- `project-business-system.html` — Sistem Bisnis & Dokumentasi Keanggotaan Mitra HCI
 
 ## Artikel Insight
 
