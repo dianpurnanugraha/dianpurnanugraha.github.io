@@ -30,7 +30,7 @@ window.I18N_PAGE = {
     "gallery.catAll": "Semua",
     "gallery.navAriaLabel": "Navigasi halaman galeri",
     "nav.prev": "Sistem Operasional Penjualan &amp; Retur Multi-Channel",
-    "nav.next": "Optimasi Toko Shopee &amp; TikTok Shop",
+    "nav.next": "Sistem Bisnis &amp; Dokumentasi Keanggotaan Mitra HCI",
     "process1.title": "Struktur Sumber Transaksi",
     "process1.desc": "Menjadikan MD/Public Sales sebagai sumber tunggal untuk nomor invoice, nomor surat jalan, pelanggan, alamat, produk, qty, harga, diskon, status pembayaran, dan catatan.",
     "process2.title": "Pemilihan Nomor Dokumen",
@@ -84,7 +84,7 @@ window.I18N_PAGE = {
     "gallery.catAll": "All",
     "gallery.navAriaLabel": "Gallery page navigation",
     "nav.prev": "Multi-Channel Sales &amp; Return Operations System",
-    "nav.next": "Shopee &amp; TikTok Shop Store Optimization",
+    "nav.next": "HCI Partner Business System &amp; Membership Documentation",
     "process1.title": "Transaction Source Structure",
     "process1.desc": "Used MD/Public Sales as the single source for invoice numbers, delivery-note numbers, customers, addresses, products, quantities, prices, discounts, payment status, and notes.",
     "process2.title": "Document Number Selection",
@@ -109,5 +109,4 @@ window.I18N_PAGE = {
     "connect.footerNote": "Real Results &nbsp;•&nbsp; Attention to Detail &nbsp;•&nbsp; On Time"
   }
 };
-
 

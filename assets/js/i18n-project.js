@@ -57,6 +57,8 @@ window.I18N_PAGE = {
     'card15.desc': 'Mengolah transaksi, biaya marketplace, modal, margin, status pesanan, impor BigSeller, serta pemulihan stok retur lintas channel.',
     'card16.title': 'Invoice &amp; Surat Jalan Otomatis',
     'card16.desc': 'Membuat invoice dan surat jalan otomatis dari data MD/Public Sales lewat pilihan nomor transaksi, siap cetak hingga 50 produk per dokumen.',
+    'card26.title': 'Sistem Bisnis &amp; Dokumentasi Keanggotaan Mitra HCI',
+    'card26.desc': 'Mendokumentasikan level kemitraan, skema diskon, sharing profit, dan formulir pendaftaran Mitra HCI dalam referensi yang terstruktur.',
 
     'card17.title': 'Kampanye Diskon Produk Shopee',
     'card17.desc': 'Mengelola dan mengevaluasi diskon produk melalui penjualan, pesanan, produk terjual, pembeli, dan tren bulanan.',
@@ -143,6 +145,8 @@ window.I18N_PAGE = {
     'card15.desc': 'Processed transactions, marketplace fees, cost, margin, order status, BigSeller imports, and returned-stock recovery across channels.',
     'card16.title': 'Automated Invoices &amp; Delivery Notes',
     'card16.desc': 'Generated invoices and delivery notes automatically from MD/Public Sales data via transaction-number selection, print-ready for up to 50 products.',
+    'card26.title': 'HCI Partner Business System &amp; Membership Documentation',
+    'card26.desc': 'Documented partner levels, discount scheme, profit sharing, and the HCI membership application form in a structured reference.',
     'card17.title': 'Shopee Product Discount Campaign',
     'card17.desc': 'Manage and evaluate product discounts using sales, orders, units sold, buyers, and monthly trends.',
     'card18.title': 'Shopee Live &amp; Video Content Performance',
