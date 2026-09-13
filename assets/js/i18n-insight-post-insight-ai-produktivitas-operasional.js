@@ -5,7 +5,7 @@ window.I18N_PAGE = {
     '_metaDesc': 'ChatGPT, Claude, Gemini, dan NotebookLM bukan sekadar tren. Ini cara nyata memakainya untuk riset, dokumentasi, dan konten tanpa kehilangan kendali kualitas.',
     '_ogTitle': 'Memanfaatkan AI untuk Produktivitas Operasional Bisnis Sehari-hari — Dian Purna Nugraha, S.Kom.',
     'breadcrumb.title': 'AI untuk Produktivitas Operasional Bisnis',
-    'hero.catLabel': 'AI &amp; Digital',
+    'hero.catLabel': 'Digital Marketing',
     'hero.title': 'Memanfaatkan AI untuk Produktivitas Operasional Bisnis Sehari-hari',
     'hero.desc': 'ChatGPT, Claude, Gemini, dan NotebookLM bukan sekadar tren. Ini cara nyata memakainya untuk riset, dokumentasi, dan konten tanpa kehilangan kendali kualitas.',
     'meta.categoryLabel': 'Kategori',
@@ -50,7 +50,7 @@ window.I18N_PAGE = {
     '_metaDesc': 'ChatGPT, Claude, Gemini, and NotebookLM are more than a trend. Here is how they get used in practice for research, documentation, and content without losing quality control.',
     '_ogTitle': 'Using AI for Everyday Business Operations Productivity — Dian Purna Nugraha, S.Kom.',
     'breadcrumb.title': 'AI for Business Operations Productivity',
-    'hero.catLabel': 'AI &amp; Digital',
+    'hero.catLabel': 'Digital Marketing',
     'hero.title': 'Using AI for Everyday Business Operations Productivity',
     'hero.desc': 'ChatGPT, Claude, Gemini, and NotebookLM are more than a trend. Here is how they get used in practice for research, documentation, and content without losing quality control.',
     'meta.categoryLabel': 'Category',
@@ -91,4 +91,3 @@ window.I18N_PAGE = {
     'closing': 'The full mix of tools I use day to day, including the AI &amp; Research category, is on the <a href="skill.html">Skill</a> and <a href="services.html">Services</a> pages.',
   }
 };
-
