@@ -6,7 +6,7 @@ Website portofolio statis bilingual untuk menampilkan profil, pengalaman, layana
 
 ## Ringkasan
 
-- 24 halaman detail proyek
+- 23 halaman detail proyek
 - 10 artikel Insight
 - 5 kategori proyek
 - 6 kategori Insight
@@ -22,7 +22,7 @@ Website portofolio statis bilingual untuk menampilkan profil, pengalaman, layana
 | `services.html` | Layanan profesional |
 | `skill.html` | Kompetensi, skill, dan tools |
 | `experience.html` | Riwayat pengalaman kerja |
-| `project.html` | Daftar 24 proyek dengan filter kategori |
+| `project.html` | Daftar 23 proyek dengan filter kategori |
 | `insight.html` | Daftar artikel dan insight profesional |
 | `contact.html` | Kontak dan tautan sosial media |
 
