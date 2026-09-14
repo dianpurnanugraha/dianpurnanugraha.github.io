@@ -7,8 +7,9 @@ Website portofolio statis bilingual untuk menampilkan profil, pengalaman, layana
 ## Ringkasan
 
 - 23 halaman detail proyek
-- 6 artikel Insight
+- 10 artikel Insight
 - 5 kategori proyek
+- 6 kategori Insight
 - Bahasa Indonesia dan Inggris
 - Responsive untuk desktop dan perangkat mobile
 
@@ -68,12 +69,22 @@ Website portofolio statis bilingual untuk menampilkan profil, pengalaman, layana
 
 ## Artikel Insight
 
+- `insight-funnel-traffic-penjualan.html`
+- `insight-voucher-promo-data.html`
+- `insight-konten-produk-multi-format.html`
+- `insight-retur-stok-cashflow.html`
 - `insight-ai-produktivitas-operasional.html`
 - `insight-dashboard-data-keputusan.html`
 - `insight-identitas-visual-multi-brand.html`
 - `insight-karier-it-ke-ecommerce.html`
 - `insight-shopee-tiktok-lessons.html`
 - `insight-sop-gudang-human-error.html`
+
+Seluruh artikel Insight memiliki kamus bilingual per halaman di `assets/js/i18n-insight-post-*.js`, memakai komponen bahasa bersama, navigasi prev/next dua arah, dan terdaftar di `sitemap.xml`.
+
+### Isi Paket Insight
+
+Paket Insight terfokus dapat dipindahkan atau dibagikan tanpa membawa seluruh halaman project. Isinya mencakup 11 halaman Insight, seluruh kamus i18n Insight, komponen JavaScript dan CSS yang dipakai langsung, foto profil, CV, `sitemap.xml`, serta README ini. Tautan dari artikel ke halaman project tetap mengarah ke file di root repository utama.
 
 ## Tech Stack
 
@@ -114,4 +125,4 @@ Kemudian buka [http://localhost:8000](http://localhost:8000).
 - WhatsApp: +62 812 9573 3476
 - LinkedIn: [dianpurnanugraha](https://www.linkedin.com/in/dianpurnanugraha/)
 
-_Last updated: 12 September 2026._
+_Last updated: 14 September 2026._
