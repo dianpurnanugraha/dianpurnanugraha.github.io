@@ -63,6 +63,104 @@
   ]
 }
 </script>
+
+<style>
+/* =========================================================
+   MOBILE HERO PHOTO ONLY
+   Desktop hero remains untouched.
+   On mobile, the photo becomes its own background layer so it
+   can dissolve into the hero instead of ending as a hard block.
+   ========================================================= */
+.hero-mobile-photo { display: none; }
+
+@media (max-width: 768px) {
+  .hero-panel {
+    --hero-mobile-left:  #e6eefb;
+    --hero-mobile-right: #e3ebfa;
+    position: relative !important;
+    overflow: hidden !important;
+    isolation: isolate;
+    background: linear-gradient(90deg, var(--hero-mobile-left) 0%, var(--hero-mobile-right) 100%) !important;
+  }
+
+  /* Hide the normal mobile image block. Desktop still uses it normally. */
+  .hero-panel > img.hero-photo-base {
+    display: none !important;
+  }
+
+  /* New mobile-only photo layer */
+  .hero-mobile-photo {
+    display: block !important;
+    position: absolute !important;
+    z-index: 0 !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: clamp(300px, 82vw, 350px) !important;
+    overflow: hidden !important;
+    pointer-events: none;
+  }
+
+  .hero-mobile-photo img {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    object-fit: cover !important;
+    object-position: 84% top !important;
+    display: block !important;
+  }
+
+  /* Wash the LEFT side of the photo into the hero background,
+     while keeping the person on the right clear. */
+  .hero-mobile-photo::before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      90deg,
+      rgba(230,238,251,.94) 0%,
+      rgba(230,238,251,.78) 13%,
+      rgba(230,238,251,.48) 30%,
+      rgba(230,238,251,.18) 49%,
+      rgba(230,238,251,0) 68%
+    );
+  }
+
+  /* Strong BOTTOM dissolve. This removes the visible horizontal
+     photo edge and lets the photo blend behind the intro text. */
+  .hero-mobile-photo::after {
+    content: "";
+    position: absolute;
+    z-index: 3;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      180deg,
+      rgba(229,237,251,0) 40%,
+      rgba(229,237,251,.08) 50%,
+      rgba(229,237,251,.28) 61%,
+      rgba(229,237,251,.58) 73%,
+      rgba(229,237,251,.84) 85%,
+      rgba(229,237,251,.97) 94%,
+      rgba(229,237,251,1) 100%
+    );
+  }
+
+  /* Content is not restyled; it is only lifted into the fade area
+     so the image and text form one continuous hero like the reference. */
+  .hero-content {
+    position: relative !important;
+    z-index: 4 !important;
+    background: transparent !important;
+    padding-top: clamp(260px, 69vw, 295px) !important;
+  }
+}
+</style>
+
 </head>
 <body>
 
@@ -127,7 +225,10 @@
   <div class="wrap">
     <div class="hero-panel">
       <!-- Taruh foto asli di sini, ini otomatis jadi lapisan paling belakang (background) -->
-      <img src="assets/img/profile/profile.webp" alt="Foto Profil" loading="lazy">
+      <img class="hero-photo-base" src="assets/img/profile/profile.webp" alt="Foto Profil" loading="lazy">
+      <div class="hero-mobile-photo" aria-hidden="true">
+        <img src="assets/img/profile/profile.webp" alt="" loading="lazy">
+      </div>
       <!-- <img src="foto-saya.webp" alt="Foto profil" loading="lazy"> -->
 
       <div class="hero-content">
