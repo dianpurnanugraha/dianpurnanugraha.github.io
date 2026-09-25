@@ -16,6 +16,42 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="assets/css/styles.css?v=11">
 <link rel="canonical" href="https://dianpurnanugraha.my.id/about.html">
+<style id="about-readmore-alignment-fix">
+  /* Samakan titik kiri judul, metadata/deskripsi, dan tombol Selengkapnya. */
+  #toc-edukasi .edu-item > div:not(.ic){
+    min-width:0;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  #toc-edukasi .edu-item > div:not(.ic) > h5,
+  #toc-edukasi .edu-item > div:not(.ic) > span,
+  #toc-edukasi .edu-item > div:not(.ic) > button[data-i18n="about.readMore"]{
+    margin-left:0 !important;
+    padding-left:0 !important;
+    text-indent:0 !important;
+    align-self:flex-start;
+  }
+
+  #toc-edukasi .edu-item button[data-i18n="about.readMore"]{
+    display:block !important;
+    width:auto;
+    max-width:100%;
+    margin:8px 0 0 !important;
+    padding:0 !important;
+    border:0;
+    text-align:left !important;
+    font-family:inherit;
+    line-height:1.35;
+  }
+
+  #toc-edukasi .edu-item > div:not(.ic) > div[id$="-more"]{
+    width:100%;
+  }
+</style>
+
 
 <script type="application/ld+json">
 {

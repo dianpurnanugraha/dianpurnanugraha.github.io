@@ -16,6 +16,39 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
 <link href="assets/css/styles.css?v=11" rel="stylesheet"/>
 <link href="https://dianpurnanugraha.my.id/contact.html" rel="canonical"/>
+<style id="mobile-social-links-fix">
+  /* Desktop keeps the existing 8-column layout.
+     Mobile switches to 4 columns so icons and labels never overlap. */
+  @media (max-width:640px){
+    #toc-sosial .social-links-row{
+      grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+      column-gap:8px !important;
+      row-gap:18px !important;
+      width:100%;
+    }
+    #toc-sosial .social-link-item{
+      width:100%;
+      min-width:0;
+      text-align:center;
+    }
+    #toc-sosial .social-link-item .ic-circle{
+      width:48px;
+      height:48px;
+      margin:0 auto 7px;
+    }
+    #toc-sosial .social-link-item > span{
+      display:block;
+      width:100%;
+      min-width:0;
+      font-size:10.5px;
+      line-height:1.25;
+      text-align:center;
+      white-space:normal;
+      overflow-wrap:anywhere;
+    }
+  }
+</style>
+
 </head>
 <body>
 <!-- ===================== NAVBAR ===================== -->
