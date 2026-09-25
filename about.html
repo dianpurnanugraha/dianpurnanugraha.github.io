@@ -17,7 +17,9 @@
 <link rel="stylesheet" href="assets/css/styles.css?v=11">
 <link rel="canonical" href="https://dianpurnanugraha.my.id/about.html">
 <style id="about-readmore-alignment-fix">
-  /* Samakan titik kiri judul, metadata/deskripsi, dan tombol Selengkapnya. */
+  /* Judul, metadata/deskripsi, dan tombol toggle memakai titik kiri yang sama.
+     Selector tombol tidak bergantung pada readMore/readLess agar posisinya
+     tidak berubah saat teks berganti menjadi "Sembunyikan". */
   #toc-edukasi .edu-item > div:not(.ic){
     min-width:0;
     flex:1;
@@ -28,20 +30,21 @@
 
   #toc-edukasi .edu-item > div:not(.ic) > h5,
   #toc-edukasi .edu-item > div:not(.ic) > span,
-  #toc-edukasi .edu-item > div:not(.ic) > button[data-i18n="about.readMore"]{
+  #toc-edukasi .edu-item > div:not(.ic) > button[onclick^="toggleMore"]{
     margin-left:0 !important;
     padding-left:0 !important;
     text-indent:0 !important;
-    align-self:flex-start;
+    align-self:flex-start !important;
   }
 
-  #toc-edukasi .edu-item button[data-i18n="about.readMore"]{
+  #toc-edukasi .edu-item button[onclick^="toggleMore"]{
     display:block !important;
-    width:auto;
+    width:max-content !important;
     max-width:100%;
     margin:8px 0 0 !important;
     padding:0 !important;
-    border:0;
+    border:0 !important;
+    background:none !important;
     text-align:left !important;
     font-family:inherit;
     line-height:1.35;
@@ -49,6 +52,13 @@
 
   #toc-edukasi .edu-item > div:not(.ic) > div[id$="-more"]{
     width:100%;
+    margin-left:0 !important;
+    padding-left:0 !important;
+  }
+
+  #toc-edukasi .edu-item > div:not(.ic) > div[id$="-more"] > p{
+    margin-left:0 !important;
+    padding-left:0 !important;
   }
 </style>
 
