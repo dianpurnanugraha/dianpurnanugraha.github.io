@@ -6,7 +6,7 @@ Website portofolio statis bilingual untuk menampilkan profil, pengalaman, layana
 
 ## Ringkasan
 
-- 24 halaman detail proyek
+- 25 halaman detail proyek
 - 10 artikel Insight
 - 5 kategori proyek
 - 6 kategori Insight
@@ -22,7 +22,7 @@ Website portofolio statis bilingual untuk menampilkan profil, pengalaman, layana
 | `services.html` | Layanan profesional |
 | `skill.html` | Kompetensi, skill, dan tools |
 | `experience.html` | Riwayat pengalaman kerja |
-| `project.html` | Daftar 24 proyek dengan filter kategori |
+| `project.html` | Daftar 25 proyek dengan filter kategori |
 | `insight.html` | Daftar artikel dan insight profesional |
 | `contact.html` | Kontak dan tautan sosial media |
 
@@ -36,6 +36,7 @@ Website portofolio statis bilingual untuk menampilkan profil, pengalaman, layana
 ### Branding & Design
 
 - `project-logo-identitas.html` — Desain Logo & Identitas Visual
+- `project-kaos-dtg.html` — Desain Artwork Kaos & Mockup DTG
 - `project-brosur.html` — Desain Materi Promosi Cetak & Display
 - `project-katalog.html` — Desain Katalog Produk Multi-Brand
 - `project-packaging.html` — Desain Kemasan & Branding Multi-Brand
@@ -125,4 +126,4 @@ Kemudian buka [http://localhost:8000](http://localhost:8000).
 - WhatsApp: +62 812 9573 3476
 - LinkedIn: [dianpurnanugraha](https://www.linkedin.com/in/dianpurnanugraha/)
 
-_Last updated: 14 September 2026._
+_Last updated: 29 September 2026._
