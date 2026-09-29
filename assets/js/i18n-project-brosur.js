@@ -49,7 +49,7 @@ window.I18N_PAGE = {
     'example.tagDouble': 'Bolak-balik',
     'example.tagSingle': 'Satu Sisi',
 
-    'nav.prev': 'Desain Logo &amp; Identitas Visual',
+    'nav.prev': 'Desain Artwork Kaos &amp; Mockup DTG',
     'nav.next': 'Desain Katalog Produk Multi-Brand',
 
     'connect.badge': 'Lihat Hasil Kerja Saya',
@@ -112,7 +112,7 @@ window.I18N_PAGE = {
     'example.tagDouble': 'Double-Sided',
     'example.tagSingle': 'Single-Sided',
 
-    'nav.prev': 'Logo &amp; Visual Identity Design',
+    'nav.prev': 'T-Shirt Artwork &amp; DTG Mockup Design',
     'nav.next': 'Multi-Brand Product Catalog Design',
 
     'connect.badge': 'See My Work',
