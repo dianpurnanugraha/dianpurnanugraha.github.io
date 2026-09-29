@@ -49,6 +49,7 @@ window.I18N_PAGE = {
     'about.certColTitle': 'Sertifikasi',
     'about.certColDesc': 'Sertifikasi & pelatihan yang telah diselesaikan.',
     'about.cert1Title': 'Mastering Adobe Illustrator: Dasar Warna dan Brush',
+    'about.cert1Meta': 'Skill Academy &middot; Program Kartu Prakerja &middot; 2020',
     'about.cert2Title': 'Workshop Web & Java "Develop Your Coding Skill"',
     'about.cert3Title': 'Talkshow & Creative Product Demo: "Proud and Fun to be an Entrepreuner"',
     'about.cert5Title': 'Keterampilan Komputer dan Pengolahan Informasi (KKPI)',
@@ -66,6 +67,8 @@ window.I18N_PAGE = {
     'about.cert11Meta': 'PT. Taharica &middot; 2013',
     'about.cert12Title': 'Training "5S"',
     'about.cert12Meta': 'PT. Taharica &middot; 2013',
+    'about.cert13Title': 'Kursus Bahasa Inggris',
+    'about.cert13Meta': 'Amico (American College) &middot; 2011',
 
     'about.workPrefEyebrow': 'PREFERENSI KERJA',
     'about.workPrefTitle': 'Fleksibel untuk <span>Kolaborasi</span>',
@@ -205,6 +208,7 @@ window.I18N_PAGE = {
     'about.certColTitle': 'Certifications',
     'about.certColDesc': 'Certifications & training that have been completed.',
     'about.cert1Title': 'Mastering Adobe Illustrator: Color and Brush Basics',
+    'about.cert1Meta': 'Skill Academy &middot; Kartu Prakerja Program &middot; 2020',
     'about.cert2Title': 'Web & Java Workshop "Develop Your Coding Skill"',
     'about.cert3Title': 'Talkshow & Creative Product Demo: "Proud and Fun to be an Entrepreneur"',
     'about.cert5Title': 'Computer Skills and Information Processing (KKPI)',
@@ -222,6 +226,8 @@ window.I18N_PAGE = {
     'about.cert11Meta': 'PT. Taharica &middot; 2013',
     'about.cert12Title': 'Training "5S"',
     'about.cert12Meta': 'PT. Taharica &middot; 2013',
+    'about.cert13Title': 'English Language Course',
+    'about.cert13Meta': 'Amico (American College) &middot; 2011',
 
     'about.workPrefEyebrow': 'WORK PREFERENCES',
     'about.workPrefTitle': 'Flexible for <span>Collaboration</span>',
