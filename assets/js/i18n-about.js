@@ -32,6 +32,9 @@ window.I18N_PAGE = {
     'about.award1Title': 'Penghargaan 5S/5R',
     'about.award1Meta': 'PT Bumi Mataritama · 2014',
     'about.award1Desc': 'Berkontribusi sebagai bagian dari tim dalam pencapaian penghargaan penerapan 5S/5R di lingkungan kerja.',
+    'about.award2Title': 'Juara I Festival Robot 2010',
+    'about.award2Meta': 'Klub Robotik PKP Jakarta Islamic School · 2010',
+    'about.award2Desc': 'Meraih Juara I dalam Festival Robot 2010 yang diselenggarakan di Kampus PKP Jakarta Islamic School pada 8–10 April 2010.',
 
     'about.orgColTitle': 'Pengalaman Organisasi &amp; Relawan',
     'about.orgColDesc': 'Keterlibatan dalam organisasi dan kegiatan sosial melalui kepanitiaan acara, koordinasi operasional, dokumentasi, dan dukungan kegiatan.',
@@ -191,6 +194,9 @@ window.I18N_PAGE = {
     'about.award1Title': '5S/5R Award',
     'about.award1Meta': 'PT Bumi Mataritama · 2014',
     'about.award1Desc': 'Contributed as part of a team to achieving a 5S/5R implementation award in the workplace.',
+    'about.award2Title': '1st Place — Robot Festival 2010',
+    'about.award2Meta': 'PKP Jakarta Islamic School Robotics Club · 2010',
+    'about.award2Desc': 'Won 1st Place in the 2010 Robot Festival held at the PKP Jakarta Islamic School campus on April 8–10, 2010.',
 
     'about.orgColTitle': 'Organizational &amp; Volunteer Experience',
     'about.orgColDesc': 'Involvement in organizations and social activities through event committees, operational coordination, documentation, and activity support.',
