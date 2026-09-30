@@ -336,6 +336,24 @@
     { tag: "Sari Rimpang", tagAlt: true, title: "Teh Rimpang", titleEn: "Rimpang Tea", images: [
         { src: "assets/img/packaging/project-packaging-saririmpang-mockup.webp" },
         { src: "assets/img/packaging/project-packaging-saririmpang-flat.webp" }
+    ]},
+    { tag: "Naima", tagAlt: false, title: "Bawang Hitam", titleEn: "Black Garlic", images: [
+        { src: "assets/img/packaging/project-packaging-naima-blackgarlic-box-mockup.webp", label: "Mockup 1", labelEn: "Mockup 1" },
+        { src: "assets/img/packaging/project-packaging-naima-blackgarlic-bottle-mockup.webp", label: "Mockup 2", labelEn: "Mockup 2" },
+        { src: "assets/img/packaging/project-packaging-naima-blackgarlic-flat-3side.webp", label: "Desain Flat", labelEn: "Flat Design" }
+    ]},
+    { tag: "Syifacare", tagAlt: false, title: "Bawang Hitam Lanang", titleEn: "Single-Clove Black Garlic", images: [
+	{ src: "assets/img/packaging/project-packaging-syifacare-blackgarlic-mockup-wide-1.webp", label: "Mockup 1", labelEn: "Mockup 1" },
+        { src: "assets/img/packaging/project-packaging-syifacare-blackgarlic-mockup-wide-2.webp", label: "Mockup 2", labelEn: "Mockup 2" },
+        { src: "assets/img/packaging/project-packaging-syifacare-blackgarlic-mockup-wide-3.webp", label: "Mockup 3", labelEn: "Mockup 3" },
+        { src: "assets/img/packaging/project-packaging-syifacare-blackgarlic-mockup-front.webp", label: "Mockup 4", labelEn: "Mockup 4" },
+        { src: "assets/img/packaging/project-packaging-syifacare-blackgarlic-mockup-left.webp", label: "Mockup 5", labelEn: "Mockup 5" },
+        { src: "assets/img/packaging/project-packaging-syifacare-blackgarlic-mockup-right.webp", label: "Mockup 6", labelEn: "Mockup 6" },
+        { src: "assets/img/packaging/project-packaging-syifacare-blackgarlic-flat.webp", label: "Desain Flat", labelEn: "Flat Design" }
+    ]},
+    { tag: "Syifacare", tagAlt: false, title: "Madu Hutan", titleEn: "Forest Honey", images: [
+        { src: "assets/img/packaging/project-packaging-syifacare-madu-hutan-mockup.webp" },
+        { src: "assets/img/packaging/project-packaging-syifacare-madu-hutan-flat.webp" }
     ]}
   ];
 
@@ -348,9 +366,14 @@
   var currentPage = 1;
 
   function getLang(){ return localStorage.getItem('site-lang') || 'id'; }
-  function getSlideLabel(index){
+  function getSlideLabel(item, index){
+    var lang = getLang();
+    if (item) {
+      if (lang === 'en' && item.labelEn) return item.labelEn;
+      if (lang !== 'en' && item.label) return item.label;
+    }
     if (index === 0) return 'Mockup';
-    return getLang() === 'en' ? 'Flat Design' : 'Desain Flat';
+    return lang === 'en' ? 'Flat Design' : 'Desain Flat';
   }
   function getProductTitle(product){
     return getLang() === 'en' ? product.titleEn : product.title;
@@ -364,15 +387,16 @@
     var head = document.createElement('div');
     head.className = 'slider-card-head';
     head.innerHTML =
-      '<span class="slider-card-tag"><i class="fa-solid fa-cube"></i> <span class="packaging-slide-label">' + getSlideLabel(0) + '</span></span>';
+      '<span class="slider-card-tag"><i class="fa-solid fa-cube"></i> <span class="packaging-slide-label">' + getSlideLabel(product.images[0], 0) + '</span></span>';
     card.appendChild(head);
 
     var slider = document.createElement('div');
     slider.className = 'media-slider';
 
     var slidesHtml = product.images.map(function(img, index){
-      return '<div class="media-slide">' +
-               '<img src="' + img.src + '" alt="Kemasan ' + product.tag + ' ' + productTitle + ' — ' + getSlideLabel(index) + '" loading="lazy">' +
+      var slideLabel = getSlideLabel(img, index);
+      return '<div class="media-slide" data-label-id="' + (img.label || '') + '" data-label-en="' + (img.labelEn || '') + '">' +
+               '<img src="' + img.src + '" alt="Kemasan ' + product.tag + ' ' + productTitle + ' — ' + slideLabel + '" loading="lazy">' +
              '</div>';
     }).join('');
 
@@ -430,7 +454,14 @@
         index = (i + slides.length) % slides.length;
         track.style.transform = 'translateX(-' + (index * 100) + '%)';
         dots.forEach(function(d, di){ d.classList.toggle('active', di === index); });
-        if (slideLabelEl) slideLabelEl.textContent = getSlideLabel(index);
+        if (slideLabelEl) {
+          var slideEl = slides[index];
+          var labelItem = slideEl ? {
+            label: slideEl.getAttribute('data-label-id') || '',
+            labelEn: slideEl.getAttribute('data-label-en') || ''
+          } : null;
+          slideLabelEl.textContent = getSlideLabel(labelItem, index);
+        }
       }
       prevBtn.addEventListener('click', function(){ goTo(index - 1); });
       nextBtn.addEventListener('click', function(){ goTo(index + 1); });
